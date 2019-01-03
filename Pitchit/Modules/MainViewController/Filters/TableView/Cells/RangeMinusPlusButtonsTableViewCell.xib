@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Medium.ttf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RangeMinusPlusButtonsTableViewCell" rowHeight="218" id="KGk-i7-Jjw" customClass="RangeMinusPlusButtonsTableViewCell" customModule="Pitchit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="218"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="483" height="217.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1al-1n-i10">
+                        <rect key="frame" x="206.5" y="0.0" width="70.5" height="34.5"/>
+                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="24"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbu-pj-53Q">
+                        <rect key="frame" x="22" y="56.5" width="439" height="50"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-bR-MzJ">
+                                <rect key="frame" x="389" y="0.0" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UBh-bR-MzJ" secondAttribute="height" multiplier="1:1" id="KZk-tr-eJS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYW-Bh-GNF">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bathroom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-zz-PW4">
+                                <rect key="frame" x="58" y="18" width="323" height="14.5"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="0.50565567484662577" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dYW-Bh-GNF" firstAttribute="leading" secondItem="Sbu-pj-53Q" secondAttribute="leading" id="08F-cd-b0W"/>
+                            <constraint firstItem="UBh-bR-MzJ" firstAttribute="leading" secondItem="kAN-zz-PW4" secondAttribute="trailing" constant="8" id="0pw-8K-EOJ"/>
+                            <constraint firstItem="kAN-zz-PW4" firstAttribute="centerY" secondItem="UBh-bR-MzJ" secondAttribute="centerY" id="7Q1-5h-Pzl"/>
+                            <constraint firstItem="dYW-Bh-GNF" firstAttribute="top" secondItem="Sbu-pj-53Q" secondAttribute="top" id="D1s-Ac-SrR"/>
+                            <constraint firstAttribute="height" constant="50" id="F3D-DN-VvT"/>
+                            <constraint firstItem="UBh-bR-MzJ" firstAttribute="top" secondItem="Sbu-pj-53Q" secondAttribute="top" id="HfY-Ry-kKa"/>
+                            <constraint firstItem="dYW-Bh-GNF" firstAttribute="width" secondItem="dYW-Bh-GNF" secondAttribute="height" multiplier="1:1" id="X6O-45-Ngj"/>
+                            <constraint firstItem="kAN-zz-PW4" firstAttribute="leading" secondItem="dYW-Bh-GNF" secondAttribute="trailing" constant="8" id="XdR-QK-kW9"/>
+                            <constraint firstAttribute="bottom" secondItem="UBh-bR-MzJ" secondAttribute="bottom" id="cvs-9A-1wE"/>
+                            <constraint firstAttribute="trailing" secondItem="UBh-bR-MzJ" secondAttribute="trailing" id="lqX-0r-qCc"/>
+                            <constraint firstAttribute="bottom" secondItem="dYW-Bh-GNF" secondAttribute="bottom" id="u4e-XM-DTG"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47Q-Wi-7ZC">
+                        <rect key="frame" x="22" y="122.5" width="439" height="50"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-Gy-E3y">
+                                <rect key="frame" x="389" y="0.0" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egj-Df-orh">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rooms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDL-1g-dVB">
+                                <rect key="frame" x="58" y="18" width="323" height="14.5"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="0.50565567479999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="10s-6S-6Nh"/>
+                            <constraint firstAttribute="bottom" secondItem="Egj-Df-orh" secondAttribute="bottom" id="5j1-aE-YH1"/>
+                            <constraint firstItem="Egj-Df-orh" firstAttribute="leading" secondItem="47Q-Wi-7ZC" secondAttribute="leading" id="9Dx-JQ-wVW"/>
+                            <constraint firstItem="xnq-Gy-E3y" firstAttribute="width" secondItem="xnq-Gy-E3y" secondAttribute="height" multiplier="1:1" id="T3A-MI-eHv"/>
+                            <constraint firstAttribute="bottom" secondItem="xnq-Gy-E3y" secondAttribute="bottom" id="T46-Mo-kHm"/>
+                            <constraint firstItem="Egj-Df-orh" firstAttribute="width" secondItem="Egj-Df-orh" secondAttribute="height" multiplier="1:1" id="VXx-zQ-mVB"/>
+                            <constraint firstItem="Egj-Df-orh" firstAttribute="top" secondItem="47Q-Wi-7ZC" secondAttribute="top" id="YOM-Ya-fO1"/>
+                            <constraint firstAttribute="trailing" secondItem="xnq-Gy-E3y" secondAttribute="trailing" id="Zzv-AM-2qO"/>
+                            <constraint firstItem="xnq-Gy-E3y" firstAttribute="top" secondItem="47Q-Wi-7ZC" secondAttribute="top" id="cBY-S0-Ok6"/>
+                            <constraint firstItem="xnq-Gy-E3y" firstAttribute="leading" secondItem="sDL-1g-dVB" secondAttribute="trailing" constant="8" id="naa-OC-vuR"/>
+                            <constraint firstItem="sDL-1g-dVB" firstAttribute="leading" secondItem="Egj-Df-orh" secondAttribute="trailing" constant="8" id="ycy-9O-05R"/>
+                            <constraint firstItem="sDL-1g-dVB" firstAttribute="centerY" secondItem="Egj-Df-orh" secondAttribute="centerY" id="zyT-SO-8GD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="1al-1n-i10" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9ZY-D3-KL3"/>
+                    <constraint firstItem="47Q-Wi-7ZC" firstAttribute="centerX" secondItem="Sbu-pj-53Q" secondAttribute="centerX" id="Owg-V1-biO"/>
+                    <constraint firstItem="47Q-Wi-7ZC" firstAttribute="top" secondItem="Sbu-pj-53Q" secondAttribute="bottom" constant="16" id="OzS-Qx-EN2"/>
+                    <constraint firstItem="Sbu-pj-53Q" firstAttribute="top" secondItem="1al-1n-i10" secondAttribute="bottom" constant="22" id="Rcz-vv-TKv"/>
+                    <constraint firstItem="1al-1n-i10" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UF0-h5-Hqw"/>
+                    <constraint firstItem="Sbu-pj-53Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="ckh-3Z-i7A"/>
+                    <constraint firstAttribute="bottom" secondItem="47Q-Wi-7ZC" secondAttribute="bottom" constant="45" id="hPq-ve-Ih7"/>
+                    <constraint firstItem="47Q-Wi-7ZC" firstAttribute="width" secondItem="Sbu-pj-53Q" secondAttribute="width" id="ipU-Ye-k1L"/>
+                    <constraint firstAttribute="trailing" secondItem="Sbu-pj-53Q" secondAttribute="trailing" constant="22" id="rHm-ga-gbX"/>
+                    <constraint firstItem="47Q-Wi-7ZC" firstAttribute="height" secondItem="Sbu-pj-53Q" secondAttribute="height" id="zOi-A2-Hjx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="firstButton" destination="Sbu-pj-53Q" id="T9B-Z9-cBD"/>
+                <outlet property="secondButton" destination="47Q-Wi-7ZC" id="gmy-jn-dpM"/>
+            </connections>
+            <point key="canvasLocation" x="271.19999999999999" y="186.20689655172416"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PitchCollectionViewCell" id="gTV-IL-0wX" customClass="PitchCollectionViewCell" customModule="Pitchit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="224" height="262"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="224" height="262"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-fc-Aif">
+                        <rect key="frame" x="4" y="4" width="38.5" height="38.5"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <action selector="tapOnlike:" destination="gTV-IL-0wX" eventType="touchUpInside" id="rEK-fc-BhK"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYt-pE-UHM">
+                        <rect key="frame" x="81.5" y="120.5" width="61" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-9i-65Q">
+                        <rect key="frame" x="12" y="12" width="22.5" height="22.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Mvo-9i-65Q" secondAttribute="height" multiplier="1:1" id="OX1-7t-Ucu"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQG-bB-1Dq" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
+                        <rect key="frame" x="190" y="8" width="26" height="17"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6A-yc-5as" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
+                        <rect key="frame" x="8" y="204" width="208" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6V-8C-02q" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
+                        <rect key="frame" x="8" y="233" width="208" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="y3L-fc-Aif" firstAttribute="centerX" secondItem="Mvo-9i-65Q" secondAttribute="centerX" id="3YI-Tc-vTy"/>
+                <constraint firstItem="Mvo-9i-65Q" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.1" id="8G2-do-AbB"/>
+                <constraint firstAttribute="trailing" secondItem="H6V-8C-02q" secondAttribute="trailing" constant="8" id="Owd-og-MTq"/>
+                <constraint firstItem="bQG-bB-1Dq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="SuD-JL-A9A"/>
+                <constraint firstAttribute="trailing" secondItem="R6A-yc-5as" secondAttribute="trailing" constant="8" id="Tlh-7u-41t"/>
+                <constraint firstItem="aYt-pE-UHM" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="WDu-qh-ued"/>
+                <constraint firstItem="Mvo-9i-65Q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="X0h-Fm-PAr"/>
+                <constraint firstAttribute="bottom" secondItem="H6V-8C-02q" secondAttribute="bottom" constant="8" id="ZgP-G1-MYA"/>
+                <constraint firstItem="R6A-yc-5as" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="gFE-b0-ACT"/>
+                <constraint firstItem="H6V-8C-02q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="h4E-hN-tTZ"/>
+                <constraint firstAttribute="trailing" secondItem="bQG-bB-1Dq" secondAttribute="trailing" constant="8" id="kjh-WO-1WT"/>
+                <constraint firstItem="y3L-fc-Aif" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="mRS-Uh-4Lm"/>
+                <constraint firstItem="y3L-fc-Aif" firstAttribute="centerY" secondItem="Mvo-9i-65Q" secondAttribute="centerY" id="mvj-nT-d3e"/>
+                <constraint firstItem="y3L-fc-Aif" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="nkw-yM-fna"/>
+                <constraint firstItem="Mvo-9i-65Q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="tlZ-tD-uxv"/>
+                <constraint firstItem="aYt-pE-UHM" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="wMS-nm-7ht"/>
+                <constraint firstItem="H6V-8C-02q" firstAttribute="top" secondItem="R6A-yc-5as" secondAttribute="bottom" constant="8" id="xQa-h3-Icz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="224" height="262"/>
+            <connections>
+                <outlet property="buttonBackGround" destination="y3L-fc-Aif" id="E2N-aa-w1e"/>
+                <outlet property="distanceLabel" destination="bQG-bB-1Dq" id="oa5-z7-JFK"/>
+                <outlet property="likeImage" destination="Mvo-9i-65Q" id="jgz-Hk-RjJ"/>
+                <outlet property="loadingLabel" destination="aYt-pE-UHM" id="xdr-Gp-lky"/>
+                <outlet property="priceTitle" destination="H6V-8C-02q" id="cxV-XE-9M8"/>
+                <outlet property="titleLabel" destination="R6A-yc-5as" id="jwB-sc-LuZ"/>
+            </connections>
+            <point key="canvasLocation" x="136" y="211.39430284857573"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart" width="512" height="512"/>
+    </resources>
+</document>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="KyG-Ko-PEJ">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="v7X-lP-450" customClass="ProfileViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J6M-xG-v98">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7PX-sa-pOU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7PX-sa-pOU" firstAttribute="top" secondItem="Uu9-g7-VAC" secondAttribute="top" id="4Fo-1z-RJ9"/>
+                            <constraint firstItem="7PX-sa-pOU" firstAttribute="trailing" secondItem="Uu9-g7-VAC" secondAttribute="trailing" id="I9a-kM-Ld4"/>
+                            <constraint firstItem="7PX-sa-pOU" firstAttribute="bottom" secondItem="Uu9-g7-VAC" secondAttribute="bottom" id="Zeg-NI-sdR"/>
+                            <constraint firstItem="7PX-sa-pOU" firstAttribute="leading" secondItem="Uu9-g7-VAC" secondAttribute="leading" id="dMv-5w-EQq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uu9-g7-VAC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="MqR-ex-jm2">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Ksm-qf-z2c">
+                            <connections>
+                                <action selector="showMenu:" destination="v7X-lP-450" id="dHk-uW-1w6"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Edit" id="9cj-uA-0Jz">
+                                <connections>
+                                    <action selector="editProfile:" destination="v7X-lP-450" id="Rje-bf-JdY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Analytic" id="sZx-4J-X2f">
+                                <connections>
+                                    <action selector="showAnalytics:" destination="v7X-lP-450" id="lbn-d7-29m"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="7PX-sa-pOU" id="q2j-oN-Ar0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebb-Qy-hqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="120.98950524737631"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="eCo-va-U6Y">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" id="tGa-Su-UxU" customClass="EditProfileViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cjv-F6-j7Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cBn-ER-9Ai">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cBn-ER-9Ai" firstAttribute="trailing" secondItem="45w-uM-swn" secondAttribute="trailing" id="8Mf-RI-KMd"/>
+                            <constraint firstItem="cBn-ER-9Ai" firstAttribute="leading" secondItem="45w-uM-swn" secondAttribute="leading" id="RVk-Ol-V4p"/>
+                            <constraint firstItem="cBn-ER-9Ai" firstAttribute="top" secondItem="45w-uM-swn" secondAttribute="top" id="UH7-Ad-7iI"/>
+                            <constraint firstItem="cBn-ER-9Ai" firstAttribute="bottom" secondItem="45w-uM-swn" secondAttribute="bottom" id="aOi-fN-n49"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="45w-uM-swn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="xa4-yS-gL4">
+                        <barButtonItem key="leftBarButtonItem" title="X" id="bba-Bt-Weg">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="closeAction:" destination="tGa-Su-UxU" id="7zr-gJ-5z5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="cBn-ER-9Ai" id="kE0-EZ-a2M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sr-EQ-wj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="121"/>
+        </scene>
+        <!--Rate View Controller-->
+        <scene sceneID="K6L-Ha-6C2">
+            <objects>
+                <viewController storyboardIdentifier="RateViewController" id="x21-Ri-vdE" customClass="RateViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xVp-oD-VsH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review the seller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z8h-gO-vEd">
+                                <rect key="frame" x="94" y="84" width="187.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-nh-qGR" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="16" y="144.5" width="343" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" red="0.41960784309999999" green="0.34509803919999998" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NkR-TY-mWm" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                <rect key="frame" x="16" y="294" width="343" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Describe your rate"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-H4-ZXV">
+                                <rect key="frame" x="8" y="585" width="359" height="74"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="xEF-Xo-YRN"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitReview:" destination="x21-Ri-vdE" eventType="touchUpInside" id="lCN-Ut-jbS"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEZ-0F-gC9">
+                                <rect key="frame" x="0.0" y="135.5" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="T1u-Pc-sBJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NkR-TY-mWm" firstAttribute="top" secondItem="8cy-nh-qGR" secondAttribute="bottom" constant="16" id="0hG-nt-p3H"/>
+                            <constraint firstItem="z8h-gO-vEd" firstAttribute="centerX" secondItem="hxo-cL-A1C" secondAttribute="centerX" id="7uB-ah-kA0"/>
+                            <constraint firstItem="NkR-TY-mWm" firstAttribute="leading" secondItem="hxo-cL-A1C" secondAttribute="leading" constant="16" id="Ddp-0k-eaf"/>
+                            <constraint firstItem="8cy-nh-qGR" firstAttribute="top" secondItem="WEZ-0F-gC9" secondAttribute="bottom" constant="8" id="I6K-pb-MqU"/>
+                            <constraint firstItem="h2h-H4-ZXV" firstAttribute="centerX" secondItem="hxo-cL-A1C" secondAttribute="centerX" id="Ll6-u9-uVM"/>
+                            <constraint firstItem="8cy-nh-qGR" firstAttribute="leading" secondItem="hxo-cL-A1C" secondAttribute="leading" constant="16" id="M0k-di-XaC"/>
+                            <constraint firstItem="hxo-cL-A1C" firstAttribute="bottom" secondItem="h2h-H4-ZXV" secondAttribute="bottom" constant="8" id="Mf0-pY-aq2"/>
+                            <constraint firstItem="hxo-cL-A1C" firstAttribute="trailing" secondItem="h2h-H4-ZXV" secondAttribute="trailing" constant="8" id="NWH-JX-QBE"/>
+                            <constraint firstItem="WEZ-0F-gC9" firstAttribute="leading" secondItem="xVp-oD-VsH" secondAttribute="leading" id="OPH-hC-kJj"/>
+                            <constraint firstItem="WEZ-0F-gC9" firstAttribute="top" secondItem="z8h-gO-vEd" secondAttribute="bottom" constant="20" id="Y1T-zE-wo8"/>
+                            <constraint firstItem="hxo-cL-A1C" firstAttribute="trailing" secondItem="NkR-TY-mWm" secondAttribute="trailing" constant="16" id="aX6-VP-POa"/>
+                            <constraint firstAttribute="trailing" secondItem="WEZ-0F-gC9" secondAttribute="trailing" id="e8R-WB-fMH"/>
+                            <constraint firstItem="8cy-nh-qGR" firstAttribute="height" secondItem="xVp-oD-VsH" secondAttribute="height" multiplier="0.2" id="eHY-BA-fi6"/>
+                            <constraint firstItem="NkR-TY-mWm" firstAttribute="height" secondItem="8cy-nh-qGR" secondAttribute="height" id="i6d-1k-XeP"/>
+                            <constraint firstItem="z8h-gO-vEd" firstAttribute="top" secondItem="hxo-cL-A1C" secondAttribute="top" constant="20" id="idd-ev-4iJ"/>
+                            <constraint firstItem="h2h-H4-ZXV" firstAttribute="leading" secondItem="hxo-cL-A1C" secondAttribute="leading" constant="8" id="pus-bJ-OL6"/>
+                            <constraint firstItem="z8h-gO-vEd" firstAttribute="width" secondItem="xVp-oD-VsH" secondAttribute="width" multiplier="0.5" id="q4S-Ag-zgG"/>
+                            <constraint firstItem="hxo-cL-A1C" firstAttribute="trailing" secondItem="8cy-nh-qGR" secondAttribute="trailing" constant="16" id="tXD-sM-mFP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hxo-cL-A1C"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="reviewText" destination="NkR-TY-mWm" id="aVB-bD-nHi"/>
+                        <outlet property="starRate" destination="8cy-nh-qGR" id="9fX-zK-ThL"/>
+                        <outlet property="yourRateDesc" destination="NkR-TY-mWm" id="MXC-5U-Nk1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WqX-1P-vul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="121"/>
+        </scene>
+        <!--Analytics View Controller-->
+        <scene sceneID="tQi-2x-Fsf">
+            <objects>
+                <viewController storyboardIdentifier="AnalyticsViewController" id="Iba-Ng-y7t" customClass="AnalyticsViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iec-eM-tHT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hFW-xJ-O80">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hFW-xJ-O80" firstAttribute="leading" secondItem="ua9-MH-Xzp" secondAttribute="leading" id="Fn1-zz-Cil"/>
+                            <constraint firstItem="hFW-xJ-O80" firstAttribute="top" secondItem="ua9-MH-Xzp" secondAttribute="top" id="fB1-WD-6nA"/>
+                            <constraint firstItem="hFW-xJ-O80" firstAttribute="trailing" secondItem="ua9-MH-Xzp" secondAttribute="trailing" id="l8V-ow-apV"/>
+                            <constraint firstItem="hFW-xJ-O80" firstAttribute="bottom" secondItem="ua9-MH-Xzp" secondAttribute="bottom" id="mP9-tW-jTR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ua9-MH-Xzp"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="hFW-xJ-O80" id="Z3p-0Z-U7K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VyV-0G-bse" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="121"/>
+        </scene>
+    </scenes>
+</document>

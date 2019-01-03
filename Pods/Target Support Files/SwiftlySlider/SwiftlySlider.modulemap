@@ -1,0 +1,6 @@
+framework module SwiftlySlider {
+  umbrella header "SwiftlySlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

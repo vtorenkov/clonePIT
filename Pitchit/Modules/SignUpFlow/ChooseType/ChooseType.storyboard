@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Medium.ttf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Choose Type View Controller-->
+        <scene sceneID="X92-lB-Tp9">
+            <objects>
+                <viewController storyboardIdentifier="ChooseTypeViewController" id="IsY-kC-nWb" customClass="ChooseTypeViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZf-2H-Ka9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkj-bY-tOj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oy-eC-6Eg">
+                                <rect key="frame" x="35" y="157.5" width="305" height="53.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="18"/>
+                                <state key="normal" title="Personal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="openPersonalSignUp:" destination="IsY-kC-nWb" eventType="touchUpInside" id="oed-0V-yuY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smM-vk-Spm">
+                                <rect key="frame" x="35" y="241" width="305" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="18"/>
+                                <state key="normal" title="Business">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="openBusinessSignUp:" destination="IsY-kC-nWb" eventType="touchUpInside" id="kEj-OR-cMV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3oy-eC-6Eg" firstAttribute="height" secondItem="NZf-2H-Ka9" secondAttribute="height" multiplier="0.08" id="0E2-z4-2x4"/>
+                            <constraint firstItem="Fkh-jd-IH4" firstAttribute="trailing" secondItem="3oy-eC-6Eg" secondAttribute="trailing" constant="35" id="71O-oH-nkg"/>
+                            <constraint firstItem="Fkh-jd-IH4" firstAttribute="bottom" secondItem="gkj-bY-tOj" secondAttribute="bottom" id="7pz-lI-4vL"/>
+                            <constraint firstItem="gkj-bY-tOj" firstAttribute="leading" secondItem="Fkh-jd-IH4" secondAttribute="leading" id="PVJ-Yc-MTR"/>
+                            <constraint firstItem="smM-vk-Spm" firstAttribute="top" secondItem="3oy-eC-6Eg" secondAttribute="bottom" constant="30" id="VxM-Xu-aj4"/>
+                            <constraint firstItem="gkj-bY-tOj" firstAttribute="top" secondItem="NZf-2H-Ka9" secondAttribute="top" id="XK4-yg-rmf"/>
+                            <constraint firstItem="smM-vk-Spm" firstAttribute="trailing" secondItem="3oy-eC-6Eg" secondAttribute="trailing" id="dEC-QG-avF"/>
+                            <constraint firstItem="smM-vk-Spm" firstAttribute="leading" secondItem="3oy-eC-6Eg" secondAttribute="leading" id="jCx-Qr-HUh"/>
+                            <constraint firstItem="Fkh-jd-IH4" firstAttribute="trailing" secondItem="gkj-bY-tOj" secondAttribute="trailing" id="mnn-fy-3t3"/>
+                            <constraint firstItem="gkj-bY-tOj" firstAttribute="top" secondItem="3oy-eC-6Eg" secondAttribute="bottom" constant="-211" id="pJb-5f-QRA"/>
+                            <constraint firstItem="3oy-eC-6Eg" firstAttribute="leading" secondItem="Fkh-jd-IH4" secondAttribute="leading" constant="35" id="u7g-wF-2VK"/>
+                            <constraint firstItem="smM-vk-Spm" firstAttribute="height" secondItem="3oy-eC-6Eg" secondAttribute="height" id="wKY-NA-asZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fkh-jd-IH4"/>
+                    </view>
+                    <connections>
+                        <outlet property="gradientView" destination="gkj-bY-tOj" id="vuY-OV-Ab4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJ3-AJ-q2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72.799999999999997" y="163.26836581709148"/>
+        </scene>
+    </scenes>
+</document>

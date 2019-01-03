@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="k3Q-9l-e2N">
+            <objects>
+                <viewController storyboardIdentifier="RecordVideoViewController" id="Fku-NE-dQ8" customClass="RecordVideoViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d3p-S4-ukH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-Qs-P79">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEd-qJ-Bwg">
+                                <rect key="frame" x="112.5" y="580" width="150" height="68"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IEd-qJ-Bwg" secondAttribute="height" multiplier="148:67" id="WxH-ph-IAL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="recordButton:" destination="Fku-NE-dQ8" eventType="touchUpInside" id="aZi-kC-EjF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IEd-qJ-Bwg" firstAttribute="width" secondItem="Dng-Qs-P79" secondAttribute="width" multiplier="0.4" id="7DZ-0m-8yg"/>
+                            <constraint firstItem="Dng-Qs-P79" firstAttribute="trailing" secondItem="k9b-g2-4Nh" secondAttribute="trailing" id="A0R-Uf-gxN"/>
+                            <constraint firstItem="Dng-Qs-P79" firstAttribute="top" secondItem="d3p-S4-ukH" secondAttribute="top" id="Clq-Ur-5hU"/>
+                            <constraint firstItem="IEd-qJ-Bwg" firstAttribute="centerX" secondItem="Dng-Qs-P79" secondAttribute="centerX" id="F8a-Fr-ceK"/>
+                            <constraint firstItem="Dng-Qs-P79" firstAttribute="leading" secondItem="k9b-g2-4Nh" secondAttribute="leading" id="LEG-T8-t8h"/>
+                            <constraint firstItem="Dng-Qs-P79" firstAttribute="bottom" secondItem="k9b-g2-4Nh" secondAttribute="bottom" id="mXb-EY-qWG"/>
+                            <constraint firstItem="IEd-qJ-Bwg" firstAttribute="top" secondItem="Dng-Qs-P79" secondAttribute="bottom" constant="-87" id="sxb-PM-S1l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k9b-g2-4Nh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="uJV-iV-EMs">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Vd5-w0-oMs">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5a0-5c-qRF">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add Video"/>
+                                <connections>
+                                    <action selector="addVideoToItem:" destination="Fku-NE-dQ8" eventType="touchUpInside" id="ebx-Mv-Sxv"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="addButtonOutlet" destination="5a0-5c-qRF" id="P8d-5V-mjL"/>
+                        <outlet property="cameraButton" destination="IEd-qJ-Bwg" id="LTI-ll-Cf1"/>
+                        <outlet property="cameraView" destination="Dng-Qs-P79" id="wvr-l9-QB5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnW-oK-iBE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-492" y="-20.239880059970016"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_Pitchit {
+  umbrella header "Pods-Pitchit-umbrella.h"
+
+  export *
+  module * { export * }
+}

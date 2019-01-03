@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up From View Controller-->
+        <scene sceneID="pVN-3N-vEd">
+            <objects>
+                <viewController storyboardIdentifier="SignUpFromViewController" id="3o4-y1-elG" customClass="SignUpFromViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pbr-EP-1Xr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTL-oB-RRA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eH-Qt-3xt">
+                                <rect key="frame" x="35" y="82" width="305" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ad8-Wx-tRN" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="152.5" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="zYg-Nc-HX3"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHw-vN-yjM" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                        <rect key="frame" x="152.5" y="0.0" width="152.5" height="50"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ad8-Wx-tRN" firstAttribute="width" secondItem="jHw-vN-yjM" secondAttribute="width" id="Cn3-d6-AN2"/>
+                                    <constraint firstItem="ad8-Wx-tRN" firstAttribute="height" secondItem="jHw-vN-yjM" secondAttribute="height" id="UOu-xT-9hH"/>
+                                </constraints>
+                            </stackView>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-Qu-34p" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="35" y="167" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="x7c-0F-KRL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYh-xz-MFr" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="35" y="252" width="305" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eXn-zU-sbd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEw-dy-Wa0">
+                                <rect key="frame" x="284" y="337" width="56" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iEw-dy-Wa0" secondAttribute="height" multiplier="1:1" id="dMv-J4-qzF"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" image="nextBlack"/>
+                                <connections>
+                                    <action selector="nextStep:" destination="3o4-y1-elG" eventType="touchUpInside" id="MRK-be-pZ9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dvs-Vb-M4a" firstAttribute="trailing" secondItem="CYh-xz-MFr" secondAttribute="trailing" constant="35" id="DW7-cS-m1v"/>
+                            <constraint firstItem="MTL-oB-RRA" firstAttribute="top" secondItem="8eH-Qt-3xt" secondAttribute="bottom" constant="-132" id="DaY-J2-w2B"/>
+                            <constraint firstItem="MTL-oB-RRA" firstAttribute="trailing" secondItem="Dvs-Vb-M4a" secondAttribute="trailing" id="I3B-ZM-Lk8"/>
+                            <constraint firstItem="3YU-Qu-34p" firstAttribute="top" secondItem="8eH-Qt-3xt" secondAttribute="bottom" constant="35" id="JAf-Fp-P9u"/>
+                            <constraint firstItem="3YU-Qu-34p" firstAttribute="leading" secondItem="Dvs-Vb-M4a" secondAttribute="leading" constant="35" id="KVE-CS-NDD"/>
+                            <constraint firstItem="Dvs-Vb-M4a" firstAttribute="trailing" secondItem="3YU-Qu-34p" secondAttribute="trailing" constant="35" id="MS8-Xc-gSx"/>
+                            <constraint firstItem="MTL-oB-RRA" firstAttribute="bottom" secondItem="Dvs-Vb-M4a" secondAttribute="bottom" id="MdD-Hd-GsL"/>
+                            <constraint firstItem="Dvs-Vb-M4a" firstAttribute="trailing" secondItem="8eH-Qt-3xt" secondAttribute="trailing" constant="35" id="OcN-CH-x8Y"/>
+                            <constraint firstItem="MTL-oB-RRA" firstAttribute="leading" secondItem="Dvs-Vb-M4a" secondAttribute="leading" id="h2V-cV-eEw"/>
+                            <constraint firstItem="Dvs-Vb-M4a" firstAttribute="trailing" secondItem="iEw-dy-Wa0" secondAttribute="trailing" constant="35" id="hFX-EE-IFy"/>
+                            <constraint firstItem="8eH-Qt-3xt" firstAttribute="leading" secondItem="Dvs-Vb-M4a" secondAttribute="leading" constant="35" id="mfo-S0-zFT"/>
+                            <constraint firstItem="CYh-xz-MFr" firstAttribute="leading" secondItem="Dvs-Vb-M4a" secondAttribute="leading" constant="35" id="nAA-ba-i91"/>
+                            <constraint firstItem="CYh-xz-MFr" firstAttribute="top" secondItem="3YU-Qu-34p" secondAttribute="bottom" constant="35" id="qaR-bP-elJ"/>
+                            <constraint firstItem="iEw-dy-Wa0" firstAttribute="width" secondItem="MTL-oB-RRA" secondAttribute="width" multiplier="0.15" id="r1U-IV-mYA"/>
+                            <constraint firstItem="MTL-oB-RRA" firstAttribute="top" secondItem="Pbr-EP-1Xr" secondAttribute="top" id="uCG-XC-a8E"/>
+                            <constraint firstItem="iEw-dy-Wa0" firstAttribute="top" secondItem="CYh-xz-MFr" secondAttribute="bottom" constant="35" id="uTQ-g7-K4e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dvs-Vb-M4a"/>
+                    </view>
+                    <connections>
+                        <outlet property="gradientView" destination="MTL-oB-RRA" id="Mee-xC-Ex8"/>
+                        <outlet property="nextStepButton" destination="iEw-dy-Wa0" id="QZk-EN-XtV"/>
+                        <outletCollection property="floatingTextArray" destination="ad8-Wx-tRN" collectionClass="NSMutableArray" id="L9D-rH-0fB"/>
+                        <outletCollection property="floatingTextArray" destination="jHw-vN-yjM" collectionClass="NSMutableArray" id="YpE-ck-oEU"/>
+                        <outletCollection property="floatingTextArray" destination="3YU-Qu-34p" collectionClass="NSMutableArray" id="si8-4U-Kl4"/>
+                        <outletCollection property="floatingTextArray" destination="CYh-xz-MFr" collectionClass="NSMutableArray" id="a3o-p1-S6h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j7A-Wj-Wur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.80000000000000004" y="85.907046476761622"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nextBlack" width="200" height="200"/>
+    </resources>
+</document>

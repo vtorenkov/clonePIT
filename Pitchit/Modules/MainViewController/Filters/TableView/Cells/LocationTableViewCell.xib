@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Medium.ttf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" rowHeight="242" id="KGk-i7-Jjw" customClass="LocationTableViewCell" customModule="Pitchit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="528" height="242"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="528" height="241.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIR-6R-wIC">
+                        <rect key="frame" x="22" y="51" width="484" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="ysd-P1-buQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
+                        <state key="normal" title="Los Angeles, CA 90048">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPF-7T-8JO">
+                        <rect key="frame" x="219.5" y="0.0" width="89.5" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dW-HO-5B0" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
+                        <rect key="frame" x="20" y="109" width="488" height="87.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CPF-7T-8JO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="3rg-tr-c0u"/>
+                    <constraint firstItem="YIR-6R-wIC" firstAttribute="top" secondItem="CPF-7T-8JO" secondAttribute="bottom" constant="22" id="DPt-Yu-ul8"/>
+                    <constraint firstItem="YIR-6R-wIC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="JNd-66-b3s"/>
+                    <constraint firstAttribute="trailing" secondItem="YIR-6R-wIC" secondAttribute="trailing" constant="22" id="KhP-dJ-rCR"/>
+                    <constraint firstAttribute="bottom" secondItem="4dW-HO-5B0" secondAttribute="bottom" constant="45" id="SIe-ZV-DCQ"/>
+                    <constraint firstItem="CPF-7T-8JO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TjB-bd-SXV"/>
+                    <constraint firstItem="4dW-HO-5B0" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="a8M-f0-TaF"/>
+                    <constraint firstItem="4dW-HO-5B0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fvk-8Z-Y3r"/>
+                    <constraint firstItem="4dW-HO-5B0" firstAttribute="top" secondItem="YIR-6R-wIC" secondAttribute="bottom" constant="8" id="uPU-hH-cow"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="sliderLocation" destination="4dW-HO-5B0" id="4b0-dM-MfB"/>
+            </connections>
+            <point key="canvasLocation" x="123.2" y="217.69115442278863"/>
+        </tableViewCell>
+    </objects>
+</document>
