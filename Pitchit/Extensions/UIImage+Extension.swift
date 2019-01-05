@@ -14,7 +14,6 @@ extension UIImageView {
         self.layer.cornerRadius = (self.frame.width / 2)
         self.layer.masksToBounds = true
     }
-    
     func setRoundedCorners() {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
