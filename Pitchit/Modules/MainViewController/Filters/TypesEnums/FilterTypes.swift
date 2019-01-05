@@ -25,7 +25,7 @@ class BuilderModel: BuilderModelProtocol {
                 return self.buildArtModels(delegate: delegate)
             case .clothing:
                 return self.buildArtModels(delegate: delegate)
-//                return self.buildСlothingModels()
+////                return self.buildСlothingModels()
             case .electronics:
                 return self.buildArtModels(delegate: delegate)
 //                return self.buildElectronicsModels()

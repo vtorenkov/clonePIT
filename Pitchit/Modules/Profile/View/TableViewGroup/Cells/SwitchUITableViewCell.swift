@@ -13,12 +13,12 @@ class SwitchUITableViewCell: UITableViewCell, NibReusable {
     @IBOutlet var switchPtofileOutlet: UISegmentedControl!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
         // Initialization code
     }
     
     @IBAction func switchAction(_ sender: Any) {
         switchPtofileOutlet.changeUnderlinePosition()
-
     }
     
     static var reuseIdentifier: String { return "SwitchUITableViewCell" }
@@ -30,6 +30,17 @@ struct SwitchUITableViewCellModel {
 
 extension SwitchUITableViewCellModel: CellViewModel {
     func setup(cell: SwitchUITableViewCell) {
+        let widthSegment = kScreenWidth / 2
+        cell.switchPtofileOutlet.setWidth(widthSegment, forSegmentAt: 0)
+        cell.switchPtofileOutlet.setWidth(widthSegment, forSegmentAt: 1)
+
         cell.switchPtofileOutlet.addUnderlineForSelectedSegment()
+        cell.switchPtofileOutlet.tintColor = UIColor.switchBlue
+        
+        let titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+        cell.switchPtofileOutlet.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        
+        let titleTextAttributesUnselected = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+        cell.switchPtofileOutlet.setTitleTextAttributes(titleTextAttributesUnselected, for: .normal)
     }
 }

@@ -12,10 +12,21 @@ class PersonalAccountTableViewCell: UITableViewCell, NibReusable {
     
     @IBOutlet var iconPersonal: UIImageView!
     
+    @IBOutlet var folowersNumber: UILabel!
+    @IBOutlet var verifiedLabel: UILabel!
+    @IBOutlet var accountType: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
         iconPersonal.tintColor = UIColor.red
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        folowersNumber.font = UIFont.mainFonSFUItRegular(ofSize: 12)
+        verifiedLabel.font = UIFont.mainFonSFUItRegular(ofSize: 12)
+        accountType.font = UIFont.mainFonSFUItRegular(ofSize: 10)
     }
 
     static var reuseIdentifier: String { return "PersonalAccountTableViewCell" }

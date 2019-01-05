@@ -31,5 +31,9 @@ extension UIFont {
     static func mainFonSFUItSemiBold(ofSize size: CGFloat) -> UIFont {
         return customFont(name: "SFUIDisplay-Semibold", size: size)
     }
+    
+    static func mainFonSFUItLight(ofSize size: CGFloat) -> UIFont {
+        return customFont(name: "SFUIDisplay-Light", size: size)
+    }
 
 }

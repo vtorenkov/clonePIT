@@ -37,6 +37,10 @@ extension UIColor {
     @nonobjc class var searchBackColor: UIColor {
         return UIColor(rgb: 0xF8F7F7)
     }
+    
+    @nonobjc class var switchBlue: UIColor {
+        return UIColor(rgb: 0x8C92F5)
+    }
 }
 
 

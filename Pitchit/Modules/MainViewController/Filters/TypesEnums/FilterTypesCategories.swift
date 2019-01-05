@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum Range: String {
     case sizeFootWear = "Select size range"
     case year = "Year"
@@ -16,7 +15,6 @@ enum Range: String {
     
     static let rangeArray = [sizeFootWear, year, mileage]
 }
-
 
 enum SortBy: String {
     case lowToHight = "Low to High"
@@ -46,7 +44,6 @@ enum Types: String {
             models = [TypeCollectionViewCellModel(type: .carTrucs), TypeCollectionViewCellModel(type: .moto)]
         case .realestate:
             models = [TypeCollectionViewCellModel(type: .rent), TypeCollectionViewCellModel(type: .buy)]
-
         default:
             models = [TypeCollectionViewCellModel(type: .carTrucs)]
         }

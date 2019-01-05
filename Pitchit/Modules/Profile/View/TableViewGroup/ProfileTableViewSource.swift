@@ -12,7 +12,6 @@ protocol ProfileTableItemDelegate: class {
     func tapOnrate()
 }
 
-
 enum ProfileType {
     case TopAvatar
     case Switch
@@ -21,8 +20,6 @@ enum ProfileType {
     
     static let allTypes = [TopAvatar, Personal, Switch, Items]
 }
-
-
 
 final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProtocol {
     
@@ -91,9 +88,8 @@ class ProfileTableViewDelegate: NSObject, UITableViewDelegate {
         case .Items:
             return UITableViewAutomaticDimension
         case .Personal:
-            return kScreenHeight/8
+            return kScreenHeight/10
         }
-        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
