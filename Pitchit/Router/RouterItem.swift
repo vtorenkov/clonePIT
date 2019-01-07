@@ -57,9 +57,7 @@ class RouterItem {
     func openFavorites(target: UIViewController?){
         let storyboard = UIStoryboard(name: "MainViewController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as? FavoritesViewController{
-            target?.navigationController?.pushViewController(controller, animated: true)
+            target?.present(controller, animated: true, completion: nil)
         }
     }
-    
-    
 }

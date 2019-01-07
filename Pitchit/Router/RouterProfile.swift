@@ -23,7 +23,8 @@ class RouterProfile {
         let storyboard = UIStoryboard(name: "ProfileController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController") as? EditProfileViewController{
             let navigationController = UINavigationController(rootViewController: controller)
-            target?.present(navigationController, animated: true, completion: nil)        }
+            target?.present(navigationController, animated: true, completion: nil)
+        }
     }
     
     

@@ -183,7 +183,7 @@
             </objects>
             <point key="canvasLocation" x="2023.2" y="103.89805097451276"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Title-->
         <scene sceneID="Fm7-I6-W5u">
             <objects>
                 <viewController storyboardIdentifier="FavoritesViewController" id="tJg-e7-56F" customClass="FavoritesViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
@@ -205,6 +205,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UI1-6J-Lle"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="7Nj-Ei-D13">
+                        <barButtonItem key="leftBarButtonItem" title="X" style="plain" id="I9i-wv-LWd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Up2-LN-58Y">
+                                <rect key="frame" x="16" y="5" width="83" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeAction:" destination="tJg-e7-56F" eventType="touchUpInside" id="zdW-u8-5Rc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="yjp-Fe-O5N" id="wWp-R3-hAA"/>
