@@ -26,7 +26,7 @@ extension MenuViewController: MenuTableItemDelegate {
         case .InviteFriends:
             Router.sharedInstance.openInviteFriend(target: self)
         case .Favorites:
-            Router.sharedInstance.openFavorites(target: self)
+            RouterItem.sharedInstance.openFavorites(target: self)
         case .Support:
             Router.sharedInstance.openSupport(target: self)
         case .SavedSearch:

@@ -43,10 +43,14 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         self.priceTitle.roundCorners()
         self.buttonBackGround.circleCorners()
         self.distanceLabel.roundCorners()
+        
+        self.titleLabel.font = UIFont.mainFonSFUItRegular(ofSize: 14)
+        self.priceTitle.font = UIFont.mainFonSFUItBold(ofSize: 16)
+        self.distanceLabel.font = UIFont.mainFonSFUItRegular(ofSize: 10)
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-      
     }
     
     @IBAction func tapOnlike(_ sender: Any) {

@@ -40,5 +40,10 @@ extension AnalyticsTableViewCellModel: CellViewModel {
         if let image = item.thumbImage {
             cell.orderImage.image = image
         }
+        
+        cell.watched.font = UIFont.mainFonSFUItRegular(ofSize: 16)
+        cell.views.font = UIFont.mainFonSFUItRegular(ofSize: 16)
+        cell.orderTitle.font = UIFont.mainFonSFUItMedium(ofSize: 17)
+        cell.orderPostDate.font = UIFont.mainFonSFUItLight(ofSize: 14)
     }
 }

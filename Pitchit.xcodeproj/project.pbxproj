@@ -114,10 +114,8 @@
 		FA810CD221370D7C003176A8 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810CD121370D7B003176A8 /* CategoriesViewController.swift */; };
 		FA810CD821370DD9003176A8 /* SupportModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA810CD721370DD9003176A8 /* SupportModule.storyboard */; };
 		FA810CDA21370DE6003176A8 /* InviteFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA810CD921370DE6003176A8 /* InviteFriends.storyboard */; };
-		FA810CDC21370DF6003176A8 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA810CDB21370DF6003176A8 /* Favorites.storyboard */; };
 		FA810CDE21370E03003176A8 /* SavedSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA810CDD21370E03003176A8 /* SavedSearch.storyboard */; };
 		FA810CE021370E33003176A8 /* SavedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810CDF21370E33003176A8 /* SavedSearchViewController.swift */; };
-		FA810CE221370E41003176A8 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810CE121370E41003176A8 /* FavoritesViewController.swift */; };
 		FA810CE421370E51003176A8 /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810CE321370E51003176A8 /* InviteFriendsViewController.swift */; };
 		FA810CE621370E61003176A8 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810CE521370E61003176A8 /* SupportViewController.swift */; };
 		FA810CE8213DB34F003176A8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810CE7213DB34F003176A8 /* UIViewController+Extension.swift */; };
@@ -141,6 +139,11 @@
 		FA96D5E1215968CC00A04840 /* BussinesSignUpForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA96D5DF215968CC00A04840 /* BussinesSignUpForm.storyboard */; };
 		FA96D5E2215968CC00A04840 /* BussinesSignUpFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96D5E0215968CC00A04840 /* BussinesSignUpFromViewController.swift */; };
 		FA96D5E42159701C00A04840 /* BusinessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96D5E32159701C00A04840 /* BusinessDetailsViewController.swift */; };
+		FA9A031F21E2208C00DF6C2C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A031E21E2208C00DF6C2C /* FavoritesViewController.swift */; };
+		FA9A032621E373BE00DF6C2C /* FavoritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9A032221E373BE00DF6C2C /* FavoritesTableViewCell.xib */; };
+		FA9A032721E373BE00DF6C2C /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A032321E373BE00DF6C2C /* FavoritesTableViewCell.swift */; };
+		FA9A032821E373BE00DF6C2C /* FavoritesTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A032421E373BE00DF6C2C /* FavoritesTableViewSource.swift */; };
+		FA9A032921E373BE00DF6C2C /* FavoritesTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A032521E373BE00DF6C2C /* FavoritesTableViewProtocol.swift */; };
 		FA9E6D9B2199F5A500C22FD5 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E6D9A2199F5A500C22FD5 /* AnalyticsViewController.swift */; };
 		FA9E6DA02199F92B00C22FD5 /* TableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E6D9E2199F92B00C22FD5 /* TableViewProtocol.swift */; };
 		FA9E6DA12199F92B00C22FD5 /* TableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E6D9F2199F92B00C22FD5 /* TableViewSource.swift */; };
@@ -325,10 +328,8 @@
 		FA810CD121370D7B003176A8 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		FA810CD721370DD9003176A8 /* SupportModule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SupportModule.storyboard; sourceTree = "<group>"; };
 		FA810CD921370DE6003176A8 /* InviteFriends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InviteFriends.storyboard; sourceTree = "<group>"; };
-		FA810CDB21370DF6003176A8 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		FA810CDD21370E03003176A8 /* SavedSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedSearch.storyboard; sourceTree = "<group>"; };
 		FA810CDF21370E33003176A8 /* SavedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSearchViewController.swift; sourceTree = "<group>"; };
-		FA810CE121370E41003176A8 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		FA810CE321370E51003176A8 /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
 		FA810CE521370E61003176A8 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		FA810CE7213DB34F003176A8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -361,6 +362,11 @@
 		FA96D5DF215968CC00A04840 /* BussinesSignUpForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BussinesSignUpForm.storyboard; sourceTree = "<group>"; };
 		FA96D5E0215968CC00A04840 /* BussinesSignUpFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BussinesSignUpFromViewController.swift; sourceTree = "<group>"; };
 		FA96D5E32159701C00A04840 /* BusinessDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailsViewController.swift; sourceTree = "<group>"; };
+		FA9A031E21E2208C00DF6C2C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		FA9A032221E373BE00DF6C2C /* FavoritesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesTableViewCell.xib; sourceTree = "<group>"; };
+		FA9A032321E373BE00DF6C2C /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		FA9A032421E373BE00DF6C2C /* FavoritesTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewSource.swift; sourceTree = "<group>"; };
+		FA9A032521E373BE00DF6C2C /* FavoritesTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewProtocol.swift; sourceTree = "<group>"; };
 		FA9E6D9A2199F5A500C22FD5 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		FA9E6D9E2199F92B00C22FD5 /* TableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProtocol.swift; sourceTree = "<group>"; };
 		FA9E6D9F2199F92B00C22FD5 /* TableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSource.swift; sourceTree = "<group>"; };
@@ -829,15 +835,6 @@
 			path = SavedSearch;
 			sourceTree = "<group>";
 		};
-		FA810CD421370DB2003176A8 /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				FA810CDB21370DF6003176A8 /* Favorites.storyboard */,
-				FA810CE121370E41003176A8 /* FavoritesViewController.swift */,
-			);
-			path = Favorites;
-			sourceTree = "<group>";
-		};
 		FA810CD521370DB8003176A8 /* InviteFriends */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,6 +929,50 @@
 				FA96D5E32159701C00A04840 /* BusinessDetailsViewController.swift */,
 			);
 			path = BussinesSignUp;
+			sourceTree = "<group>";
+		};
+		FA9A031B21E2204B00DF6C2C /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				FA9A031D21E2206100DF6C2C /* Presenter */,
+				FA9A031C21E2205A00DF6C2C /* View */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		FA9A031C21E2205A00DF6C2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA9A032021E373BE00DF6C2C /* FavoritesTableView */,
+				FA9A031E21E2208C00DF6C2C /* FavoritesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA9A031D21E2206100DF6C2C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA9A032021E373BE00DF6C2C /* FavoritesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				FA9A032121E373BE00DF6C2C /* Cells */,
+				FA9A032421E373BE00DF6C2C /* FavoritesTableViewSource.swift */,
+				FA9A032521E373BE00DF6C2C /* FavoritesTableViewProtocol.swift */,
+			);
+			path = FavoritesTableView;
+			sourceTree = "<group>";
+		};
+		FA9A032121E373BE00DF6C2C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA9A032221E373BE00DF6C2C /* FavoritesTableViewCell.xib */,
+				FA9A032321E373BE00DF6C2C /* FavoritesTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FA9E6D992199F58E00C22FD5 /* Analytics */ = {
@@ -1097,18 +1138,10 @@
 		FADBF25E2143E60E0047FAF0 /* ProfileCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				FADBF25F2143E6180047FAF0 /* Collection */,
 				FADBF25A2143E60A0047FAF0 /* ProfileCollectionTableViewCell.swift */,
 				FADBF25B2143E60A0047FAF0 /* ProfileCollectionTableViewCell.xib */,
 			);
 			path = ProfileCollectionCell;
-			sourceTree = "<group>";
-		};
-		FADBF25F2143E6180047FAF0 /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Collection;
 			sourceTree = "<group>";
 		};
 		FAE575C220EFCA430023383B = {
@@ -1164,7 +1197,6 @@
 				FA4CA5C3214060750018C6B7 /* LogIn */,
 				FA810CD621370DCA003176A8 /* Support */,
 				FA810CD521370DB8003176A8 /* InviteFriends */,
-				FA810CD421370DB2003176A8 /* Favorites */,
 				FA810CD321370D9F003176A8 /* SavedSearch */,
 				FA810CCE21370D41003176A8 /* CategoriesModule */,
 				FA810CC921370D18003176A8 /* ChatModule */,
@@ -1210,6 +1242,7 @@
 		FAE575E620EFCBFF0023383B /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FA9A031B21E2204B00DF6C2C /* Favorites */,
 				FADBF2502142D74E0047FAF0 /* Filters */,
 				FADBF24F2142D7440047FAF0 /* ListOfItems */,
 				FAE575EF20EFCD4A0023383B /* MainViewController.storyboard */,
@@ -1457,7 +1490,6 @@
 				FA86BF8E214D1C2A00B0B7AA /* Market Fresh Bold ALL CAPS.ttf in Resources */,
 				FA810C53211CB6BE003176A8 /* MapTableViewCell.xib in Resources */,
 				FA86BF8D214D1C2A00B0B7AA /* Market Fresh Bold Lower Case.ttf in Resources */,
-				FA810CDC21370DF6003176A8 /* Favorites.storyboard in Resources */,
 				FA7CD30221C99C96008CD64D /* SelectTypesTableViewCell.xib in Resources */,
 				FA810C8A212B467F003176A8 /* DescTextPitchTableViewCell.xib in Resources */,
 				FA810CB3212C8E1B003176A8 /* AdditionalCollectionViewCell.xib in Resources */,
@@ -1468,6 +1500,7 @@
 				FAE575F520EFCD700023383B /* PostItemController.storyboard in Resources */,
 				FACC8825210795E900BBB31C /* ItemDetail.storyboard in Resources */,
 				FA810CD021370D52003176A8 /* CategoriesModule.storyboard in Resources */,
+				FA9A032621E373BE00DF6C2C /* FavoritesTableViewCell.xib in Resources */,
 				FA810C6721233B39003176A8 /* CategoryPitchTableViewCell.xib in Resources */,
 				FA86BF8C214D1C2A00B0B7AA /* Market Fresh Inline Bold ALL CAPS.ttf in Resources */,
 				FAE575F020EFCD4A0023383B /* MainViewController.storyboard in Resources */,
@@ -1670,6 +1703,8 @@
 				FA3D5F3121C05D3200B17AD9 /* FilterTypes.swift in Sources */,
 				FAE575FD20EFCDAC0023383B /* ProfileViewController.swift in Sources */,
 				FACC883E210C785F00BBB31C /* ProfileTableViewCell.swift in Sources */,
+				FA9A032921E373BE00DF6C2C /* FavoritesTableViewProtocol.swift in Sources */,
+				FA9A032721E373BE00DF6C2C /* FavoritesTableViewCell.swift in Sources */,
 				FA810C4E211CB4C3003176A8 /* PhotosCollectionViewProtocol.swift in Sources */,
 				FA63052B20F7BAEF00F0777E /* MenuTableViewSource.swift in Sources */,
 				FAE5763020F121960023383B /* CategoryItem.swift in Sources */,
@@ -1714,6 +1749,7 @@
 				FA810C732124A78E003176A8 /* CategoriesPostCollectionViewSource.swift in Sources */,
 				FA79F3CB2184A940005A9AEB /* PhotosFullSizeDataSource.swift in Sources */,
 				FA810CB8212DE54F003176A8 /* PostItemPresenter.swift in Sources */,
+				FA9A032821E373BE00DF6C2C /* FavoritesTableViewSource.swift in Sources */,
 				FA810C4A211CB463003176A8 /* PhotosCollectionViewCell.swift in Sources */,
 				FAE5764220F123C20023383B /* NibLoadable.swift in Sources */,
 				FA810C8E212B486F003176A8 /* ItemConditionTableViewCellOld.swift in Sources */,
@@ -1730,7 +1766,6 @@
 				FACC8828210795FF00BBB31C /* ItemDetailsViewController.swift in Sources */,
 				FA86BF74214C2BBE00B0B7AA /* UIColor+Extension.swift in Sources */,
 				FACC882E2109013F00BBB31C /* ItemDetailsTableViewSource.swift in Sources */,
-				FA810CE221370E41003176A8 /* FavoritesViewController.swift in Sources */,
 				FA810C4F211CB4C3003176A8 /* PhotosCollectionViewSource.swift in Sources */,
 				FA810C8B212B467F003176A8 /* DescTextPitchTableViewCell.swift in Sources */,
 				FAA0525421D3E649003F960F /* FilterTypesCategories.swift in Sources */,
@@ -1750,6 +1785,7 @@
 				FA810CBD212F08D4003176A8 /* RecordVideoViewController.swift in Sources */,
 				FAA6A56B21D502B000D6C3A1 /* TypesCollectionViewProtocol.swift in Sources */,
 				FA9E6DA42199F99E00C22FD5 /* AnalyticsTableViewCell.swift in Sources */,
+				FA9A031F21E2208C00DF6C2C /* FavoritesViewController.swift in Sources */,
 				FA79F3B5217514C1005A9AEB /* EditProfileTableViewProtocol.swift in Sources */,
 				FA810CB5212DDFAB003176A8 /* ItemModel.swift in Sources */,
 				FA810CC12132B8BE003176A8 /* CollectionView+Extension.swift in Sources */,

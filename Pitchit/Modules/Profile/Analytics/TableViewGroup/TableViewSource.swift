@@ -22,7 +22,7 @@ final class AnalyticsTableViewDatasource: NSObject, AnalyticsTableViewDatasource
         self.delegate = delegate
         self.delegateVC = delegateVC
         super.init()
-        self.tableView?.separatorColor = UIColor.clear
+        self.tableView?.separatorColor = UIColor.separatorColor
         
         tableView.register(cellType: AnalyticsTableViewCell.self)
         self.tableView?.estimatedRowHeight = 100

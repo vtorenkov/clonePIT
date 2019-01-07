@@ -47,7 +47,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6A-yc-5as" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
-                        <rect key="frame" x="8" y="204" width="208" height="21"/>
+                        <rect key="frame" x="8" y="208" width="208" height="21"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,7 +80,7 @@
                 <constraint firstItem="y3L-fc-Aif" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="nkw-yM-fna"/>
                 <constraint firstItem="Mvo-9i-65Q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="tlZ-tD-uxv"/>
                 <constraint firstItem="aYt-pE-UHM" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="wMS-nm-7ht"/>
-                <constraint firstItem="H6V-8C-02q" firstAttribute="top" secondItem="R6A-yc-5as" secondAttribute="bottom" constant="8" id="xQa-h3-Icz"/>
+                <constraint firstItem="H6V-8C-02q" firstAttribute="top" secondItem="R6A-yc-5as" secondAttribute="bottom" constant="4" id="xQa-h3-Icz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="224" height="262"/>

@@ -78,15 +78,6 @@ class Router {
         }
     }
     
-    func openFavorites(target: UIViewController?){
-        let storyboard = UIStoryboard(name: "Favorites", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as? FavoritesViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
-        }
-    }
-    
     func openSavedSearh(target: UIViewController?){
         let storyboard = UIStoryboard(name: "SavedSearch", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SavedSearchViewController") as? SavedSearchViewController{

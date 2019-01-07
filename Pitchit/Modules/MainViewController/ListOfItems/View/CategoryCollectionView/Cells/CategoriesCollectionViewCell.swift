@@ -37,7 +37,7 @@ extension CategoriesCollectionViewCellModel: CellViewModel {
     } else {
         cell.categoryName.textColor = UIColor.white
     }
-
+    cell.categoryName.font = UIFont.mainFonSFUItBold(ofSize: 12)
   }
 }
 
