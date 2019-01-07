@@ -8,9 +8,19 @@ import UIKit
 
 class FavoritesTableViewCell: UITableViewCell, NibReusable {
    
+    @IBOutlet var heartFavorite: UIImageView!
+    @IBOutlet var favoriteLastDate: UILabel!
+    @IBOutlet var favoritePrice: NSLayoutConstraint!
+    @IBOutlet var favoriteLabel: UILabel!
+    @IBOutlet var favoritesImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.favoritesImage.setSmallRoundedCorners()
     }
   
   static var reuseIdentifier: String { return "FavoritesTableViewCell" }

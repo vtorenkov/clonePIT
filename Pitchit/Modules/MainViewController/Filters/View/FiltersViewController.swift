@@ -25,6 +25,7 @@ class FiltersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
         self.title = "\(type?.rawValue ?? "") Filters"
         buildModel = BuilderModel(type: type ?? .art)
         self.filterTableViewDelegate = FilterTableViewDelegate(self)

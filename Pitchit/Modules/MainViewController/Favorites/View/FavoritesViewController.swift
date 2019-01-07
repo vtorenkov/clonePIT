@@ -21,11 +21,10 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Favorites"
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
+
         self.favoritesViewDelegate = FavoritesTableViewDelegate(self)
         self.favoritesViewDatasource = FavoritesTableViewDatasource(tableView: tableView, delegate: self.favoritesViewDelegate!, delegateVC: self)
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func closeAction(_ sender: Any) {
