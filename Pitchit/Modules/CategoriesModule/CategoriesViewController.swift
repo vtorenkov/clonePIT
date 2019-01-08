@@ -13,7 +13,7 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Categories"
+        self.title = "Categories".uppercased()
         // Do any additional setup after loading the view.
     }
     

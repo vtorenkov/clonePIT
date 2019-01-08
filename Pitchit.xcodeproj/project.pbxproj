@@ -212,6 +212,8 @@
 		FAE5764220F123C20023383B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5763B20F123C20023383B /* NibLoadable.swift */; };
 		FAE5764320F123C20023383B /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5763C20F123C20023383B /* NibOwnerLoadable.swift */; };
 		FAE5764520F1255A0023383B /* AnyCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5764420F125590023383B /* AnyCellProtocol.swift */; };
+		FAF1A99521E51A0C00F5ABD1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A99321E51A0C00F5ABD1 /* HeaderTableViewCell.swift */; };
+		FAF1A99621E51A0C00F5ABD1 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF1A99421E51A0C00F5ABD1 /* HeaderTableViewCell.xib */; };
 		FAF2454221985A4800642F4C /* PersonalAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2454021985A4800642F4C /* PersonalAccountTableViewCell.swift */; };
 		FAF2454321985A4800642F4C /* PersonalAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF2454121985A4800642F4C /* PersonalAccountTableViewCell.xib */; };
 		FAF2454621985C9400642F4C /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2454521985C9400642F4C /* RateViewController.swift */; };
@@ -440,6 +442,8 @@
 		FAE5763B20F123C20023383B /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		FAE5763C20F123C20023383B /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
 		FAE5764420F125590023383B /* AnyCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCellProtocol.swift; sourceTree = "<group>"; };
+		FAF1A99321E51A0C00F5ABD1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		FAF1A99421E51A0C00F5ABD1 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		FAF2454021985A4800642F4C /* PersonalAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountTableViewCell.swift; sourceTree = "<group>"; };
 		FAF2454121985A4800642F4C /* PersonalAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalAccountTableViewCell.xib; sourceTree = "<group>"; };
 		FAF2454521985C9400642F4C /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
@@ -590,6 +594,7 @@
 		FA79F3AF21750E94005A9AEB /* TableViewData */ = {
 			isa = PBXGroup;
 			children = (
+				FAF1A99221E519E500F5ABD1 /* Header */,
 				FA79F3B621764FE1005A9AEB /* Cells */,
 				FA79F3B3217514C1005A9AEB /* EditProfileTableViewProtocol.swift */,
 				FA79F3B2217514C0005A9AEB /* EditProfileTableViewSource.swift */,
@@ -1416,6 +1421,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FAF1A99221E519E500F5ABD1 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1A99321E51A0C00F5ABD1 /* HeaderTableViewCell.swift */,
+				FAF1A99421E51A0C00F5ABD1 /* HeaderTableViewCell.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		FAF2454421985C2A00642F4C /* RateProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1493,6 +1507,7 @@
 				FA7CD30221C99C96008CD64D /* SelectTypesTableViewCell.xib in Resources */,
 				FA810C8A212B467F003176A8 /* DescTextPitchTableViewCell.xib in Resources */,
 				FA810CB3212C8E1B003176A8 /* AdditionalCollectionViewCell.xib in Resources */,
+				FAF1A99621E51A0C00F5ABD1 /* HeaderTableViewCell.xib in Resources */,
 				FACC881E2100FBA100BBB31C /* CoverA.xib in Resources */,
 				FA810C4B211CB463003176A8 /* PhotosCollectionViewCell.xib in Resources */,
 				FA5D55552118D51D008CA265 /* AdditionalPhotosTableViewCell.xib in Resources */,
@@ -1735,6 +1750,7 @@
 				FAE5763F20F123C20023383B /* UICollectionView+Reusable.swift in Sources */,
 				FA810CE621370E61003176A8 /* SupportViewController.swift in Sources */,
 				FA810C96212B4AD2003176A8 /* PublicButtonTableViewCell.swift in Sources */,
+				FAF1A99521E51A0C00F5ABD1 /* HeaderTableViewCell.swift in Sources */,
 				FADB458821AABBB500304A45 /* InquireViewController.swift in Sources */,
 				FADBF2582143E5F80047FAF0 /* SwitchUITableViewCell.swift in Sources */,
 				FAE5764020F123C20023383B /* Reusable.swift in Sources */,

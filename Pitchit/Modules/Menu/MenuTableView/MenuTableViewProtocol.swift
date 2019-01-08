@@ -7,9 +7,7 @@
 import Foundation
 import UIKit
 
-
 protocol MenuTableViewDatasourceProtocol: UITableViewDataSource {
-  
   weak var tableView: UITableView? {get}
   weak var delegate: UITableViewDelegate? {get}
   
@@ -23,6 +21,5 @@ extension MenuTableViewDatasourceProtocol {
     self.tableView?.dataSource = self
     self.tableView?.delegate = self.delegate
     self.tableView?.reloadData()
-    
   }
 }

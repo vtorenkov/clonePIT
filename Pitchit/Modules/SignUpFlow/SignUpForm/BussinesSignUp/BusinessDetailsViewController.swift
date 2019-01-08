@@ -38,7 +38,7 @@ class BusinessDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.title = "Bussines Address"
+        self.title = "Bussines Address".uppercased()
     }
     
     @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!

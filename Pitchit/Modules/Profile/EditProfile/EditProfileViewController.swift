@@ -15,7 +15,8 @@ class EditProfileViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Edit Profile"
+        self.title = "Edit Profile".uppercased()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
         self.editProfileTableViewDelegate = EditProfileTableViewDelegate(self)
         self.editProfileTableViewDatasource = EditProfileTableViewDatasource(tableView: tableView, delegate: self.editProfileTableViewDelegate!, delegateVC: self)
 

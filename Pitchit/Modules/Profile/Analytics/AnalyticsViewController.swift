@@ -21,7 +21,7 @@ class AnalyticsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Analytics"
+        self.title = "Analytics".uppercased()
         self.analyticsTableViewDelegate = AnalyticsTableViewDelegate(self)
         self.analyticsTableViewDatasource = AnalyticsTableViewDatasource(tableView: tableView, delegate: self.analyticsTableViewDelegate!, delegateVC: self)
     }

@@ -35,7 +35,7 @@ class BussinesSignUpFromViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.title = "Bussines Account"
+        self.title = "Bussines Account".uppercased()
     }
     
     @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!

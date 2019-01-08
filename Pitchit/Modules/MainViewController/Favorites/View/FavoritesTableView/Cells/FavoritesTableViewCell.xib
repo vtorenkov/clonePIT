@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,13 +32,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posted 9 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOg-z7-AcY">
-                        <rect key="frame" x="72" y="60.5" width="289" height="16"/>
+                        <rect key="frame" x="80" y="60.5" width="281" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015 Jeep Wrangler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVy-Lw-Q77">
-                        <rect key="frame" x="72" y="20.5" width="289" height="21"/>
+                        <rect key="frame" x="80" y="20.5" width="281" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -51,14 +51,14 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMX-4r-4Cw">
-                        <rect key="frame" x="72" y="40" width="289" height="17"/>
+                        <rect key="frame" x="80" y="40" width="281" height="17"/>
                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="14"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="oMX-4r-4Cw" firstAttribute="leading" secondItem="w4X-7d-Jti" secondAttribute="trailing" constant="8" id="3oW-M2-lf0"/>
+                    <constraint firstItem="oMX-4r-4Cw" firstAttribute="leading" secondItem="w4X-7d-Jti" secondAttribute="trailing" constant="16" id="3oW-M2-lf0"/>
                     <constraint firstItem="NMr-Ia-H2y" firstAttribute="leading" secondItem="oMX-4r-4Cw" secondAttribute="trailing" constant="8" id="5Vn-RV-jyA"/>
                     <constraint firstItem="w4X-7d-Jti" firstAttribute="top" secondItem="plx-9u-rjf" secondAttribute="top" constant="20" id="D5I-ev-uGz"/>
                     <constraint firstItem="NMr-Ia-H2y" firstAttribute="centerY" secondItem="plx-9u-rjf" secondAttribute="centerY" id="HOS-mL-g3r"/>
@@ -69,10 +69,10 @@
                     <constraint firstItem="NMr-Ia-H2y" firstAttribute="leading" secondItem="eVy-Lw-Q77" secondAttribute="trailing" constant="8" id="UPU-uy-kNb"/>
                     <constraint firstAttribute="bottom" secondItem="w4X-7d-Jti" secondAttribute="bottom" constant="20" id="Zff-ux-Tk4"/>
                     <constraint firstItem="oMX-4r-4Cw" firstAttribute="centerY" secondItem="w4X-7d-Jti" secondAttribute="centerY" id="f1V-HF-bBT"/>
-                    <constraint firstItem="eVy-Lw-Q77" firstAttribute="leading" secondItem="w4X-7d-Jti" secondAttribute="trailing" constant="8" id="lHD-cz-aII"/>
+                    <constraint firstItem="eVy-Lw-Q77" firstAttribute="leading" secondItem="w4X-7d-Jti" secondAttribute="trailing" constant="16" id="lHD-cz-aII"/>
                     <constraint firstItem="eVy-Lw-Q77" firstAttribute="top" secondItem="w4X-7d-Jti" secondAttribute="top" id="tI5-fm-016"/>
                     <constraint firstItem="NMr-Ia-H2y" firstAttribute="leading" secondItem="UOg-z7-AcY" secondAttribute="trailing" constant="8" id="wcR-Pc-GF7"/>
-                    <constraint firstItem="UOg-z7-AcY" firstAttribute="leading" secondItem="w4X-7d-Jti" secondAttribute="trailing" constant="8" id="yUy-uG-1r5"/>
+                    <constraint firstItem="UOg-z7-AcY" firstAttribute="leading" secondItem="w4X-7d-Jti" secondAttribute="trailing" constant="16" id="yUy-uG-1r5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Ele-ct-l5U"/>

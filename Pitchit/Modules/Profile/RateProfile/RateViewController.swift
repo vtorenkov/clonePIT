@@ -21,7 +21,7 @@ class RateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Review"
+        self.title = "Review".uppercased()
     }
     
     override func viewDidLayoutSubviews() {

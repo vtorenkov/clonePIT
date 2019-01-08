@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="448" height="151.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="CH3-dP-6XW">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="women" translatesAutoresizingMaskIntoConstraints="NO" id="CH3-dP-6XW">
                         <rect key="frame" x="179" y="31" width="90" height="89.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="CH3-dP-6XW" secondAttribute="height" multiplier="1:1" id="WXT-Qe-5cf"/>
@@ -43,6 +43,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="placeholder_avatar" width="225" height="225"/>
+        <image name="women" width="3000" height="2000"/>
     </resources>
 </document>

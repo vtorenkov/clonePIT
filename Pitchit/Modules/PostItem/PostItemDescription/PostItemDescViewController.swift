@@ -42,7 +42,7 @@ class PostItemDescViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        self.title = "Post an Item"
+        self.title = "Post an Item".uppercased()
         if let item = self.item {
             self.addItemViewDelegate = ItemDescTableViewDelegate(self)
             self.addItemViewDatasource = ItemDescTableViewDatasource(tableView: tableView, delegate: self.addItemViewDelegate!, delegateVC: self, item: item)

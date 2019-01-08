@@ -20,7 +20,7 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Favorites"
+        self.title = "Favorites".uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
 
         self.favoritesViewDelegate = FavoritesTableViewDelegate(self)

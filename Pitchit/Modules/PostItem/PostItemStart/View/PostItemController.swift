@@ -68,7 +68,7 @@ class PostItemController: UIViewController {
 
         self.addItemViewDelegate = PostItemTableViewDelegate(self)
         self.addItemViewDatasource = PostItemTableViewDatasource(tableView: tableView, delegate: self.addItemViewDelegate!, delegateVC: self, item: item, delegateVCDesc: self)
-        self.title = "Add Item"
+        self.title = "Add Item".uppercased()
         imagePicker.delegate = self
     }
     

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +19,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IQButtonBarArrowUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="QAq-sc-RZ5">
-                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="QAq-sc-RZ5" secondAttribute="height" multiplier="1:1" id="mZs-70-fan"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="QAq-sc-RZ5">
+                        <rect key="frame" x="32" y="12" width="20" height="21"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dym-Bq-lzd">
-                        <rect key="frame" x="52" y="12" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dym-Bq-lzd">
+                        <rect key="frame" x="73" y="12" width="231" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -35,22 +31,24 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="QAq-sc-RZ5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1Hb-MN-L53"/>
+                    <constraint firstItem="dym-Bq-lzd" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="6Tu-zP-I29"/>
                     <constraint firstItem="dym-Bq-lzd" firstAttribute="centerY" secondItem="QAq-sc-RZ5" secondAttribute="centerY" id="QPf-Ju-pQK"/>
-                    <constraint firstAttribute="bottom" secondItem="QAq-sc-RZ5" secondAttribute="bottom" id="UMn-ZV-Xbx"/>
-                    <constraint firstItem="QAq-sc-RZ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bTH-5F-XN9"/>
-                    <constraint firstItem="dym-Bq-lzd" firstAttribute="leading" secondItem="QAq-sc-RZ5" secondAttribute="trailing" constant="8" id="fNR-WQ-Mif"/>
+                    <constraint firstItem="QAq-sc-RZ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="bTH-5F-XN9"/>
+                    <constraint firstItem="dym-Bq-lzd" firstAttribute="leading" secondItem="QAq-sc-RZ5" secondAttribute="trailing" constant="21" id="fNR-WQ-Mif"/>
+                    <constraint firstItem="QAq-sc-RZ5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gft-uJ-GOM"/>
+                    <constraint firstItem="QAq-sc-RZ5" firstAttribute="height" secondItem="dym-Bq-lzd" secondAttribute="height" id="rJQ-IQ-zcX"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="menuImage" destination="QAq-sc-RZ5" id="hnp-hR-lr6"/>
                 <outlet property="menuName" destination="dym-Bq-lzd" id="Y0W-pk-vvF"/>
             </connections>
-            <point key="canvasLocation" x="83" y="127.5"/>
+            <point key="canvasLocation" x="81.599999999999994" y="127.28635682158921"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="IQButtonBarArrowUp.png" width="21" height="12"/>
+        <image name="chat" width="20" height="17"/>
     </resources>
 </document>

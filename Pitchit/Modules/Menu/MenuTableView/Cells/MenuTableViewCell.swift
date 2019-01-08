@@ -27,9 +27,9 @@ class MenuTableViewCell: UITableViewCell, NibReusable {
         super.awakeFromNib()
         // Initialization code
     }
-  
-  static var reuseIdentifier: String { return "MenuTableViewCell" }
-  static var nib: UINib { return UINib(nibName: "MenuTableViewCell", bundle: nil) } // Use VeryCustomUI.xib
+    
+    static var reuseIdentifier: String { return "MenuTableViewCell" }
+    static var nib: UINib { return UINib(nibName: "MenuTableViewCell", bundle: nil) } // Use VeryCustomUI.xib
 }
 
 struct MenuTableViewCellModel {
@@ -37,7 +37,26 @@ struct MenuTableViewCellModel {
 }
 
 extension MenuTableViewCellModel: CellViewModel {
-  func setup(cell: MenuTableViewCell) {
-    cell.menuName.text = type.rawValue
-  }
+    func setup(cell: MenuTableViewCell) {
+        cell.menuName.text = type.rawValue
+        
+        switch type {
+        case .Chats:
+            cell.menuImage.image = UIImage(named: "chat")
+        case .Categories:
+            cell.menuImage.image = UIImage(named: "categories")
+        case .Settings:
+            cell.menuImage.image = UIImage(named: "chat")
+        case .InviteFriends:
+            cell.menuImage.image = UIImage(named: "invite_friends")
+        case .Support:
+            cell.menuImage.image = UIImage(named: "support")
+        case .Favorites:
+            cell.menuImage.image = UIImage(named: "favorites")
+        case .SavedSearch:
+            cell.menuImage.image = UIImage(named: "saved_searches")
+        case .LogOut:
+            cell.menuImage.image = UIImage(named: "logOut")
+        }
+    }
 }

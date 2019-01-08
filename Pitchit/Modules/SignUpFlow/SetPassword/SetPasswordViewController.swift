@@ -33,7 +33,7 @@ class SetPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.title = "Set a Password"
+        self.title = "Set a Password".uppercased()
     }
     @IBOutlet var nextStepButton: UIButton!
 

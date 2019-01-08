@@ -14,9 +14,7 @@ import Kingfisher
 
 extension MenuViewController: MenuTableItemDelegate {
     func didClickMenu(type: MenuType) {
-
         switch type {
-      
         case .Chats:
             Router.sharedInstance.openChat(target: self)
         case .Categories:
@@ -57,10 +55,6 @@ class MenuViewController: UIViewController {
     @IBOutlet var avatarImage: UIImageView!
     @IBOutlet var versionLabel: UILabel!
     
-    deinit {
-        print("deinit MenuViewController")
-    }
-    
     @IBOutlet var backGroundGradient: UIView!
     @IBOutlet var bottomView: UIView!
     fileprivate var menuViewDatasource: MenuTableViewDatasource?
@@ -71,6 +65,7 @@ class MenuViewController: UIViewController {
         self.menuViewDelegate = MenuTableViewDelegate(self)
         self.menuViewDatasource = MenuTableViewDatasource(tableView: tableView, delegate: self.menuViewDelegate!, delegateVC: self)
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.backGroundGradient.addGradientMenu()
@@ -85,11 +80,15 @@ class MenuViewController: UIViewController {
             let url = URL(string: UserShared.sharedInstance.user.imageUrl)
             avatarImage.kf.setImage(with: url)
         }
-        self.nameUser.text = UserShared.sharedInstance.user.fullName
+        
+        if UserShared.sharedInstance.user.fullName.isEmpty {
+            self.nameUser.text = "John Smith"
+        } else {
+            self.nameUser.text = UserShared.sharedInstance.user.fullName
+        }
     }
-
+    
     @IBAction func openEditProfile(_ sender: Any) {
-        print("Edit profile")
         SideMenuManager.default.menuLeftNavigationController?.dismiss(animated: true, completion: nil)
     }
     
