@@ -10,15 +10,13 @@ import UIKit
 
 class ChooseTypeViewController: UIViewController {
     var newUser = UserModel()
+    @IBOutlet var gradientView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Choose Account Type"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        // Do any additional setup after loading the view.
     }
-    
-    @IBOutlet var gradientView: UIView!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

@@ -34,18 +34,15 @@ enum BusinessDetailsSignUpType: Int {
 
 class BusinessDetailsViewController: UIViewController {
     var newUser = UserModel()
+    @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
+    @IBOutlet var nextStepButton: UIButton!
+    @IBOutlet var gradientView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.title = "Bussines Address".uppercased()
     }
-    
-    @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
-    
-    @IBOutlet var nextStepButton: UIButton!
-    
-    @IBOutlet var gradientView: UIView!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -89,6 +86,7 @@ extension BusinessDetailsViewController: UITextFieldDelegate{
             }
         }
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if let type = BusinessDetailsSignUpType(rawValue: textField.tag), let text = textField.text  {
             switch type {
@@ -105,7 +103,5 @@ extension BusinessDetailsViewController: UITextFieldDelegate{
 
             }
         }
-        
     }
-    
 }

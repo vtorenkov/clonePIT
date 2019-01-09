@@ -17,6 +17,7 @@ class RangeMinusPlusButtonsTableViewCell: UITableViewCell, NibReusable {
         self.selectionStyle = .none
         // Initialization code
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         firstButton.roundCornersSmall()

@@ -30,7 +30,6 @@ class SelecterTableViewCell: UITableViewCell, NibReusable {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.initStatusRange()
-        // Initialization code
         self.selectionStyle = .none
         buttonCondition.titleLabel?.textAlignment = .center
         buttonCondition.roundCornersSmall()
@@ -71,6 +70,5 @@ struct SelecterTableViewCellModel {
 extension SelecterTableViewCellModel: CellViewModel {
     func setup(cell: SelecterTableViewCell) {
         cell.buttonCondition.setTitle("Brand New", for: .normal)
-
     }
 }

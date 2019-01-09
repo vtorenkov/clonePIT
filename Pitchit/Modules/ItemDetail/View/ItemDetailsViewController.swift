@@ -10,7 +10,6 @@ import UIKit
 import NYTPhotoViewer
 
 extension ItemDetailsViewController: ItemDetailsTableItemDelegate{
-    
     func tapOnImquire() {
         RouterItem.sharedInstance.openItemInquire(target: self, item: self.item)
     }

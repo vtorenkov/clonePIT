@@ -31,18 +31,15 @@ enum SignUpType: Int {
 
 class SignUpFromViewController: UIViewController {
     var newUser = UserModel()
+    @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
+    @IBOutlet var nextStepButton: UIButton!
+    @IBOutlet var gradientView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
         self.title = "Personal Account"
-        
     }
-    
-    @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
-    @IBOutlet var nextStepButton: UIButton!
-    @IBOutlet var gradientView: UIView!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -66,7 +63,6 @@ class SignUpFromViewController: UIViewController {
         }
     }
     
-    
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
         if self.newUser.email.isValidEmail() {
@@ -89,6 +85,7 @@ extension SignUpFromViewController: UITextFieldDelegate{
             }
         }
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if let type = SignUpType(rawValue: textField.tag), let text = textField.text  {
             switch type {
@@ -102,7 +99,5 @@ extension SignUpFromViewController: UITextFieldDelegate{
                 self.newUser.phone = text
             }
         }
-
     }
-    
 }

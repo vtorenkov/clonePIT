@@ -39,7 +39,6 @@ final class FavoritesTableViewDatasource: NSObject, FavoritesTableViewDatasource
     }
 }
 
-
 class FavoritesTableViewDelegate: NSObject, UITableViewDelegate {
     weak var delegate: FavoritesTableItemDelegate?
     
@@ -54,5 +53,4 @@ class FavoritesTableViewDelegate: NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }

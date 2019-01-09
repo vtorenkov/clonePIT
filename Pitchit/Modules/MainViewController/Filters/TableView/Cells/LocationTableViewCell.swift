@@ -33,6 +33,5 @@ extension LocationTableViewCellModel: CellViewModel {
         cell.sliderLocation.disableRange = true
         cell.sliderLocation.lineHeight = 2.0
         cell.sliderLocation.tintColor = UIColor.white
-
     }
 }

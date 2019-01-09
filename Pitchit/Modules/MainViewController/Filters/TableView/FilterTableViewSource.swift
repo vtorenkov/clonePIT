@@ -11,13 +11,12 @@ protocol FilterTableItemDelegate: class {
     func selectType(type: Types)
 }
 
-
 final class FilterTableViewDatasource: NSObject, FilterTableViewDatasourceProtocol {
     weak var tableView: UITableView?
     weak var delegate: UITableViewDelegate?
     weak var delegateVC: FilterTableItemDelegate?
     var models = [CellViewAnyModel]()
-
+    
     required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC: FilterTableItemDelegate, builder: BuilderModelProtocol) {
         self.tableView = tableView
         self.delegate = delegate
@@ -32,7 +31,7 @@ final class FilterTableViewDatasource: NSObject, FilterTableViewDatasourceProtoc
         tableView.register(cellType: SelecterTableViewCell.self)
         tableView.register(cellType: ShowResultsTableViewCell.self)
         tableView.register(cellType: RangeMinusPlusButtonsTableViewCell.self)
-
+        
         self.tableView?.estimatedRowHeight = 100
         self.tableView?.rowHeight = UITableViewAutomaticDimension;
         tableView.tableFooterView = UIView(frame: .zero)
@@ -76,5 +75,4 @@ class FilterTableViewDelegate: NSObject, UITableViewDelegate {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.clear
     }
-    
 }

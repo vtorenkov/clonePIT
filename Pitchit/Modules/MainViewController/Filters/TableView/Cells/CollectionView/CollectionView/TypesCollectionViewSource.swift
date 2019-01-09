@@ -45,7 +45,7 @@ class TypesCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     var delegate: TypesCollectionInteract
     weak var collectionView: UICollectionView?
     var modelsForCells = [CellViewAnyModel]()
-
+    
     init(_ delegate: TypesCollectionInteract, collectionView: UICollectionView, models: [CellViewAnyModel]) {
         self.delegate = delegate
         self.collectionView = collectionView

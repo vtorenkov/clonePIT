@@ -60,8 +60,7 @@ class LogInScreenViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if let _ = FBSDKAccessToken.current()
-        {
+        if let _ = FBSDKAccessToken.current() {
             self.fetchUserProfile()
         }
     }

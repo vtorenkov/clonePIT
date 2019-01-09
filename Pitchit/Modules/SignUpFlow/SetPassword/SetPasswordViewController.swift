@@ -24,18 +24,17 @@ enum PasswordType: Int {
 }
 
 class SetPasswordViewController: UIViewController {
-    
     var newUser = UserModel()
     
     @IBOutlet var floatingTextArrayPass: [SkyFloatingLabelTextField]!
     @IBOutlet var gradiendView: UIView!
-    
+    @IBOutlet var nextStepButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.title = "Set a Password".uppercased()
     }
-    @IBOutlet var nextStepButton: UIButton!
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -77,8 +76,6 @@ class SetPasswordViewController: UIViewController {
             self.alert(message: "Password didnt match")
         }
     }
-    
-   
 }
 
 extension SetPasswordViewController: UITextFieldDelegate{
@@ -91,8 +88,6 @@ extension SetPasswordViewController: UITextFieldDelegate{
                 self.newUser.passWordRepeat = text
             }
         }
-        
     }
-    
 }
 

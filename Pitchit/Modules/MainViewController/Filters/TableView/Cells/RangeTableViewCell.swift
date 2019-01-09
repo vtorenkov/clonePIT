@@ -10,7 +10,7 @@ import UIKit
 import RangeSeekSlider
 
 class RangeTableViewCell: UITableViewCell, NibReusable {
-
+    
     @IBOutlet var rangeSlider: RangeSeekSlider!
     @IBOutlet var nameLabel: UILabel!
     var type: Range!
@@ -40,7 +40,7 @@ extension RangeTableViewCellModel: CellViewModel {
         cell.rangeSlider.lineHeight = 2.0
         cell.rangeSlider.minLabelFont = UIFont.mainFonSFUItRegular(ofSize: 15)
         cell.rangeSlider.maxLabelFont = UIFont.mainFonSFUItRegular(ofSize: 15)
-
+        
         switch type {
         case .sizeFootWear:
             cell.rangeSlider.maxValue = 42

@@ -14,8 +14,8 @@ class ShowResultsTableViewCell: UITableViewCell, NibReusable {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        // Initialization code
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         resultButton.roundCornersSmall()

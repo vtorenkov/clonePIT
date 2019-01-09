@@ -41,16 +41,16 @@ class MainViewController: UIViewController {
     @IBOutlet var categoryCollection: UICollectionView!
     
     lazy var presenter: MainPresenter = MainPresenter(view: self)
-
+    
     fileprivate var pitchCollectionViewDatasource: PitchCollectionDatasource?
     fileprivate var pitchCollectionViewDelegate: PitchCollectionDelegate?
-
+    
     fileprivate var categoriesCollectionViewDatasource: CategoriesCollectionDatasource?
     fileprivate var categoriesCollectionViewDelegate: CategoriesCollectionDelegate?
-
+    
     var items = [ItemModel]()
     var category: CategoryItemType = .art
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
@@ -60,20 +60,14 @@ class MainViewController: UIViewController {
         self.pitchCollectionViewDelegate = PitchCollectionDelegate(self, collectionView: pitchCollection, items: items)
         self.pitchCollectionViewDatasource = PitchCollectionDatasource(collectionView: pitchCollection, delegate: self.pitchCollectionViewDelegate!, delegateVC: self, presenter: presenter, items: items)
         self.pitchCollectionViewDelegate?.controller = self
-
+        
         self.categoriesCollectionViewDelegate = CategoriesCollectionDelegate(self, collectionView: categoryCollection)
         self.categoriesCollectionViewDatasource = CategoriesCollectionDatasource(collectionView: categoryCollection, delegate: self.categoriesCollectionViewDelegate!, delegateVC: self, presenter: presenter)
     }
     
-    deinit {
-        print("deinit mainviewcontroller")
-    }
-    
     func initSearchBar() {
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-
         self.searchBar.delegate = self
-        
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         searchBar.backgroundImage = UIImage()
         searchBar.backgroundColor = UIColor.searchBackColor

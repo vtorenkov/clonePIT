@@ -31,6 +31,9 @@ enum BusinessSignUpType: Int {
 
 class BussinesSignUpFromViewController: UIViewController {
     var newUser = UserModel()
+    @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
+    @IBOutlet var nextStepButton: UIButton!
+    @IBOutlet var gradientView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +41,11 @@ class BussinesSignUpFromViewController: UIViewController {
         self.title = "Bussines Account".uppercased()
     }
     
-    @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
-    
-    @IBOutlet var nextStepButton: UIButton!
-    
-    @IBOutlet var gradientView: UIView!
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.nextStepButton.circleCorners()
         self.gradientView.addGradient()
-      
+        
         _ = floatingTextArray.map { unwrappedfloatingTextArray in
             _ = unwrappedfloatingTextArray.map {
                 $0.font = UIFont.mainFonSFUItRegular(ofSize: 24)
@@ -65,8 +62,8 @@ class BussinesSignUpFromViewController: UIViewController {
             }
         }
     }
-
-   
+    
+    
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
         if self.newUser.bussinesModel.email.isValidEmail() {
@@ -89,6 +86,7 @@ extension BussinesSignUpFromViewController: UITextFieldDelegate{
             }
         }
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if let type = BusinessSignUpType(rawValue: textField.tag), let text = textField.text  {
             switch type {
@@ -102,7 +100,5 @@ extension BussinesSignUpFromViewController: UITextFieldDelegate{
                 self.newUser.bussinesModel.phone = text
             }
         }
-
     }
-    
 }
