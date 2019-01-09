@@ -41,9 +41,7 @@ class SignUpFromViewController: UIViewController {
     }
     
     @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
-    
     @IBOutlet var nextStepButton: UIButton!
-    
     @IBOutlet var gradientView: UIView!
     
     override func viewDidLayoutSubviews() {

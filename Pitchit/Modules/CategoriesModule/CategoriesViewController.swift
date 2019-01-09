@@ -8,18 +8,34 @@
 
 import UIKit
 
-class CategoriesViewController: UIViewController {
+extension CategoriesViewController: CatsCollectionInteract {
+    func selectCategory() {
+        print("cat select")
+    }
+}
 
+class CategoriesViewController: UIViewController {
+    @IBOutlet var gradiendView: UIView!
+    @IBOutlet var collectionView: UICollectionView!
+    
+    fileprivate var catsCollectionViewDatasource: CatsCollectionDatasource?
+    fileprivate var catsCollectionViewDelegate: CatsCollectionDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.title = "Categories".uppercased()
-        // Do any additional setup after loading the view.
+        
+        catsCollectionViewDelegate = CatsCollectionDelegate(self, collectionView: collectionView)
+        catsCollectionViewDatasource = CatsCollectionDatasource(collectionView: collectionView, delegate: catsCollectionViewDelegate!, delegateVC: self)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.gradiendView.addGradient()
+        self.view.sendSubview(toBack: gradiendView)
     }
     
     @IBAction func closeAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-
 }
