@@ -843,6 +843,7 @@
 		FA810CD321370D9F003176A8 /* SavedSearch */ = {
 			isa = PBXGroup;
 			children = (
+				FAF1A9AB21E7D7E200F5ABD1 /* TableView */,
 				FA810CDD21370E03003176A8 /* SavedSearch.storyboard */,
 				FA810CDF21370E33003176A8 /* SavedSearchViewController.swift */,
 			);
@@ -1456,6 +1457,13 @@
 				FAF1A99C21E55D0200F5ABD1 /* CatsCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAF1A9AB21E7D7E200F5ABD1 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		FAF2454421985C2A00642F4C /* RateProfile */ = {

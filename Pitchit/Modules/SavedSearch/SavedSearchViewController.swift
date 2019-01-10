@@ -10,10 +10,11 @@ import UIKit
 
 class SavedSearchViewController: UIViewController {
 
+    @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Saved search"
+        self.title = "Saved search".uppercased()
         // Do any additional setup after loading the view.
     }
     
