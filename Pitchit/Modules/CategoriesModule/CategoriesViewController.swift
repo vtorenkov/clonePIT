@@ -27,6 +27,7 @@ class CategoriesViewController: UIViewController {
         
         catsCollectionViewDelegate = CatsCollectionDelegate(self, collectionView: collectionView)
         catsCollectionViewDatasource = CatsCollectionDatasource(collectionView: collectionView, delegate: catsCollectionViewDelegate!, delegateVC: self)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
     }
     
     override func viewDidLayoutSubviews() {

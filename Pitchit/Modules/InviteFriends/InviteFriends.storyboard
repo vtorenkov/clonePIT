@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,21 +17,37 @@
                     <view key="view" contentMode="scaleToFill" id="ZdZ-HG-hLY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ne7-OE-hGg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ne7-OE-hGg" firstAttribute="top" secondItem="Uac-aR-UfR" secondAttribute="top" id="2Pk-lK-cPf"/>
+                            <constraint firstItem="ne7-OE-hGg" firstAttribute="leading" secondItem="Uac-aR-UfR" secondAttribute="leading" id="8HS-o9-fzZ"/>
+                            <constraint firstItem="ne7-OE-hGg" firstAttribute="bottom" secondItem="Uac-aR-UfR" secondAttribute="bottom" id="F0a-Bs-5rJ"/>
+                            <constraint firstItem="ne7-OE-hGg" firstAttribute="trailing" secondItem="Uac-aR-UfR" secondAttribute="trailing" id="M5N-od-2JQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uac-aR-UfR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="VFG-AW-Uz5">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="vBQ-UJ-cSQ">
+                        <barButtonItem key="leftBarButtonItem" title="X" id="vBQ-UJ-cSQ">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="1m2-RG-Tab" id="Snd-kG-7mt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="gradiendView" destination="ne7-OE-hGg" id="vcI-eZ-gvX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rZ-em-pdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="90"/>
+            <point key="canvasLocation" x="45.600000000000001" y="89.505247376311857"/>
         </scene>
     </scenes>
 </document>

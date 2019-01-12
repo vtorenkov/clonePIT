@@ -9,11 +9,18 @@
 import UIKit
 
 class InviteFriendsViewController: UIViewController {
+    @IBOutlet var gradiendView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Invite Friends"
-        // Do any additional setup after loading the view.
+        self.title = "Invite Friends".uppercased()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.gradiendView.addGradient()
+        self.view.sendSubview(toBack: gradiendView)
     }
     
     @IBAction func closeAction(_ sender: Any) {

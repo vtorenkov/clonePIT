@@ -53,12 +53,11 @@
                         <color key="onTintColor" red="0.20000000000000001" green="0.79215686269999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="thumbTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </switch>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YtO-mt-xEf">
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YtO-mt-xEf">
                         <rect key="frame" x="76" y="38" width="201" height="109"/>
                         <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="109" id="7p0-n6-hx6"/>
-                            <constraint firstAttribute="width" constant="201" id="Bcc-ZD-DVv"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -69,7 +68,6 @@
                     <constraint firstItem="fjt-HH-W4f" firstAttribute="leading" secondItem="ToL-ke-3JW" secondAttribute="trailing" constant="8" symbolic="YES" id="8bv-oq-ZBJ"/>
                     <constraint firstItem="ToL-ke-3JW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9WS-7u-ilm"/>
                     <constraint firstItem="YtO-mt-xEf" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="DtG-nK-l6C"/>
-                    <constraint firstItem="jRE-aP-8tW" firstAttribute="leading" secondItem="YtO-mt-xEf" secondAttribute="trailing" constant="8" symbolic="YES" id="Fcr-09-9Un"/>
                     <constraint firstItem="ToL-ke-3JW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HrE-D2-rfD"/>
                     <constraint firstItem="ToL-ke-3JW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Nfp-Wb-Z0u"/>
                     <constraint firstItem="fjt-HH-W4f" firstAttribute="top" secondItem="iBp-NJ-UgT" secondAttribute="top" id="axx-Kj-s2Z"/>
