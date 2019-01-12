@@ -8,14 +8,24 @@
 
 import UIKit
 
+extension SavedSearchViewController: SavedSearchTableItemDelegate{
+    
+}
+
 class SavedSearchViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    
+    fileprivate var savedSearchViewDatasource: SavedSearchTableViewDatasource?
+    fileprivate var savedSearchViewDelegate: SavedSearchTableViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.savedSearchViewDelegate = SavedSearchTableViewDelegate(self)
+        self.savedSearchViewDatasource = SavedSearchTableViewDatasource(tableView: tableView, delegate: self.savedSearchViewDelegate!, delegateVC: self)
         self.title = "Saved search".uppercased()
-        // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
     }
     
     @IBAction func closeAction(_ sender: Any) {

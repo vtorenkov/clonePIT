@@ -45,6 +45,10 @@ extension UIColor {
     @nonobjc class var separatorColor: UIColor {
         return UIColor(rgb: 0xebebeb)
     }
+    
+    @nonobjc class var switchColor: UIColor {
+        return UIColor(rgb: 0x949cf5)
+    }
 }
 
 

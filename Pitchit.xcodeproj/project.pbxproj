@@ -218,6 +218,12 @@
 		FAF1A99E21E55D0200F5ABD1 /* CatsCollectionViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A99921E55D0200F5ABD1 /* CatsCollectionViewSource.swift */; };
 		FAF1A99F21E55D0200F5ABD1 /* CatsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A99B21E55D0200F5ABD1 /* CatsCollectionViewCell.swift */; };
 		FAF1A9A021E55D0200F5ABD1 /* CatsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF1A99C21E55D0200F5ABD1 /* CatsCollectionViewCell.xib */; };
+		FAF1A9B121EA077000F5ABD1 /* SavedSearchTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A9AC21EA076F00F5ABD1 /* SavedSearchTableViewSource.swift */; };
+		FAF1A9B221EA077000F5ABD1 /* SavedSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF1A9AE21EA076F00F5ABD1 /* SavedSearchTableViewCell.xib */; };
+		FAF1A9B321EA077000F5ABD1 /* SavedSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A9AF21EA076F00F5ABD1 /* SavedSearchTableViewCell.swift */; };
+		FAF1A9B421EA077000F5ABD1 /* SavedSearchTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A9B021EA076F00F5ABD1 /* SavedSearchTableViewProtocol.swift */; };
+		FAF1A9B721EA0F5F00F5ABD1 /* SavedSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A9B621EA0F5F00F5ABD1 /* SavedSearchView.swift */; };
+		FAF1A9B921EA0F7C00F5ABD1 /* SavedSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF1A9B821EA0F7C00F5ABD1 /* SavedSearchView.xib */; };
 		FAF2454221985A4800642F4C /* PersonalAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2454021985A4800642F4C /* PersonalAccountTableViewCell.swift */; };
 		FAF2454321985A4800642F4C /* PersonalAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF2454121985A4800642F4C /* PersonalAccountTableViewCell.xib */; };
 		FAF2454621985C9400642F4C /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2454521985C9400642F4C /* RateViewController.swift */; };
@@ -452,6 +458,12 @@
 		FAF1A99921E55D0200F5ABD1 /* CatsCollectionViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatsCollectionViewSource.swift; sourceTree = "<group>"; };
 		FAF1A99B21E55D0200F5ABD1 /* CatsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatsCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAF1A99C21E55D0200F5ABD1 /* CatsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CatsCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAF1A9AC21EA076F00F5ABD1 /* SavedSearchTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedSearchTableViewSource.swift; sourceTree = "<group>"; };
+		FAF1A9AE21EA076F00F5ABD1 /* SavedSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavedSearchTableViewCell.xib; sourceTree = "<group>"; };
+		FAF1A9AF21EA076F00F5ABD1 /* SavedSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedSearchTableViewCell.swift; sourceTree = "<group>"; };
+		FAF1A9B021EA076F00F5ABD1 /* SavedSearchTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedSearchTableViewProtocol.swift; sourceTree = "<group>"; };
+		FAF1A9B621EA0F5F00F5ABD1 /* SavedSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSearchView.swift; sourceTree = "<group>"; };
+		FAF1A9B821EA0F7C00F5ABD1 /* SavedSearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedSearchView.xib; sourceTree = "<group>"; };
 		FAF2454021985A4800642F4C /* PersonalAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccountTableViewCell.swift; sourceTree = "<group>"; };
 		FAF2454121985A4800642F4C /* PersonalAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalAccountTableViewCell.xib; sourceTree = "<group>"; };
 		FAF2454521985C9400642F4C /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
@@ -1462,8 +1474,30 @@
 		FAF1A9AB21E7D7E200F5ABD1 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				FAF1A9AD21EA076F00F5ABD1 /* Cells */,
+				FAF1A9B021EA076F00F5ABD1 /* SavedSearchTableViewProtocol.swift */,
+				FAF1A9AC21EA076F00F5ABD1 /* SavedSearchTableViewSource.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		FAF1A9AD21EA076F00F5ABD1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1A9B521EA0EC800F5ABD1 /* ViewSaved */,
+				FAF1A9AE21EA076F00F5ABD1 /* SavedSearchTableViewCell.xib */,
+				FAF1A9AF21EA076F00F5ABD1 /* SavedSearchTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAF1A9B521EA0EC800F5ABD1 /* ViewSaved */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1A9B621EA0F5F00F5ABD1 /* SavedSearchView.swift */,
+				FAF1A9B821EA0F7C00F5ABD1 /* SavedSearchView.xib */,
+			);
+			path = ViewSaved;
 			sourceTree = "<group>";
 		};
 		FAF2454421985C2A00642F4C /* RateProfile */ = {
@@ -1568,6 +1602,7 @@
 				FA810CDA21370DE6003176A8 /* InviteFriends.storyboard in Resources */,
 				FAF2454321985A4800642F4C /* PersonalAccountTableViewCell.xib in Resources */,
 				FA63053020F7BAFE00F0777E /* MenuTableViewCell.xib in Resources */,
+				FAF1A9B221EA077000F5ABD1 /* SavedSearchTableViewCell.xib in Resources */,
 				FA63052420F6879400F0777E /* Menu.storyboard in Resources */,
 				FA86BF89214D1C2A00B0B7AA /* Market Fresh.ttf in Resources */,
 				FA0A12E921A73C190061F7AA /* ItemConditionTableViewCell.xib in Resources */,
@@ -1591,6 +1626,7 @@
 				FA86BF76214C2C8C00B0B7AA /* ChooseType.storyboard in Resources */,
 				FA810C6B21233B47003176A8 /* UploadPItchTableViewCell.xib in Resources */,
 				FA810CD821370DD9003176A8 /* SupportModule.storyboard in Resources */,
+				FAF1A9B921EA0F7C00F5ABD1 /* SavedSearchView.xib in Resources */,
 				FA810C97212B4AD2003176A8 /* PublicButtonTableViewCell.xib in Resources */,
 				FA810CCB21370D2C003176A8 /* ChatModule.storyboard in Resources */,
 				FA63053C20FE6F6C00F0777E /* AvtarProfileTableViewCell.xib in Resources */,
@@ -1727,6 +1763,7 @@
 				FA810C92212B4889003176A8 /* AdditionalPicsVidsTableViewCell.swift in Sources */,
 				FA810CE421370E51003176A8 /* InviteFriendsViewController.swift in Sources */,
 				FA810CBF213191C1003176A8 /* Int+Extensions.swift in Sources */,
+				FAF1A9B421EA077000F5ABD1 /* SavedSearchTableViewProtocol.swift in Sources */,
 				FAE5761F20F11C8B0023383B /* PitchCollectionViewSource.swift in Sources */,
 				FA86BF9C214E910900B0B7AA /* SetPasswordViewController.swift in Sources */,
 				FAE5764320F123C20023383B /* NibOwnerLoadable.swift in Sources */,
@@ -1790,6 +1827,7 @@
 				FAE5763F20F123C20023383B /* UICollectionView+Reusable.swift in Sources */,
 				FA810CE621370E61003176A8 /* SupportViewController.swift in Sources */,
 				FA810C96212B4AD2003176A8 /* PublicButtonTableViewCell.swift in Sources */,
+				FAF1A9B721EA0F5F00F5ABD1 /* SavedSearchView.swift in Sources */,
 				FAF1A99521E51A0C00F5ABD1 /* HeaderTableViewCell.swift in Sources */,
 				FADB458821AABBB500304A45 /* InquireViewController.swift in Sources */,
 				FADBF2582143E5F80047FAF0 /* SwitchUITableViewCell.swift in Sources */,
@@ -1799,6 +1837,7 @@
 				FA810C6621233B39003176A8 /* CategoryPitchTableViewCell.swift in Sources */,
 				FA96D5DB2152B7F500A04840 /* UserShared.swift in Sources */,
 				FAE5763E20F123C20023383B /* StoryboardBased.swift in Sources */,
+				FAF1A9B121EA077000F5ABD1 /* SavedSearchTableViewSource.swift in Sources */,
 				FA79F3C8217B573D005A9AEB /* UILabel+Extension.swift in Sources */,
 				FAE5761B20F11C850023383B /* CategoriesCollectionViewSource.swift in Sources */,
 				FA810C7C2124AA87003176A8 /* PostItemCatCollectionViewCell.swift in Sources */,
@@ -1864,6 +1903,7 @@
 				FA3D5F3921C05EB200B17AD9 /* LocationTableViewCell.swift in Sources */,
 				FAE575F320EFCD5E0023383B /* MainViewController.swift in Sources */,
 				FA810CE021370E33003176A8 /* SavedSearchViewController.swift in Sources */,
+				FAF1A9B321EA077000F5ABD1 /* SavedSearchTableViewCell.swift in Sources */,
 				FA810CAB212C861B003176A8 /* ConditionsCollectionViewSource.swift in Sources */,
 				FACC881F2100FBA100BBB31C /* CoverA.swift in Sources */,
 				FA5D55542118D51D008CA265 /* AdditionalPhotosTableViewCell.swift in Sources */,
