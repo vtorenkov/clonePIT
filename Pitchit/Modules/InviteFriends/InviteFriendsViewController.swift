@@ -10,7 +10,8 @@ import UIKit
 
 class InviteFriendsViewController: UIViewController {
     @IBOutlet var gradiendView: UIView!
-
+    @IBOutlet var textContact: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Invite Friends".uppercased()
@@ -21,6 +22,7 @@ class InviteFriendsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.gradiendView.addGradient()
         self.view.sendSubview(toBack: gradiendView)
+        self.textContact.roundCornersSmall()
     }
     
     @IBAction func closeAction(_ sender: Any) {
