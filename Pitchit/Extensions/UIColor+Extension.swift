@@ -49,6 +49,10 @@ extension UIColor {
     @nonobjc class var switchColor: UIColor {
         return UIColor(rgb: 0x949cf5)
     }
+    
+    @nonobjc class var placeholderColor: UIColor {
+        return UIColor(rgb: 0x5e748d)
+    }
 }
 
 

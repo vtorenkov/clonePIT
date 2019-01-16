@@ -11,16 +11,19 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import SwiftyJSON
 
-class LogInScreenViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LogInScreenViewController: UIViewController {
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
+    
+    @IBOutlet var loginButton: UIButton!
     @IBOutlet var gradientView: UIView!
-    @IBOutlet var facebookButton: FBSDKLoginButton!
+    @IBOutlet var facebookButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        facebookButton.delegate = self
-        facebookButton.readPermissions = ["public_profile","email"]
-
+        loginButton.roundCornersSmall()
+        facebookButton.roundCornersSmall()
+        
         self.title = ""
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -33,6 +36,7 @@ class LogInScreenViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.gradientView.addGradient()
+        self.manageUitextField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,8 +69,17 @@ class LogInScreenViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
+    @IBAction func loginButton(_ sender: UIButton) {
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (login, error) in
+            if(error == nil){
+                print("No Error")
+                self.fetchUserProfile()
+            }
+        }
+    }
+    
     func fetchUserProfile() {
-        
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
         
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
@@ -79,5 +92,22 @@ class LogInScreenViewController: UIViewController, FBSDKLoginButtonDelegate {
                 Router.sharedInstance.goToMainPage()
             }
         })
+    }
+    
+    func manageUitextField() {
+        let attributes = [
+            NSAttributedStringKey.foregroundColor: UIColor.placeholderColor,
+            NSAttributedStringKey.font : UIFont.mainFonSFUItMedium(ofSize: 12)
+        ]
+        
+        passwordText.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attributes)
+        emailText.attributedPlaceholder = NSAttributedString(string: "Email", attributes: attributes)
+        
+        let paddingView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 27, height: 20))
+        passwordText.leftView = paddingView
+        passwordText.leftViewMode = .always
+        let paddingViewSecond: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 27, height: 20))
+        emailText.leftView = paddingViewSecond
+        emailText.leftViewMode = .always
     }
 }
