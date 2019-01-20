@@ -53,7 +53,13 @@ extension UIColor {
     @nonobjc class var placeholderColor: UIColor {
         return UIColor(rgb: 0x5e748d)
     }
+    
+    @nonobjc class var placeholderColorInTextView: UIColor {
+        return UIColor(rgb: 0x8a888b)
+    }
 }
+
+
 
 
 extension UIColor {

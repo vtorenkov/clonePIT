@@ -85,6 +85,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="submitButton" destination="beQ-1S-6F3" id="MGd-Gm-jMh"/>
+                        <outlet property="typeYourMessage" destination="MIS-nx-21X" id="zIo-kG-7Oy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPy-zz-ejz" userLabel="First Responder" sceneMemberID="firstResponder"/>

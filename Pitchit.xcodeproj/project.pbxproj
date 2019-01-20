@@ -34,6 +34,7 @@
 		FA63053820FE6F6500F0777E /* ProfileTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63053620FE6F6400F0777E /* ProfileTableViewSource.swift */; };
 		FA63053B20FE6F6C00F0777E /* AvtarProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63053920FE6F6B00F0777E /* AvtarProfileTableViewCell.swift */; };
 		FA63053C20FE6F6C00F0777E /* AvtarProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */; };
+		FA78386E21F507240033D8E7 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78386D21F507240033D8E7 /* UITextView+Extension.swift */; };
 		FA79F3AD21750E4A005A9AEB /* RouterProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79F3AC21750E49005A9AEB /* RouterProfile.swift */; };
 		FA79F3B121750EAA005A9AEB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79F3B021750EAA005A9AEB /* EditProfileViewController.swift */; };
 		FA79F3B4217514C1005A9AEB /* EditProfileTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79F3B2217514C0005A9AEB /* EditProfileTableViewSource.swift */; };
@@ -260,6 +261,7 @@
 		FA63053620FE6F6400F0777E /* ProfileTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewSource.swift; sourceTree = "<group>"; };
 		FA63053920FE6F6B00F0777E /* AvtarProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvtarProfileTableViewCell.swift; sourceTree = "<group>"; };
 		FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvtarProfileTableViewCell.xib; sourceTree = "<group>"; };
+		FA78386D21F507240033D8E7 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		FA79F3AC21750E49005A9AEB /* RouterProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProfile.swift; sourceTree = "<group>"; };
 		FA79F3B021750EAA005A9AEB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		FA79F3B2217514C0005A9AEB /* EditProfileTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewSource.swift; sourceTree = "<group>"; };
@@ -1252,6 +1254,7 @@
 				FA86BF95214E8DF500B0B7AA /* String+Extension.swift */,
 				FA79F3C7217B573D005A9AEB /* UILabel+Extension.swift */,
 				FAF245472198852C00642F4C /* UISegmentControll+Extension.swift */,
+				FA78386D21F507240033D8E7 /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1844,6 +1847,7 @@
 				FA810C732124A78E003176A8 /* CategoriesPostCollectionViewSource.swift in Sources */,
 				FA79F3CB2184A940005A9AEB /* PhotosFullSizeDataSource.swift in Sources */,
 				FA810CB8212DE54F003176A8 /* PostItemPresenter.swift in Sources */,
+				FA78386E21F507240033D8E7 /* UITextView+Extension.swift in Sources */,
 				FA9A032821E373BE00DF6C2C /* FavoritesTableViewSource.swift in Sources */,
 				FA810C4A211CB463003176A8 /* PhotosCollectionViewCell.swift in Sources */,
 				FAE5764220F123C20023383B /* NibLoadable.swift in Sources */,
