@@ -57,10 +57,11 @@ extension UIColor {
     @nonobjc class var placeholderColorInTextView: UIColor {
         return UIColor(rgb: 0x8a888b)
     }
+    
+    @nonobjc class var borderColorTextView: UIColor {
+        return UIColor(rgb: 0xefefef)
+    }
 }
-
-
-
 
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {

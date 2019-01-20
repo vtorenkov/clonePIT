@@ -21,6 +21,9 @@ class SupportViewController: UIViewController, UITextViewDelegate {
         typeYourMessage.font = UIFont.mainFonSFUItLight(ofSize: 18)
         typeYourMessage.returnKeyType = .done
         typeYourMessage.delegate = self
+        
+        typeYourMessage.layer.borderColor = UIColor.borderColorTextView.cgColor
+        typeYourMessage.layer.borderWidth = 1.0
     }
     
     @IBAction func closeAction(_ sender: Any) {
