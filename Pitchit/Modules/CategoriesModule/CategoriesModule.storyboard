@@ -51,7 +51,7 @@
                             <constraint firstItem="zRp-7N-vvE" firstAttribute="leading" secondItem="oM3-TD-wff" secondAttribute="leading" constant="16" id="LtW-9F-uRf"/>
                             <constraint firstItem="zRp-7N-vvE" firstAttribute="bottom" secondItem="oM3-TD-wff" secondAttribute="bottom" id="TBH-HV-Usa"/>
                             <constraint firstItem="zRp-7N-vvE" firstAttribute="top" secondItem="oM3-TD-wff" secondAttribute="top" constant="16" id="Y4v-Lb-fsf"/>
-                            <constraint firstItem="iLs-4F-ZUd" firstAttribute="bottom" secondItem="oM3-TD-wff" secondAttribute="bottom" id="rFz-na-78p"/>
+                            <constraint firstItem="iLs-4F-ZUd" firstAttribute="bottom" secondItem="eMD-dC-2An" secondAttribute="bottom" id="rFz-na-78p"/>
                             <constraint firstItem="oM3-TD-wff" firstAttribute="trailing" secondItem="zRp-7N-vvE" secondAttribute="trailing" constant="16" id="vQd-fD-zkg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oM3-TD-wff"/>

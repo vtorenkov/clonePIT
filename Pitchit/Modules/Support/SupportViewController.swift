@@ -9,11 +9,12 @@
 import UIKit
 
 class SupportViewController: UIViewController {
-
+    @IBOutlet var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Support"
-        // Do any additional setup after loading the view.
+        submitButton.roundCornersSmall()
+        self.title = "Support".uppercased()
     }
     
     @IBAction func closeAction(_ sender: Any) {
