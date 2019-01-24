@@ -17,9 +17,9 @@ class CategoriesCollectionViewCell: UICollectionViewCell, NibReusable {
     super.awakeFromNib()
     // Initialization code
   }
+    
   static var reuseIdentifier: String { return "CategoriesCollectionViewCell" }
   static var nib: UINib { return UINib(nibName: "CategoriesCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
-  
 }
 
 struct CategoriesCollectionViewCellModel {
@@ -31,7 +31,6 @@ extension CategoriesCollectionViewCellModel: CellViewModel {
   func setup(cell: CategoriesCollectionViewCell) {
     cell.categoryName.text = cat.name
     cell.backgroundColor = cat.color
-    
     if currentCat == cat.type  {
         cell.categoryName.textColor = UIColor.white
     } else {

@@ -14,7 +14,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     
     fileprivate var player = Player()
     weak var item: ItemModel?
-
+    
     @IBOutlet var buttonBackGround: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loadingLabel: UILabel!
@@ -59,7 +59,6 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     
     static var reuseIdentifier: String { return "PitchCollectionViewCell" }
     static var nib: UINib { return UINib(nibName: "PitchCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
-    
 }
 
 struct PitchCollectionViewCellModel {
@@ -79,26 +78,26 @@ extension PitchCollectionViewCellModel: CellViewModel {
 
 extension PitchCollectionViewCell {
     /*
-    @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
-        switch (self.player.playbackState.rawValue) {
-        case PlaybackState.stopped.rawValue:
-            self.player.playFromBeginning()
-            break
-        case PlaybackState.paused.rawValue:
-            self.player.playFromCurrentTime()
-            break
-        case PlaybackState.playing.rawValue:
-            self.player.pause()
-            break
-        case PlaybackState.failed.rawValue:
-            self.player.pause()
-            break
-        default:
-            self.player.pause()
-            break
-        }
-    }
- */
+     @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
+     switch (self.player.playbackState.rawValue) {
+     case PlaybackState.stopped.rawValue:
+     self.player.playFromBeginning()
+     break
+     case PlaybackState.paused.rawValue:
+     self.player.playFromCurrentTime()
+     break
+     case PlaybackState.playing.rawValue:
+     self.player.pause()
+     break
+     case PlaybackState.failed.rawValue:
+     self.player.pause()
+     break
+     default:
+     self.player.pause()
+     break
+     }
+     }
+     */
     
 }
 

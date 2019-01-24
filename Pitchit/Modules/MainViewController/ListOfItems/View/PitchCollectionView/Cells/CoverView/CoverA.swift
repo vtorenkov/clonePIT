@@ -13,7 +13,7 @@ import AVFoundation
 class CoverA: UIView, MMPlayerCoverViewProtocol {
     weak var playLayer: MMPlayerLayer?
     fileprivate var isUpdateTime = false
-
+    
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var playSlider: UISlider!
     @IBOutlet weak var labTotal: UILabel!
@@ -53,7 +53,7 @@ class CoverA: UIView, MMPlayerCoverViewProtocol {
             self.playSlider.value = Float(time.seconds)
         }
     }
-
+    
     fileprivate func convert(second: Double) -> String {
         let component =  Date.dateComponentFrom(second: second)
         if let hour = component.hour ,
@@ -84,7 +84,7 @@ class CoverA: UIView, MMPlayerCoverViewProtocol {
     func player(isMuted: Bool) {
         
     }
-
+    
     func removeObserver() {
         
     }
