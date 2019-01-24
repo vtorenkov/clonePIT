@@ -48,6 +48,8 @@ extension PostItemController: PostItemTableItemDelegate{
 class PostItemController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var item = ItemModel()
+    @IBOutlet var closeItem: UIBarButtonItem!
+    
     lazy var presenter: PostItemPresenter = PostItemPresenter(view: self, item: item)
     let imagePicker = UIImagePickerController()
 
@@ -68,8 +70,13 @@ class PostItemController: UIViewController {
 
         self.addItemViewDelegate = PostItemTableViewDelegate(self)
         self.addItemViewDatasource = PostItemTableViewDatasource(tableView: tableView, delegate: self.addItemViewDelegate!, delegateVC: self, item: item, delegateVCDesc: self)
-        self.title = "Add Item".uppercased()
+        self.title = "POST AN ITEM".uppercased()
         imagePicker.delegate = self
+        
+        closeItem.setTitleTextAttributes([
+            NSAttributedStringKey.font : UIFont.mainFonSFUItMedium(ofSize: 17),
+            NSAttributedStringKey.foregroundColor : UIColor.navBarColorItem,
+            ], for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

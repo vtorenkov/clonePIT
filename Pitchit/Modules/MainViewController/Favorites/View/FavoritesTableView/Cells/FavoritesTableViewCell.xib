@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="397" height="89.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="w4X-7d-Jti">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_sample" translatesAutoresizingMaskIntoConstraints="NO" id="w4X-7d-Jti">
                         <rect key="frame" x="20" y="20.5" width="44" height="56"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="56" id="3RW-y0-IK1"/>
@@ -88,6 +88,6 @@
     </objects>
     <resources>
         <image name="heart" width="512" height="512"/>
-        <image name="sample" width="43" height="41"/>
+        <image name="table_sample" width="225" height="225"/>
     </resources>
 </document>

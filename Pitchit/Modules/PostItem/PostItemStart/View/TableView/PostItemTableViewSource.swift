@@ -92,13 +92,9 @@ final class PostItemTableViewDatasource: NSObject, PostItemTableViewDatasourcePr
             model = TextPitchTableViewCellModel(type:type, item: self.item)
         }
         
-        
         return tableView.dequeueReusableCell(with: model, for: indexPath)
-        
     }
-    
 }
-
 
 class PostItemTableViewDelegate: NSObject, UITableViewDelegate {
     var delegate: PostItemTableItemDelegate
@@ -111,7 +107,6 @@ class PostItemTableViewDelegate: NSObject, UITableViewDelegate {
         let type = AddItemCellType.allTypes[indexPath.row]
         
         switch type {
-            
         case .video:
             return kScreenHeight / 3
         case .nameText:
@@ -121,7 +116,7 @@ class PostItemTableViewDelegate: NSObject, UITableViewDelegate {
         case .locationText:
             return kScreenHeight / 5
         case .category:
-            return kScreenHeight / 7
+            return kScreenHeight / 4
         case .desc:
             return kScreenHeight / 5
         case .aditionalVideosPics:
@@ -133,8 +128,6 @@ class PostItemTableViewDelegate: NSObject, UITableViewDelegate {
         default:
             return UITableViewAutomaticDimension
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -34,6 +34,10 @@ extension UIColor {
         return UIColor(rgb: 0xfcfcfc)
     }
     
+    @nonobjc class var navBarColorItem: UIColor {
+        return UIColor(rgb: 0x4a4a4a)
+    }
+    
     @nonobjc class var searchBackColor: UIColor {
         return UIColor(rgb: 0xF8F7F7)
     }

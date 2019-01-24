@@ -17,7 +17,7 @@ extension CategoryPitchTableViewCell: CategoriesPostInteract {
         }
     }
 }
-   
+
 
 class CategoryPitchTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet var collectionView: UICollectionView!
@@ -25,7 +25,6 @@ class CategoryPitchTableViewCell: UITableViewCell, NibReusable {
     fileprivate var categoriesCollectionViewDatasource: CategoriesPostCollectionViewSource?
     fileprivate var categoriesCollectionViewDelegate: CategoriesPostDelegate?
     weak var item: ItemModel?
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +34,6 @@ class CategoryPitchTableViewCell: UITableViewCell, NibReusable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         self.categoriesCollectionViewDelegate = CategoriesPostDelegate(self, collectionView: collectionView)
         self.categoriesCollectionViewDatasource = CategoriesPostCollectionViewSource(collectionView: collectionView, delegate: self.categoriesCollectionViewDelegate!, delegateVC: self, currentCat: self.item?.type)
     }

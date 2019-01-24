@@ -65,7 +65,6 @@ class SetPasswordViewController: UIViewController {
         textFields.first!.isSecureTextEntry = !textFields.first!.isSecureTextEntry
     }
     
-    
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
         if newUser.passWordRepeat == newUser.passWord {

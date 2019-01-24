@@ -39,6 +39,7 @@ class PostItemDescViewController: UIViewController {
     weak var item: ItemModel?
     let imagePicker = UIImagePickerController()
     
+    @IBOutlet var closeItem: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -47,6 +48,10 @@ class PostItemDescViewController: UIViewController {
             self.addItemViewDelegate = ItemDescTableViewDelegate(self)
             self.addItemViewDatasource = ItemDescTableViewDatasource(tableView: tableView, delegate: self.addItemViewDelegate!, delegateVC: self, item: item)
         }
+        closeItem.setTitleTextAttributes([
+            NSAttributedStringKey.font : UIFont.mainFonSFUItMedium(ofSize: 17),
+            NSAttributedStringKey.foregroundColor : UIColor.navBarColorItem,
+            ], for: .normal)
     }
     
     @IBAction func closeAction(_ sender: Any) {

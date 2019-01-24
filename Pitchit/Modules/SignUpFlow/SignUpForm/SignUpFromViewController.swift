@@ -73,9 +73,7 @@ class SignUpFromViewController: UIViewController {
     }
 }
 
-
 extension SignUpFromViewController: UITextFieldDelegate{
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let type = SignUpType(rawValue: textField.tag){
             switch type {

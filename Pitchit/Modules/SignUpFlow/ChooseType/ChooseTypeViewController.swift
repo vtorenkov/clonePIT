@@ -12,10 +12,14 @@ class ChooseTypeViewController: UIViewController {
     var newUser = UserModel()
     @IBOutlet var gradientView: UIView!
 
+    @IBOutlet var businessBUtton: UIButton!
+    @IBOutlet var personalButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Choose Account Type"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        businessBUtton.roundCornersSmall()
+        personalButton.roundCornersSmall()
     }
     
     override func viewDidLayoutSubviews() {

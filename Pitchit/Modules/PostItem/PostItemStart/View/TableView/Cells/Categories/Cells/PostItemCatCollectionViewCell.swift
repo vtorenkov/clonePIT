@@ -9,16 +9,17 @@
 import UIKit
 
 class PostItemCatCollectionViewCell: UICollectionViewCell, NibReusable {
+    @IBOutlet var whiteDeselected: UIView!
     @IBOutlet var categoryName: UILabel!
     @IBOutlet var categoryImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        categoryName.font = UIFont.mainFonSFUItMedium(ofSize: 12)
     }
  
     static var reuseIdentifier: String { return "PostItemCatCollectionViewCell" }
     static var nib: UINib { return UINib(nibName: "PostItemCatCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
-    
 }
 
 struct PostItemCatCollectionViewCellModel {
@@ -30,11 +31,10 @@ extension PostItemCatCollectionViewCellModel: CellViewModel {
     func setup(cell: PostItemCatCollectionViewCell) {
         cell.categoryName.text = cat.name
         if cat.type == currentCat {
-            cell.categoryName.backgroundColor = UIColor.red
+            cell.whiteDeselected.alpha = 0.0
         } else {
-            cell.categoryName.backgroundColor = UIColor.white
+            cell.whiteDeselected.alpha = 0.5
         }
-        
         cell.categoryImage.image = cat.image
     }
 }
