@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,27 +92,17 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="EbT-zP-5cI">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="knS-md-3yx">
-                                    <rect key="frame" x="287" y="7" width="72" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="Filters"/>
-                                    <connections>
-                                        <action selector="openSettings:" destination="mNB-DM-GpY" eventType="touchUpInside" id="w9b-MG-XBi"/>
-                                    </connections>
-                                </button>
+                            <barButtonItem image="icons8-tune-filled-44" id="GOn-Vf-r91">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="openSettings:" destination="mNB-DM-GpY" id="fdz-bw-sNB"/>
+                                </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="wZV-m6-xn6">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="znp-MC-1E2" userLabel="Favorites">
-                                    <rect key="frame" x="187" y="7" width="92" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="Favorites"/>
-                                    <connections>
-                                        <action selector="openFavorites:" destination="mNB-DM-GpY" eventType="touchUpInside" id="NTt-T8-Eza"/>
-                                    </connections>
-                                </button>
+                            <barButtonItem image="icons8-christmas-star-50" id="oQY-86-Rkf">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="openFavorites:" destination="mNB-DM-GpY" id="BGP-uB-xTn"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -250,6 +240,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-christmas-star-50" width="25" height="25"/>
+        <image name="icons8-tune-filled-44" width="22" height="22"/>
         <image name="menu_icon" width="30" height="30"/>
     </resources>
 </document>

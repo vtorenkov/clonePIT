@@ -40,12 +40,14 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Edit" id="9cj-uA-0Jz">
+                            <barButtonItem image="icons8-settings-filled-50" id="9cj-uA-0Jz">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="editProfile:" destination="v7X-lP-450" id="Rje-bf-JdY"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Analytic" id="sZx-4J-X2f">
+                            <barButtonItem image="icons8-google-analytics-logo-filled-50" id="sZx-4J-X2f">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="showAnalytics:" destination="v7X-lP-450" id="lbn-d7-29m"/>
                                 </connections>
@@ -230,6 +232,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-google-analytics-logo-filled-50" width="25" height="25"/>
+        <image name="icons8-settings-filled-50" width="25" height="25"/>
         <image name="menu_icon" width="30" height="30"/>
     </resources>
 </document>
