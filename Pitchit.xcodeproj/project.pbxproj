@@ -61,8 +61,6 @@
 		FA7CD30621C99CA5008CD64D /* SelecterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7CD30421C99CA5008CD64D /* SelecterTableViewCell.xib */; };
 		FA7CD30921C99CC1008CD64D /* ShowResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CD30721C99CC1008CD64D /* ShowResultsTableViewCell.swift */; };
 		FA7CD30A21C99CC1008CD64D /* ShowResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7CD30821C99CC1008CD64D /* ShowResultsTableViewCell.xib */; };
-		FA810C4A211CB463003176A8 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810C48211CB463003176A8 /* PhotosCollectionViewCell.swift */; };
-		FA810C4B211CB463003176A8 /* PhotosCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA810C49211CB463003176A8 /* PhotosCollectionViewCell.xib */; };
 		FA810C4E211CB4C3003176A8 /* PhotosCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810C4C211CB4C2003176A8 /* PhotosCollectionViewProtocol.swift */; };
 		FA810C4F211CB4C3003176A8 /* PhotosCollectionViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810C4D211CB4C2003176A8 /* PhotosCollectionViewSource.swift */; };
 		FA810C52211CB6BE003176A8 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA810C50211CB6BE003176A8 /* MapTableViewCell.swift */; };
@@ -288,8 +286,6 @@
 		FA7CD30421C99CA5008CD64D /* SelecterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelecterTableViewCell.xib; sourceTree = "<group>"; };
 		FA7CD30721C99CC1008CD64D /* ShowResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultsTableViewCell.swift; sourceTree = "<group>"; };
 		FA7CD30821C99CC1008CD64D /* ShowResultsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowResultsTableViewCell.xib; sourceTree = "<group>"; };
-		FA810C48211CB463003176A8 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
-		FA810C49211CB463003176A8 /* PhotosCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA810C4C211CB4C2003176A8 /* PhotosCollectionViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewProtocol.swift; sourceTree = "<group>"; };
 		FA810C4D211CB4C2003176A8 /* PhotosCollectionViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewSource.swift; sourceTree = "<group>"; };
 		FA810C50211CB6BE003176A8 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
@@ -662,18 +658,8 @@
 			children = (
 				FA810C4C211CB4C2003176A8 /* PhotosCollectionViewProtocol.swift */,
 				FA810C4D211CB4C2003176A8 /* PhotosCollectionViewSource.swift */,
-				FA810C47211CB44F003176A8 /* Cell */,
 			);
 			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		FA810C47211CB44F003176A8 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				FA810C48211CB463003176A8 /* PhotosCollectionViewCell.swift */,
-				FA810C49211CB463003176A8 /* PhotosCollectionViewCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		FA810C5A21233AB8003176A8 /* TableView */ = {
@@ -1582,7 +1568,6 @@
 				FA810CB3212C8E1B003176A8 /* AdditionalCollectionViewCell.xib in Resources */,
 				FAF1A99621E51A0C00F5ABD1 /* HeaderTableViewCell.xib in Resources */,
 				FACC881E2100FBA100BBB31C /* CoverA.xib in Resources */,
-				FA810C4B211CB463003176A8 /* PhotosCollectionViewCell.xib in Resources */,
 				FA5D55552118D51D008CA265 /* AdditionalPhotosTableViewCell.xib in Resources */,
 				FACC883F210C785F00BBB31C /* ProfileTableViewCell.xib in Resources */,
 				FAE575F520EFCD700023383B /* PostItemController.storyboard in Resources */,
@@ -1849,7 +1834,6 @@
 				FA810CB8212DE54F003176A8 /* PostItemPresenter.swift in Sources */,
 				FA78386E21F507240033D8E7 /* UITextView+Extension.swift in Sources */,
 				FA9A032821E373BE00DF6C2C /* FavoritesTableViewSource.swift in Sources */,
-				FA810C4A211CB463003176A8 /* PhotosCollectionViewCell.swift in Sources */,
 				FAE5764220F123C20023383B /* NibLoadable.swift in Sources */,
 				FA810C8E212B486F003176A8 /* ItemConditionTableViewCellOld.swift in Sources */,
 				FA810CAA212C861B003176A8 /* ConditionsCollectionViewProtocol.swift in Sources */,

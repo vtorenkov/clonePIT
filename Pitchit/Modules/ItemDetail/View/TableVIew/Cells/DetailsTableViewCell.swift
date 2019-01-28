@@ -18,8 +18,14 @@ class DetailsTableViewCell: UITableViewCell, NibReusable {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        detailedText.textContainerInset = UIEdgeInsets.zero
+        detailedText.textContainer.lineFragmentPadding = 0
+    }
+    
     static var reuseIdentifier: String { return "DetailsTableViewCell" }
     static var nib: UINib { return UINib(nibName: "DetailsTableViewCell", bundle: nil) } // Use VeryCustomUI.xib
 }
@@ -32,7 +38,7 @@ extension DetailsTableViewCellModel: CellViewModel {
     func setup(cell: DetailsTableViewCell) {
         cell.item = item
         if let selectedItem = item {
-            cell.titleItem.text = selectedItem.title
+            cell.titleItem.text = "Details"
             cell.detailedText.text = selectedItem.desc
             cell.datePosted.text = selectedItem.dateOfPost
         }

@@ -23,6 +23,7 @@ class AdditionalPhotosTableViewCell: UITableViewCell, NibReusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.selectionStyle = .none
     }
     weak var item: ItemModel?
 

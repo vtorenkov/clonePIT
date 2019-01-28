@@ -11,8 +11,7 @@ import UIKit
 class TypeCollectionViewCell: UICollectionViewCell, NibReusable {
     
     @IBOutlet var typeButton: UIButton!
-//    @IBOutlet var typeLabel: UILabel!
-//    @IBOutlet var viewBackGround: UIView!
+
     var type: Types!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,7 +46,6 @@ extension TypeCollectionViewCellModel: CellViewModel {
         cell.typeButton.setTitle(type.rawValue, for: .normal)
         cell.typeButton.setTitleColor(UIColor.black, for: .normal)
         cell.typeButton.setTitleColor(UIColor.black, for: .selected)
-
     }
 }
 

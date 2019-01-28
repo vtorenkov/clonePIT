@@ -95,7 +95,7 @@ class ItemDetailsTableViewDelegate: NSObject, UITableViewDelegate {
         case .categoryCondition:
             return kScreenHeight/5
         case .additionalPhotos:
-            return kScreenHeight/5
+            return kScreenHeight/4
         case .map:
             return kScreenHeight/2
         case .buttons:

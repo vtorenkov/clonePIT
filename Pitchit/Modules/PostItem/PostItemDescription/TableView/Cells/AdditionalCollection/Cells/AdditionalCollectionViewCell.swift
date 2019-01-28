@@ -9,12 +9,18 @@
 import UIKit
 
 class AdditionalCollectionViewCell: UICollectionViewCell, NibReusable {
+    @IBOutlet var additionalPhoto: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    @IBOutlet var additionalPhoto: UIImageView!
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.additionalPhoto.setRoundedCorners()
+    }
+    
     static var reuseIdentifier: String { return "AdditionalCollectionViewCell" }
     static var nib: UINib { return UINib(nibName: "AdditionalCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
     

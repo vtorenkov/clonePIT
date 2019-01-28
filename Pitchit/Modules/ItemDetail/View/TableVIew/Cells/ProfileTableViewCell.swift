@@ -7,17 +7,18 @@
 //
 
 import UIKit
-
+import Cosmos
 class ProfileTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet var gradientView: UIView!
     weak var item: ItemModel?
     @IBOutlet var UserName: UILabel!
     @IBOutlet var profileAvatar: UIImageView!
+    @IBOutlet var starRate: CosmosView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
         profileAvatar.setRounded()
-        // Initialization code
     }
     
     override func layoutSubviews() {
@@ -31,8 +32,14 @@ class ProfileTableViewCell: UITableViewCell, NibReusable {
             let url = URL(string: user.imageUrl)
             profileAvatar.kf.setImage(with: url)
         }
+        
         profileAvatar.layoutIfNeeded() // iOS 10 Fix
         profileAvatar.setRounded()
+        
+        starRate.settings.starMargin = 0.0
+        starRate.settings.filledColor = UIColor.white
+        starRate.settings.filledBorderColor = UIColor.white
+        starRate.settings.emptyBorderColor = UIColor.white
 
         self.gradientView.addGradient()
     }
@@ -48,5 +55,6 @@ struct ProfileTableViewCellModel {
 extension ProfileTableViewCellModel: CellViewModel {
     func setup(cell: ProfileTableViewCell) {
         cell.item = item
+        cell.backgroundColor = UIColor.white
     }
 }

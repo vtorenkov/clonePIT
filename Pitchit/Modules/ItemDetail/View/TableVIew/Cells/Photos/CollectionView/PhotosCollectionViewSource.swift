@@ -44,7 +44,6 @@ final class PhotosCollectionDatasource: NSObject, PhotosCollectionDatasourceProt
         guard let itemPhoto = item?.additionImage[indexPath.row] else {
             return UICollectionViewCell()
         }
-        
         let model = AdditionalCollectionViewCellModel(image: itemPhoto)
         return collectionView.dequeueReusableCell(with: model, for: indexPath)
     }
