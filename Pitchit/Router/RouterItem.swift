@@ -18,12 +18,27 @@ class RouterItem {
         
     }()
     
+    func openAddOfferOrder(target: UIViewController, item: ItemModel?){
+        let storyboard = UIStoryboard(name: "AddOfferOrder", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "AddOfferOrderViewController") as? AddOfferOrderViewController {
+            controller.item = item
+            target.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    func openPurchaseOrder(target: UIViewController, item: ItemModel?){
+        let storyboard = UIStoryboard(name: "PurchaseOrder", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "PurchaseOrderViewController") as? PurchaseOrderViewController {
+            controller.item = item
+            target.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     
     func openItemInquire(target: UIViewController?, item: ItemModel?){
         let storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "InquireViewController") as? InquireViewController{
+        if let controller = storyboard.instantiateViewController(withIdentifier: "InquireViewController") as? InquireViewController {
             controller.item = item
-
             target?.navigationController?.pushViewController(controller, animated: true)
         }
     }

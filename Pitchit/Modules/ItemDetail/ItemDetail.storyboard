@@ -112,6 +112,9 @@
                                         <state key="normal" title="Message Seller">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="messageAction:" destination="MnB-7j-Glc" eventType="touchUpInside" id="Cfy-r3-ura"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgD-5Y-YoK">
                                         <rect key="frame" x="0.0" y="76.5" width="335" height="67"/>
@@ -119,6 +122,9 @@
                                         <state key="normal" title="Make an Offer">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="makeAnOffer:" destination="MnB-7j-Glc" eventType="touchUpInside" id="9Dm-QI-W0b"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -132,6 +138,9 @@
                                 <state key="normal" title="Purchase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="purchaseAction:" destination="MnB-7j-Glc" eventType="touchUpInside" id="DIq-zG-vuD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,6 +162,9 @@
                     </view>
                     <connections>
                         <outlet property="gradiendView" destination="c9h-7Y-n3T" id="PLY-Js-L4I"/>
+                        <outlet property="makeAnOffer" destination="qgD-5Y-YoK" id="Z8j-iK-hrl"/>
+                        <outlet property="messageSeller" destination="aNd-KF-H63" id="yNk-1B-ob4"/>
+                        <outlet property="purchaseButton" destination="lZS-Qt-FKH" id="Ybd-AZ-xQ3"/>
                         <outlet property="stackView" destination="GJS-5r-Y4Y" id="dUN-TS-RMD"/>
                     </connections>
                 </viewController>

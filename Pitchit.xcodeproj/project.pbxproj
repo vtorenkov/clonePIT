@@ -211,6 +211,10 @@
 		FAE5764220F123C20023383B /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5763B20F123C20023383B /* NibLoadable.swift */; };
 		FAE5764320F123C20023383B /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5763C20F123C20023383B /* NibOwnerLoadable.swift */; };
 		FAE5764520F1255A0023383B /* AnyCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5764420F125590023383B /* AnyCellProtocol.swift */; };
+		FAE5ECB3220F19E700768C6F /* AddOfferOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE5ECAC220F19E700768C6F /* AddOfferOrder.storyboard */; };
+		FAE5ECB4220F19E700768C6F /* AddOfferOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5ECAE220F19E700768C6F /* AddOfferOrderViewController.swift */; };
+		FAE5ECB5220F19E700768C6F /* PurchaseOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE5ECB0220F19E700768C6F /* PurchaseOrder.storyboard */; };
+		FAE5ECB6220F19E700768C6F /* PurchaseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE5ECB2220F19E700768C6F /* PurchaseOrderViewController.swift */; };
 		FAF1A99521E51A0C00F5ABD1 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A99321E51A0C00F5ABD1 /* HeaderTableViewCell.swift */; };
 		FAF1A99621E51A0C00F5ABD1 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF1A99421E51A0C00F5ABD1 /* HeaderTableViewCell.xib */; };
 		FAF1A99D21E55D0200F5ABD1 /* CatsCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1A99821E55D0100F5ABD1 /* CatsCollectionViewProtocol.swift */; };
@@ -450,6 +454,10 @@
 		FAE5763B20F123C20023383B /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		FAE5763C20F123C20023383B /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
 		FAE5764420F125590023383B /* AnyCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCellProtocol.swift; sourceTree = "<group>"; };
+		FAE5ECAC220F19E700768C6F /* AddOfferOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddOfferOrder.storyboard; sourceTree = "<group>"; };
+		FAE5ECAE220F19E700768C6F /* AddOfferOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOfferOrderViewController.swift; sourceTree = "<group>"; };
+		FAE5ECB0220F19E700768C6F /* PurchaseOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PurchaseOrder.storyboard; sourceTree = "<group>"; };
+		FAE5ECB2220F19E700768C6F /* PurchaseOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseOrderViewController.swift; sourceTree = "<group>"; };
 		FAF1A99321E51A0C00F5ABD1 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		FAF1A99421E51A0C00F5ABD1 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
 		FAF1A99821E55D0100F5ABD1 /* CatsCollectionViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatsCollectionViewProtocol.swift; sourceTree = "<group>"; };
@@ -1050,6 +1058,8 @@
 		FACC88202107951800BBB31C /* ItemDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FAE5ECAB220F19E700768C6F /* AddOfferOrder */,
+				FAE5ECAF220F19E700768C6F /* PurchaseOrder */,
 				FADB458621AABB9200304A45 /* Inquire */,
 				FACC8826210795ED00BBB31C /* View */,
 				FACC8824210795E900BBB31C /* ItemDetail.storyboard */,
@@ -1432,6 +1442,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FAE5ECAB220F19E700768C6F /* AddOfferOrder */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5ECAC220F19E700768C6F /* AddOfferOrder.storyboard */,
+				FAE5ECAD220F19E700768C6F /* View */,
+			);
+			path = AddOfferOrder;
+			sourceTree = "<group>";
+		};
+		FAE5ECAD220F19E700768C6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5ECAE220F19E700768C6F /* AddOfferOrderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAE5ECAF220F19E700768C6F /* PurchaseOrder */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5ECB0220F19E700768C6F /* PurchaseOrder.storyboard */,
+				FAE5ECB1220F19E700768C6F /* View */,
+			);
+			path = PurchaseOrder;
+			sourceTree = "<group>";
+		};
+		FAE5ECB1220F19E700768C6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5ECB2220F19E700768C6F /* PurchaseOrderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FAF1A99221E519E500F5ABD1 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -1597,6 +1641,7 @@
 				FA7CD30621C99CA5008CD64D /* SelecterTableViewCell.xib in Resources */,
 				FAE575D920EFCA470023383B /* LaunchScreen.storyboard in Resources */,
 				FA810CBB212F08C1003176A8 /* RecordVideo.storyboard in Resources */,
+				FAE5ECB3220F19E700768C6F /* AddOfferOrder.storyboard in Resources */,
 				FA86BF8B214D1C2A00B0B7AA /* Market Fresh ALL CAPS.ttf in Resources */,
 				FA9E6DA52199F99E00C22FD5 /* AnalyticsTableViewCell.xib in Resources */,
 				FA79F3BE2176500E005A9AEB /* DoubleTextTableViewCell.xib in Resources */,
@@ -1610,6 +1655,7 @@
 				FA86BF9A214E90F800B0B7AA /* SetPassword.storyboard in Resources */,
 				FAA0525821D3E74B003F960F /* RangeMinusPlusButtonsTableViewCell.xib in Resources */,
 				FA86BF90214D379800B0B7AA /* SignUpForm.storyboard in Resources */,
+				FAE5ECB5220F19E700768C6F /* PurchaseOrder.storyboard in Resources */,
 				FA7CD2FA21C99C62008CD64D /* RangeTableViewCell.xib in Resources */,
 				FA86BF76214C2C8C00B0B7AA /* ChooseType.storyboard in Resources */,
 				FA810C6B21233B47003176A8 /* UploadPItchTableViewCell.xib in Resources */,
@@ -1799,6 +1845,7 @@
 				FAA0525721D3E74B003F960F /* RangeMinusPlusButtonsTableViewCell.swift in Sources */,
 				FA810CD221370D7C003176A8 /* CategoriesViewController.swift in Sources */,
 				FAE5762920F120E90023383B /* PitchCollectionViewCell.swift in Sources */,
+				FAE5ECB6220F19E700768C6F /* PurchaseOrderViewController.swift in Sources */,
 				FAE5761C20F11C850023383B /* CategoriesCollectionViewProtocol.swift in Sources */,
 				FA810CA2212C860C003176A8 /* AdditionalCollectionViewSource.swift in Sources */,
 				FACC883A210C776B00BBB31C /* ButtonsTableViewCell.swift in Sources */,
@@ -1856,6 +1903,7 @@
 				FAE5764520F1255A0023383B /* AnyCellProtocol.swift in Sources */,
 				FA810C86212A0756003176A8 /* ItemDescTableViewSource.swift in Sources */,
 				FA810CC42132BC62003176A8 /* ItemManager.swift in Sources */,
+				FAE5ECB4220F19E700768C6F /* AddOfferOrderViewController.swift in Sources */,
 				FA0A12E821A73C190061F7AA /* ItemConditionTableViewCell.swift in Sources */,
 				FAF245482198852C00642F4C /* UISegmentControll+Extension.swift in Sources */,
 				FAE5763D20F123C20023383B /* StoryboardSceneBased.swift in Sources */,

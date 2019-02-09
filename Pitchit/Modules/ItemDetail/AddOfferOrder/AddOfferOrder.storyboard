@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Offer Order View Controller-->
+        <scene sceneID="fL0-0R-aOF">
+            <objects>
+                <viewController storyboardIdentifier="AddOfferOrderViewController" id="LKn-9f-uRZ" customClass="AddOfferOrderViewController" customModule="Pitchit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4i1-iD-sYL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NV-rg-Eie">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6NV-rg-Eie" firstAttribute="leading" secondItem="845-bG-1PR" secondAttribute="leading" id="b5g-n2-HTh"/>
+                            <constraint firstItem="6NV-rg-Eie" firstAttribute="top" secondItem="4i1-iD-sYL" secondAttribute="top" id="gCZ-au-T2S"/>
+                            <constraint firstItem="6NV-rg-Eie" firstAttribute="trailing" secondItem="845-bG-1PR" secondAttribute="trailing" id="h1A-rp-e3h"/>
+                            <constraint firstItem="6NV-rg-Eie" firstAttribute="bottom" secondItem="845-bG-1PR" secondAttribute="bottom" id="l4b-dL-oJf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="845-bG-1PR"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="gradientView" destination="6NV-rg-Eie" id="ePZ-B1-ems"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a61-BB-rKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+</document>
