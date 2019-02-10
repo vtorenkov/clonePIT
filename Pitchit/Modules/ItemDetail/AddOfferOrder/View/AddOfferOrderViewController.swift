@@ -12,6 +12,12 @@ class AddOfferOrderViewController: UIViewController {
     @IBOutlet var gradientView: UIView!
     weak var item: ItemModel?
 
+    @IBOutlet var termsConsButton: UIButton!
+    @IBOutlet var termsCondLabel: UILabel!
+    @IBOutlet var yourOfferTextField: UITextField!
+    @IBOutlet var yourOfferTitle: UILabel!
+    @IBOutlet var currentPrice: UILabel!
+    @IBOutlet var askingPrice: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.sendSubview(toBack: self.gradientView)
@@ -30,6 +36,19 @@ class AddOfferOrderViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.gradientView.addGradient()
+        setUpUI()
+    }
+    
+    func setUpUI() {
+        askingPrice.textColor = UIColor.white
+        termsCondLabel.textColor = UIColor.white
+        yourOfferTitle.textColor = UIColor.white
+        currentPrice.textColor = UIColor.white
+        currentPrice.roundCornersWhiteBorders()
+        yourOfferTextField.roundCornersSmall()
     }
 
+    @IBAction func termsConsAction(_ sender: Any) {
+      
+    }
 }

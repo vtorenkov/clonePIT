@@ -47,4 +47,11 @@ extension UIView {
         self.layer.cornerRadius = self.frame.width / 2
         self.layer.masksToBounds = true
     }
+    
+    func roundCornersWhiteBorders() {
+        self.layer.cornerRadius = 4
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.masksToBounds = true
+    }
 }

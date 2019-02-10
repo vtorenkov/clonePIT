@@ -9,6 +9,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIDisplay-Bold.ttf">
+            <string>SFUIDisplay-Bold</string>
+        </array>
+        <array key="SFUIDisplay-Light.ttf">
+            <string>SFUIDisplay-Light</string>
+        </array>
+        <array key="SFUIDisplay-Regular.ttf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Add Offer Order View Controller-->
         <scene sceneID="fL0-0R-aOF">
@@ -22,19 +33,101 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-uv-Ye9">
+                                <rect key="frame" x="20" y="580.5" width="335" height="66.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="MAKE AN OFFER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asking Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC4-ud-MgX">
+                                <rect key="frame" x="123.5" y="130" width="128.5" height="29"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Offer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyi-Z9-3Rm">
+                                <rect key="frame" x="135.5" y="266" width="104.5" height="29"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh4-C9-gcH">
+                                <rect key="frame" x="20" y="179" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Pjt-7H-TwA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuV-yw-R0s">
+                                <rect key="frame" x="20" y="403.5" width="13" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="dZO-tR-Yvd"/>
+                                    <constraint firstAttribute="width" constant="13" id="fWR-Ic-PHr"/>
+                                </constraints>
+                                <state key="normal" image="start"/>
+                                <connections>
+                                    <action selector="termsConsAction:" destination="LKn-9f-uRZ" eventType="touchUpInside" id="l9G-Ob-u4J"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8td-bB-s0t">
+                                <rect key="frame" x="20" y="315" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="d8u-Ka-Gf9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="27"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have reviewed and agree to the terms and conditions" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amJ-xN-wJu">
+                                <rect key="frame" x="60" y="385" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bUL-6D-W7b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="HuV-yw-R0s" firstAttribute="centerY" secondItem="amJ-xN-wJu" secondAttribute="centerY" id="0Yq-T4-aTc"/>
+                            <constraint firstItem="HuV-yw-R0s" firstAttribute="leading" secondItem="845-bG-1PR" secondAttribute="leading" constant="20" id="1kh-VC-OGd"/>
+                            <constraint firstItem="845-bG-1PR" firstAttribute="trailing" secondItem="8td-bB-s0t" secondAttribute="trailing" constant="20" id="5Po-It-Tr6"/>
+                            <constraint firstItem="8td-bB-s0t" firstAttribute="top" secondItem="wyi-Z9-3Rm" secondAttribute="bottom" constant="20" id="661-le-pSA"/>
+                            <constraint firstItem="845-bG-1PR" firstAttribute="trailing" secondItem="Jh4-C9-gcH" secondAttribute="trailing" constant="20" id="85b-fE-hBE"/>
+                            <constraint firstItem="8td-bB-s0t" firstAttribute="leading" secondItem="845-bG-1PR" secondAttribute="leading" constant="20" id="A67-cw-CKe"/>
+                            <constraint firstItem="845-bG-1PR" firstAttribute="bottom" secondItem="QU5-uv-Ye9" secondAttribute="bottom" constant="20" id="ItF-nW-c7Q"/>
+                            <constraint firstItem="QU5-uv-Ye9" firstAttribute="height" secondItem="6NV-rg-Eie" secondAttribute="height" multiplier="0.1" id="Ixn-gW-I9F"/>
+                            <constraint firstItem="wyi-Z9-3Rm" firstAttribute="centerX" secondItem="Jh4-C9-gcH" secondAttribute="centerX" id="Kb7-Cg-ke8"/>
+                            <constraint firstItem="dC4-ud-MgX" firstAttribute="centerX" secondItem="6NV-rg-Eie" secondAttribute="centerX" id="Tgp-pB-j7S"/>
+                            <constraint firstItem="dC4-ud-MgX" firstAttribute="top" secondItem="845-bG-1PR" secondAttribute="top" constant="66" id="Ucv-fi-YSV"/>
+                            <constraint firstItem="845-bG-1PR" firstAttribute="trailing" secondItem="QU5-uv-Ye9" secondAttribute="trailing" constant="20" id="aPV-jk-4PV"/>
                             <constraint firstItem="6NV-rg-Eie" firstAttribute="leading" secondItem="845-bG-1PR" secondAttribute="leading" id="b5g-n2-HTh"/>
+                            <constraint firstItem="amJ-xN-wJu" firstAttribute="top" secondItem="8td-bB-s0t" secondAttribute="bottom" constant="20" id="bwa-Gk-Wo9"/>
+                            <constraint firstItem="Jh4-C9-gcH" firstAttribute="top" secondItem="dC4-ud-MgX" secondAttribute="bottom" constant="20" id="gAi-lZ-3yO"/>
                             <constraint firstItem="6NV-rg-Eie" firstAttribute="top" secondItem="4i1-iD-sYL" secondAttribute="top" id="gCZ-au-T2S"/>
+                            <constraint firstItem="Jh4-C9-gcH" firstAttribute="leading" secondItem="845-bG-1PR" secondAttribute="leading" constant="20" id="gqV-qu-VsQ"/>
                             <constraint firstItem="6NV-rg-Eie" firstAttribute="trailing" secondItem="845-bG-1PR" secondAttribute="trailing" id="h1A-rp-e3h"/>
+                            <constraint firstItem="amJ-xN-wJu" firstAttribute="leading" secondItem="HuV-yw-R0s" secondAttribute="trailing" constant="27" id="jhE-kH-C3P"/>
+                            <constraint firstItem="wyi-Z9-3Rm" firstAttribute="top" secondItem="Jh4-C9-gcH" secondAttribute="bottom" constant="37" id="k4n-Ho-CA6"/>
                             <constraint firstItem="6NV-rg-Eie" firstAttribute="bottom" secondItem="845-bG-1PR" secondAttribute="bottom" id="l4b-dL-oJf"/>
+                            <constraint firstItem="QU5-uv-Ye9" firstAttribute="leading" secondItem="845-bG-1PR" secondAttribute="leading" constant="20" id="o2h-8Q-ABn"/>
+                            <constraint firstItem="845-bG-1PR" firstAttribute="trailing" secondItem="amJ-xN-wJu" secondAttribute="trailing" constant="20" id="sGt-F0-ITS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="845-bG-1PR"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="askingPrice" destination="dC4-ud-MgX" id="ae5-Vi-ma7"/>
+                        <outlet property="currentPrice" destination="Jh4-C9-gcH" id="GXa-Ax-ctr"/>
                         <outlet property="gradientView" destination="6NV-rg-Eie" id="ePZ-B1-ems"/>
+                        <outlet property="termsCondLabel" destination="amJ-xN-wJu" id="MsQ-aF-XP9"/>
+                        <outlet property="termsConsButton" destination="HuV-yw-R0s" id="kFj-Zm-vUJ"/>
+                        <outlet property="yourOfferTextField" destination="8td-bB-s0t" id="sef-6q-UQo"/>
+                        <outlet property="yourOfferTitle" destination="wyi-Z9-3Rm" id="uL3-eF-5Lc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a61-BB-rKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,4 +135,7 @@
             <point key="canvasLocation" x="52" y="124.58770614692655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="start" width="626" height="626"/>
+    </resources>
 </document>
