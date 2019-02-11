@@ -16,6 +16,9 @@
         <array key="SFUIDisplay-Light.ttf">
             <string>SFUIDisplay-Light</string>
         </array>
+        <array key="SFUIDisplay-Medium.ttf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
         <array key="SFUIDisplay-Regular.ttf">
             <string>SFUIDisplay-Regular</string>
         </array>
@@ -36,6 +39,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-uv-Ye9">
                                 <rect key="frame" x="20" y="580.5" width="335" height="66.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="15"/>
                                 <state key="normal" title="MAKE AN OFFER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -113,7 +117,7 @@
                             <constraint firstItem="6NV-rg-Eie" firstAttribute="trailing" secondItem="845-bG-1PR" secondAttribute="trailing" id="h1A-rp-e3h"/>
                             <constraint firstItem="amJ-xN-wJu" firstAttribute="leading" secondItem="HuV-yw-R0s" secondAttribute="trailing" constant="27" id="jhE-kH-C3P"/>
                             <constraint firstItem="wyi-Z9-3Rm" firstAttribute="top" secondItem="Jh4-C9-gcH" secondAttribute="bottom" constant="37" id="k4n-Ho-CA6"/>
-                            <constraint firstItem="6NV-rg-Eie" firstAttribute="bottom" secondItem="845-bG-1PR" secondAttribute="bottom" id="l4b-dL-oJf"/>
+                            <constraint firstItem="6NV-rg-Eie" firstAttribute="bottom" secondItem="4i1-iD-sYL" secondAttribute="bottom" id="l4b-dL-oJf"/>
                             <constraint firstItem="QU5-uv-Ye9" firstAttribute="leading" secondItem="845-bG-1PR" secondAttribute="leading" constant="20" id="o2h-8Q-ABn"/>
                             <constraint firstItem="845-bG-1PR" firstAttribute="trailing" secondItem="amJ-xN-wJu" secondAttribute="trailing" constant="20" id="sGt-F0-ITS"/>
                         </constraints>
@@ -132,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a61-BB-rKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="124.58770614692655"/>
+            <point key="canvasLocation" x="50" y="64"/>
         </scene>
     </scenes>
     <resources>

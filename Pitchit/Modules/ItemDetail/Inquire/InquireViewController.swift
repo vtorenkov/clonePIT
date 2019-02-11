@@ -40,6 +40,7 @@ class InquireViewController: UIViewController {
     }
     
     @IBAction func messageAction(_ sender: Any) {
+        Router.sharedInstance.openChat(target: self)
     }
     
     @IBAction func makeAnOffer(_ sender: Any) {
@@ -49,5 +50,9 @@ class InquireViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.gradiendView.addGradient()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }

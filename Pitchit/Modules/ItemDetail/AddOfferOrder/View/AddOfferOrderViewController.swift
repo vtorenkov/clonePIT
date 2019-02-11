@@ -51,4 +51,8 @@ class AddOfferOrderViewController: UIViewController {
     @IBAction func termsConsAction(_ sender: Any) {
       
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
