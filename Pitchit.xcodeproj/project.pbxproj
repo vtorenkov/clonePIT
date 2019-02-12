@@ -34,6 +34,8 @@
 		FA63053820FE6F6500F0777E /* ProfileTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63053620FE6F6400F0777E /* ProfileTableViewSource.swift */; };
 		FA63053B20FE6F6C00F0777E /* AvtarProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63053920FE6F6B00F0777E /* AvtarProfileTableViewCell.swift */; };
 		FA63053C20FE6F6C00F0777E /* AvtarProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */; };
+		FA6E9DD422135A4600D50B15 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */; };
+		FA6E9DD522135A4600D50B15 /* AddCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E9DD322135A4600D50B15 /* AddCard.storyboard */; };
 		FA78386E21F507240033D8E7 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78386D21F507240033D8E7 /* UITextView+Extension.swift */; };
 		FA79F3AD21750E4A005A9AEB /* RouterProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79F3AC21750E49005A9AEB /* RouterProfile.swift */; };
 		FA79F3B121750EAA005A9AEB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79F3B021750EAA005A9AEB /* EditProfileViewController.swift */; };
@@ -263,6 +265,8 @@
 		FA63053620FE6F6400F0777E /* ProfileTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewSource.swift; sourceTree = "<group>"; };
 		FA63053920FE6F6B00F0777E /* AvtarProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvtarProfileTableViewCell.swift; sourceTree = "<group>"; };
 		FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvtarProfileTableViewCell.xib; sourceTree = "<group>"; };
+		FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		FA6E9DD322135A4600D50B15 /* AddCard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCard.storyboard; sourceTree = "<group>"; };
 		FA78386D21F507240033D8E7 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		FA79F3AC21750E49005A9AEB /* RouterProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProfile.swift; sourceTree = "<group>"; };
 		FA79F3B021750EAA005A9AEB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -606,6 +610,23 @@
 				FAF2454121985A4800642F4C /* PersonalAccountTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA6E9DD022135A4600D50B15 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E9DD122135A4600D50B15 /* View */,
+				FA6E9DD322135A4600D50B15 /* AddCard.storyboard */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		FA6E9DD122135A4600D50B15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FA79F3AE21750E88005A9AEB /* EditProfile */ = {
@@ -1218,6 +1239,7 @@
 		FAE575E120EFCAE00023383B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FA6E9DD022135A4600D50B15 /* AddCard */,
 				FA86BF70214C2AB200B0B7AA /* SignUpFlow */,
 				FA4CA5C3214060750018C6B7 /* LogIn */,
 				FA810CD621370DCA003176A8 /* Support */,
@@ -1621,6 +1643,7 @@
 				FA810C6721233B39003176A8 /* CategoryPitchTableViewCell.xib in Resources */,
 				FA86BF8C214D1C2A00B0B7AA /* Market Fresh Inline Bold ALL CAPS.ttf in Resources */,
 				FAE575F020EFCD4A0023383B /* MainViewController.storyboard in Resources */,
+				FA6E9DD522135A4600D50B15 /* AddCard.storyboard in Resources */,
 				FA5D55512118D50A008CA265 /* CategoryConditionTableViewCell.xib in Resources */,
 				FA79F3C62176504F005A9AEB /* PaymentTableViewCell.xib in Resources */,
 				FAE5762620F120E40023383B /* CategoriesCollectionViewCell.xib in Resources */,
@@ -1943,6 +1966,7 @@
 				FA810CAB212C861B003176A8 /* ConditionsCollectionViewSource.swift in Sources */,
 				FACC881F2100FBA100BBB31C /* CoverA.swift in Sources */,
 				FA5D55542118D51D008CA265 /* AdditionalPhotosTableViewCell.swift in Sources */,
+				FA6E9DD422135A4600D50B15 /* AddCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

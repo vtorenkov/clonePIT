@@ -11,7 +11,7 @@ import UIKit
 class PurchaseOrderViewController: UIViewController {
     @IBOutlet var gradientView: UIView!
     weak var item: ItemModel?
-
+    
     @IBOutlet var termsConsButton: UIButton!
     @IBOutlet var termsCondLabel: UILabel!
     @IBOutlet var priceView: UIView!
@@ -19,18 +19,25 @@ class PurchaseOrderViewController: UIViewController {
     @IBOutlet var currentPrice: UILabel!
     @IBOutlet var confirmPurchase: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.sendSubview(toBack: self.gradientView)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.sendSubview(toBack: self.gradientView)
         if let item = self.item {
             self.title = item.title
         }
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItSemiBold(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let itemButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = itemButton
     }
     
     override func viewDidLayoutSubviews() {
@@ -54,5 +61,9 @@ class PurchaseOrderViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @IBAction func editCard(_ sender: Any) {
+        RouterItem.sharedInstance.openAddCard(target: self)
     }
 }

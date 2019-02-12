@@ -12,11 +12,16 @@ import UIKit
 class RouterItem {
     
     static let sharedInstance : RouterItem = {
-        
         let instance = RouterItem()
         return instance
-        
     }()
+    
+    func openAddCard(target: UIViewController){
+        let storyboard = UIStoryboard(name: "AddCard", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "AddCardViewController") as? AddCardViewController {
+            target.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
     
     func openAddOfferOrder(target: UIViewController, item: ItemModel?){
         let storyboard = UIStoryboard(name: "AddOfferOrder", bundle: nil)

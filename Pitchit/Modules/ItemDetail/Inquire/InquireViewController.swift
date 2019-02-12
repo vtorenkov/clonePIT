@@ -17,15 +17,18 @@ class InquireViewController: UIViewController {
     @IBOutlet var makeAnOffer: UIButton!
     @IBOutlet var messageSeller: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.sendSubview(toBack: self.gradiendView)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.sendSubview(toBack: self.gradiendView)
         stackView.roundCorners()
         purchaseButton.roundCornersButton()
         makeAnOffer.roundCornersButton()
