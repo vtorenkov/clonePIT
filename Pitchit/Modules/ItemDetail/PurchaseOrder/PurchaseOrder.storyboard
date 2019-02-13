@@ -180,6 +180,6 @@
     </scenes>
     <resources>
         <image name="start" width="626" height="626"/>
-        <image name="visa" width="16" height="16"/>
+        <image name="visa" width="280" height="180"/>
     </resources>
 </document>
