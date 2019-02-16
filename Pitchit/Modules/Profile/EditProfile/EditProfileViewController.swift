@@ -1,7 +1,7 @@
 //
 //  EditProfileViewController.swift
 //  Pitchit
-//
+//  test amend source tree - now will try to amend
 //  Created by Alex on 10/15/18.
 //  Copyright © 2018 Alexei Jovmir. All rights reserved.
 //
