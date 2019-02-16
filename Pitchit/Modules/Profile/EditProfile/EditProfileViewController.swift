@@ -19,7 +19,9 @@ class EditProfileViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
         self.editProfileTableViewDelegate = EditProfileTableViewDelegate(self)
         self.editProfileTableViewDatasource = EditProfileTableViewDatasource(tableView: tableView, delegate: self.editProfileTableViewDelegate!, delegateVC: self)
-
+        
+        let itemButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = itemButton
     }
     
     @IBAction func closeAction(_ sender: Any) {
@@ -28,5 +30,7 @@ class EditProfileViewController: UIViewController {
 }
 
 extension EditProfileViewController: EditProfileTableItemDelegate {
-    
+    func addPurchaseMethod() {
+        RouterItem.sharedInstance.openAddCard(target: self)
+    }
 }

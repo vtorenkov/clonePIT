@@ -10,6 +10,11 @@ import UIKit
 
 class AddCardViewController: UIViewController {
     @IBOutlet var cardTextField: UITextField!
+    @IBOutlet var cardDate: UITextField!
+    @IBOutlet var cardCVV: UITextField!
+    @IBOutlet var nameOnCard: UITextField!
+    @IBOutlet var billingZip: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add Card"
@@ -22,10 +27,14 @@ class AddCardViewController: UIViewController {
         button.backgroundColor = UIColor.black
         button.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
         cardTextField.inputAccessoryView = button
+        cardDate.inputAccessoryView = button
+        cardCVV.inputAccessoryView = button
+        nameOnCard.inputAccessoryView = button
+        billingZip.inputAccessoryView = button
     }
     
     @objc func saveAction() {
-        print("save")
+        self.view.endEditing(true)
     }
     
     override func willMove(toParentViewController parent: UIViewController?) {
