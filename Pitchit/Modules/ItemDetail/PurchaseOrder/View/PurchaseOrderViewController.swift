@@ -56,7 +56,7 @@ class PurchaseOrderViewController: UIViewController {
     }
     
     @IBAction func purchaseAction(_ sender: Any) {
-        
+        RouterItem.sharedInstance.openConfirmationScren(target: self)
     }
     
     override var prefersStatusBarHidden: Bool {

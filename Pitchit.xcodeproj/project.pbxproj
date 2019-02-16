@@ -36,6 +36,8 @@
 		FA63053C20FE6F6C00F0777E /* AvtarProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */; };
 		FA6E9DD422135A4600D50B15 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */; };
 		FA6E9DD522135A4600D50B15 /* AddCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E9DD322135A4600D50B15 /* AddCard.storyboard */; };
+		FA6E9DDA2218549C00D50B15 /* ConfirmPurchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E9DD92218549C00D50B15 /* ConfirmPurchase.storyboard */; };
+		FA6E9DDD221854B200D50B15 /* ConfirmPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E9DDC221854B200D50B15 /* ConfirmPurchaseViewController.swift */; };
 		FA78386E21F507240033D8E7 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78386D21F507240033D8E7 /* UITextView+Extension.swift */; };
 		FA79F3AD21750E4A005A9AEB /* RouterProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79F3AC21750E49005A9AEB /* RouterProfile.swift */; };
 		FA79F3B121750EAA005A9AEB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79F3B021750EAA005A9AEB /* EditProfileViewController.swift */; };
@@ -267,6 +269,8 @@
 		FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvtarProfileTableViewCell.xib; sourceTree = "<group>"; };
 		FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		FA6E9DD322135A4600D50B15 /* AddCard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCard.storyboard; sourceTree = "<group>"; };
+		FA6E9DD92218549C00D50B15 /* ConfirmPurchase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPurchase.storyboard; sourceTree = "<group>"; };
+		FA6E9DDC221854B200D50B15 /* ConfirmPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPurchaseViewController.swift; sourceTree = "<group>"; };
 		FA78386D21F507240033D8E7 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		FA79F3AC21750E49005A9AEB /* RouterProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProfile.swift; sourceTree = "<group>"; };
 		FA79F3B021750EAA005A9AEB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -625,6 +629,23 @@
 			isa = PBXGroup;
 			children = (
 				FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA6E9DD82218548200D50B15 /* ConfirmPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E9DDB221854A400D50B15 /* View */,
+				FA6E9DD92218549C00D50B15 /* ConfirmPurchase.storyboard */,
+			);
+			path = ConfirmPurchase;
+			sourceTree = "<group>";
+		};
+		FA6E9DDB221854A400D50B15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E9DDC221854B200D50B15 /* ConfirmPurchaseViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1079,6 +1100,7 @@
 		FACC88202107951800BBB31C /* ItemDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FA6E9DD82218548200D50B15 /* ConfirmPurchase */,
 				FAE5ECAB220F19E700768C6F /* AddOfferOrder */,
 				FAE5ECAF220F19E700768C6F /* PurchaseOrder */,
 				FADB458621AABB9200304A45 /* Inquire */,
@@ -1675,6 +1697,7 @@
 				FAA6A56921D502B000D6C3A1 /* TypeCollectionViewCell.xib in Resources */,
 				FAF1A9A021E55D0200F5ABD1 /* CatsCollectionViewCell.xib in Resources */,
 				FA5D554D2118D0A3008CA265 /* DetailsTableViewCell.xib in Resources */,
+				FA6E9DDA2218549C00D50B15 /* ConfirmPurchase.storyboard in Resources */,
 				FA86BF9A214E90F800B0B7AA /* SetPassword.storyboard in Resources */,
 				FAA0525821D3E74B003F960F /* RangeMinusPlusButtonsTableViewCell.xib in Resources */,
 				FA86BF90214D379800B0B7AA /* SignUpForm.storyboard in Resources */,
@@ -1926,6 +1949,7 @@
 				FAE5764520F1255A0023383B /* AnyCellProtocol.swift in Sources */,
 				FA810C86212A0756003176A8 /* ItemDescTableViewSource.swift in Sources */,
 				FA810CC42132BC62003176A8 /* ItemManager.swift in Sources */,
+				FA6E9DDD221854B200D50B15 /* ConfirmPurchaseViewController.swift in Sources */,
 				FAE5ECB4220F19E700768C6F /* AddOfferOrderViewController.swift in Sources */,
 				FA0A12E821A73C190061F7AA /* ItemConditionTableViewCell.swift in Sources */,
 				FAF245482198852C00642F4C /* UISegmentControll+Extension.swift in Sources */,

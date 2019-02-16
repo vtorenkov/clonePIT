@@ -16,6 +16,13 @@ class RouterItem {
         return instance
     }()
     
+    func openConfirmationScren(target: UIViewController){
+        let storyboard = UIStoryboard(name: "ConfirmPurchase", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "ConfirmPurchaseViewController") as? ConfirmPurchaseViewController {
+            target.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     func openAddCard(target: UIViewController){
         let storyboard = UIStoryboard(name: "AddCard", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "AddCardViewController") as? AddCardViewController {
