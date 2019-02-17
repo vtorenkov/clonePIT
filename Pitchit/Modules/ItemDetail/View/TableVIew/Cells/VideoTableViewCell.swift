@@ -1,7 +1,7 @@
 //
 //  UserCarUsTableViewCell.swift
 //
-//  Created by Alex Jovmir on 11/15/17.
+//  Created by Alexei Jovmir on 11/15/17.
 //
 
 import UIKit
