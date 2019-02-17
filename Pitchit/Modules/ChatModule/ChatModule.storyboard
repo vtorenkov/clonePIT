@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,21 +17,52 @@
                     <view key="view" contentMode="scaleToFill" id="rEY-Ws-y6C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RAI-TG-DJN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Buying"/>
+                                    <segment title="Selling"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchAction:" destination="uYa-mB-2LZ" eventType="valueChanged" id="d6v-hP-sdA"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s8P-kL-BGd">
+                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RAI-TG-DJN" firstAttribute="leading" secondItem="IhU-S4-uay" secondAttribute="leading" id="0zE-KD-ijb"/>
+                            <constraint firstItem="RAI-TG-DJN" firstAttribute="top" secondItem="IhU-S4-uay" secondAttribute="top" id="9dT-MD-K2q"/>
+                            <constraint firstItem="s8P-kL-BGd" firstAttribute="bottom" secondItem="IhU-S4-uay" secondAttribute="bottom" id="JCQ-LB-ecJ"/>
+                            <constraint firstItem="s8P-kL-BGd" firstAttribute="leading" secondItem="IhU-S4-uay" secondAttribute="leading" id="M1V-H0-TkR"/>
+                            <constraint firstItem="s8P-kL-BGd" firstAttribute="trailing" secondItem="IhU-S4-uay" secondAttribute="trailing" id="Oc9-sQ-hhP"/>
+                            <constraint firstItem="s8P-kL-BGd" firstAttribute="top" secondItem="RAI-TG-DJN" secondAttribute="bottom" id="WCG-EW-ZKe"/>
+                            <constraint firstItem="RAI-TG-DJN" firstAttribute="trailing" secondItem="IhU-S4-uay" secondAttribute="trailing" id="WdO-q8-uEK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IhU-S4-uay"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Esi-m6-ase">
-                        <barButtonItem key="rightBarButtonItem" title="Close" id="OuE-qB-RW8">
+                        <barButtonItem key="leftBarButtonItem" title="X" id="OuE-qB-RW8">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="uYa-mB-2LZ" id="wtq-22-cU1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="chatSegment" destination="RAI-TG-DJN" id="fVi-4a-pK2"/>
+                        <outlet property="tableView" destination="s8P-kL-BGd" id="693-6B-JPe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uI-cG-0WG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="96"/>
+            <point key="canvasLocation" x="109.59999999999999" y="95.802098950524751"/>
         </scene>
     </scenes>
 </document>
