@@ -12,8 +12,15 @@ class ChatViewController: UIViewController {
     @IBOutlet var chatSegment: UISegmentedControl!
     
     @IBOutlet var tableView: UITableView!
+    
+    fileprivate var chatTableViewDatasource: ChatTableViewDatasource?
+    fileprivate var chatTableViewDelegate: ChatTableViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        chatTableViewDelegate = ChatTableViewDelegate(self)
+        chatTableViewDatasource = ChatTableViewDatasource(tableView: tableView, delegate: chatTableViewDelegate!, delegateVC: self)
+        
         self.title = "Chat".uppercased()
         setup(segment: chatSegment)
     }
@@ -26,7 +33,9 @@ class ChatViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
-
+extension ChatViewController: ChatTableItemDelegate{
+    
+}
 
 extension ChatViewController {
     func setup(segment: UISegmentedControl) {

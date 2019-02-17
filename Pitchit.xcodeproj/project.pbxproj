@@ -138,6 +138,10 @@
 		FA86BF9C214E910900B0B7AA /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BF9B214E910900B0B7AA /* SetPasswordViewController.swift */; };
 		FA86BF9F215008C400B0B7AA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BF9E215008C400B0B7AA /* UserModel.swift */; };
 		FA86BFA12150092400B0B7AA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA86BFA02150092400B0B7AA /* UserManager.swift */; };
+		FA8E78EF221994DD00B23D1C /* ChatTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E78EA221994DC00B23D1C /* ChatTableViewProtocol.swift */; };
+		FA8E78F0221994DD00B23D1C /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E78EC221994DC00B23D1C /* ChatTableViewCell.swift */; };
+		FA8E78F1221994DD00B23D1C /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8E78ED221994DD00B23D1C /* ChatTableViewCell.xib */; };
+		FA8E78F2221994DD00B23D1C /* ChatTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E78EE221994DD00B23D1C /* ChatTableViewSource.swift */; };
 		FA96D5DB2152B7F500A04840 /* UserShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96D5DA2152B7F500A04840 /* UserShared.swift */; };
 		FA96D5E1215968CC00A04840 /* BussinesSignUpForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA96D5DF215968CC00A04840 /* BussinesSignUpForm.storyboard */; };
 		FA96D5E2215968CC00A04840 /* BussinesSignUpFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA96D5E0215968CC00A04840 /* BussinesSignUpFromViewController.swift */; };
@@ -380,6 +384,10 @@
 		FA86BF9B214E910900B0B7AA /* SetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		FA86BF9E215008C400B0B7AA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FA86BFA02150092400B0B7AA /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		FA8E78EA221994DC00B23D1C /* ChatTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewProtocol.swift; sourceTree = "<group>"; };
+		FA8E78EC221994DC00B23D1C /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		FA8E78ED221994DD00B23D1C /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		FA8E78EE221994DD00B23D1C /* ChatTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewSource.swift; sourceTree = "<group>"; };
 		FA96D5DA2152B7F500A04840 /* UserShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShared.swift; sourceTree = "<group>"; };
 		FA96D5DF215968CC00A04840 /* BussinesSignUpForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BussinesSignUpForm.storyboard; sourceTree = "<group>"; };
 		FA96D5E0215968CC00A04840 /* BussinesSignUpFromViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BussinesSignUpFromViewController.swift; sourceTree = "<group>"; };
@@ -874,8 +882,8 @@
 		FA810CC921370D18003176A8 /* ChatModule */ = {
 			isa = PBXGroup;
 			children = (
+				FA8E78E82219949200B23D1C /* View */,
 				FA810CCA21370D2C003176A8 /* ChatModule.storyboard */,
-				FA810CCC21370D3D003176A8 /* ChatViewController.swift */,
 			);
 			path = ChatModule;
 			sourceTree = "<group>";
@@ -984,6 +992,34 @@
 				FA86BF9E215008C400B0B7AA /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FA8E78E82219949200B23D1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA8E78E92219949C00B23D1C /* TableView */,
+				FA810CCC21370D3D003176A8 /* ChatViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA8E78E92219949C00B23D1C /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				FA8E78EB221994DC00B23D1C /* Cells */,
+				FA8E78EA221994DC00B23D1C /* ChatTableViewProtocol.swift */,
+				FA8E78EE221994DD00B23D1C /* ChatTableViewSource.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		FA8E78EB221994DC00B23D1C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA8E78EC221994DC00B23D1C /* ChatTableViewCell.swift */,
+				FA8E78ED221994DD00B23D1C /* ChatTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FA96D5DE2159687F00A04840 /* BussinesSignUp */ = {
@@ -1687,6 +1723,7 @@
 				FAE575D920EFCA470023383B /* LaunchScreen.storyboard in Resources */,
 				FA810CBB212F08C1003176A8 /* RecordVideo.storyboard in Resources */,
 				FAE5ECB3220F19E700768C6F /* AddOfferOrder.storyboard in Resources */,
+				FA8E78F1221994DD00B23D1C /* ChatTableViewCell.xib in Resources */,
 				FA86BF8B214D1C2A00B0B7AA /* Market Fresh ALL CAPS.ttf in Resources */,
 				FA9E6DA52199F99E00C22FD5 /* AnalyticsTableViewCell.xib in Resources */,
 				FA79F3BE2176500E005A9AEB /* DoubleTextTableViewCell.xib in Resources */,
@@ -1875,6 +1912,7 @@
 				FAE575FD20EFCDAC0023383B /* ProfileViewController.swift in Sources */,
 				FACC883E210C785F00BBB31C /* ProfileTableViewCell.swift in Sources */,
 				FA9A032921E373BE00DF6C2C /* FavoritesTableViewProtocol.swift in Sources */,
+				FA8E78F0221994DD00B23D1C /* ChatTableViewCell.swift in Sources */,
 				FA9A032721E373BE00DF6C2C /* FavoritesTableViewCell.swift in Sources */,
 				FA810C4E211CB4C3003176A8 /* PhotosCollectionViewProtocol.swift in Sources */,
 				FA63052B20F7BAEF00F0777E /* MenuTableViewSource.swift in Sources */,
@@ -1887,12 +1925,14 @@
 				FA3D5F3A21C05EB200B17AD9 /* FilterTableViewProtocol.swift in Sources */,
 				FACC882D2109013F00BBB31C /* ItemDetailsTableViewProtocol.swift in Sources */,
 				FA79F3C12176503A005A9AEB /* SingleTextTableViewCell.swift in Sources */,
+				FA8E78EF221994DD00B23D1C /* ChatTableViewProtocol.swift in Sources */,
 				FA7CD30921C99CC1008CD64D /* ShowResultsTableViewCell.swift in Sources */,
 				FAA0525721D3E74B003F960F /* RangeMinusPlusButtonsTableViewCell.swift in Sources */,
 				FA810CD221370D7C003176A8 /* CategoriesViewController.swift in Sources */,
 				FAE5762920F120E90023383B /* PitchCollectionViewCell.swift in Sources */,
 				FAE5ECB6220F19E700768C6F /* PurchaseOrderViewController.swift in Sources */,
 				FAE5761C20F11C850023383B /* CategoriesCollectionViewProtocol.swift in Sources */,
+				FA8E78F2221994DD00B23D1C /* ChatTableViewSource.swift in Sources */,
 				FA810CA2212C860C003176A8 /* AdditionalCollectionViewSource.swift in Sources */,
 				FACC883A210C776B00BBB31C /* ButtonsTableViewCell.swift in Sources */,
 				FAA6A56A21D502B000D6C3A1 /* TypeCollectionViewCell.swift in Sources */,
