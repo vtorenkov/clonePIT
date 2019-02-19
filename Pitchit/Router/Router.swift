@@ -12,11 +12,14 @@ import UIKit
 
 class Router {
     
+    enum RouterPresentationStyle {
+        case push
+        case present
+    }
+    
     static let sharedInstance : Router = {
-        
         let instance = Router()
         return instance
-        
     }()
     
     func openChooseType(target: UIViewController?){
@@ -58,13 +61,10 @@ class Router {
         }
     }
     
-  
-    
     func openSupport(target: UIViewController?){
         let storyboard = UIStoryboard(name: "SupportModule", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SupportViewController") as? SupportViewController{
             let navigationController = UINavigationController(rootViewController: controller)
-            
             target?.present(navigationController, animated: true, completion: nil)
         }
     }
@@ -87,38 +87,32 @@ class Router {
         }
     }
     
-    func openCategories(target: UIViewController?){
+    func openCategories(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "CategoriesModule", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as? CategoriesViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
     func openFilterView(target: UIViewController?, type: CategoryItemType) {
         let storyboard = UIStoryboard(name: "MainViewController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "FiltersViewController") as? FiltersViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
             controller.type = type
+            let navigationController = UINavigationController(rootViewController: controller)
             target?.present(navigationController, animated: true, completion: nil)
         }
-
     }
     
-    func openChat(target: UIViewController?){
+    func openChat(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "ChatModule", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController {
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
     func logOut(){
         let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "LogInScreenViewController") as? LogInScreenViewController{
-           
             let navigationController = UINavigationController(rootViewController: controller)
             UIApplication.shared.keyWindow?.rootViewController = navigationController
         }
@@ -128,6 +122,20 @@ class Router {
         let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController {
             UIApplication.shared.keyWindow?.rootViewController = controller
+        }
+    }
+    
+    func pushOrPresentController(target: UIViewController?, controller: UIViewController, presentationStyle: RouterPresentationStyle) {
+        switch presentationStyle {
+        case .present:
+            let navigationController = UINavigationController(rootViewController: controller)
+            target?.present(navigationController, animated: true, completion: nil)
+        case .push:
+            if let target = target as? UINavigationController {
+                target.pushViewController(controller, animated: true)
+            } else {
+                target?.navigationController?.pushViewController(controller, animated: true)
+            }
         }
     }
 }

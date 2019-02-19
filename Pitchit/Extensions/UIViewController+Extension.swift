@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    func closeProgramaticalyController() {
+        if (self.presentingViewController != nil) || self.navigationController?.presentingViewController?.presentedViewController == self.navigationController || self.tabBarController?.presentedViewController is UITabBarController {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+   
     func alertYesNo(title: String, message: String, completionHandler:@escaping (Bool) -> ()) {
         let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         

@@ -37,6 +37,6 @@ class CategoriesViewController: UIViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.closeProgramaticalyController()
     }
 }
