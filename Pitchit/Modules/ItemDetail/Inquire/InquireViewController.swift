@@ -43,7 +43,7 @@ class InquireViewController: UIViewController {
     }
     
     @IBAction func messageAction(_ sender: Any) {
-        Router.sharedInstance.openChat(target: self)
+        Router.sharedInstance.openChat(target: self, presentationStyle: .present)
     }
     
     @IBAction func makeAnOffer(_ sender: Any) {
