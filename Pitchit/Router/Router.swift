@@ -10,13 +10,7 @@ import Foundation
 import UIKit
 
 
-class Router {
-    
-    enum RouterPresentationStyle {
-        case push
-        case present
-    }
-    
+class Router: GlobalRouter {
     static let sharedInstance : Router = {
         let instance = Router()
         return instance
@@ -61,29 +55,24 @@ class Router {
         }
     }
     
-    func openSupport(target: UIViewController?){
+    func openSupport(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "SupportModule", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SupportViewController") as? SupportViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
-    func openInviteFriend(target: UIViewController?){
+    func openInviteFriend(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "InviteFriends", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "InviteFriendsViewController") as? InviteFriendsViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
-    func openSavedSearh(target: UIViewController?){
+    func openSavedSearh(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "SavedSearch", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SavedSearchViewController") as? SavedSearchViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
@@ -122,20 +111,6 @@ class Router {
         let storyboard = UIStoryboard(name: "TabBarController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController {
             UIApplication.shared.keyWindow?.rootViewController = controller
-        }
-    }
-    
-    func pushOrPresentController(target: UIViewController?, controller: UIViewController, presentationStyle: RouterPresentationStyle) {
-        switch presentationStyle {
-        case .present:
-            let navigationController = UINavigationController(rootViewController: controller)
-            target?.present(navigationController, animated: true, completion: nil)
-        case .push:
-            if let target = target as? UINavigationController {
-                target.pushViewController(controller, animated: true)
-            } else {
-                target?.navigationController?.pushViewController(controller, animated: true)
-            }
         }
     }
 }
