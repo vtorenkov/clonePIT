@@ -9,7 +9,28 @@
 import Foundation
 import UIKit
 
-class RouterItem {
+class GlobalRouter {
+    enum RouterPresentationStyle {
+        case push
+        case present
+    }
+    
+    func pushOrPresentController(target: UIViewController?, controller: UIViewController, presentationStyle: RouterPresentationStyle) {
+        switch presentationStyle {
+        case .present:
+            let navigationController = UINavigationController(rootViewController: controller)
+            target?.present(navigationController, animated: true, completion: nil)
+        case .push:
+            if let target = target as? UINavigationController {
+                target.pushViewController(controller, animated: true)
+            } else {
+                target?.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+    }
+}
+
+class RouterItem: GlobalRouter {
     
     static let sharedInstance : RouterItem = {
         let instance = RouterItem()
@@ -60,7 +81,6 @@ class RouterItem {
         if let controller = storyboard.instantiateViewController(withIdentifier: "ItemDetailsViewController") as? ItemDetailsViewController{
             controller.item = item
             let navigationController = UINavigationController(rootViewController: controller)
-            
             target?.present(navigationController, animated: true, completion: nil)
         }
     }
@@ -81,11 +101,10 @@ class RouterItem {
         }
     }
     
-    func openFavorites(target: UIViewController?){
+    func openFavorites(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "MainViewController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "FavoritesViewController") as? FavoritesViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
 }
