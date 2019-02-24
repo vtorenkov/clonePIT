@@ -12,15 +12,19 @@ import GooglePlaces
 import IQKeyboardManager
 import FBSDKLoginKit
 import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    let googleSignIn = "499607014353-tqd4bs3d0bvsq5647jst2b6chunkipsp.apps.googleusercontent.com"
+    
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.registerMenu()
         IQKeyboardManager.shared().isEnabled = true
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance().clientID = googleSignIn
+
         self.createItems()
         return true
     }
