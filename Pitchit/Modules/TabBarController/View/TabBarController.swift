@@ -49,12 +49,17 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         controllerProfile.title = "profile_title".localized()
         controllerProfile.tabBarItem = iconProfile
         
+        let iconMenu = UITabBarItem(title: "Menu", image: UIImage(named: "menu_icon"), selectedImage: UIImage(named: "menu_icon"))
+        let storyboardMenu = UIStoryboard(name: "Menu", bundle: nil)
+        let controllerMenu: MenuViewController = storyboardMenu.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        controllerMenu.title = "Menu"
+        controllerMenu.tabBarItem = iconMenu
+        
         self.tabBar.barTintColor = UIColor.black
         self.tabBar.tintColor = UIColor.white
         self.tabBar.unselectedItemTintColor = UIColor.lightGray
         
-        
-        let controllers = [controllerMain, controllerPost, controllerProfile]
+        let controllers = [controllerMain, controllerPost, controllerProfile, controllerMenu]
         let controllerWithNav = controllers.map { UINavigationController(rootViewController: $0) }
         viewControllers = controllerWithNav
         
@@ -64,5 +69,4 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             $0.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         }
     }
-    
 }

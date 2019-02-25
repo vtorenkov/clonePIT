@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 
 extension ProfileViewController: PitchCollectionInteract {
     func tapOnLike(item: ItemModel?) {
@@ -45,7 +44,6 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func showMenu(_ sender: Any) {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     @IBAction func editProfile(_ sender: Any) {

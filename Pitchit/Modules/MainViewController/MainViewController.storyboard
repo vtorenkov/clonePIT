@@ -85,12 +85,6 @@
                         <viewLayoutGuide key="safeArea" id="plC-2A-Dsw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="fEW-dy-XSV">
-                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="p7c-fq-ozQ">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="showMenu:" destination="mNB-DM-GpY" id="bd7-5p-DAK"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icons8-tune-filled-44" id="GOn-Vf-r91">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -242,6 +236,5 @@
     <resources>
         <image name="icons8-christmas-star-50" width="25" height="25"/>
         <image name="icons8-tune-filled-44" width="22" height="22"/>
-        <image name="menu_icon" width="30" height="30"/>
     </resources>
 </document>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Kingfisher
@@ -83,7 +82,6 @@ class MenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         if !UserShared.sharedInstance.user.imageUrl.isEmpty {
             let url = URL(string: UserShared.sharedInstance.user.imageUrl)
             avatarImage.kf.setImage(with: url)
@@ -97,6 +95,5 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func openEditProfile(_ sender: Any) {
-        SideMenuManager.default.menuLeftNavigationController?.dismiss(animated: true, completion: nil)
     }
 }
