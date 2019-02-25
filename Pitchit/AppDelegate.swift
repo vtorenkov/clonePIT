@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 import GooglePlaces
 import IQKeyboardManager
 import FBSDKLoginKit
@@ -20,12 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.registerMenu()
+        GMSPlacesClient.provideAPIKey("AIzaSyCY7_Tb4b_K82hGknYP3xwyhsuNJ85FbKU")
         IQKeyboardManager.shared().isEnabled = true
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         GIDSignIn.sharedInstance().clientID = googleSignIn
 
-        self.createItems()
+        createItems()
         return true
     }
     
@@ -34,17 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                          open: url,
                                                          sourceApplication: sourceApplication,
                                                          annotation: annotation)
-    }
-    
-    func registerMenu() {
-        let menuLeftNavigationController = UIStoryboard(name: "Menu", bundle: nil).instantiateViewController(withIdentifier: "UISideMenuNavigationController") as! UISideMenuNavigationController
-        
-        SideMenuManager.default.menuFadeStatusBar = false
-        SideMenuManager.default.menuPresentMode = .viewSlideInOut
-        SideMenuManager.default.menuShadowOpacity = 10.5
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        
-        GMSPlacesClient.provideAPIKey("AIzaSyCY7_Tb4b_K82hGknYP3xwyhsuNJ85FbKU")
     }
     
     func createItems() {
