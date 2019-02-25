@@ -50,7 +50,6 @@ PODS:
   - Player (0.8.4)
   - RangeSeekSlider (1.7.0)
   - SearchTextField (1.2.0)
-  - SideMenu (3.1.5)
   - SkyFloatingLabelTextField (3.5.2)
   - SwiftlySlider (0.7.1)
   - SwiftyJSON (4.1.0)
@@ -74,7 +73,6 @@ DEPENDENCIES:
   - Player
   - RangeSeekSlider
   - SearchTextField
-  - SideMenu
   - SkyFloatingLabelTextField
   - SwiftlySlider
   - SwiftyJSON
@@ -105,7 +103,6 @@ SPEC REPOS:
     - Player
     - RangeSeekSlider
     - SearchTextField
-    - SideMenu
     - SkyFloatingLabelTextField
     - SwiftlySlider
     - SwiftyJSON
@@ -135,11 +132,10 @@ SPEC CHECKSUMS:
   Player: e45514e9e5fb8ff18f50eb2ba6f84dac9b6a0024
   RangeSeekSlider: 0386c5a9aa5ebcb2fa5238e8a627280cf46c7c0a
   SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
-  SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SkyFloatingLabelTextField: f0672b67cd0e86abda946c0dc3b2fe8580767dbb
   SwiftlySlider: 1c9b3dd207a50b83983b29317e3247711d387e14
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 069efbf58cd5b105064c810565f8805419b89fec
+PODFILE CHECKSUM: b1bff25fad9c4af7edb69cbfaae1c3375c08a1da
 
 COCOAPODS: 1.5.3
