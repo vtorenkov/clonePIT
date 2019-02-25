@@ -60,6 +60,17 @@
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kf-DZ-yrp">
+                                <rect key="frame" x="35" y="486" width="305" height="53"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.34509803919999998" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
+                                <state key="normal" title="LOGIN WITH GOOGLE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonGoogle:" destination="lCb-H5-tv5" eventType="touchUpInside" id="A1E-IZ-tSH"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xJo-gM-Akt">
                                 <rect key="frame" x="35" y="309.5" width="305" height="53.5"/>
                                 <nil key="textColor"/>
@@ -84,7 +95,7 @@
                                     <action selector="loginButton:" destination="lCb-H5-tv5" eventType="touchUpInside" id="83V-9d-D3h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfC-NG-Cps">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfC-NG-Cps">
                                 <rect key="frame" x="86" y="620" width="203" height="27"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
                                 <state key="normal" title="DON’T HAVE AN ACCOUNT? SIGN UP">
@@ -101,6 +112,7 @@
                             <constraint firstItem="xJo-gM-Akt" firstAttribute="top" secondItem="Mxz-hr-T2a" secondAttribute="bottom" constant="16" id="0Kr-V4-kzp"/>
                             <constraint firstItem="Yup-TA-Qdm" firstAttribute="height" secondItem="Y3P-vu-3PN" secondAttribute="height" id="230-Z5-sOZ"/>
                             <constraint firstItem="Mxz-hr-T2a" firstAttribute="height" secondItem="KGi-bx-un4" secondAttribute="height" multiplier="0.08" id="3Er-J4-1JA"/>
+                            <constraint firstItem="3kf-DZ-yrp" firstAttribute="trailing" secondItem="Yup-TA-Qdm" secondAttribute="trailing" id="6ZN-8S-tGA"/>
                             <constraint firstItem="30W-e1-cRE" firstAttribute="top" secondItem="yZw-25-2CU" secondAttribute="bottom" constant="8" id="6qg-5O-3kI"/>
                             <constraint firstItem="xVB-c2-Gw5" firstAttribute="centerX" secondItem="Y3P-vu-3PN" secondAttribute="centerX" id="803-bh-Nub"/>
                             <constraint firstItem="Y3P-vu-3PN" firstAttribute="trailing" secondItem="xJo-gM-Akt" secondAttribute="trailing" id="9NH-N2-J16"/>
@@ -108,15 +120,18 @@
                             <constraint firstItem="xJo-gM-Akt" firstAttribute="leading" secondItem="Mxz-hr-T2a" secondAttribute="leading" id="CGy-4X-Mge"/>
                             <constraint firstItem="F4I-jX-GOp" firstAttribute="width" secondItem="KGi-bx-un4" secondAttribute="width" id="Ccu-oX-tae"/>
                             <constraint firstItem="F4I-jX-GOp" firstAttribute="height" secondItem="KGi-bx-un4" secondAttribute="height" id="D8w-ju-hDQ"/>
+                            <constraint firstItem="Yup-TA-Qdm" firstAttribute="top" secondItem="3kf-DZ-yrp" secondAttribute="bottom" constant="10.5" id="FeT-Eg-05v"/>
                             <constraint firstItem="yZw-25-2CU" firstAttribute="centerX" secondItem="30W-e1-cRE" secondAttribute="centerX" id="GbD-NE-jtw"/>
                             <constraint firstAttribute="bottom" secondItem="F4I-jX-GOp" secondAttribute="bottom" id="IaS-OL-Lvr"/>
                             <constraint firstItem="Yup-TA-Qdm" firstAttribute="width" secondItem="Y3P-vu-3PN" secondAttribute="width" id="Mpp-Op-QnE"/>
                             <constraint firstItem="xJo-gM-Akt" firstAttribute="trailing" secondItem="Mxz-hr-T2a" secondAttribute="trailing" id="Ob4-sr-sdC"/>
+                            <constraint firstItem="3kf-DZ-yrp" firstAttribute="top" secondItem="xVB-c2-Gw5" secondAttribute="bottom" constant="7" id="P7G-Zy-esC"/>
                             <constraint firstItem="Mxz-hr-T2a" firstAttribute="top" secondItem="30W-e1-cRE" secondAttribute="bottom" constant="40" id="PLP-hQ-MPF"/>
                             <constraint firstItem="Mxz-hr-T2a" firstAttribute="leading" secondItem="k0f-Ci-o6z" secondAttribute="leading" constant="35" id="QPo-uM-kOn"/>
                             <constraint firstItem="F4I-jX-GOp" firstAttribute="top" secondItem="KGi-bx-un4" secondAttribute="top" id="ROs-lU-Hbd"/>
                             <constraint firstItem="xJo-gM-Akt" firstAttribute="height" secondItem="Mxz-hr-T2a" secondAttribute="height" id="RlN-XF-HpS"/>
                             <constraint firstItem="xVB-c2-Gw5" firstAttribute="top" secondItem="Y3P-vu-3PN" secondAttribute="bottom" constant="20" id="SVl-Ao-gVY"/>
+                            <constraint firstItem="3kf-DZ-yrp" firstAttribute="leading" secondItem="Yup-TA-Qdm" secondAttribute="leading" id="SoI-b9-WVR"/>
                             <constraint firstItem="F4I-jX-GOp" firstAttribute="leading" secondItem="KGi-bx-un4" secondAttribute="leading" id="TtS-lW-I2s"/>
                             <constraint firstItem="Y3P-vu-3PN" firstAttribute="leading" secondItem="xJo-gM-Akt" secondAttribute="leading" id="aGA-k1-eRd"/>
                             <constraint firstItem="gfC-NG-Cps" firstAttribute="top" secondItem="Yup-TA-Qdm" secondAttribute="bottom" constant="17" id="aLM-dq-lSq"/>
@@ -127,6 +142,7 @@
                             <constraint firstItem="k0f-Ci-o6z" firstAttribute="trailing" secondItem="Mxz-hr-T2a" secondAttribute="trailing" constant="35" id="hYc-az-VJt"/>
                             <constraint firstItem="gfC-NG-Cps" firstAttribute="centerX" secondItem="k0f-Ci-o6z" secondAttribute="centerX" id="qyP-87-d9m"/>
                             <constraint firstItem="yZw-25-2CU" firstAttribute="width" secondItem="F4I-jX-GOp" secondAttribute="width" multiplier="0.2" id="sSy-Ja-zYv"/>
+                            <constraint firstItem="3kf-DZ-yrp" firstAttribute="height" secondItem="Yup-TA-Qdm" secondAttribute="height" id="tSz-9o-wzt"/>
                             <constraint firstItem="Y3P-vu-3PN" firstAttribute="top" secondItem="xJo-gM-Akt" secondAttribute="bottom" constant="16" id="vTV-LP-QOQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k0f-Ci-o6z"/>

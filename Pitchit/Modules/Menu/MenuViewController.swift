@@ -11,6 +11,7 @@ import SideMenu
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Kingfisher
+import GoogleSignIn
 
 extension MenuViewController: MenuTableItemDelegate {
     func didClickMenu(type: MenuType) {
@@ -33,13 +34,20 @@ extension MenuViewController: MenuTableItemDelegate {
             self.alertYesNo(title: "Log out", message: "Are you sure you want to log out?") { (yes) in
                 if yes {
                     self.dismiss(animated: false, completion: {
-                        let loginManager = FBSDKLoginManager()
-                        loginManager.logOut()
-                        FBSDKAccessToken.setCurrent(nil)
-                        
-                        UserShared.sharedInstance.user = UserModel()
-                        UserManager.deletePass()
-                        Router.sharedInstance.logOut()
+                        if (FBSDKAccessToken.current() != nil) {
+                            let loginManager = FBSDKLoginManager()
+                            loginManager.logOut()
+                            FBSDKAccessToken.setCurrent(nil)
+                            
+                            UserShared.sharedInstance.user = UserModel()
+                            UserManager.deletePass()
+                            Router.sharedInstance.logOut()
+                        } else if (GIDSignIn.sharedInstance()?.currentUser != nil) {
+                            GIDSignIn.sharedInstance().signOut()
+                            Router.sharedInstance.logOut()
+                        } else {
+                            Router.sharedInstance.logOut()
+                        }
                     })
                 }
             }
@@ -91,5 +99,4 @@ class MenuViewController: UIViewController {
     @IBAction func openEditProfile(_ sender: Any) {
         SideMenuManager.default.menuLeftNavigationController?.dismiss(animated: true, completion: nil)
     }
-    
 }

@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import SwiftyJSON
+import GoogleSignIn
 
 class LogInScreenViewController: UIViewController {
     @IBOutlet var emailText: UITextField!
@@ -45,6 +46,8 @@ class LogInScreenViewController: UIViewController {
             Router.sharedInstance.goToMainPage()
         } else if (FBSDKAccessToken.current() != nil) {
             self.fetchUserProfile()
+        } else if (GIDSignIn.sharedInstance()?.currentUser != nil) {
+            Router.sharedInstance.goToMainPage()
         }
     }
     
@@ -56,9 +59,6 @@ class LogInScreenViewController: UIViewController {
         Router.sharedInstance.openChooseType(target: self)
     }
     
-    @IBAction func getFaceBookLogin(_ sender: Any) {
-    }
-    
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("login")
     }
@@ -67,6 +67,12 @@ class LogInScreenViewController: UIViewController {
         if let _ = FBSDKAccessToken.current() {
             self.fetchUserProfile()
         }
+    }
+    
+    @IBAction func loginButtonGoogle(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
@@ -87,7 +93,6 @@ class LogInScreenViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 let json = JSON(result)
-                print(json)
                 UserShared.sharedInstance.user = UserModel(json: json)
                 Router.sharedInstance.goToMainPage()
             }
@@ -109,5 +114,11 @@ class LogInScreenViewController: UIViewController {
         let paddingViewSecond: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 27, height: 20))
         emailText.leftView = paddingViewSecond
         emailText.leftViewMode = .always
+    }
+}
+
+extension LogInScreenViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        Router.sharedInstance.goToMainPage()
     }
 }

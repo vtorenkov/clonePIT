@@ -28,5 +28,6 @@ pod 'KMPlaceholderTextView', '~> 1.4.0'
 pod 'DropDown'
 pod 'SwiftlySlider'
 pod 'RangeSeekSlider'
+pod 'GoogleSignIn'
 
 end
