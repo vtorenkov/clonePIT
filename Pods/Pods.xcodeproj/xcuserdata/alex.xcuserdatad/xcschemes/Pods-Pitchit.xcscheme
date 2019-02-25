@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55D55A5FE5F908F7CAF4723312B8C6CE"
+               BlueprintIdentifier = "5580FBBC199DD0CDAD690052CFC4A33F"
                BuildableName = "Pods_Pitchit.framework"
                BlueprintName = "Pods-Pitchit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55D55A5FE5F908F7CAF4723312B8C6CE"
+            BlueprintIdentifier = "5580FBBC199DD0CDAD690052CFC4A33F"
             BuildableName = "Pods_Pitchit.framework"
             BlueprintName = "Pods-Pitchit"
             ReferencedContainer = "container:Pods.xcodeproj">
