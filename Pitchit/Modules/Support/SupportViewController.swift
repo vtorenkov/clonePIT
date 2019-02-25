@@ -27,7 +27,7 @@ class SupportViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        closeProgramaticalyController()
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

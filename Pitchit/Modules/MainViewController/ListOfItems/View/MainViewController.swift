@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 
 extension MainViewController: CategoriesCollectionInteract {
     func selectCategory(category: CategoryItemType) {
@@ -87,10 +86,6 @@ class MainViewController: UIViewController {
     
     @IBAction func openFavorites(_ sender: Any) {
         RouterItem.sharedInstance.openFavorites(target: self)
-    }
-    
-    @IBAction func showMenu(_ sender: Any) {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
 }
 

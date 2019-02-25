@@ -20,7 +20,6 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         chatTableViewDelegate = ChatTableViewDelegate(self)
         chatTableViewDatasource = ChatTableViewDatasource(tableView: tableView, delegate: chatTableViewDelegate!, delegateVC: self)
-        
         self.title = "Chat".uppercased()
         setup(segment: chatSegment)
     }
@@ -28,11 +27,12 @@ class ChatViewController: UIViewController {
     @IBAction func switchAction(_ sender: Any) {
         chatSegment.changeUnderlinePosition()
     }
-   
+    
     @IBAction func closeAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.closeProgramaticalyController()
     }
 }
+
 extension ChatViewController: ChatTableItemDelegate{
     
 }

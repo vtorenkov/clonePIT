@@ -26,6 +26,6 @@ class InviteFriendsViewController: UIViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        closeProgramaticalyController()
     }
 }

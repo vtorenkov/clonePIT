@@ -10,13 +10,10 @@ import Foundation
 import UIKit
 
 
-class Router {
-    
+class Router: GlobalRouter {
     static let sharedInstance : Router = {
-        
         let instance = Router()
         return instance
-        
     }()
     
     func openChooseType(target: UIViewController?){
@@ -58,67 +55,53 @@ class Router {
         }
     }
     
-  
-    
-    func openSupport(target: UIViewController?){
+    func openSupport(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "SupportModule", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SupportViewController") as? SupportViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
-    func openInviteFriend(target: UIViewController?){
+    func openInviteFriend(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "InviteFriends", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "InviteFriendsViewController") as? InviteFriendsViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
-    func openSavedSearh(target: UIViewController?){
+    func openSavedSearh(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "SavedSearch", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SavedSearchViewController") as? SavedSearchViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
-    func openCategories(target: UIViewController?){
+    func openCategories(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "CategoriesModule", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as? CategoriesViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
     func openFilterView(target: UIViewController?, type: CategoryItemType) {
         let storyboard = UIStoryboard(name: "MainViewController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "FiltersViewController") as? FiltersViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
             controller.type = type
+            let navigationController = UINavigationController(rootViewController: controller)
             target?.present(navigationController, animated: true, completion: nil)
         }
-
     }
     
-    func openChat(target: UIViewController?){
+    func openChat(target: UIViewController?, presentationStyle: RouterPresentationStyle = .push){
         let storyboard = UIStoryboard(name: "ChatModule", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController{
-            let navigationController = UINavigationController(rootViewController: controller)
-            
-            target?.present(navigationController, animated: true, completion: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController {
+            pushOrPresentController(target: target, controller: controller, presentationStyle: presentationStyle)
         }
     }
     
     func logOut(){
         let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "LogInScreenViewController") as? LogInScreenViewController{
-           
             let navigationController = UINavigationController(rootViewController: controller)
             UIApplication.shared.keyWindow?.rootViewController = navigationController
         }
