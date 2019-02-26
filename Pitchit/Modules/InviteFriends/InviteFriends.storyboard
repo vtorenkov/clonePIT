@@ -48,7 +48,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="155.5" height="126.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FACEBOOK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWt-zI-fK3">
-                                                        <rect key="frame" x="45.5" y="98.5" width="64.5" height="14"/>
+                                                        <rect key="frame" x="47" y="98" width="61.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                                 <rect key="frame" x="175.5" y="0.0" width="155.5" height="126.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TWITTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psw-F4-TMY">
-                                                        <rect key="frame" x="52.5" y="98.5" width="50.5" height="14"/>
+                                                        <rect key="frame" x="53" y="98" width="50" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -107,7 +107,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="155.5" height="126.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNAP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXR-Mj-v9C">
-                                                        <rect key="frame" x="62" y="98.5" width="32" height="14"/>
+                                                        <rect key="frame" x="62.5" y="98" width="31" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                                                 <rect key="frame" x="175.5" y="0.0" width="155.5" height="126.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVI-j7-xwq">
-                                                        <rect key="frame" x="60" y="98.5" width="35.5" height="14"/>
+                                                        <rect key="frame" x="61" y="98" width="34" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -183,7 +183,7 @@
                         <viewLayoutGuide key="safeArea" id="Uac-aR-UfR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="VFG-AW-Uz5">
-                        <barButtonItem key="leftBarButtonItem" title="X" id="vBQ-UJ-cSQ">
+                        <barButtonItem key="leftBarButtonItem" image="backButton" id="vBQ-UJ-cSQ">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="1m2-RG-Tab" id="Snd-kG-7mt"/>
@@ -202,6 +202,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backButton" width="25" height="25"/>
         <image name="facebook" width="32" height="32"/>
         <image name="twitter" width="34" height="28"/>
     </resources>

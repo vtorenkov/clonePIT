@@ -34,7 +34,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="HiK-kz-8wj">
-                        <barButtonItem key="leftBarButtonItem" title="X" id="nDA-qg-dzD">
+                        <barButtonItem key="leftBarButtonItem" image="backButton" id="nDA-qg-dzD">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="3LQ-B3-VXA" id="VBk-Ju-pFY"/>
@@ -52,4 +52,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="88.605697151424295"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backButton" width="25" height="25"/>
+    </resources>
 </document>

@@ -29,7 +29,7 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        self.closeProgramaticalyController()
+        closeProgramaticalyController()
     }
 }
 

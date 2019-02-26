@@ -30,7 +30,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s8P-kL-BGd">
-                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -41,13 +41,13 @@
                             <constraint firstItem="s8P-kL-BGd" firstAttribute="bottom" secondItem="IhU-S4-uay" secondAttribute="bottom" id="JCQ-LB-ecJ"/>
                             <constraint firstItem="s8P-kL-BGd" firstAttribute="leading" secondItem="IhU-S4-uay" secondAttribute="leading" id="M1V-H0-TkR"/>
                             <constraint firstItem="s8P-kL-BGd" firstAttribute="trailing" secondItem="IhU-S4-uay" secondAttribute="trailing" id="Oc9-sQ-hhP"/>
-                            <constraint firstItem="s8P-kL-BGd" firstAttribute="top" secondItem="RAI-TG-DJN" secondAttribute="bottom" id="WCG-EW-ZKe"/>
+                            <constraint firstItem="s8P-kL-BGd" firstAttribute="top" secondItem="RAI-TG-DJN" secondAttribute="bottom" constant="4" id="WCG-EW-ZKe"/>
                             <constraint firstItem="RAI-TG-DJN" firstAttribute="trailing" secondItem="IhU-S4-uay" secondAttribute="trailing" id="WdO-q8-uEK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IhU-S4-uay"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Esi-m6-ase">
-                        <barButtonItem key="leftBarButtonItem" title="X" id="OuE-qB-RW8">
+                        <barButtonItem key="leftBarButtonItem" image="backButton" id="OuE-qB-RW8">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="uYa-mB-2LZ" id="wtq-22-cU1"/>
@@ -65,4 +65,7 @@
             <point key="canvasLocation" x="109.59999999999999" y="95.802098950524751"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backButton" width="25" height="25"/>
+    </resources>
 </document>
