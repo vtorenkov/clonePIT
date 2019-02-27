@@ -32,14 +32,16 @@ final class ChatTableViewDatasource: NSObject, ChatTableViewDatasourceProtocol {
         self.setupTableView()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ProfileType.allTypes.count
+        return chatModels?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var model = ChatTableViewCellModel()
-        return tableView.dequeueReusableCell(with: model, for: indexPath)
+        if let model = chatModels?[indexPath.row] {
+            let model = ChatTableViewCellModel(chatModel: model)
+            return tableView.dequeueReusableCell(with: model, for: indexPath)
+        }
+        return UITableViewCell()
     }
 }
 

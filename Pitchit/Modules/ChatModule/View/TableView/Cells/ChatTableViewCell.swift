@@ -18,9 +18,12 @@ class ChatTableViewCell: UITableViewCell, NibReusable {
 }
 
 struct ChatTableViewCellModel {
+    var chatModel: ChatModel
 }
 
 extension ChatTableViewCellModel: CellViewModel {
     func setup(cell: ChatTableViewCell) {
+        print(chatModel.name)
+        print(chatModel.statusChat.rawValue)
     }
 }
