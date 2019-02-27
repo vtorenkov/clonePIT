@@ -14,19 +14,27 @@ struct ChatModel:Codable {
         case undreaded
     }
     
+    enum OfferType: String, Codable {
+        case buying
+        case selling
+    }
+    
     var name: String
     var statusChat: StatusChat
+    var offerType: OfferType
 }
 
 //MARK: mock chat models, just for testing.
 let json = """
 [{
 "name": "Item for sale 1",
-"statusChat": "readed"
+"statusChat": "readed",
+"offerType": "buying"
 },
 {
 "name": "Item for sale 2",
-"statusChat": "undreaded"
+"statusChat": "undreaded",
+"offerType": "selling"
 }
 ]
 """
