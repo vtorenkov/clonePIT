@@ -11,6 +11,16 @@ class ChatTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var readUnreadLabel: UIView!
     
+    @IBOutlet weak var chatName: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    //MARK: stack view with offerTypeView and lastMessageVIew views, progra,aticaly will remove one of them if needed
+    @IBOutlet weak var stackViewMain: UIStackView!
+    @IBOutlet weak var offerTypeView: UIView!
+    @IBOutlet weak var lastMessageVIew: UIView!
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var offerTypeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,16 +42,22 @@ struct ChatTableViewCellModel {
 
 extension ChatTableViewCellModel: CellViewModel {
     func setup(cell: ChatTableViewCell) {
-        print(chatModel.name)
-        print(chatModel.statusChat.rawValue)
+        cell.chatName.text = chatModel.name
+        cell.timeLabel.text = chatModel.time
         
-        switch chatModel.offerType {
-        case .buying:
-            break
-        case .selling:
-            break
+        if chatModel.isFuture {
+            cell.priceLabel.text = "\(chatModel.price)" + "$"
+            switch chatModel.offerType {
+            case .buying:
+                cell.offerTypeLabel.text = "buying"
+            case .selling:
+                cell.offerTypeLabel.text = "selling"
+            }
+        } else {
+            cell.stackViewMain.removeArrangedSubview(cell.offerTypeView)
+
         }
-        
+    
         switch chatModel.statusChat {
         case .readed:
             cell.readUnreadLabel.isHidden = true

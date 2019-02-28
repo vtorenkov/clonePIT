@@ -33,15 +33,13 @@ final class ChatTableViewDatasource: NSObject, ChatTableViewDatasourceProtocol {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatModels?.count ?? 0
+        return chatModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let model = chatModels?[indexPath.row] {
-            let model = ChatTableViewCellModel(chatModel: model)
-            return tableView.dequeueReusableCell(with: model, for: indexPath)
-        }
-        return UITableViewCell()
+        let model = chatModels[indexPath.row]
+        let modelCell = ChatTableViewCellModel(chatModel: model)
+        return tableView.dequeueReusableCell(with: modelCell, for: indexPath)
     }
 }
 

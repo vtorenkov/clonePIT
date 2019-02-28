@@ -20,25 +20,35 @@ struct ChatModel:Codable {
     }
     
     var name: String
+    var time: String
     var statusChat: StatusChat
     var offerType: OfferType
+    var isFuture: Bool
+    var price: Double
 }
 
 //MARK: mock chat models, just for testing.
 let json = """
 [{
-"name": "Item for sale 1",
+"name": "Mid century lounge chair and more desc",
 "statusChat": "readed",
-"offerType": "buying"
+"time": "12:50 PM",
+"offerType": "buying",
+"isFuture": false,
+"price": 105.6
 },
 {
-"name": "Item for sale 2",
+"name": "Mid century lounge chair and more desc 2",
 "statusChat": "undreaded",
-"offerType": "selling"
+"time": "Yesterday",
+"offerType": "selling",
+"isFuture": true,
+"price": 99.9
 }
 ]
 """
 
 let data = json.data(using: .utf8)
-let chatModels = try? JSONDecoder().decode([ChatModel].self, from: data!)
+var chatModelsSimple = try? JSONDecoder().decode([ChatModel].self, from: data!)
+let chatModels = chatModelsSimple!.sorted { $0.isFuture && !$1.isFuture }
 
