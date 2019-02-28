@@ -58,10 +58,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="lvI-xK-LKl">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="r9S-Vb-1iZ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UUx-sg-ukc">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UUx-sg-ukc">
+                                <rect key="frame" x="16" y="9.5" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="X">
+                                <state key="normal" image="backButton">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -81,4 +81,7 @@
             <point key="canvasLocation" x="101.59999999999999" y="95.802098950524751"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backButton" width="25" height="25"/>
+    </resources>
 </document>

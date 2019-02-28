@@ -75,7 +75,7 @@
                         <viewLayoutGuide key="safeArea" id="UkS-Nd-WwS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="K5Z-yg-dn1">
-                        <barButtonItem key="leftBarButtonItem" title="X" id="vkc-tS-hOI">
+                        <barButtonItem key="leftBarButtonItem" image="backButton" id="vkc-tS-hOI">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="closeAction:" destination="iJZ-LF-8W3" id="vBm-Nj-wzI"/>
@@ -93,4 +93,7 @@
             <point key="canvasLocation" x="-66" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backButton" width="25" height="25"/>
+    </resources>
 </document>

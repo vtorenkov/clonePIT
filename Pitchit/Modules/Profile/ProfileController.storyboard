@@ -33,26 +33,18 @@
                         <viewLayoutGuide key="safeArea" id="Uu9-g7-VAC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="MqR-ex-jm2">
-                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="Ksm-qf-z2c">
+                        <barButtonItem key="leftBarButtonItem" image="icons8-google-analytics-logo-filled-50" id="sZx-4J-X2f">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="showMenu:" destination="v7X-lP-450" id="dHk-uW-1w6"/>
+                                <action selector="showAnalytics:" destination="v7X-lP-450" id="lbn-d7-29m"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem image="icons8-settings-filled-50" id="9cj-uA-0Jz">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="editProfile:" destination="v7X-lP-450" id="Rje-bf-JdY"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="icons8-google-analytics-logo-filled-50" id="sZx-4J-X2f">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="showAnalytics:" destination="v7X-lP-450" id="lbn-d7-29m"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="icons8-settings-filled-50" id="9cj-uA-0Jz">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="editProfile:" destination="v7X-lP-450" id="Rje-bf-JdY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -234,6 +226,5 @@
     <resources>
         <image name="icons8-google-analytics-logo-filled-50" width="25" height="25"/>
         <image name="icons8-settings-filled-50" width="25" height="25"/>
-        <image name="menu_icon" width="30" height="30"/>
     </resources>
 </document>

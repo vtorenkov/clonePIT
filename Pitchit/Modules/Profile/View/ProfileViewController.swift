@@ -43,9 +43,6 @@ class ProfileViewController: UIViewController {
         print("deinit ProfileViewController")
     }
     
-    @IBAction func showMenu(_ sender: Any) {
-    }
-    
     @IBAction func editProfile(_ sender: Any) {
         RouterProfile.sharedInstance.openEditProfile(target: self)
     }
