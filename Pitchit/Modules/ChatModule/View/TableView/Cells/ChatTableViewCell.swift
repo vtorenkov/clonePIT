@@ -20,7 +20,7 @@ class ChatTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var lastMessageVIew: UIView!
     
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var offerTypeLabel: UILabel!
+    @IBOutlet weak var offerTypeLabel: PaddingLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -50,9 +50,12 @@ extension ChatTableViewCellModel: CellViewModel {
             switch chatModel.offerType {
             case .buying:
                 cell.offerTypeLabel.text = "buying"
+                cell.offerTypeLabel.backgroundColor = UIColor.red
             case .selling:
+                cell.offerTypeLabel.backgroundColor = UIColor.blue
                 cell.offerTypeLabel.text = "selling"
             }
+            cell.offerTypeLabel.roundCornersSmall()
         } else {
             cell.stackViewMain.removeArrangedSubview(cell.offerTypeView)
 

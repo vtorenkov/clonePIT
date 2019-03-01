@@ -18,7 +18,7 @@ struct ChatModel:Codable {
         case buying
         case selling
     }
-    
+   
     var name: String
     var time: String
     var statusChat: StatusChat
@@ -44,11 +44,28 @@ let json = """
 "offerType": "selling",
 "isFuture": true,
 "price": 99.9
+},
+{
+"name": "Mid century lounge chair and more desc 3",
+"statusChat": "undreaded",
+"time": "12:50 PM",
+"offerType": "buying",
+"isFuture": false,
+"price": 55.6
+},
+{
+"name": "Mid century lounge chair and more desc 5",
+"statusChat": "readed",
+"time": "Yesterday",
+"offerType": "buying",
+"isFuture": true,
+"price": 23.9
 }
 ]
 """
 
 let data = json.data(using: .utf8)
 var chatModelsSimple = try? JSONDecoder().decode([ChatModel].self, from: data!)
-let chatModels = chatModelsSimple!.sorted { $0.isFuture && !$1.isFuture }
+
+var chatModels = chatModelsSimple!.sorted { $0.isFuture && !$1.isFuture }
 

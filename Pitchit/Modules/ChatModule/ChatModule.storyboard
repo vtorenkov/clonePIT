@@ -33,7 +33,7 @@
                                     <segment title="Selling"/>
                                 </segments>
                                 <connections>
-                                    <action selector="switchAction:" destination="uYa-mB-2LZ" eventType="valueChanged" id="d6v-hP-sdA"/>
+                                    <action selector="switchAction:" destination="uYa-mB-2LZ" eventType="valueChanged" id="PD5-NY-UfL"/>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s8P-kL-BGd">
