@@ -24,8 +24,18 @@ class ChatViewController: UIViewController {
         setup(segment: chatSegment)
     }
     
-    @IBAction func switchAction(_ sender: Any) {
+    @IBAction func switchAction(_ sender: UISegmentedControl) {
         chatSegment.changeUnderlinePosition()
+        chatModels = chatModelsSimple!.sorted { $0.isFuture && !$1.isFuture }
+        
+        switch sender.titleForSegment(at: sender.selectedSegmentIndex)?.lowercased() {
+        case "buying":
+             chatModels = chatModels.filter{$0.offerType == .buying}
+        case "selling":
+             chatModels = chatModels.filter{$0.offerType == .selling}
+        default: break
+        }
+        self.tableView.reloadData()
     }
     
     @IBAction func closeAction(_ sender: Any) {
