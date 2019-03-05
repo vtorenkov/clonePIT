@@ -16,18 +16,64 @@
             <rect key="frame" x="0.0" y="0.0" width="504" height="103"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-Se-2B5">
-                    <rect key="frame" x="20" y="20" width="39" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="realestate" translatesAutoresizingMaskIntoConstraints="NO" id="nmq-RG-ry3">
+                    <rect key="frame" x="8" y="8" width="87" height="87"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nmq-RG-ry3" secondAttribute="height" multiplier="1:1" id="lc2-bd-eFf"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4s-BT-uFF">
+                    <rect key="frame" x="460" y="8" width="36" height="87"/>
+                    <state key="normal" title="Clear">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clearAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="WUw-xe-snW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Looking to rent - Type: Studio, Appartament - Size: 2 bath, 2 room - Range: 30 miles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRq-Jv-M4z">
+                    <rect key="frame" x="103" y="36.5" width="349" height="58.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Filter Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-Se-2B5">
+                    <rect key="frame" x="103" y="8" width="349" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20.5" id="G5B-1b-mS4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TPV-Se-2B5" firstAttribute="leading" secondItem="nmq-RG-ry3" secondAttribute="trailing" constant="8" id="2Uj-zl-CU3"/>
+                <constraint firstItem="PRq-Jv-M4z" firstAttribute="top" secondItem="TPV-Se-2B5" secondAttribute="bottom" constant="8" id="ChW-6z-r7j"/>
+                <constraint firstItem="a4s-BT-uFF" firstAttribute="leading" secondItem="TPV-Se-2B5" secondAttribute="trailing" constant="8" id="DMk-fn-w62"/>
+                <constraint firstItem="a4s-BT-uFF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="FeT-Vw-QOS"/>
+                <constraint firstItem="a4s-BT-uFF" firstAttribute="leading" secondItem="PRq-Jv-M4z" secondAttribute="trailing" constant="8" id="IMY-Z9-6P7"/>
+                <constraint firstItem="nmq-RG-ry3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Pwm-n9-KhV"/>
+                <constraint firstItem="TPV-Se-2B5" firstAttribute="top" secondItem="nmq-RG-ry3" secondAttribute="top" id="blr-Qy-7dZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nmq-RG-ry3" secondAttribute="bottom" constant="8" id="hqo-TL-4BH"/>
+                <constraint firstItem="nmq-RG-ry3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="kfL-Zd-ior"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="PRq-Jv-M4z" secondAttribute="bottom" constant="8" id="maO-14-H9W"/>
+                <constraint firstItem="PRq-Jv-M4z" firstAttribute="leading" secondItem="nmq-RG-ry3" secondAttribute="trailing" constant="8" id="rys-qd-5lO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a4s-BT-uFF" secondAttribute="trailing" constant="8" id="tQ0-aj-il0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="a4s-BT-uFF" secondAttribute="bottom" constant="8" id="xw4-cb-Ta0"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="filterTypeDescription" destination="PRq-Jv-M4z" id="TWp-wy-4jf"/>
+                <outlet property="filterTypeLabel" destination="TPV-Se-2B5" id="wPe-9V-sj7"/>
+                <outlet property="imageType" destination="nmq-RG-ry3" id="5Dg-Kc-Tle"/>
+            </connections>
             <point key="canvasLocation" x="-448" y="89.505247376311857"/>
         </view>
     </objects>
+    <resources>
+        <image name="realestate" width="47" height="45"/>
+    </resources>
 </document>
