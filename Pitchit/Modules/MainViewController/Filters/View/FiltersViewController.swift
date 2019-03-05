@@ -10,6 +10,7 @@ import UIKit
 
 protocol FiltersActions: class {
     func showFilterView()
+    func hidFilterView()
 }
 
 extension FiltersViewController: FilterTableItemDelegate {
@@ -24,7 +25,7 @@ class FiltersViewController: UIViewController {
     @IBOutlet var gradientView: UIView!
     fileprivate var filterTableViewDatasource: FilterTableViewDatasource?
     fileprivate var filterTableViewDelegate: FilterTableViewDelegate?
-    var delegateMain: FiltersActions?
+    weak var delegateMain: FiltersActions?
     @IBOutlet var tableView: UITableView!
     var buildModel: BuilderModelProtocol!
     

@@ -12,6 +12,9 @@ extension MainViewController: FiltersActions {
     func showFilterView() {
         addFilterView()
     }
+    func hidFilterView() {
+        hidFilterCustomView()
+    }
 }
 
 extension MainViewController: CategoriesCollectionInteract {
@@ -72,6 +75,7 @@ class MainViewController: UIViewController {
         self.categoriesCollectionViewDatasource = CategoriesCollectionDatasource(collectionView: categoryCollection, delegate: self.categoriesCollectionViewDelegate!, delegateVC: self, presenter: presenter)
         
         viewFilterCustom.frame = viewFilter.bounds
+        viewFilterCustom.delegateMain = self
         viewFilter.addSubview(viewFilterCustom)
         viewFilter.isHidden = true
     }
@@ -93,11 +97,15 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        viewFilter.isHidden = true
+        hidFilterCustomView()
     }
     
     func addFilterView() {
         viewFilter.isHidden = false
+    }
+    
+    func hidFilterCustomView() {
+        viewFilter.isHidden = true
     }
     
     @IBAction func openSettings(_ sender: Any) {
