@@ -30,7 +30,7 @@ struct CategoriesCollectionViewCellModel {
 extension CategoriesCollectionViewCellModel: CellViewModel {
   func setup(cell: CategoriesCollectionViewCell) {
     cell.categoryName.text = cat.name
-    cell.backgroundColor = cat.color
+    cell.backgroundColor = UIColor.violateCatBackGround
     if currentCat == cat.type  {
         cell.categoryName.textColor = UIColor.white
     } else {

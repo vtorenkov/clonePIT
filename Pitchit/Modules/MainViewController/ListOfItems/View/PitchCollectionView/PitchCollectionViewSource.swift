@@ -47,7 +47,6 @@ final class PitchCollectionDatasource: NSObject, PitchCollectionDatasourceProtoc
         let model = PitchCollectionViewCellModel(item: item, delegate: delegateVC)
         return collectionView.dequeueReusableCell(with: model, for: indexPath)
     }
-    
 }
 
 class PitchCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout {
@@ -63,7 +62,7 @@ class PitchCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView!.frame.size.width/2-10, height: self.collectionView!.frame.size.height/2-10)
+        return CGSize(width: self.collectionView!.frame.size.width, height: self.collectionView!.frame.size.height/2)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -72,6 +71,5 @@ class PitchCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout {
             RouterItem.sharedInstance.openItemDetails(target: self.controller, item: item)
         }
     }
-    
 }
 
