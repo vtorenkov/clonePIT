@@ -46,6 +46,7 @@ extension ChatTableViewCellModel: CellViewModel {
         cell.timeLabel.text = chatModel.time
         
         if chatModel.isFuture {
+            cell.stackViewMain.addArrangedSubview(cell.offerTypeView)
             cell.priceLabel.text = "\(chatModel.price)" + "$"
             switch chatModel.offerType {
             case .buying:
@@ -58,7 +59,6 @@ extension ChatTableViewCellModel: CellViewModel {
             cell.offerTypeLabel.roundCornersSmall()
         } else {
             cell.stackViewMain.removeArrangedSubview(cell.offerTypeView)
-
         }
     
         switch chatModel.statusChat {

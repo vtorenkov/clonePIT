@@ -30,7 +30,7 @@ struct ChatModel:Codable {
 //MARK: mock chat models, just for testing.
 let json = """
 [{
-"name": "Mid century lounge chair and more desc",
+"name": "1 Mid century lounge chair and more desc",
 "statusChat": "readed",
 "time": "12:50 PM",
 "offerType": "buying",
@@ -38,7 +38,7 @@ let json = """
 "price": 105.6
 },
 {
-"name": "Mid century lounge chair and more desc 2",
+"name": "2 Mid century lounge chair and more desc 2",
 "statusChat": "undreaded",
 "time": "Yesterday",
 "offerType": "selling",
@@ -46,7 +46,7 @@ let json = """
 "price": 99.9
 },
 {
-"name": "Mid century lounge chair and more desc 3",
+"name": "3 Mid century lounge chair and more desc 3",
 "statusChat": "undreaded",
 "time": "12:50 PM",
 "offerType": "buying",
@@ -54,7 +54,7 @@ let json = """
 "price": 55.6
 },
 {
-"name": "Mid century lounge chair and more desc 5",
+"name": "4 Mid century lounge chair and more desc 5",
 "statusChat": "readed",
 "time": "Yesterday",
 "offerType": "buying",
