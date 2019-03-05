@@ -65,6 +65,10 @@ extension UIColor {
     @nonobjc class var borderColorTextView: UIColor {
         return UIColor(rgb: 0xefefef)
     }
+    
+    @nonobjc class var violateCatBackGround: UIColor {
+        return UIColor(rgb: 0x7A79EB)
+    }
 }
 
 extension UIColor {
