@@ -67,12 +67,20 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6L-So-2TA">
+                                <rect key="frame" x="0.0" y="104" width="375" height="66.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="a6L-So-2TA" firstAttribute="width" secondItem="Gcv-Bw-HBG" secondAttribute="width" id="9IA-83-Qmn"/>
+                            <constraint firstItem="a6L-So-2TA" firstAttribute="centerY" secondItem="Gcv-Bw-HBG" secondAttribute="centerY" id="Ojh-Cq-Cf9"/>
                             <constraint firstItem="Gcv-Bw-HBG" firstAttribute="height" secondItem="3oT-JZ-uic" secondAttribute="height" multiplier="0.1" id="YQG-lT-G4u"/>
                             <constraint firstItem="JHL-Np-0FG" firstAttribute="leading" secondItem="plC-2A-Dsw" secondAttribute="leading" id="aRA-nf-S9T"/>
+                            <constraint firstItem="a6L-So-2TA" firstAttribute="centerX" secondItem="Gcv-Bw-HBG" secondAttribute="centerX" id="dDC-bL-KRI"/>
                             <constraint firstItem="JHL-Np-0FG" firstAttribute="trailing" secondItem="plC-2A-Dsw" secondAttribute="trailing" id="dt4-V3-Rcn"/>
+                            <constraint firstItem="a6L-So-2TA" firstAttribute="height" secondItem="Gcv-Bw-HBG" secondAttribute="height" id="ett-0O-IMA"/>
                             <constraint firstItem="JHL-Np-0FG" firstAttribute="top" secondItem="Gcv-Bw-HBG" secondAttribute="bottom" constant="10" id="ksO-8C-kZR"/>
                             <constraint firstItem="6WA-an-Har" firstAttribute="leading" secondItem="plC-2A-Dsw" secondAttribute="leading" id="nXt-md-egk"/>
                             <constraint firstAttribute="bottom" secondItem="JHL-Np-0FG" secondAttribute="bottom" id="o6k-Eq-wkq"/>
@@ -103,6 +111,7 @@
                         <outlet property="categoryCollection" destination="Gcv-Bw-HBG" id="Aqd-Zz-h1K"/>
                         <outlet property="pitchCollection" destination="JHL-Np-0FG" id="qi4-WG-wfd"/>
                         <outlet property="searchBar" destination="6WA-an-Har" id="7uR-4M-UgM"/>
+                        <outlet property="viewFilter" destination="a6L-So-2TA" id="0Wr-zT-vd6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VN-qS-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>

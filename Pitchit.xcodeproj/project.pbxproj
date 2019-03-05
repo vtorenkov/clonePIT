@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0709A8D9222E93E000CF120B /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709A8D8222E93E000CF120B /* FilterView.swift */; };
+		0709A8DB222E93F700CF120B /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0709A8DA222E93F600CF120B /* FilterView.xib */; };
+		073C6A482227F0450019A825 /* UiView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C6A472227F0450019A825 /* UiView+Borders.swift */; };
 		079F99202226DCAF007E159B /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F991F2226DCAF007E159B /* ChatModel.swift */; };
 		C4668F85B94FADEC5980165D /* Pods_Pitchit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */; };
 		FA0A12E821A73C190061F7AA /* ItemConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A12E621A73C190061F7AA /* ItemConditionTableViewCell.swift */; };
@@ -244,6 +247,9 @@
 
 /* Begin PBXFileReference section */
 		032BF683CAB4D9444997BFC4 /* Pods-Pitchit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.debug.xcconfig"; sourceTree = "<group>"; };
+		0709A8D8222E93E000CF120B /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		0709A8DA222E93F600CF120B /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		073C6A472227F0450019A825 /* UiView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Borders.swift"; sourceTree = "<group>"; };
 		079F991F2226DCAF007E159B /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		89DF4DA8C098DBD982220254 /* Pods-Pitchit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.release.xcconfig"; sourceTree = "<group>"; };
 		F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pitchit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -506,6 +512,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0709A8D7222E93CA00CF120B /* FilterView */ = {
+			isa = PBXGroup;
+			children = (
+				0709A8DA222E93F600CF120B /* FilterView.xib */,
+				0709A8D8222E93E000CF120B /* FilterView.swift */,
+			);
+			path = FilterView;
+			sourceTree = "<group>";
+		};
 		079F991E2226DC9E007E159B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1342,6 +1357,7 @@
 				FA79F3C7217B573D005A9AEB /* UILabel+Extension.swift */,
 				FAF245472198852C00642F4C /* UISegmentControll+Extension.swift */,
 				FA78386D21F507240033D8E7 /* UITextView+Extension.swift */,
+				073C6A472227F0450019A825 /* UiView+Borders.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1359,6 +1375,7 @@
 		FAE575E620EFCBFF0023383B /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0709A8D7222E93CA00CF120B /* FilterView */,
 				FA9A031B21E2204B00DF6C2C /* Favorites */,
 				FADBF2502142D74E0047FAF0 /* Filters */,
 				FADBF24F2142D7440047FAF0 /* ListOfItems */,
@@ -1760,6 +1777,7 @@
 				FA63053C20FE6F6C00F0777E /* AvtarProfileTableViewCell.xib in Resources */,
 				FAE575EB20EFCC650023383B /* TabBarController.storyboard in Resources */,
 				FADBF25D2143E60A0047FAF0 /* ProfileCollectionTableViewCell.xib in Resources */,
+				0709A8DB222E93F700CF120B /* FilterView.xib in Resources */,
 				FA810C5F21233B1F003176A8 /* UploadVideoTableViewCell.xib in Resources */,
 				FA3D5F3821C05EB200B17AD9 /* LocationTableViewCell.xib in Resources */,
 				FA810C8F212B486F003176A8 /* ItemConditionTableViewCellOld.xib in Resources */,
@@ -1951,6 +1969,7 @@
 				FAE5ECB6220F19E700768C6F /* PurchaseOrderViewController.swift in Sources */,
 				FAE5761C20F11C850023383B /* CategoriesCollectionViewProtocol.swift in Sources */,
 				FA8E78F2221994DD00B23D1C /* ChatTableViewSource.swift in Sources */,
+				0709A8D9222E93E000CF120B /* FilterView.swift in Sources */,
 				FA810CA2212C860C003176A8 /* AdditionalCollectionViewSource.swift in Sources */,
 				FACC883A210C776B00BBB31C /* ButtonsTableViewCell.swift in Sources */,
 				FAA6A56A21D502B000D6C3A1 /* TypeCollectionViewCell.swift in Sources */,
@@ -1999,6 +2018,7 @@
 				FA86BF92214D37A500B0B7AA /* SignUpFromViewController.swift in Sources */,
 				FACC8828210795FF00BBB31C /* ItemDetailsViewController.swift in Sources */,
 				FA86BF74214C2BBE00B0B7AA /* UIColor+Extension.swift in Sources */,
+				073C6A482227F0450019A825 /* UiView+Borders.swift in Sources */,
 				FACC882E2109013F00BBB31C /* ItemDetailsTableViewSource.swift in Sources */,
 				FA810C4F211CB4C3003176A8 /* PhotosCollectionViewSource.swift in Sources */,
 				FA810C8B212B467F003176A8 /* DescTextPitchTableViewCell.swift in Sources */,
