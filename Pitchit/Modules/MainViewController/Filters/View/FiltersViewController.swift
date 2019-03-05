@@ -7,6 +7,11 @@
 //
 
 import UIKit
+
+protocol FiltersActions: class {
+    func showFilterView()
+}
+
 extension FiltersViewController: FilterTableItemDelegate {
     func selectType(type: Types) {
         print("selectType \(type.rawValue)")
@@ -19,7 +24,7 @@ class FiltersViewController: UIViewController {
     @IBOutlet var gradientView: UIView!
     fileprivate var filterTableViewDatasource: FilterTableViewDatasource?
     fileprivate var filterTableViewDelegate: FilterTableViewDelegate?
-    
+    var delegateMain: FiltersActions?
     @IBOutlet var tableView: UITableView!
     var buildModel: BuilderModelProtocol!
     
@@ -38,7 +43,7 @@ class FiltersViewController: UIViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
+        self.delegateMain?.showFilterView()
         self.dismiss(animated: true, completion: nil)
     }
-
 }

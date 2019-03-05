@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension MainViewController: FiltersActions {
+    func showFilterView() {
+        addFilterView()
+    }
+}
+
 extension MainViewController: CategoriesCollectionInteract {
     func selectCategory(category: CategoryItemType) {
         self.category = category
@@ -35,7 +41,9 @@ extension MainViewController: UISearchBarDelegate {
 
 class MainViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
-    
+    @IBOutlet weak var viewFilter: UIView!
+    let viewFilterCustom = FilterView.loadFromNib()
+
     @IBOutlet var pitchCollection: UICollectionView!
     @IBOutlet var categoryCollection: UICollectionView!
     
@@ -62,6 +70,10 @@ class MainViewController: UIViewController {
         
         self.categoriesCollectionViewDelegate = CategoriesCollectionDelegate(self, collectionView: categoryCollection)
         self.categoriesCollectionViewDatasource = CategoriesCollectionDatasource(collectionView: categoryCollection, delegate: self.categoriesCollectionViewDelegate!, delegateVC: self, presenter: presenter)
+        
+        viewFilterCustom.frame = viewFilter.bounds
+        viewFilter.addSubview(viewFilterCustom)
+        viewFilter.isHidden = true
     }
     
     func initSearchBar() {
@@ -76,12 +88,20 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.items = ItemManager.sharedInstance.items
-        self.pitchCollection.reloadData()
+        items = ItemManager.sharedInstance.items
+        pitchCollection.reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        viewFilter.isHidden = true
+    }
+    
+    func addFilterView() {
+        viewFilter.isHidden = false
     }
     
     @IBAction func openSettings(_ sender: Any) {
-        Router.sharedInstance.openFilterView(target: self, type: self.category)
+        Router.sharedInstance.openFilterView(target: self, type: self.category, delegate: self)
     }
     
     @IBAction func openFavorites(_ sender: Any) {

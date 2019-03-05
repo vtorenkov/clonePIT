@@ -83,10 +83,11 @@ class Router: GlobalRouter {
         }
     }
     
-    func openFilterView(target: UIViewController?, type: CategoryItemType) {
+    func openFilterView(target: UIViewController?, type: CategoryItemType, delegate: FiltersActions) {
         let storyboard = UIStoryboard(name: "MainViewController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "FiltersViewController") as? FiltersViewController{
             controller.type = type
+            controller.delegateMain = delegate
             let navigationController = UINavigationController(rootViewController: controller)
             target?.present(navigationController, animated: true, completion: nil)
         }

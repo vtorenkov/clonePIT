@@ -13,10 +13,8 @@ import UIKit
 class RouterProfile {
     
     static let sharedInstance : RouterProfile = {
-        
         let instance = RouterProfile()
         return instance
-        
     }()
     
     func openEditProfile(target: UIViewController?){
@@ -26,7 +24,6 @@ class RouterProfile {
             target?.present(navigationController, animated: true, completion: nil)
         }
     }
-    
     
     func openRateProfile(target: UIViewController?){
         let storyboard = UIStoryboard(name: "ProfileController", bundle: nil)
