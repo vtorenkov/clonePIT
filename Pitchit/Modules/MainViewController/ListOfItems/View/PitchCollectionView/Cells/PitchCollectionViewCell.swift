@@ -10,6 +10,22 @@ import UIKit
 import Kingfisher
 import Player
 
+extension PitchCollectionViewCell: PlayerDelegate{
+    func playerReady(_ player: Player) {
+        self.player.view.frame = self.videoView.bounds
+        self.loadingLabel.isHidden = true
+    }
+    
+    func playerPlaybackStateDidChange(_ player: Player) {
+    }
+    
+    func playerBufferingStateDidChange(_ player: Player) {
+    }
+    
+    func playerBufferTimeDidChange(_ bufferTime: Double) {
+    }
+}
+
 class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     
     fileprivate var player = Player()
@@ -19,6 +35,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loadingLabel: UILabel!
     
+    @IBOutlet var videoView: UIView!
     @IBOutlet var likeImage: UIImageView!
     @IBOutlet var priceTitle: UILabel!
     @IBOutlet var distanceLabel: UILabel!
@@ -26,9 +43,10 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.player.view.frame = self.contentView.frame
-        self.contentView.addSubview(self.player.view)
-        self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.player.view.frame = self.videoView.bounds
+        self.player.playerDelegate = self
+        self.videoView.addSubview(self.player.view)
+        self.videoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         if let item = self.item, !item.videoUrl.isEmpty {
             let url = URL.init(string: item.videoUrl)!
             self.player.url = url
@@ -36,8 +54,8 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             self.player.autoplay = true
             self.player.volume = 0.0
         }
-        self.contentView.sendSubview(toBack: self.player.view)
-        self.contentView.sendSubview(toBack: self.loadingLabel)
+        
+        self.videoView.sendSubview(toBack: self.player.view)
         
         self.titleLabel.roundCorners()
         self.priceTitle.roundCorners()

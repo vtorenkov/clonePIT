@@ -3,7 +3,7 @@
 //  Rosenthal
 //
 //  Created by Jovmir Alexei on 12/28/17.
-//  Copyright © 2017 Rosenthal. All rights reserved.
+//  Copyright © 2017 PitchIt. All rights reserved.
 //
 
 import UIKit
