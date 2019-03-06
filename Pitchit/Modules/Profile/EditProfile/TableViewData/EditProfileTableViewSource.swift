@@ -8,7 +8,8 @@ import Foundation
 import UIKit
 
 protocol EditProfileTableItemDelegate: class {
-     func addPurchaseMethod()
+    func addPurchaseMethod()
+    func removePurchaseMethod()
 }
 
 enum EditProfileType {
@@ -98,6 +99,8 @@ class EditProfileTableViewDelegate: NSObject, UITableViewDelegate {
         switch type {
         case .addPayment:
             self.delegate.addPurchaseMethod()
+        case .paymentCard:
+            self.delegate.removePurchaseMethod()
         default: break
         }
         tableView.deselectRow(at: indexPath, animated: true)

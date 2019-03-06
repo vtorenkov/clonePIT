@@ -1,7 +1,7 @@
 //
 //  EditProfileViewController.swift
 //  Pitchit
-//  test amend source tree - now will try to amend
+//  
 //  Created by Alex on 10/15/18.
 //  Copyright © 2018 Alexei Jovmir. All rights reserved.
 //
@@ -31,5 +31,25 @@ class EditProfileViewController: UIViewController {
 extension EditProfileViewController: EditProfileTableItemDelegate {
     func addPurchaseMethod() {
         RouterItem.sharedInstance.openAddCard(target: self)
+    }
+    
+    func removePurchaseMethod() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Remove Card", style: .destructive , handler:{ (UIAlertAction)in
+            print("User click Approve button")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Make Default", style: .default , handler:{ (UIAlertAction)in
+            print("User click Edit button")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
+            print("User click Dismiss button")
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
 }

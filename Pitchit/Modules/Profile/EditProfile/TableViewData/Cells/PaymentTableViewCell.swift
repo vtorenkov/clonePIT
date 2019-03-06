@@ -32,7 +32,7 @@ extension PaymentTableViewCellModel: CellViewModel {
         case .paymentCard:
 //            cell.paymentImage.image = ""
             cell.paymentLabel.text = "4444-5555-6666-7777"
-            cell.changedLabel.text = "Default"
+            cell.changedLabel.text = "-"
         case .addPayment:
 //            cell.paymentImage.image = ""
             cell.paymentLabel.text = "Add Payment Method"
