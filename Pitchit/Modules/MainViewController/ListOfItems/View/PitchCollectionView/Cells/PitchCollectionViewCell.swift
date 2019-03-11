@@ -11,9 +11,14 @@ import Kingfisher
 import Player
 
 extension PitchCollectionViewCell: PlayerDelegate{
+    func player(_ player: Player, didFailWithError error: Error?) {
+        
+    }
+    
     func playerReady(_ player: Player) {
         self.player.view.frame = self.videoView.bounds
         self.loadingLabel.isHidden = true
+        self.avatarImage.circleCorners()
     }
     
     func playerPlaybackStateDidChange(_ player: Player) {
@@ -31,6 +36,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     fileprivate var player = Player()
     weak var item: ItemModel?
     
+    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet var buttonBackGround: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loadingLabel: UILabel!
@@ -46,6 +52,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         self.player.view.frame = self.videoView.bounds
         self.player.playerDelegate = self
         self.videoView.addSubview(self.player.view)
+        self.player.fillMode = .resizeAspectFill
         self.videoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         if let item = self.item, !item.videoUrl.isEmpty {
             let url = URL.init(string: item.videoUrl)!
@@ -65,6 +72,8 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         self.titleLabel.font = UIFont.mainFonSFUItRegular(ofSize: 14)
         self.priceTitle.font = UIFont.mainFonSFUItBold(ofSize: 16)
         self.distanceLabel.font = UIFont.mainFonSFUItRegular(ofSize: 10)
+        
+        self.avatarImage.circleCorners()
     }
     
     override func awakeFromNib() {
