@@ -52,7 +52,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         self.player.view.frame = self.videoView.bounds
         self.player.playerDelegate = self
         self.videoView.addSubview(self.player.view)
-        self.player.fillMode = .resizeAspectFill
+        self.player.fillMode = PlayerFillMode.resizeAspectFill.avFoundationType
         self.videoView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         if let item = self.item, !item.videoUrl.isEmpty {
             let url = URL.init(string: item.videoUrl)!
