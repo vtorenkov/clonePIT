@@ -65,7 +65,7 @@ extension ProfileCollectionTableViewCell: UICollectionViewDelegateFlowLayout, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: kScreenWidth / 2 - 20, height: kScreenHeight / 3)
+        return CGSize(width: collectionView.frame.width, height: kScreenHeight / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

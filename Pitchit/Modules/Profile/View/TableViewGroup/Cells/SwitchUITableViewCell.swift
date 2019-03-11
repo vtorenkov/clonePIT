@@ -17,6 +17,11 @@ class SwitchUITableViewCell: UITableViewCell, NibReusable {
         // Initialization code
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.switchPtofileOutlet.addUnderlineForSelectedSegment()
+    }
+    
     @IBAction func switchAction(_ sender: Any) {
         switchPtofileOutlet.changeUnderlinePosition()
     }
@@ -33,8 +38,7 @@ extension SwitchUITableViewCellModel: CellViewModel {
         let widthSegment = kScreenWidth / 2
         cell.switchPtofileOutlet.setWidth(widthSegment, forSegmentAt: 0)
         cell.switchPtofileOutlet.setWidth(widthSegment, forSegmentAt: 1)
-
-        cell.switchPtofileOutlet.addUnderlineForSelectedSegment()
+        
         cell.switchPtofileOutlet.tintColor = UIColor.switchBlue
         
         let titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
