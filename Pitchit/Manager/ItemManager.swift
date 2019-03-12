@@ -12,13 +12,9 @@ import Foundation
 class ItemManager {
     
     static let sharedInstance : ItemManager = {
-        
         let instance = ItemManager()
         return instance
-        
     }()
 
     var items = [ItemModel]()
-    
-    
 }

@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         item4.thumbImage = UIImage(named: "table_sample")
         item4.additionImage = [UIImage(named: "women"), UIImage(named: "women"), UIImage(named: "women"), UIImage(named: "women")] as! [UIImage]
 
-        ItemManager.sharedInstance.items.append(contentsOf: [item1, item2, item3, item4])
+        ItemManager.sharedInstance.items.append(contentsOf: [item1, item2, item3, item4, item1, item2, item3, item4, item1, item2, item3, item4, item1, item2, item3, item4, item1, item2, item3, item4, item1, item2, item3, item4])
     }
 }
 

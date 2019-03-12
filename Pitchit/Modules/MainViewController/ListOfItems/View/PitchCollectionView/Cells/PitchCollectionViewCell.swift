@@ -19,6 +19,7 @@ extension PitchCollectionViewCell: PlayerDelegate{
         self.player.view.frame = self.videoView.bounds
         self.loadingLabel.isHidden = true
         self.avatarImage.circleCorners()
+        self.player.playFromCurrentTime()
     }
     
     func playerPlaybackStateDidChange(_ player: Player) {
@@ -49,6 +50,8 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        //TODO: use another player:
+        // https://github.com/newyjp/JPVideoPlayer
         self.player.view.frame = self.videoView.bounds
         self.player.playerDelegate = self
         self.videoView.addSubview(self.player.view)

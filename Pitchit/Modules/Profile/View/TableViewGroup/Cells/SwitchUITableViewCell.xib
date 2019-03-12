@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9GG-21-pbd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="40.5"/>
                         <segments>
                             <segment title="My Deals"/>
                             <segment title="Favorites"/>
@@ -33,7 +33,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="9GG-21-pbd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ABJ-k3-L5o"/>
-                    <constraint firstAttribute="bottom" secondItem="9GG-21-pbd" secondAttribute="bottom" id="ZMs-rG-2I6"/>
+                    <constraint firstAttribute="bottom" secondItem="9GG-21-pbd" secondAttribute="bottom" constant="4" id="ZMs-rG-2I6"/>
                     <constraint firstItem="9GG-21-pbd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yBj-yl-UwI"/>
                     <constraint firstAttribute="trailing" secondItem="9GG-21-pbd" secondAttribute="trailing" id="yoz-2H-Ssh"/>
                 </constraints>
