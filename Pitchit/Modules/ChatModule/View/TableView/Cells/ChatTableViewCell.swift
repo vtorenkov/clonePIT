@@ -23,6 +23,7 @@ class ChatTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet weak var offerTypeLabel: PaddingLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+//        self.selectionStyle = .none
         // Initialization code
     }
     
@@ -58,6 +59,7 @@ extension ChatTableViewCellModel: CellViewModel {
             }
             cell.offerTypeLabel.roundCornersSmall()
         } else {
+            cell.offerTypeView.removeFromSuperview()
             cell.stackViewMain.removeArrangedSubview(cell.offerTypeView)
         }
     

@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0709428322392FF200B736BD /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709428222392FF200B736BD /* LogInPresenter.swift */; };
+		070942882239309C00B736BD /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070942852239309B00B736BD /* NetworkClient.swift */; };
+		070942892239309C00B736BD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070942862239309C00B736BD /* Login.swift */; };
+		0709428A2239309C00B736BD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070942872239309C00B736BD /* LoginManager.swift */; };
 		0709A8D9222E93E000CF120B /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709A8D8222E93E000CF120B /* FilterView.swift */; };
 		0709A8DB222E93F700CF120B /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0709A8DA222E93F600CF120B /* FilterView.xib */; };
 		073C6A482227F0450019A825 /* UiView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C6A472227F0450019A825 /* UiView+Borders.swift */; };
+		077E8069223A7DD40089E910 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E8068223A7DD40089E910 /* RegisterModel.swift */; };
 		079F99202226DCAF007E159B /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F991F2226DCAF007E159B /* ChatModel.swift */; };
 		C4668F85B94FADEC5980165D /* Pods_Pitchit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */; };
 		FA0A12E821A73C190061F7AA /* ItemConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A12E621A73C190061F7AA /* ItemConditionTableViewCell.swift */; };
@@ -247,9 +252,14 @@
 
 /* Begin PBXFileReference section */
 		032BF683CAB4D9444997BFC4 /* Pods-Pitchit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.debug.xcconfig"; sourceTree = "<group>"; };
+		0709428222392FF200B736BD /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
+		070942852239309B00B736BD /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		070942862239309C00B736BD /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		070942872239309C00B736BD /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		0709A8D8222E93E000CF120B /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		0709A8DA222E93F600CF120B /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		073C6A472227F0450019A825 /* UiView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Borders.swift"; sourceTree = "<group>"; };
+		077E8068223A7DD40089E910 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		079F991F2226DCAF007E159B /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		89DF4DA8C098DBD982220254 /* Pods-Pitchit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.release.xcconfig"; sourceTree = "<group>"; };
 		F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pitchit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -512,6 +522,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0709428022392EF300B736BD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0709428222392FF200B736BD /* LogInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0709428122392EF900B736BD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				077E8067223A7DC50089E910 /* Entity */,
+				070942842239309B00B736BD /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		070942842239309B00B736BD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				070942852239309B00B736BD /* NetworkClient.swift */,
+				070942862239309C00B736BD /* Login.swift */,
+				070942872239309C00B736BD /* LoginManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		0709A8D7222E93CA00CF120B /* FilterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +556,14 @@
 				0709A8D8222E93E000CF120B /* FilterView.swift */,
 			);
 			path = FilterView;
+			sourceTree = "<group>";
+		};
+		077E8067223A7DC50089E910 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				077E8068223A7DD40089E910 /* RegisterModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		079F991E2226DC9E007E159B /* Entity */ = {
@@ -590,6 +635,8 @@
 		FA4CA5C3214060750018C6B7 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				0709428122392EF900B736BD /* Services */,
+				0709428022392EF300B736BD /* Presenter */,
 				FA4CA5C4214060AC0018C6B7 /* LogInScreen.storyboard */,
 				FA4CA5C6214061CA0018C6B7 /* LogInScreenViewController.swift */,
 			);
@@ -1821,10 +1868,12 @@
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MMPlayerView/MMPlayerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/NYTPhotoViewer/NYTPhotoViewer.framework",
 				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/RangeSeekSlider/RangeSeekSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftlySlider/SwiftlySlider.framework",
@@ -1852,10 +1901,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMPlayerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NYTPhotoViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RangeSeekSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftlySlider.framework",
@@ -1913,6 +1964,7 @@
 			files = (
 				FA79F3B121750EAA005A9AEB /* EditProfileViewController.swift in Sources */,
 				FA810C92212B4889003176A8 /* AdditionalPicsVidsTableViewCell.swift in Sources */,
+				077E8069223A7DD40089E910 /* RegisterModel.swift in Sources */,
 				FA810CE421370E51003176A8 /* InviteFriendsViewController.swift in Sources */,
 				FA810CBF213191C1003176A8 /* Int+Extensions.swift in Sources */,
 				FAF1A9B421EA077000F5ABD1 /* SavedSearchTableViewProtocol.swift in Sources */,
@@ -1922,6 +1974,7 @@
 				FA810C742124A78E003176A8 /* CategoriesPostCollectionViewProtocol.swift in Sources */,
 				FAF1A99D21E55D0200F5ABD1 /* CatsCollectionViewProtocol.swift in Sources */,
 				FA810CC821343CFA003176A8 /* Date+Extension.swift in Sources */,
+				0709428322392FF200B736BD /* LogInPresenter.swift in Sources */,
 				079F99202226DCAF007E159B /* ChatModel.swift in Sources */,
 				FA63053B20FE6F6C00F0777E /* AvtarProfileTableViewCell.swift in Sources */,
 				FA79F3B4217514C1005A9AEB /* EditProfileTableViewSource.swift in Sources */,
@@ -1989,6 +2042,7 @@
 				FAF1A99521E51A0C00F5ABD1 /* HeaderTableViewCell.swift in Sources */,
 				FADB458821AABBB500304A45 /* InquireViewController.swift in Sources */,
 				FADBF2582143E5F80047FAF0 /* SwitchUITableViewCell.swift in Sources */,
+				070942892239309C00B736BD /* Login.swift in Sources */,
 				FAE5764020F123C20023383B /* Reusable.swift in Sources */,
 				FACC88312109014900BBB31C /* VideoTableViewCell.swift in Sources */,
 				FA86BF9F215008C400B0B7AA /* UserModel.swift in Sources */,
@@ -2025,6 +2079,7 @@
 				FAA0525421D3E649003F960F /* FilterTypesCategories.swift in Sources */,
 				FADBF25C2143E60A0047FAF0 /* ProfileCollectionTableViewCell.swift in Sources */,
 				FAE5764520F1255A0023383B /* AnyCellProtocol.swift in Sources */,
+				0709428A2239309C00B736BD /* LoginManager.swift in Sources */,
 				FA810C86212A0756003176A8 /* ItemDescTableViewSource.swift in Sources */,
 				FA810CC42132BC62003176A8 /* ItemManager.swift in Sources */,
 				FA6E9DDD221854B200D50B15 /* ConfirmPurchaseViewController.swift in Sources */,
@@ -2061,6 +2116,7 @@
 				FAA6A56C21D502B000D6C3A1 /* TypesCollectionViewSource.swift in Sources */,
 				FA810C6F21233BAD003176A8 /* PostItemTableViewSource.swift in Sources */,
 				FA7CD30121C99C96008CD64D /* SelectTypesTableViewCell.swift in Sources */,
+				070942882239309C00B736BD /* NetworkClient.swift in Sources */,
 				FA3D5F3921C05EB200B17AD9 /* LocationTableViewCell.swift in Sources */,
 				FAE575F320EFCD5E0023383B /* MainViewController.swift in Sources */,
 				FA810CE021370E33003176A8 /* SavedSearchViewController.swift in Sources */,

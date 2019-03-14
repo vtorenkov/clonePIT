@@ -16,6 +16,8 @@ class LogInScreenViewController: UIViewController {
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
     
+    lazy var presenter: LogInPresenter = LogInPresenter(view: self)
+
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var gradientView: UIView!
     @IBOutlet var facebookButton: UIButton!
@@ -52,7 +54,8 @@ class LogInScreenViewController: UIViewController {
     }
     
     @IBAction func openMainPage(_ sender: Any) {
-        Router.sharedInstance.goToMainPage()
+        presenter.register()
+//        Router.sharedInstance.goToMainPage()
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -121,4 +124,8 @@ extension LogInScreenViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         Router.sharedInstance.goToMainPage()
     }
+}
+
+extension LogInScreenViewController: LogInPresenterProtocol{
+    
 }

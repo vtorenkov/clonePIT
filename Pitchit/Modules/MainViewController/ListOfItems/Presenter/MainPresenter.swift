@@ -9,7 +9,7 @@
 import Foundation
 
 
-class MainPresenter:NSObject, Presenter {
+class MainPresenter: NSObject, Presenter {
     
     typealias PresenterView = MainViewController
     
