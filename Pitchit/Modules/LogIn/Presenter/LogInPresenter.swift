@@ -28,4 +28,10 @@ class LogInPresenter: NSObject, Presenter {
             print(response)
         }
     }
+    
+    func login(email: String, password: String) {
+        self.service.loginUser(email: email, password: password) { (response) in
+            print(response)
+        }
+    }
 }

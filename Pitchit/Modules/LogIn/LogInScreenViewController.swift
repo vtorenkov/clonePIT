@@ -54,7 +54,8 @@ class LogInScreenViewController: UIViewController {
     }
     
     @IBAction func openMainPage(_ sender: Any) {
-        presenter.register()
+        presenter.login(email: "email@email.com", password: "password")
+//        presenter.register()
 //        Router.sharedInstance.goToMainPage()
     }
     
