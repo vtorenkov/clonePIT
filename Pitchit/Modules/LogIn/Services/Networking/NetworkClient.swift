@@ -9,11 +9,11 @@ import Moya
 
 protocol LoginClient {
     typealias Success = NSError
-//    typealias Result = (Weather?, String) -> ()
+    typealias ResultLogin = (RegisterModel?, String) -> ()
     typealias Result = (String) -> ()
 
     var provider: MoyaProvider<Login> { get }
     
     func registerUser(regModel: RegisterModel, completion: @escaping(Result))
-    func loginUser(email: String, password: String, completion: @escaping(Result))
+    func loginUser(email: String, password: String, completion: @escaping(ResultLogin))
 }

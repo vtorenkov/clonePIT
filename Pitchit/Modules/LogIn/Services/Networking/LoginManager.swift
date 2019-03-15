@@ -10,30 +10,24 @@ import Foundation
 import Moya
 
 struct LoginManager: LoginClient {
-    
-    func loginUser(email: String, password: String, completion: @escaping (Result)) {
+    func loginUser(email: String, password: String, completion: @escaping (ResultLogin)) {
         provider.request(.login(email: email, password: password)) { (result) in
             switch result {
             case let .success(response):
                 do{
-                    //                    let weather = try response.map(Weather.self)
-                    completion(response.description)
+                    let registerModel = try response.map(RegisterModel.self)
+                    completion(registerModel, response.description)
                 } catch let error{
-                    //                    completion(nil, error.localizedDescription)
+                    completion(nil, error.localizedDescription)
                 }
             case let .failure(error):
-                completion(error.localizedDescription)
+                completion(nil, error.localizedDescription)
             }
         }
     }
     
     
     let provider = MoyaProvider<Login>()
-    
-    /*(plugins: [CredentialsPlugin { _ -> URLCredential? in
-        return URLCredential(user: "email@email.com", password: "password", persistence: .forSession)
-        }
-    ])*/
 
     func registerUser(regModel: RegisterModel, completion: @escaping(Result)) {
         provider.request(.register(regModel: regModel)) { (result) in

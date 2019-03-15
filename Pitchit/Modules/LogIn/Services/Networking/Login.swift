@@ -44,14 +44,13 @@ public enum Login: TargetType {
         switch self {
         case .login:
             return .requestPlain
-                //.requestParameters(parameters: ["email":"email", "firstName":"firstName"], encoding: URLEncoding.default)
         case .register(let regModel):
-            return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.mobileNo, "password":regModel.password, "cpassword":regModel.cpassword], encoding: URLEncoding.default)
+            return .requestPlain
+//            Parameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.mobileNo, "password":regModel.password, "cpassword":regModel.cpassword], encoding: URLEncoding.default)
         }
     }
     
     public var headers: [String : String]? {
-//        return nil
         switch self {
         case .login(let email, let password):
             let username = email
