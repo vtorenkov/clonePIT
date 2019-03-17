@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func createItems() {
         let videoUrl = "https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4"
         let videoUrl2 = "http://techslides.com/demos/sample-videos/small.mp4"
-        let author = UserModel()
+        let author = RegisterModel()
         author.firstName = "Jordan"
         author.lastName = "Belflower"
         author.fullName = "Jordan Belflower"

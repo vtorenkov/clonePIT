@@ -15,5 +15,16 @@ class UserShared {
         return instance
         
     }()
-    var user = UserModel()
+    var user = RegisterModel()
+    
+    func checkUserUrl() -> String? {
+        guard let url = user.imageUrl else {
+            return nil
+        }
+        if url.isEmpty {
+            return nil
+        }
+        
+        return url
+    }
 }

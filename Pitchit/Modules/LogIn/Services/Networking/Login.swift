@@ -45,8 +45,7 @@ public enum Login: TargetType {
         case .login:
             return .requestPlain
         case .register(let regModel):
-            return .requestPlain
-//            Parameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.mobileNo, "password":regModel.password, "cpassword":regModel.cpassword], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat], encoding: URLEncoding.default)
         }
     }
     

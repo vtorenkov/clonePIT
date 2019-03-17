@@ -10,6 +10,7 @@ import Foundation
 
 protocol LogInPresenterProtocol: class {
     func alertShow(with string: String)
+    func sendToMainPage()
 }
 
 class LogInPresenter: NSObject, Presenter {
@@ -21,12 +22,6 @@ class LogInPresenter: NSObject, Presenter {
     required init(view: LogInPresenterProtocol, service: LoginClient = LoginManager()) {
         self.view = view
         self.service = service
-    }
-    
-    func register() {
-//        self.service.registerUser(regModel: RegisterModel()) { (response) in
-//            print(response)
-//        }
     }
     
     func login(email: String?, password: String?) {
@@ -41,8 +36,13 @@ class LogInPresenter: NSObject, Presenter {
         }
         
         if email.isValidEmail() {
-            self.service.loginUser(email: email, password: pass) { (registerModel, response) in
-                print(registerModel?.email)
+            self.service.loginUser(email: email, password: pass) { [weak self] (registerModel, response) in
+                if let regModel = registerModel {
+                    self?.view.sendToMainPage()
+                    //register regmodel in data
+                } else {
+                    self?.view.alertShow(with: "Password/Email incorrect")
+                }
             }
         } else {
             view.alertShow(with: "Email is Incorrect")

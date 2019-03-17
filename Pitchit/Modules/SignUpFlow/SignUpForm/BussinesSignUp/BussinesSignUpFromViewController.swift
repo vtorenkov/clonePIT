@@ -30,7 +30,7 @@ enum BusinessSignUpType: Int {
 }
 
 class BussinesSignUpFromViewController: UIViewController {
-    var newUser = UserModel()
+    var newUser = RegisterModel()
     @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
     @IBOutlet var nextStepButton: UIButton!
     @IBOutlet var gradientView: UIView!
@@ -66,7 +66,7 @@ class BussinesSignUpFromViewController: UIViewController {
     
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
-        if self.newUser.bussinesModel.email.isValidEmail() {
+        if self.newUser.bussinesModel?.email.isValidEmail() ?? false {
             Router.sharedInstance.openBussinesDetailsSignUpForm(target: self, newUser: self.newUser)
         } else {
             self.alert(message: "Email is Invalid")
@@ -89,15 +89,18 @@ extension BussinesSignUpFromViewController: UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if let type = BusinessSignUpType(rawValue: textField.tag), let text = textField.text  {
+            guard let bussinesModel = self.newUser.bussinesModel else {
+                return
+            }
             switch type {
             case .businessName:
-                self.newUser.bussinesModel.businessName = text
+                bussinesModel.businessName = text
             case .industry:
-                self.newUser.bussinesModel.industry = text
+                bussinesModel.industry = text
             case .email:
-                self.newUser.bussinesModel.email = text
+                bussinesModel.email = text
             case .phone:
-                self.newUser.bussinesModel.phone = text
+                bussinesModel.phone = text
             }
         }
     }

@@ -9,8 +9,9 @@
 import UIKit
 
 class ChooseTypeViewController: UIViewController {
-    var newUser = UserModel()
+//    var newUser = UserModel()
     @IBOutlet var gradientView: UIView!
+    let registerModel = RegisterModel()
 
     @IBOutlet var businessBUtton: UIButton!
     @IBOutlet var personalButton: UIButton!
@@ -28,13 +29,13 @@ class ChooseTypeViewController: UIViewController {
     }
  
     @IBAction func openPersonalSignUp(_ sender: Any) {
-        self.newUser.accountType = .personal
-        Router.sharedInstance.openSignUpForm(target: self, newUser: newUser)
+        self.registerModel.accountType = .personal
+        Router.sharedInstance.openSignUpForm(target: self, newUser: registerModel)
     }
     
     @IBAction func openBusinessSignUp(_ sender: Any) {
-        self.newUser.accountType = .business
-        Router.sharedInstance.openBussinesSignUpForm(target: self, newUser: newUser)
+        self.registerModel.accountType = .business
+        Router.sharedInstance.openBussinesSignUpForm(target: self, newUser: registerModel)
     }
     
 }

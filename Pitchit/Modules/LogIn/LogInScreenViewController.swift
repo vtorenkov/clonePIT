@@ -54,9 +54,7 @@ class LogInScreenViewController: UIViewController {
     }
     
     @IBAction func loginClick(_ sender: Any) {
-        presenter.login(email: "email@email.com", password: "password")
-
-//        presenter.login(email: emailText.text, password: passwordText.text)
+        presenter.login(email: emailText.text, password: passwordText.text)
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -97,7 +95,7 @@ class LogInScreenViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 let json = JSON(result)
-                UserShared.sharedInstance.user = UserModel(json: json)
+                UserShared.sharedInstance.user = RegisterModel(json: json)
                 Router.sharedInstance.goToMainPage()
             }
         })
@@ -130,5 +128,9 @@ extension LogInScreenViewController: GIDSignInDelegate, GIDSignInUIDelegate {
 extension LogInScreenViewController: LogInPresenterProtocol{
     func alertShow(with string: String) {
         self.alert(message: string)
+    }
+    
+    func sendToMainPage() {
+        Router.sharedInstance.goToMainPage()
     }
 }

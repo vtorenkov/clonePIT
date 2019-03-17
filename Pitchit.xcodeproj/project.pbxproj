@@ -172,6 +172,7 @@
 		FAA6A56A21D502B000D6C3A1 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A56621D502AF00D6C3A1 /* TypeCollectionViewCell.swift */; };
 		FAA6A56B21D502B000D6C3A1 /* TypesCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A56721D502AF00D6C3A1 /* TypesCollectionViewProtocol.swift */; };
 		FAA6A56C21D502B000D6C3A1 /* TypesCollectionViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A56821D502B000D6C3A1 /* TypesCollectionViewSource.swift */; };
+		FABF83C8223EC7D8005EBED2 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABF83C7223EC7D8005EBED2 /* SignUpPresenter.swift */; };
 		FACC881E2100FBA100BBB31C /* CoverA.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACC881C2100FBA100BBB31C /* CoverA.xib */; };
 		FACC881F2100FBA100BBB31C /* CoverA.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC881D2100FBA100BBB31C /* CoverA.swift */; };
 		FACC88232107953C00BBB31C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACC88222107953C00BBB31C /* Router.swift */; };
@@ -427,6 +428,7 @@
 		FAA6A56621D502AF00D6C3A1 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAA6A56721D502AF00D6C3A1 /* TypesCollectionViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypesCollectionViewProtocol.swift; path = CollectionView/TypesCollectionViewProtocol.swift; sourceTree = "<group>"; };
 		FAA6A56821D502B000D6C3A1 /* TypesCollectionViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypesCollectionViewSource.swift; path = CollectionView/TypesCollectionViewSource.swift; sourceTree = "<group>"; };
+		FABF83C7223EC7D8005EBED2 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		FACC881C2100FBA100BBB31C /* CoverA.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoverA.xib; sourceTree = "<group>"; };
 		FACC881D2100FBA100BBB31C /* CoverA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverA.swift; sourceTree = "<group>"; };
 		FACC88222107953C00BBB31C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -1002,6 +1004,7 @@
 		FA86BF70214C2AB200B0B7AA /* SignUpFlow */ = {
 			isa = PBXGroup;
 			children = (
+				FABF83C6223EBE56005EBED2 /* Presenter */,
 				FA86BF97214E90DC00B0B7AA /* SetPassword */,
 				FA86BF72214C2AC800B0B7AA /* SignUpForm */,
 				FA86BF71214C2AB900B0B7AA /* ChooseType */,
@@ -1195,6 +1198,14 @@
 			);
 			name = Cell;
 			path = CollectionView/Cell;
+			sourceTree = "<group>";
+		};
+		FABF83C6223EBE56005EBED2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FABF83C7223EC7D8005EBED2 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		FACC881B2100FBA100BBB31C /* CoverView */ = {
@@ -2052,6 +2063,7 @@
 				FAF1A9B121EA077000F5ABD1 /* SavedSearchTableViewSource.swift in Sources */,
 				FA79F3C8217B573D005A9AEB /* UILabel+Extension.swift in Sources */,
 				FAE5761B20F11C850023383B /* CategoriesCollectionViewSource.swift in Sources */,
+				FABF83C8223EC7D8005EBED2 /* SignUpPresenter.swift in Sources */,
 				FA810C7C2124AA87003176A8 /* PostItemCatCollectionViewCell.swift in Sources */,
 				FA810C732124A78E003176A8 /* CategoriesPostCollectionViewSource.swift in Sources */,
 				FA79F3CB2184A940005A9AEB /* PhotosFullSizeDataSource.swift in Sources */,

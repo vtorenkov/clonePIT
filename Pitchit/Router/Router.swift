@@ -23,7 +23,7 @@ class Router: GlobalRouter {
         }
     }
     
-    func openSetPass(target: UIViewController?, newUser: UserModel){
+    func openSetPass(target: UIViewController?, newUser: RegisterModel){
         let storyboard = UIStoryboard(name: "SetPassword", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SetPasswordViewController") as? SetPasswordViewController{
             controller.newUser = newUser
@@ -31,7 +31,7 @@ class Router: GlobalRouter {
         }
     }
     
-    func openSignUpForm(target: UIViewController?, newUser: UserModel){
+    func openSignUpForm(target: UIViewController?, newUser: RegisterModel){
         let storyboard = UIStoryboard(name: "SignUpForm", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "SignUpFromViewController") as? SignUpFromViewController{
             controller.newUser = newUser
@@ -39,7 +39,7 @@ class Router: GlobalRouter {
         }
     }
     
-    func openBussinesSignUpForm(target: UIViewController?, newUser: UserModel){
+    func openBussinesSignUpForm(target: UIViewController?, newUser: RegisterModel){
         let storyboard = UIStoryboard(name: "BussinesSignUpForm", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "BussinesSignUpFromViewController") as? BussinesSignUpFromViewController{
             controller.newUser = newUser
@@ -47,7 +47,7 @@ class Router: GlobalRouter {
         }
     }
     
-    func openBussinesDetailsSignUpForm(target: UIViewController?, newUser: UserModel){
+    func openBussinesDetailsSignUpForm(target: UIViewController?, newUser: RegisterModel){
         let storyboard = UIStoryboard(name: "BussinesSignUpForm", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "BusinessDetailsViewController") as? BusinessDetailsViewController{
             controller.newUser = newUser

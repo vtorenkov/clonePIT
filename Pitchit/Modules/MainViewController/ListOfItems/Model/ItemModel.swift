@@ -25,7 +25,7 @@ class ItemModel {
     var additionImage = [UIImage]()
     var additionImageUrl = [String]()
 
-    var author = UserModel()
+    var author = RegisterModel()
     var type: CategoryItemType = .art
     var conditionType: ConditionType = .brandNew
 }

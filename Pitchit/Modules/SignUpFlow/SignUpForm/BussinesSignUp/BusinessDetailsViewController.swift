@@ -33,7 +33,7 @@ enum BusinessDetailsSignUpType: Int {
 }
 
 class BusinessDetailsViewController: UIViewController {
-    var newUser = UserModel()
+    var newUser = RegisterModel()
     @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
     @IBOutlet var nextStepButton: UIButton!
     @IBOutlet var gradientView: UIView!
@@ -89,18 +89,20 @@ extension BusinessDetailsViewController: UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if let type = BusinessDetailsSignUpType(rawValue: textField.tag), let text = textField.text  {
+            guard let bussinesModel = self.newUser.bussinesModel else {
+                return
+            }
             switch type {
             case .address:
-                self.newUser.bussinesModel.address = text
+                bussinesModel.address = text
             case .unit:
-                self.newUser.bussinesModel.unit = text
+                bussinesModel.unit = text
             case .city:
-                self.newUser.bussinesModel.email = text
+                bussinesModel.email = text
             case .state:
-                self.newUser.bussinesModel.phone = text
+                bussinesModel.phone = text
             case .zip:
-                self.newUser.bussinesModel.zip = text
-
+                bussinesModel.zip = text
             }
         }
     }

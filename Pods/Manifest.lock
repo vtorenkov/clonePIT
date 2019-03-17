@@ -158,7 +158,7 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleSignIn: 11183592dc63e105475c7305a325045ff95e02b7
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-  GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db

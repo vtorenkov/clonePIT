@@ -7,14 +7,25 @@
 //
 
 import Foundation
-
-public struct RegisterModel {
-    var email = ""
+/*1
+public class RegisterModel1: Decodable {
     var firstName = ""
     var lastName = ""
-    var mobileNo = 0
-    var password = ""
-    var cpassword = ""
+    var email = ""
+    
+    var fullName: String? = ""
+//    var id: Int? = 0
+    var phone: Int? = 0
+    var passWord: String? = ""
+    var passWordRepeat: String? = ""
+    var imageUrl: String? = ""
+    
+    var accountType: AccountType? = .business
+    var bussinesModel: BussinesModel? = BussinesModel()
+    
+    init() {}
+    
+    var isPersonal: Bool? = true
 }
 
 extension RegisterModel: Decodable {
@@ -35,8 +46,7 @@ extension RegisterModel: Decodable {
         current = try rootContainer.decode(Forecast.self, forKey: .currently)
         forecast = try dailyContainer.decode([Forecast].self, forKey: .data)
         summary = try dailyContainer.decode(String.self, forKey: .summary)
-        
     }
 }
 
-
+*/

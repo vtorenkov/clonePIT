@@ -24,8 +24,9 @@ enum PasswordType: Int {
 }
 
 class SetPasswordViewController: UIViewController {
-    var newUser = UserModel()
-    
+    var newUser = RegisterModel()
+    lazy var presenter: SignUpPresenter = SignUpPresenter(view: self)
+
     @IBOutlet var floatingTextArrayPass: [SkyFloatingLabelTextField]!
     @IBOutlet var gradiendView: UIView!
     @IBOutlet var nextStepButton: UIButton!
@@ -69,7 +70,7 @@ class SetPasswordViewController: UIViewController {
         self.view.endEditing(true)
         if newUser.passWordRepeat == newUser.passWord {
             UserShared.sharedInstance.user = self.newUser
-            UserManager.savePassword(pass: newUser.passWord)
+            UserManager.savePassword(pass: newUser.passWord ?? "")
             Router.sharedInstance.goToMainPage()
         } else {
             self.alert(message: "Password didnt match")
@@ -90,3 +91,8 @@ extension SetPasswordViewController: UITextFieldDelegate{
     }
 }
 
+extension SetPasswordViewController: SignUpPresenterProtocol {
+    func alertShow(with string: String) {
+        self.alert(message: string)
+    }
+}

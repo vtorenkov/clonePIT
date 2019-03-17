@@ -30,7 +30,7 @@ enum SignUpType: Int {
 }
 
 class SignUpFromViewController: UIViewController {
-    var newUser = UserModel()
+    var newUser = RegisterModel()
     @IBOutlet var floatingTextArray: [SkyFloatingLabelTextField]!
     @IBOutlet var nextStepButton: UIButton!
     @IBOutlet var gradientView: UIView!
@@ -94,7 +94,9 @@ extension SignUpFromViewController: UITextFieldDelegate{
             case .email:
                 self.newUser.email = text
             case .phone:
-                self.newUser.phone = text
+                if let number =  Int(text) {
+                    self.newUser.phone = number
+                }
             }
         }
     }
