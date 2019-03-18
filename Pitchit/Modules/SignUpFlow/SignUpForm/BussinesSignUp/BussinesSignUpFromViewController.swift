@@ -67,7 +67,14 @@ class BussinesSignUpFromViewController: UIViewController {
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
         if self.newUser.bussinesModel?.email.isValidEmail() ?? false {
-            Router.sharedInstance.openBussinesDetailsSignUpForm(target: self, newUser: self.newUser)
+            guard let bussinesModel = self.newUser.bussinesModel else {
+                return
+            }
+            if bussinesModel.businessName.isEmpty || bussinesModel.industry.isEmpty || bussinesModel.email.isEmpty || bussinesModel.phone.isEmpty {
+                self.alert(message: "Please complete all fields")
+            } else {
+                Router.sharedInstance.openBussinesDetailsSignUpForm(target: self, newUser: self.newUser)
+            }
         } else {
             self.alert(message: "Email is Invalid")
         }

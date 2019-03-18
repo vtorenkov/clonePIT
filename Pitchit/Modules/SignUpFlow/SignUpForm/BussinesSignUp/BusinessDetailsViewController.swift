@@ -70,7 +70,14 @@ class BusinessDetailsViewController: UIViewController {
     
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
-        Router.sharedInstance.openSetPass(target: self, newUser: self.newUser)
+        guard let bussinesModel = self.newUser.bussinesModel else {
+            return
+        }
+        if bussinesModel.address.isEmpty || bussinesModel.email.isEmpty || bussinesModel.zip.isEmpty || bussinesModel.state.isEmpty || bussinesModel.city.isEmpty  {
+            self.alert(message: "Please complete all fields")
+        } else {
+            Router.sharedInstance.openSetPass(target: self, newUser: self.newUser)
+        }
     }
 }
 
@@ -98,9 +105,9 @@ extension BusinessDetailsViewController: UITextFieldDelegate{
             case .unit:
                 bussinesModel.unit = text
             case .city:
-                bussinesModel.email = text
+                bussinesModel.city = text
             case .state:
-                bussinesModel.phone = text
+                bussinesModel.state = text
             case .zip:
                 bussinesModel.zip = text
             }

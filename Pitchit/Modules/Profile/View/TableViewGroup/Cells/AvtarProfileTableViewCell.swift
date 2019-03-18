@@ -34,14 +34,21 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
         tapGestureRecognizer.numberOfTapsRequired = 1
         rateView.addGestureRecognizer(tapGestureRecognizer)
         
-        userName.text = UserShared.sharedInstance.user.getUserFullName()
-        
-        userName.text = userName.text?.uppercased()
+        userName.text = UserShared.sharedInstance.user.getUserFullName().uppercased()
         avatarImage.setRounded()
         
         if let url = UserShared.sharedInstance.checkUserUrl() {
             let url = URL(string: url)
             avatarImage.kf.setImage(with: url)
+        }
+        
+        if let type = UserShared.sharedInstance.user.accountType, let text = userName.text {
+            switch type {
+            case .personal:
+                userName.text = text + "Personal"
+            case .business:
+                userName.text = text + "Business"
+            }
         }
         
         userName.font = UIFont.mainFonSFUItRegular(ofSize: 15)

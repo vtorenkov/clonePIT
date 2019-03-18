@@ -15,5 +15,6 @@ protocol LoginClient {
     var provider: MoyaProvider<Login> { get }
     
     func registerUser(regModel: RegisterModel, completion: @escaping(Result))
+    func registerBusinessUser(regModel: RegisterModel, completion: @escaping(Result))
     func loginUser(email: String, password: String, completion: @escaping(ResultLogin))
 }

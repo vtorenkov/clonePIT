@@ -45,6 +45,21 @@ struct LoginManager: LoginClient {
         }
     }
     
+    func registerBusinessUser(regModel: RegisterModel, completion: @escaping(Result)) {
+        provider.request(.registerBusiness(regModel: regModel)) { (result) in
+            switch result {
+            case let .success(response):
+                do{
+                    completion(response.description)
+                } catch let error{
+                    completion(error.localizedDescription)
+                }
+            case let .failure(error):
+                completion(error.localizedDescription)
+            }
+        }
+    }
+    
     func parseErrorMessage(error: MoyaError) -> String {
         do {
             if let body = try error.response?.mapJSON() as? NSDictionary, let mess = body.value(forKey: "Message") as? String {

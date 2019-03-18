@@ -12,6 +12,7 @@ import Alamofire
 
 public enum Login: TargetType {
     case register(regModel: RegisterModel)
+    case registerBusiness(regModel: RegisterModel)
     case login(email: String, password: String)
     
     public var baseURL: URL {
@@ -24,6 +25,8 @@ public enum Login: TargetType {
             return "/user/register"
         case .login:
             return "/user/login"
+        case .registerBusiness:
+            return "/User/registerBusiness"
         }
     }
     
@@ -32,6 +35,8 @@ public enum Login: TargetType {
         case .register:
             return .post
         case .login:
+            return .post
+        case .registerBusiness:
             return .post
         }
     }
@@ -46,9 +51,18 @@ public enum Login: TargetType {
             return .requestPlain
         case .register(let regModel):
             return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat], encoding: URLEncoding.default)
+        case .registerBusiness(let regModel):
+             return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat,
+             "businessName": "",
+             "industry": "",
+             "address": "",
+             "city": "",
+             "state": "",
+             "zip": "",
+             "unit": ""], encoding: URLEncoding.default)
         }
     }
-    
+  
     public var headers: [String : String]? {
         switch self {
         case .login(let email, let password):

@@ -76,7 +76,7 @@ public class RegisterModel: Codable  {
         return url
     }
     
-    func getUserFullName() -> String? {
+    func getUserFullName() -> String {
         return self.firstName + " " + self.lastName
     }
     

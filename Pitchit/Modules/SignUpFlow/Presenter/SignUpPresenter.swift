@@ -30,4 +30,11 @@ class SignUpPresenter: NSObject, Presenter {
             //view.sendToMainScreen()
         }
     }
+    
+    func registerBusiness(user: RegisterModel) {
+        self.service.registerBusinessUser(regModel: user) { (response) in
+            print(response)
+            //view.sendToMainScreen()
+        }
+    }
 }
