@@ -9,13 +9,13 @@
 import Foundation
 
 class UserShared {
+    
     static let sharedInstance : UserShared = {
-        
         let instance = UserShared()
         return instance
-        
     }()
-    var user = RegisterModel()
+    
+    var user: RegisterModel = RegisterModel()
     
     func checkUserUrl() -> String? {
         guard let url = user.imageUrl else {

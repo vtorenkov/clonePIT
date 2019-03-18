@@ -102,7 +102,8 @@ class Router: GlobalRouter {
     
     func logOut(){
         let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "LogInScreenViewController") as? LogInScreenViewController{
+        if let controller = storyboard.instantiateViewController(withIdentifier: "LogInScreenViewController") as? LogInScreenViewController {
+            UserManager.deletePass()
             let navigationController = UINavigationController(rootViewController: controller)
             UIApplication.shared.keyWindow?.rootViewController = navigationController
         }

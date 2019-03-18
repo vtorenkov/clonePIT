@@ -69,9 +69,7 @@ class SetPasswordViewController: UIViewController {
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
         if newUser.passWordRepeat == newUser.passWord {
-            UserShared.sharedInstance.user = self.newUser
-            UserManager.savePassword(pass: newUser.passWord ?? "")
-            Router.sharedInstance.goToMainPage()
+            self.presenter.register(user: newUser)
         } else {
             self.alert(message: "Password didnt match")
         }
@@ -94,5 +92,11 @@ extension SetPasswordViewController: UITextFieldDelegate{
 extension SetPasswordViewController: SignUpPresenterProtocol {
     func alertShow(with string: String) {
         self.alert(message: string)
+    }
+    
+    func sendToMainScreen() {
+        UserManager.savePassword(user: newUser)
+        UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
+        Router.sharedInstance.goToMainPage()
     }
 }

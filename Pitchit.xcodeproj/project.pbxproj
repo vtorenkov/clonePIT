@@ -14,7 +14,6 @@
 		0709A8D9222E93E000CF120B /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709A8D8222E93E000CF120B /* FilterView.swift */; };
 		0709A8DB222E93F700CF120B /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0709A8DA222E93F600CF120B /* FilterView.xib */; };
 		073C6A482227F0450019A825 /* UiView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C6A472227F0450019A825 /* UiView+Borders.swift */; };
-		077E8069223A7DD40089E910 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E8068223A7DD40089E910 /* RegisterModel.swift */; };
 		079F99202226DCAF007E159B /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F991F2226DCAF007E159B /* ChatModel.swift */; };
 		C4668F85B94FADEC5980165D /* Pods_Pitchit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */; };
 		FA0A12E821A73C190061F7AA /* ItemConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A12E621A73C190061F7AA /* ItemConditionTableViewCell.swift */; };
@@ -260,7 +259,6 @@
 		0709A8D8222E93E000CF120B /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		0709A8DA222E93F600CF120B /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		073C6A472227F0450019A825 /* UiView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Borders.swift"; sourceTree = "<group>"; };
-		077E8068223A7DD40089E910 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		079F991F2226DCAF007E159B /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		89DF4DA8C098DBD982220254 /* Pods-Pitchit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.release.xcconfig"; sourceTree = "<group>"; };
 		F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pitchit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -535,7 +533,6 @@
 		0709428122392EF900B736BD /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				077E8067223A7DC50089E910 /* Entity */,
 				070942842239309B00B736BD /* Networking */,
 			);
 			path = Services;
@@ -558,14 +555,6 @@
 				0709A8D8222E93E000CF120B /* FilterView.swift */,
 			);
 			path = FilterView;
-			sourceTree = "<group>";
-		};
-		077E8067223A7DC50089E910 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				077E8068223A7DD40089E910 /* RegisterModel.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		079F991E2226DC9E007E159B /* Entity */ = {
@@ -1975,7 +1964,6 @@
 			files = (
 				FA79F3B121750EAA005A9AEB /* EditProfileViewController.swift in Sources */,
 				FA810C92212B4889003176A8 /* AdditionalPicsVidsTableViewCell.swift in Sources */,
-				077E8069223A7DD40089E910 /* RegisterModel.swift in Sources */,
 				FA810CE421370E51003176A8 /* InviteFriendsViewController.swift in Sources */,
 				FA810CBF213191C1003176A8 /* Int+Extensions.swift in Sources */,
 				FAF1A9B421EA077000F5ABD1 /* SavedSearchTableViewProtocol.swift in Sources */,

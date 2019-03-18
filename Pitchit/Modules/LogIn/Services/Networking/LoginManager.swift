@@ -10,38 +10,49 @@ import Foundation
 import Moya
 
 struct LoginManager: LoginClient {
+    
+    let provider = MoyaProvider<Login>()
+
     func loginUser(email: String, password: String, completion: @escaping (ResultLogin)) {
         provider.request(.login(email: email, password: password)) { (result) in
             switch result {
             case let .success(response):
                 do{
                     let registerModel = try response.map(RegisterModel.self)
+                    registerModel.passWord = password
                     completion(registerModel, response.description)
                 } catch let error{
                     completion(nil, error.localizedDescription)
                 }
             case let .failure(error):
-                completion(nil, error.localizedDescription)
+                completion(nil, self.parseErrorMessage(error: error))
             }
         }
     }
-    
-    
-    let provider = MoyaProvider<Login>()
 
     func registerUser(regModel: RegisterModel, completion: @escaping(Result)) {
         provider.request(.register(regModel: regModel)) { (result) in
             switch result {
             case let .success(response):
                 do{
-//                    let weather = try response.map(Weather.self)
                     completion(response.description)
                 } catch let error{
-//                    completion(nil, error.localizedDescription)
+                    completion(error.localizedDescription)
                 }
             case let .failure(error):
                 completion(error.localizedDescription)
             }
         }
+    }
+    
+    func parseErrorMessage(error: MoyaError) -> String {
+        do {
+            if let body = try error.response?.mapJSON() as? NSDictionary, let mess = body.value(forKey: "Message") as? String {
+                return mess
+            }
+        } catch {
+            return error.localizedDescription
+        }
+        return "Error, something happens"
     }
 }

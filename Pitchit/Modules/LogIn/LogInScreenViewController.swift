@@ -46,6 +46,7 @@ class LogInScreenViewController: UIViewController {
         super.viewWillAppear(true)
         if UserManager.isUserIsLoggin() {
             Router.sharedInstance.goToMainPage()
+            UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
         } else if (FBSDKAccessToken.current() != nil) {
             self.fetchUserProfile()
         } else if (GIDSignIn.sharedInstance()?.currentUser != nil) {
@@ -77,7 +78,7 @@ class LogInScreenViewController: UIViewController {
         GIDSignIn.sharedInstance().signIn()
     }
     
-    @IBAction func loginButton(_ sender: UIButton) {
+    @IBAction func loginButtonFaceBook(_ sender: UIButton) {
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (login, error) in
             if(error == nil){
@@ -125,12 +126,14 @@ extension LogInScreenViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     }
 }
 
-extension LogInScreenViewController: LogInPresenterProtocol{
+extension LogInScreenViewController: LogInPresenterProtocol {
     func alertShow(with string: String) {
         self.alert(message: string)
     }
     
-    func sendToMainPage() {
+    func sendToMainPage(newUser: RegisterModel) {
+        UserManager.savePassword(user: newUser)
+        UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
         Router.sharedInstance.goToMainPage()
     }
 }

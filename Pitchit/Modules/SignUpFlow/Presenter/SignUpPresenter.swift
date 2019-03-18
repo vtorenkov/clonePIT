@@ -10,6 +10,7 @@ import Foundation
 
 protocol SignUpPresenterProtocol: class {
     func alertShow(with string: String)
+    func sendToMainScreen()
 }
 
 class SignUpPresenter: NSObject, Presenter {
@@ -23,10 +24,10 @@ class SignUpPresenter: NSObject, Presenter {
         self.service = service
     }
     
-    
-    func register() {
-        self.service.registerUser(regModel: RegisterModel()) { (response) in
+    func register(user: RegisterModel) {
+        self.service.registerUser(regModel: user) { (response) in
             print(response)
+            //view.sendToMainScreen()
         }
     }
 }

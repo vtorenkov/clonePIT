@@ -38,7 +38,6 @@ extension MenuViewController: MenuTableItemDelegate {
                         FBSDKAccessToken.setCurrent(nil)
                         
                         UserShared.sharedInstance.user = RegisterModel()
-                        UserManager.deletePass()
                         Router.sharedInstance.logOut()
                     } else if (GIDSignIn.sharedInstance()?.currentUser != nil) {
                         GIDSignIn.sharedInstance().signOut()
