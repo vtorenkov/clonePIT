@@ -18,7 +18,8 @@ class ItemModel {
     var place = ""
     var dateOfPost = ""
     var is_favourite = true
-    
+    var sold = true
+
     var placeCoodinate: CLLocationCoordinate2D?
     var thumbImage: UIImage?
     var additionImage = [UIImage]()
@@ -35,9 +36,12 @@ class ItemModel {
         self.price = codableItem.price
         self.placeCoodinate = CLLocationCoordinate2D(latitude: codableItem.latitude, longitude: codableItem.longitude)
         self.videoUrl = codableItem.videoUrl
-//        self.is_favourite = codableItem.is_favourite ?? false
+        self.is_favourite = codableItem.is_favourite ?? false
+        self.sold = codableItem.sold ?? false
+
+        //add dependency from codable classes to this wrapper
         self.conditionType = ConditionType(rawValue: codableItem.productStatus) ?? .likeNew
-//        self.author = codableItem.seller
+        self.author = codableItem.seller
     }
     
     init() {}
@@ -53,17 +57,13 @@ class ItemModelCodable: Codable {
     var latitude: Double
     var longitude: Double
     var seller: AuthorCodable
-//    var is_favourite: Bool? = true
-
+    var is_favourite: Bool? = true
+    var sold: Bool? = true
 }
 
 class AuthorCodable: Codable {
     var name = ""
-//    var userId = ""
-//    var image = ""
+    var userId: String? = ""
+    var image: String? = ""
 }
-/*
-"userId": "12441436-59ef-11e7-9002-0a3e46e83204",
-"name": "David ",
-"image":
-*/
+

@@ -76,6 +76,15 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         self.priceTitle.font = UIFont.mainFonSFUItBold(ofSize: 16)
         self.distanceLabel.font = UIFont.mainFonSFUItRegular(ofSize: 10)
         
+        self.avatarImage.contentMode = .scaleAspectFill
+        self.avatarImage.clipsToBounds = true
+        if let seller = item?.author {
+            if let url = seller.image {
+                let url = URL(string: url)
+                avatarImage.kf.setImage(with: url)
+            }
+        }
+        
         self.avatarImage.circleCorners()
     }
     
