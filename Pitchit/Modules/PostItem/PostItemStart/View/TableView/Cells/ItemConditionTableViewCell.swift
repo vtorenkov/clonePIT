@@ -12,7 +12,6 @@ enum ConditionType: String {
     case good = "Good"
     case acceptable = "Acceptable"
     case poor = "Poor"
-
     static let typesToGetRandomly = [ConditionType.brandNew.rawValue, ConditionType.likeNew.rawValue, ConditionType.good.rawValue, ConditionType.acceptable.rawValue, ConditionType.poor.rawValue]
 }
 

@@ -35,12 +35,12 @@ struct LoginManager: LoginClient {
             switch result {
             case let .success(response):
                 do{
-                    completion(response.description)
+                    completion(true, response.description)
                 } catch let error{
-                    completion(error.localizedDescription)
+                    completion(false, error.localizedDescription)
                 }
             case let .failure(error):
-                completion(error.localizedDescription)
+                completion(false, self.parseErrorMessage(error: error))
             }
         }
     }
@@ -50,12 +50,12 @@ struct LoginManager: LoginClient {
             switch result {
             case let .success(response):
                 do{
-                    completion(response.description)
+                    completion(true, response.description)
                 } catch let error{
-                    completion(error.localizedDescription)
+                    completion(false, error.localizedDescription)
                 }
             case let .failure(error):
-                completion(error.localizedDescription)
+                completion(false, self.parseErrorMessage(error: error))
             }
         }
     }

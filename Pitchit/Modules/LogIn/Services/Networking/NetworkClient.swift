@@ -10,7 +10,7 @@ import Moya
 protocol LoginClient {
     typealias Success = NSError
     typealias ResultLogin = (RegisterModel?, String) -> ()
-    typealias Result = (String) -> ()
+    typealias Result = (Bool, String) -> ()
 
     var provider: MoyaProvider<Login> { get }
     

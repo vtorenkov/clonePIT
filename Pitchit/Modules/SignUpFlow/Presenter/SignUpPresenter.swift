@@ -25,16 +25,22 @@ class SignUpPresenter: NSObject, Presenter {
     }
     
     func register(user: RegisterModel) {
-        self.service.registerUser(regModel: user) { (response) in
-            print(response)
-            //view.sendToMainScreen()
+        self.service.registerUser(regModel: user) { [weak self] (success, response) in
+            self?.checkResponse(succes: success, response: response)
         }
     }
     
     func registerBusiness(user: RegisterModel) {
-        self.service.registerBusinessUser(regModel: user) { (response) in
-            print(response)
-            //view.sendToMainScreen()
+        self.service.registerBusinessUser(regModel: user) { [weak self]  (success, response) in
+            self?.checkResponse(succes: success, response: response)
+        }
+    }
+    
+    func checkResponse(succes: Bool, response: String) {
+        if succes {
+            self.view.sendToMainScreen()
+        } else {
+            self.view.alertShow(with: response)
         }
     }
 }

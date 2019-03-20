@@ -16,7 +16,7 @@ public enum Login: TargetType {
     case login(email: String, password: String)
     
     public var baseURL: URL {
-        return URL(string: "http://ec2-34-238-119-69.compute-1.amazonaws.com")!
+        return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
     
     public var path: String {
@@ -52,14 +52,18 @@ public enum Login: TargetType {
         case .register(let regModel):
             return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat], encoding: URLEncoding.default)
         case .registerBusiness(let regModel):
-             return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat,
-             "businessName": "",
-             "industry": "",
-             "address": "",
-             "city": "",
-             "state": "",
-             "zip": "",
-             "unit": ""], encoding: URLEncoding.default)
+            guard let bisModel = regModel.bussinesModel else {
+                return .requestPlain
+            }
+             return .requestParameters(parameters: ["firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat,
+             "businessName": bisModel.businessName,
+             "industry": bisModel.industry,
+             "address": bisModel.address,
+             "city": bisModel.city,
+             "state": bisModel.state,
+             "zip": bisModel.zip,
+             "unit": bisModel.unit,
+             "email": bisModel.email], encoding: URLEncoding.default)
         }
     }
   

@@ -15,13 +15,21 @@ class MainPresenter: NSObject, Presenter {
     
     weak var view: PresenterView!
     
-//    let service:RestServiceManager
-//
-//    let amazonService = AmazonService()
+    fileprivate let service: MainViewClient!
     
-//    required init(view: PresenterView ,service:RestServiceManager = RestServiceManager()) {
-
-    required init(view: PresenterView) {
+    required init(view: PresenterView, service: MainViewClient = MainViewManager()) {
         self.view = view
+        self.service = service
+    }
+    
+    func getPosts() {
+        var items = [ItemModel]()
+        self.service.getPosts { [weak self] (itemsCodable, response) in
+            itemsCodable?.forEach{items.append(ItemModel(codableItem: $0))}
+            self?.view.items = items
+            self?.view.pitchCollectionViewDelegate?.items = items
+            self?.view.pitchCollectionViewDatasource?.items = items
+            self?.view.pitchCollection.reloadData()
+        }
     }
 }

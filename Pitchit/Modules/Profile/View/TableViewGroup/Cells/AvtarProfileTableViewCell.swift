@@ -45,9 +45,9 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
         if let type = UserShared.sharedInstance.user.accountType, let text = userName.text {
             switch type {
             case .personal:
-                userName.text = text + "Personal"
+                userName.text = text + " " + "(Personal)"
             case .business:
-                userName.text = text + "Business"
+                userName.text = text + " " + "(Business)"
             }
         }
         

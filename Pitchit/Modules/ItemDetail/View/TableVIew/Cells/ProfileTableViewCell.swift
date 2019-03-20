@@ -27,11 +27,11 @@ class ProfileTableViewCell: UITableViewCell, NibReusable {
             return
         }
         
-        self.UserName.text = user.fullName
-        if let url = user.getUserImage() {
-            let url = URL(string: url)
-            profileAvatar.kf.setImage(with: url)
-        }
+        self.UserName.text = user.name
+//        if !user.image.isEmpty {
+//            let url = URL(string: user.image)
+//            profileAvatar.kf.setImage(with: url)
+//        }
         
         profileAvatar.layoutIfNeeded() // iOS 10 Fix
         profileAvatar.setRounded()
