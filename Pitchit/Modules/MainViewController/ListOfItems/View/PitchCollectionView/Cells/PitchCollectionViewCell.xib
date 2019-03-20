@@ -78,25 +78,27 @@
                         <rect key="frame" x="340" y="216" width="36" height="36"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6V-8C-02q" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
-                                <rect key="frame" x="-1.5" y="4" width="39" height="21"/>
+                                <rect key="frame" x="0.0" y="4" width="36" height="14.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 mi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQG-bB-1Dq" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
-                                <rect key="frame" x="5" y="19" width="26" height="17"/>
+                                <rect key="frame" x="8.5" y="24" width="19.5" height="12"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47843137254901957" green="0.47450980392156861" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="H6V-8C-02q" firstAttribute="leading" secondItem="lwb-Rh-f21" secondAttribute="leading" id="07s-Vz-lSr"/>
                             <constraint firstItem="H6V-8C-02q" firstAttribute="top" secondItem="lwb-Rh-f21" secondAttribute="top" constant="4" id="1Oq-AM-ieb"/>
                             <constraint firstAttribute="width" secondItem="lwb-Rh-f21" secondAttribute="height" multiplier="1:1" id="NmE-WP-55a"/>
                             <constraint firstItem="bQG-bB-1Dq" firstAttribute="centerX" secondItem="H6V-8C-02q" secondAttribute="centerX" id="POP-2S-o76"/>
+                            <constraint firstAttribute="trailing" secondItem="H6V-8C-02q" secondAttribute="trailing" id="XAv-03-cLF"/>
                             <constraint firstAttribute="bottom" secondItem="bQG-bB-1Dq" secondAttribute="bottom" id="hU5-nY-3RR"/>
                             <constraint firstItem="H6V-8C-02q" firstAttribute="centerX" secondItem="lwb-Rh-f21" secondAttribute="centerX" id="t0I-in-i5V"/>
                         </constraints>
