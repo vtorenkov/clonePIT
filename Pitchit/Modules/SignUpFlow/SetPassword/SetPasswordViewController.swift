@@ -24,18 +24,19 @@ enum PasswordType: Int {
 }
 
 class SetPasswordViewController: UIViewController {
-    var newUser = UserModel()
+    var newUser = RegisterModel()
+    lazy var presenter: SignUpPresenter = SignUpPresenter(view: self)
     
     @IBOutlet var floatingTextArrayPass: [SkyFloatingLabelTextField]!
     @IBOutlet var gradiendView: UIView!
     @IBOutlet var nextStepButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.title = "Set a Password".uppercased()
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.gradiendView.addGradient()
@@ -67,10 +68,13 @@ class SetPasswordViewController: UIViewController {
     
     @IBAction func nextStep(_ sender: Any) {
         self.view.endEditing(true)
-        if newUser.passWordRepeat == newUser.passWord {
-            UserShared.sharedInstance.user = self.newUser
-            UserManager.savePassword(pass: newUser.passWord)
-            Router.sharedInstance.goToMainPage()
+        if newUser.passWordRepeat == newUser.passWord, let type = newUser.accountType {
+            switch type {
+            case .business:
+                self.presenter.registerBusiness(user: newUser)
+            case .personal:
+                self.presenter.register(user: newUser)
+            }
         } else {
             self.alert(message: "Password didnt match")
         }
@@ -90,3 +94,14 @@ extension SetPasswordViewController: UITextFieldDelegate{
     }
 }
 
+extension SetPasswordViewController: SignUpPresenterProtocol {
+    func alertShow(with string: String) {
+        self.alert(message: string)
+    }
+    
+    func sendToMainScreen() {
+        UserManager.savePassword(user: newUser)
+        UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
+        Router.sharedInstance.goToMainPage()
+    }
+}

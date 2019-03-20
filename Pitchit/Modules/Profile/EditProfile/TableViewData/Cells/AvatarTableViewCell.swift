@@ -13,11 +13,10 @@ class AvatarTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet var avatarImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        if !UserShared.sharedInstance.user.imageUrl.isEmpty {
-            let url = URL(string: UserShared.sharedInstance.user.imageUrl)
+        if let url = UserShared.sharedInstance.checkUserUrl() {
+            let url = URL(string: url)
             avatarImage.kf.setImage(with: url)
         }
-        // Initialization code
     }
     
     override func layoutSubviews() {

@@ -9,7 +9,7 @@ import Cosmos
 
 class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet var gradientView: UIView!
-
+    
     @IBOutlet var userAddress: UILabel!
     @IBOutlet var rateView: UIView!
     @IBOutlet var userName: UILabel!
@@ -34,17 +34,21 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
         tapGestureRecognizer.numberOfTapsRequired = 1
         rateView.addGestureRecognizer(tapGestureRecognizer)
         
-        if !UserShared.sharedInstance.user.fullName.isEmpty {
-            userName.text = UserShared.sharedInstance.user.fullName
-        } else {
-            userName.text = "Jordan delflower"
-        }
-        userName.text = userName.text?.uppercased()
+        userName.text = UserShared.sharedInstance.user.getUserFullName().uppercased()
         avatarImage.setRounded()
         
-        if !UserShared.sharedInstance.user.imageUrl.isEmpty {
-            let url = URL(string: UserShared.sharedInstance.user.imageUrl)
+        if let url = UserShared.sharedInstance.checkUserUrl() {
+            let url = URL(string: url)
             avatarImage.kf.setImage(with: url)
+        }
+        
+        if let type = UserShared.sharedInstance.user.accountType, let text = userName.text {
+            switch type {
+            case .personal:
+                userName.text = text + " " + "(Personal)"
+            case .business:
+                userName.text = text + " " + "(Business)"
+            }
         }
         
         userName.font = UIFont.mainFonSFUItRegular(ofSize: 15)
@@ -56,7 +60,7 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
         starRate.settings.filledColor = UIColor.white
         starRate.settings.filledBorderColor = UIColor.white
         starRate.settings.emptyBorderColor = UIColor.white
-
+        
         if let layers = self.gradientView.layer.sublayers {
             layers.forEach{$0.removeFromSuperlayer()}
         }

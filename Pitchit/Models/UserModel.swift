@@ -9,39 +9,89 @@
 import Foundation
 import SwiftyJSON
 
-enum AccountType {
+enum AccountType: Codable  {
+    
+    enum Key: CodingKey {
+        case rawValue
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: Key.self)
+        switch self {
+        case .business:
+            try container.encode(0, forKey: .rawValue)
+        case .personal:
+            try container.encode(1, forKey: .rawValue)
+        }
+    }
+    
+    init(from decoder: Decoder) throws {
+        let label = try decoder.singleValueContainer().decode(String.self)
+        switch label {
+        case "business": self = .business
+        case "personal": self = .personal
+        default:
+            self = .personal
+        }
+    }
+    
     case business
     case personal
 }
 
-class UserModel {
-    var id = 0
+public class RegisterModel: Codable  {
     var firstName = ""
     var lastName = ""
-    var phone = ""
     var email = ""
-    var passWord = ""
-    var passWordRepeat = ""
-    var imageUrl = ""
+
+    var fullName: String? = ""
+    var userId: String = ""
+    var phone: Int? = 0
+    var passWord: String? = ""
+    var passWordRepeat: String? = ""
+    var imageUrl: String? = ""
     
-    var accountType: AccountType = .business
+    var accountType: AccountType? = .personal
+    var bussinesModel: BussinesModel? = BussinesModel()
     
-    var bussinesModel = BussinesModel()
-    
-    var fullName: String = ""
-    
-    init() {
+    public required init(from decoder: Decoder) throws {
+        let map = try decoder.container(keyedBy: CodingKeys.self)
+        do {
+            self.userId = try map.decode(String.self, forKey: .userId)
+        } catch {
+            self.userId = ""
+        }
+        
+        self.firstName = try map.decode(String.self, forKey: .firstName)
+        self.lastName = try map.decode(String.self, forKey: .lastName)
+        self.email = try map.decode(String.self, forKey: .email)
     }
     
+    func getUserImage() -> String? {
+        guard let url = self.imageUrl else {
+            return nil
+        }
+        if url.isEmpty {
+            return nil
+        }
+        return url
+    }
+    
+    func getUserFullName() -> String {
+        return self.firstName + " " + self.lastName
+    }
+    
+    init() {}
+    
     init(json:JSON) {
-        self.id = json["id"].intValue
+        self.userId = json["id"].stringValue
         self.fullName = json["name"].stringValue
         self.imageUrl = json["picture"]["data"]["url"].stringValue
         self.email = json["email"].stringValue
     }
 }
 
-class BussinesModel {
+class BussinesModel: Codable {
     var businessName = ""
     var industry = ""
     var address = ""

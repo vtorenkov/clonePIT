@@ -27,9 +27,9 @@ class ProfileTableViewCell: UITableViewCell, NibReusable {
             return
         }
         
-        self.UserName.text = user.fullName
-        if !user.imageUrl.isEmpty {
-            let url = URL(string: user.imageUrl)
+        self.UserName.text = user.name
+        if let url = user.image {
+            let url = URL(string: url)
             profileAvatar.kf.setImage(with: url)
         }
         

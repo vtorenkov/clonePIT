@@ -29,4 +29,5 @@ pod 'SwiftlySlider'
 pod 'RangeSeekSlider'
 pod 'GoogleSignIn'
 
+pod 'Moya', '~> 11.0'
 end

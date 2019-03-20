@@ -52,8 +52,8 @@ class MainViewController: UIViewController {
     
     lazy var presenter: MainPresenter = MainPresenter(view: self)
     
-    fileprivate var pitchCollectionViewDatasource: PitchCollectionDatasource?
-    fileprivate var pitchCollectionViewDelegate: PitchCollectionDelegate?
+    var pitchCollectionViewDatasource: PitchCollectionDatasource?
+    var pitchCollectionViewDelegate: PitchCollectionDelegate?
     
     fileprivate var categoriesCollectionViewDatasource: CategoriesCollectionDatasource?
     fileprivate var categoriesCollectionViewDelegate: CategoriesCollectionDelegate?
@@ -92,8 +92,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        items = ItemManager.sharedInstance.items
-        pitchCollection.reloadData()
+        self.presenter.getPosts()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -12,9 +12,9 @@ import NYTPhotoViewer
 extension PostItemDescViewController: ItemDescTableItemDelegate {
     func uploadItem() {
         if let item = self.item {
-            item.author = UserShared.sharedInstance.user
-            item.dateOfPost = Date().toString()
-            ItemManager.sharedInstance.items.append(item)
+//            item.author = UserShared.sharedInstance.user
+//            item.dateOfPost = Date().toString()
+//            ItemManager.sharedInstance.items.append(item)
         }
         self.dismiss(animated: true, completion: nil)
     }

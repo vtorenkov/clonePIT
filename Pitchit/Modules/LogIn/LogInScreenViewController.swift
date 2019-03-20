@@ -16,6 +16,8 @@ class LogInScreenViewController: UIViewController {
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
     
+    lazy var presenter: LogInPresenter = LogInPresenter(view: self)
+    
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var gradientView: UIView!
     @IBOutlet var facebookButton: UIButton!
@@ -44,6 +46,7 @@ class LogInScreenViewController: UIViewController {
         super.viewWillAppear(true)
         if UserManager.isUserIsLoggin() {
             Router.sharedInstance.goToMainPage()
+            UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
         } else if (FBSDKAccessToken.current() != nil) {
             self.fetchUserProfile()
         } else if (GIDSignIn.sharedInstance()?.currentUser != nil) {
@@ -51,8 +54,8 @@ class LogInScreenViewController: UIViewController {
         }
     }
     
-    @IBAction func openMainPage(_ sender: Any) {
-        Router.sharedInstance.goToMainPage()
+    @IBAction func loginClick(_ sender: Any) {
+        presenter.login(email: emailText.text, password: passwordText.text)
     }
     
     @IBAction func signUpAction(_ sender: Any) {
@@ -75,7 +78,7 @@ class LogInScreenViewController: UIViewController {
         GIDSignIn.sharedInstance().signIn()
     }
     
-    @IBAction func loginButton(_ sender: UIButton) {
+    @IBAction func loginButtonFaceBook(_ sender: UIButton) {
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (login, error) in
             if(error == nil){
@@ -93,7 +96,7 @@ class LogInScreenViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 let json = JSON(result)
-                UserShared.sharedInstance.user = UserModel(json: json)
+                UserShared.sharedInstance.user = RegisterModel(json: json)
                 Router.sharedInstance.goToMainPage()
             }
         })
@@ -119,6 +122,18 @@ class LogInScreenViewController: UIViewController {
 
 extension LogInScreenViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        Router.sharedInstance.goToMainPage()
+    }
+}
+
+extension LogInScreenViewController: LogInPresenterProtocol {
+    func alertShow(with string: String) {
+        self.alert(message: string)
+    }
+    
+    func sendToMainPage(newUser: RegisterModel) {
+        UserManager.savePassword(user: newUser)
+        UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
         Router.sharedInstance.goToMainPage()
     }
 }

@@ -32,22 +32,19 @@ extension MenuViewController: MenuTableItemDelegate {
         case .LogOut:
             self.alertYesNo(title: "Log out", message: "Are you sure you want to log out?") { (yes) in
                 if yes {
-                    self.dismiss(animated: false, completion: {
-                        if (FBSDKAccessToken.current() != nil) {
-                            let loginManager = FBSDKLoginManager()
-                            loginManager.logOut()
-                            FBSDKAccessToken.setCurrent(nil)
-                            
-                            UserShared.sharedInstance.user = UserModel()
-                            UserManager.deletePass()
-                            Router.sharedInstance.logOut()
-                        } else if (GIDSignIn.sharedInstance()?.currentUser != nil) {
-                            GIDSignIn.sharedInstance().signOut()
-                            Router.sharedInstance.logOut()
-                        } else {
-                            Router.sharedInstance.logOut()
-                        }
-                    })
+                    if (FBSDKAccessToken.current() != nil) {
+                        let loginManager = FBSDKLoginManager()
+                        loginManager.logOut()
+                        FBSDKAccessToken.setCurrent(nil)
+                        
+                        UserShared.sharedInstance.user = RegisterModel()
+                        Router.sharedInstance.logOut()
+                    } else if (GIDSignIn.sharedInstance()?.currentUser != nil) {
+                        GIDSignIn.sharedInstance().signOut()
+                        Router.sharedInstance.logOut()
+                    } else {
+                        Router.sharedInstance.logOut()
+                    }
                 }
             }
             break
@@ -82,16 +79,12 @@ class MenuViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !UserShared.sharedInstance.user.imageUrl.isEmpty {
-            let url = URL(string: UserShared.sharedInstance.user.imageUrl)
+        if let url = UserShared.sharedInstance.checkUserUrl() {
+            let url = URL(string: url)
             avatarImage.kf.setImage(with: url)
         }
         
-        if UserShared.sharedInstance.user.fullName.isEmpty {
-            self.nameUser.text = "John Smith"
-        } else {
-            self.nameUser.text = UserShared.sharedInstance.user.fullName
-        }
+        self.nameUser.text = UserShared.sharedInstance.user.getUserFullName()
     }
     
     @IBAction func openEditProfile(_ sender: Any) {
