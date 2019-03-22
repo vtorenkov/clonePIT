@@ -24,7 +24,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell, NibReusable {
 
 struct CategoriesCollectionViewCellModel {
     var cat: CategoryItem
-    var currentCat: CategoryItemType
+    var currentCat: CategoryItem
 }
 
 extension CategoriesCollectionViewCellModel: CellViewModel {

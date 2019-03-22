@@ -21,9 +21,14 @@ enum CategoryItemType: String {
     case vehicles = "Vehicles"
 }
 
-
-struct CategoryItem: Codable {
+class CategoryItem: Codable {
     var name: String
     let id: String
     let image: String
+    
+    init(){
+        self.name = ""
+        self.id = ""
+        self.image = ""
+    }
 }

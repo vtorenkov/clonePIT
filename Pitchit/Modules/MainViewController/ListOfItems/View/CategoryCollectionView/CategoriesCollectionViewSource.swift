@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 protocol CategoriesCollectionInteract: class {
-    func selectCategory(category: CategoryItemType)
+    func selectCategory(category: CategoryItem)
 }
 
 final class CategoriesCollectionDatasource: NSObject, CategoriesCollectionDatasourceProtocol {
@@ -19,7 +19,7 @@ final class CategoriesCollectionDatasource: NSObject, CategoriesCollectionDataso
     
     weak var presenter: MainPresenter?
     weak var pageControll: UIPageControl!
-    var category: CategoryItemType = .art
+    var category: CategoryItem = CategoryItem()
     var categories = [CategoryItem]()
 
     required init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CategoriesCollectionInteract, presenter: MainPresenter) {
@@ -61,7 +61,7 @@ class CategoriesCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let categoryItem = categories[indexPath.row]
-        self.delegate?.selectCategory(category: .clothing)
+        self.delegate?.selectCategory(category: categoryItem)
     }
 }
 

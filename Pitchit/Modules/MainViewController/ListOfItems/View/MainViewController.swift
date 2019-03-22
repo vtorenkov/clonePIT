@@ -18,13 +18,13 @@ extension MainViewController: FiltersActions {
 }
 
 extension MainViewController: CategoriesCollectionInteract {
-    func selectCategory(category: CategoryItemType) {
+    func selectCategory(category: CategoryItem) {
         self.category = category
-        self.items = ItemManager.sharedInstance.items.filter{$0.type == category}
-        self.pitchCollectionViewDatasource?.items = self.items
+        let filteredItems = items.filter{$0.typeString == category.name}
+        self.pitchCollectionViewDatasource?.items = filteredItems
         self.pitchCollectionViewDatasource?.category = category
         self.categoriesCollectionViewDatasource?.category = category
-        self.pitchCollectionViewDelegate?.items = self.items
+        self.pitchCollectionViewDelegate?.items = filteredItems
         self.pitchCollection.reloadData()
         self.categoryCollection.reloadData()
     }
@@ -59,7 +59,7 @@ class MainViewController: UIViewController {
     var categoriesCollectionViewDelegate: CategoriesCollectionDelegate?
     
     var items = [ItemModel]()
-    var category: CategoryItemType = .art
+    var category: CategoryItem = CategoryItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()

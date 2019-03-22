@@ -27,6 +27,7 @@ class ItemModel {
 
     var author = AuthorCodable()
     var type: CategoryItemType = .art
+    var typeString = ""
     var conditionType: ConditionType = .brandNew
     
     init(codableItem: ItemModelCodable) {
@@ -36,6 +37,7 @@ class ItemModel {
         self.price = codableItem.price
         self.placeCoodinate = CLLocationCoordinate2D(latitude: codableItem.latitude, longitude: codableItem.longitude)
         self.videoUrl = codableItem.videoUrl
+        self.typeString = codableItem.category
         self.is_favourite = codableItem.is_favourite ?? false
         self.sold = codableItem.sold ?? false
 
@@ -59,6 +61,7 @@ class ItemModelCodable: Codable {
     var seller: AuthorCodable
     var is_favourite: Bool? = true
     var sold: Bool? = true
+    var category: String = ""
 }
 
 class AuthorCodable: Codable {

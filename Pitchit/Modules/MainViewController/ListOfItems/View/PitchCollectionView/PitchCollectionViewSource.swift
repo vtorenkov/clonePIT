@@ -19,8 +19,8 @@ final class PitchCollectionDatasource: NSObject, PitchCollectionDatasourceProtoc
     weak var delegateVC: PitchCollectionInteract?
     var items = [ItemModel]()
     weak var presenter: MainPresenter?
-    var category: CategoryItemType = .art
-    
+    var category: CategoryItem = CategoryItem()
+
     required init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : PitchCollectionInteract, presenter: MainPresenter, items: [ItemModel]) {
         self.collectionView = collectionView
         self.delegate = delegate
@@ -35,7 +35,7 @@ final class PitchCollectionDatasource: NSObject, PitchCollectionDatasourceProtoc
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.items.count == 0 {
-            self.collectionView?.setEmptyMessage("Nothing to show in \(category.rawValue) category. Add new Items.")
+            self.collectionView?.setEmptyMessage("Nothing to show in \(category.name) category. Add new Items.")
         } else {
             self.collectionView?.restore()
         }
