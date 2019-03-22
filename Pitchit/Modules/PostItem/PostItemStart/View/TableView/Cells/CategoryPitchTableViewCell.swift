@@ -11,9 +11,9 @@ import UIKit
 extension CategoryPitchTableViewCell: CategoriesPostInteract {
     func selectCategory(cat: CategoryItem) {
         if let item = self.item {
-            item.type = cat.type
-            self.categoriesCollectionViewDatasource?.type = cat.type
-            self.collectionView.reloadData()
+//            item.type = cat.type
+//            self.categoriesCollectionViewDatasource?.type = cat.type
+//            self.collectionView.reloadData()
         }
     }
 }

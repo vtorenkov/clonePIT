@@ -20,7 +20,8 @@ final class CategoriesCollectionDatasource: NSObject, CategoriesCollectionDataso
     weak var presenter: MainPresenter?
     weak var pageControll: UIPageControl!
     var category: CategoryItemType = .art
-    
+    var categories = [CategoryItem]()
+
     required init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CategoriesCollectionInteract, presenter: MainPresenter) {
         self.collectionView = collectionView
         self.delegate = delegate
@@ -47,6 +48,7 @@ final class CategoriesCollectionDatasource: NSObject, CategoriesCollectionDataso
 class CategoriesCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     weak var delegate: CategoriesCollectionInteract?
     weak var collectionView: UICollectionView?
+    var categories = [CategoryItem]()
     
     init(_ delegate: CategoriesCollectionInteract, collectionView: UICollectionView) {
         self.delegate = delegate
@@ -59,7 +61,7 @@ class CategoriesCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let categoryItem = categories[indexPath.row]
-        self.delegate?.selectCategory(category: categoryItem.type)
+        self.delegate?.selectCategory(category: .clothing)
     }
 }
 

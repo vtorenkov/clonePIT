@@ -30,12 +30,13 @@ struct PostItemCatCollectionViewCellModel {
 extension PostItemCatCollectionViewCellModel: CellViewModel {
     func setup(cell: PostItemCatCollectionViewCell) {
         cell.categoryName.text = cat.name
-        if cat.type == currentCat {
-            cell.whiteDeselected.alpha = 0.0
-        } else {
-            cell.whiteDeselected.alpha = 0.5
-        }
-        cell.categoryImage.image = cat.image
+//        if cat.type == currentCat {
+//            cell.whiteDeselected.alpha = 0.0
+//        } else {
+//            cell.whiteDeselected.alpha = 0.5
+//        }
+        let url = URL(string: cat.image)
+        cell.categoryImage.kf.setImage(with: url)
     }
 }
 

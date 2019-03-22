@@ -32,8 +32,11 @@ class MainPresenter: NSObject, Presenter {
             self?.view.pitchCollection.reloadData()
         }
         
-        self.service.getCategories { (categories, response) in
-            
+        self.service.getCategories { [weak self] (categories, response) in
+            self?.view.categoriesCollectionViewDelegate?.categories = categories ?? [CategoryItem]()
+            self?.view.categoriesCollectionViewDatasource?.categories = categories ?? [CategoryItem]()
+            self?.view.categoryCollection.reloadData()
+
         }
     }
 }

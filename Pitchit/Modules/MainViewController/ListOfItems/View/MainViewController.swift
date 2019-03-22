@@ -55,8 +55,8 @@ class MainViewController: UIViewController {
     var pitchCollectionViewDatasource: PitchCollectionDatasource?
     var pitchCollectionViewDelegate: PitchCollectionDelegate?
     
-    fileprivate var categoriesCollectionViewDatasource: CategoriesCollectionDatasource?
-    fileprivate var categoriesCollectionViewDelegate: CategoriesCollectionDelegate?
+    var categoriesCollectionViewDatasource: CategoriesCollectionDatasource?
+    var categoriesCollectionViewDelegate: CategoriesCollectionDelegate?
     
     var items = [ItemModel]()
     var category: CategoryItemType = .art

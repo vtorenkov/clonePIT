@@ -18,6 +18,7 @@ final class CategoriesPostCollectionViewSource: NSObject, CategoriesPostDatasour
     weak var delegate: UICollectionViewDelegate?
     weak var delegateVC: CategoriesPostInteract?
     var type: CategoryItemType = .art
+    var categories = [CategoryItem]()
     
     required init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CategoriesPostInteract, currentCat: CategoryItemType?) {
         self.collectionView = collectionView
@@ -46,7 +47,8 @@ final class CategoriesPostCollectionViewSource: NSObject, CategoriesPostDatasour
 class CategoriesPostDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     weak var delegate: CategoriesPostInteract?
     weak var collectionView: UICollectionView?
-    
+    var categories = [CategoryItem]()
+
     init(_ delegate: CategoriesPostInteract, collectionView: UICollectionView) {
         self.delegate = delegate
         self.collectionView = collectionView
