@@ -28,7 +28,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gcv-Bw-HBG">
-                                <rect key="frame" x="0.0" y="104" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="46.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="3" minimumInteritemSpacing="3" id="bek-nE-ewP">
                                     <size key="itemSize" width="50" height="50"/>
@@ -38,7 +38,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e4l-hX-uxg">
-                                        <rect key="frame" x="0.0" y="8.5" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="-2" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -48,7 +48,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JHL-Np-0FG">
-                                <rect key="frame" x="0.0" y="180.5" width="375" height="486.5"/>
+                                <rect key="frame" x="0.0" y="160.5" width="375" height="506.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X7g-lA-1Xb">
                                     <size key="itemSize" width="50" height="50"/>
@@ -68,7 +68,7 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6L-So-2TA">
-                                <rect key="frame" x="0.0" y="104" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="46.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -76,7 +76,7 @@
                         <constraints>
                             <constraint firstItem="a6L-So-2TA" firstAttribute="width" secondItem="Gcv-Bw-HBG" secondAttribute="width" id="9IA-83-Qmn"/>
                             <constraint firstItem="a6L-So-2TA" firstAttribute="centerY" secondItem="Gcv-Bw-HBG" secondAttribute="centerY" id="Ojh-Cq-Cf9"/>
-                            <constraint firstItem="Gcv-Bw-HBG" firstAttribute="height" secondItem="3oT-JZ-uic" secondAttribute="height" multiplier="0.1" id="YQG-lT-G4u"/>
+                            <constraint firstItem="Gcv-Bw-HBG" firstAttribute="height" secondItem="3oT-JZ-uic" secondAttribute="height" multiplier="0.07" id="YQG-lT-G4u"/>
                             <constraint firstItem="JHL-Np-0FG" firstAttribute="leading" secondItem="plC-2A-Dsw" secondAttribute="leading" id="aRA-nf-S9T"/>
                             <constraint firstItem="a6L-So-2TA" firstAttribute="centerX" secondItem="Gcv-Bw-HBG" secondAttribute="centerX" id="dDC-bL-KRI"/>
                             <constraint firstItem="JHL-Np-0FG" firstAttribute="trailing" secondItem="plC-2A-Dsw" secondAttribute="trailing" id="dt4-V3-Rcn"/>

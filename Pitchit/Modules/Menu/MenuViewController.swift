@@ -74,7 +74,10 @@ class MenuViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.backGroundGradient.addGradientMenu()
         self.bottomView.addGradient()
+    }
+    override func viewDidAppear(_ animated: Bool) {
         self.avatarImage.setRounded()
+        avatarImage.layoutIfNeeded() // iOS 10 Fix
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,7 +86,6 @@ class MenuViewController: UIViewController {
             let url = URL(string: url)
             avatarImage.kf.setImage(with: url)
         }
-        
         self.nameUser.text = UserShared.sharedInstance.user.getUserFullName()
     }
     

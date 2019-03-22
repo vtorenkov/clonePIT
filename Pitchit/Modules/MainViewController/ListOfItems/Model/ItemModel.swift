@@ -26,7 +26,6 @@ class ItemModel {
     var additionImageUrl = [String]()
 
     var author = AuthorCodable()
-    var type: CategoryItemType = .art
     var conditionType: ConditionType = .brandNew
     
     init(codableItem: ItemModelCodable) {

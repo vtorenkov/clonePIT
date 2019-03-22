@@ -14,12 +14,12 @@ class CategoriesCollectionViewCell: UICollectionViewCell, NibReusable {
     @IBOutlet var catImage: UIImageView!
     
     override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
-  }
+        super.awakeFromNib()
+        // Initialization code
+    }
     
-  static var reuseIdentifier: String { return "CategoriesCollectionViewCell" }
-  static var nib: UINib { return UINib(nibName: "CategoriesCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
+    static var reuseIdentifier: String { return "CategoriesCollectionViewCell" }
+    static var nib: UINib { return UINib(nibName: "CategoriesCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
 }
 
 struct CategoriesCollectionViewCellModel {
@@ -28,15 +28,13 @@ struct CategoriesCollectionViewCellModel {
 }
 
 extension CategoriesCollectionViewCellModel: CellViewModel {
-  func setup(cell: CategoriesCollectionViewCell) {
-    cell.categoryName.text = cat.name
-    cell.backgroundColor = UIColor.violateCatBackGround
-    if currentCat == cat.type  {
-        cell.categoryName.textColor = UIColor.white
-    } else {
-        cell.categoryName.textColor = UIColor.white
+    func setup(cell: CategoriesCollectionViewCell) {
+        cell.categoryName.text = cat.name
+        cell.backgroundColor = UIColor.violateCatBackGround
+        cell.categoryName.font = UIFont.mainFonSFUItBold(ofSize: 12)
+        
+        let url = URL(string: cat.image)
+        cell.catImage.kf.setImage(with: url)
     }
-    cell.categoryName.font = UIFont.mainFonSFUItBold(ofSize: 12)
-  }
 }
 

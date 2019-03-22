@@ -50,12 +50,12 @@ public enum Login: TargetType {
         case .login:
             return .requestPlain
         case .register(let regModel):
-            return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["email":regModel.email, "firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord!, "cpassword":regModel.passWordRepeat!], encoding: URLEncoding.default)
         case .registerBusiness(let regModel):
             guard let bisModel = regModel.bussinesModel else {
                 return .requestPlain
             }
-             return .requestParameters(parameters: ["firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":regModel.phone, "password":regModel.passWord, "cpassword":regModel.passWordRepeat,
+             return .requestParameters(parameters: ["firstName":regModel.firstName, "lastName":regModel.lastName, "mobileNo":bisModel.phone, "password":regModel.passWord!, "cpassword":regModel.passWordRepeat!,
              "businessName": bisModel.businessName,
              "industry": bisModel.industry,
              "address": bisModel.address,

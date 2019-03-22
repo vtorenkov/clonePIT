@@ -106,6 +106,7 @@ extension BussinesSignUpFromViewController: UITextFieldDelegate{
                 bussinesModel.industry = text
             case .email:
                 bussinesModel.email = text
+                self.newUser.email = text
             case .phone:
                 bussinesModel.phone = text
             }

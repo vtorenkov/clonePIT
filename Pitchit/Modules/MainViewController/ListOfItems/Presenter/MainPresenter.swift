@@ -31,5 +31,9 @@ class MainPresenter: NSObject, Presenter {
             self?.view.pitchCollectionViewDatasource?.items = items
             self?.view.pitchCollection.reloadData()
         }
+        
+        self.service.getCategories { (categories, response) in
+            
+        }
     }
 }

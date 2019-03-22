@@ -34,6 +34,7 @@ extension PitchCollectionViewCell: PlayerDelegate{
 
 class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     
+    @IBOutlet weak var priceView: UIView!
     fileprivate var player = Player()
     weak var item: ItemModel?
     
@@ -50,6 +51,14 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        priceView.clipsToBounds = true
+        priceView.layer.cornerRadius = 10
+        if #available(iOS 11.0, *) {
+            priceView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        }
+
+        
         //TODO: use another player:
         // https://github.com/newyjp/JPVideoPlayer
         self.player.view.frame = self.videoView.bounds

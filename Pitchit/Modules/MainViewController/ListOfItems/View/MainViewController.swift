@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
         self.title = "Pitchit".uppercased()
-        self.items = ItemManager.sharedInstance.items.filter{$0.type == category}
+//        self.items = ItemManager.sharedInstance.items.filter{$0.type == category}
         self.initSearchBar()
         self.pitchCollectionViewDelegate = PitchCollectionDelegate(self, collectionView: pitchCollection, items: items)
         self.pitchCollectionViewDatasource = PitchCollectionDatasource(collectionView: pitchCollection, delegate: self.pitchCollectionViewDelegate!, delegateVC: self, presenter: presenter, items: items)

@@ -64,5 +64,4 @@ class UserManager {
         let keychain = KeychainSwift()
         keychain.delete(kUserObject)
     }
-    
 }

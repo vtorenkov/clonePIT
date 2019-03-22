@@ -66,7 +66,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posted 9 minutes agos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZM-FC-iHU">
-                        <rect key="frame" x="0.0" y="246" width="111" height="16"/>
+                        <rect key="frame" x="8" y="246" width="111" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="wb2-RD-bNJ"/>
                         </constraints>
@@ -75,17 +75,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwb-Rh-f21">
-                        <rect key="frame" x="340" y="216" width="36" height="36"/>
+                        <rect key="frame" x="324.5" y="216" width="51.5" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6V-8C-02q" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="4" width="36" height="14.5"/>
+                                <rect key="frame" x="0.0" y="4" width="51.5" height="14.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 mi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQG-bB-1Dq" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
-                                <rect key="frame" x="8.5" y="24" width="19.5" height="12"/>
+                                <rect key="frame" x="16" y="27" width="19.5" height="12"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,10 +96,10 @@
                         <constraints>
                             <constraint firstItem="H6V-8C-02q" firstAttribute="leading" secondItem="lwb-Rh-f21" secondAttribute="leading" id="07s-Vz-lSr"/>
                             <constraint firstItem="H6V-8C-02q" firstAttribute="top" secondItem="lwb-Rh-f21" secondAttribute="top" constant="4" id="1Oq-AM-ieb"/>
-                            <constraint firstAttribute="width" secondItem="lwb-Rh-f21" secondAttribute="height" multiplier="1:1" id="NmE-WP-55a"/>
+                            <constraint firstAttribute="width" secondItem="lwb-Rh-f21" secondAttribute="height" multiplier="1.2:1" id="NmE-WP-55a"/>
                             <constraint firstItem="bQG-bB-1Dq" firstAttribute="centerX" secondItem="H6V-8C-02q" secondAttribute="centerX" id="POP-2S-o76"/>
                             <constraint firstAttribute="trailing" secondItem="H6V-8C-02q" secondAttribute="trailing" id="XAv-03-cLF"/>
-                            <constraint firstAttribute="bottom" secondItem="bQG-bB-1Dq" secondAttribute="bottom" id="hU5-nY-3RR"/>
+                            <constraint firstAttribute="bottom" secondItem="bQG-bB-1Dq" secondAttribute="bottom" constant="4" id="hU5-nY-3RR"/>
                             <constraint firstItem="H6V-8C-02q" firstAttribute="centerX" secondItem="lwb-Rh-f21" secondAttribute="centerX" id="t0I-in-i5V"/>
                         </constraints>
                     </view>
@@ -108,7 +108,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="y3L-fc-Aif" firstAttribute="centerX" secondItem="Mvo-9i-65Q" secondAttribute="centerX" id="3YI-Tc-vTy"/>
-                <constraint firstAttribute="bottom" secondItem="lwb-Rh-f21" secondAttribute="bottom" constant="10" id="4Px-Ur-WZg"/>
+                <constraint firstAttribute="bottom" secondItem="lwb-Rh-f21" secondAttribute="bottom" constant="3" id="4Px-Ur-WZg"/>
                 <constraint firstItem="R6A-yc-5as" firstAttribute="leading" secondItem="GJw-IM-ayc" secondAttribute="trailing" constant="8" id="59I-J9-mHF"/>
                 <constraint firstItem="hFZ-BS-qba" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="6nx-Fc-65Q"/>
                 <constraint firstItem="Mvo-9i-65Q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="8xL-pR-lWx"/>
@@ -124,7 +124,7 @@
                 <constraint firstItem="NPZ-dt-VKM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="daM-bD-4p5"/>
                 <constraint firstItem="hFZ-BS-qba" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hN0-og-iCF"/>
                 <constraint firstItem="hFZ-BS-qba" firstAttribute="top" secondItem="GJw-IM-ayc" secondAttribute="bottom" constant="8" id="hPk-qV-pt9"/>
-                <constraint firstItem="dZM-FC-iHU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lbb-Pq-1lQ"/>
+                <constraint firstItem="dZM-FC-iHU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="lbb-Pq-1lQ"/>
                 <constraint firstItem="y3L-fc-Aif" firstAttribute="centerY" secondItem="Mvo-9i-65Q" secondAttribute="centerY" id="mvj-nT-d3e"/>
                 <constraint firstAttribute="trailing" secondItem="R6A-yc-5as" secondAttribute="trailing" constant="20" id="p1u-2M-WNX"/>
                 <constraint firstItem="R6A-yc-5as" firstAttribute="centerY" secondItem="GJw-IM-ayc" secondAttribute="centerY" id="qC8-xI-sNJ"/>
@@ -143,6 +143,7 @@
                 <outlet property="likeImage" destination="Mvo-9i-65Q" id="jgz-Hk-RjJ"/>
                 <outlet property="loadingLabel" destination="aYt-pE-UHM" id="xdr-Gp-lky"/>
                 <outlet property="priceTitle" destination="H6V-8C-02q" id="cxV-XE-9M8"/>
+                <outlet property="priceView" destination="lwb-Rh-f21" id="OJD-su-oT1"/>
                 <outlet property="titleLabel" destination="R6A-yc-5as" id="jwB-sc-LuZ"/>
                 <outlet property="videoView" destination="hFZ-BS-qba" id="fng-Qm-GaB"/>
             </connections>
