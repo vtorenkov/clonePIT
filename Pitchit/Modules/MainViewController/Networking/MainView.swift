@@ -13,6 +13,7 @@ import Alamofire
 public enum MainView: TargetType {
     case getPosts()
     case getCategories()
+    case getFavorites()
     
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
@@ -24,12 +25,14 @@ public enum MainView: TargetType {
             return "/offer/get"
         case .getCategories:
             return "/category/get"
+        case .getFavorites:
+            return "/Offer/GetFavorites"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .getPosts, .getCategories:
+        case .getPosts, .getCategories, .getFavorites():
             return .get
         }
     }
@@ -44,13 +47,14 @@ public enum MainView: TargetType {
             return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
         case .getCategories:
             return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
+        case .getFavorites:
+            return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
         }
     }
     
-    
     public var headers: [String : String]? {
         switch self {
-        case .getPosts, .getCategories:
+        case .getPosts, .getCategories, .getFavorites:
             let username = UserManager.getCurrentUserObject().email
             let password = UserManager.getPassword()
             let loginString = String(format: "%@:%@", username, password)
@@ -58,7 +62,6 @@ public enum MainView: TargetType {
             let base64LoginString = loginData.base64EncodedString()
             
             return ["Authorization":"Basic \(base64LoginString)"]
-            
         }
     }
     

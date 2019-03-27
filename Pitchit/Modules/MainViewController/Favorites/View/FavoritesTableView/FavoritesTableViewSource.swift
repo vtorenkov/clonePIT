@@ -15,6 +15,7 @@ final class FavoritesTableViewDatasource: NSObject, FavoritesTableViewDatasource
     weak var tableView: UITableView?
     weak var delegate: UITableViewDelegate?
     weak var delegateVC: FavoritesTableItemDelegate?
+    var favoritesArray = [FavoritesCodable]()
     
     required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC : FavoritesTableItemDelegate) {
         self.tableView = tableView
@@ -30,11 +31,11 @@ final class FavoritesTableViewDatasource: NSObject, FavoritesTableViewDatasource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return favoritesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = FavoritesTableViewCellModel()
+        let model = FavoritesTableViewCellModel(favoriteItem: favoritesArray[indexPath.row])
         return tableView.dequeueReusableCell(with: model, for: indexPath)
     }
 }

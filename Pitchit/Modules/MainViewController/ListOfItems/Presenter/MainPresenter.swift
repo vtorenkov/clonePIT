@@ -36,7 +36,6 @@ class MainPresenter: NSObject, Presenter {
             self?.view.categoriesCollectionViewDelegate?.categories = categories ?? [CategoryItem]()
             self?.view.categoriesCollectionViewDatasource?.categories = categories ?? [CategoryItem]()
             self?.view.categoryCollection.reloadData()
-
         }
     }
 }

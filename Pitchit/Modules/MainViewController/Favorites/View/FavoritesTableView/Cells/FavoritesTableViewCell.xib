@@ -79,7 +79,7 @@
             <connections>
                 <outlet property="favoriteLabel" destination="eVy-Lw-Q77" id="I5U-WG-ikd"/>
                 <outlet property="favoriteLastDate" destination="UOg-z7-AcY" id="Ed3-X3-YcJ"/>
-                <outlet property="favoritePrice" destination="f1V-HF-bBT" id="JXl-eX-oEk"/>
+                <outlet property="favoritePrice" destination="oMX-4r-4Cw" id="NeD-YL-gJc"/>
                 <outlet property="favoritesImage" destination="w4X-7d-Jti" id="0wU-16-pdB"/>
                 <outlet property="heartFavorite" destination="NMr-Ia-H2y" id="2ux-Vx-xqd"/>
             </connections>

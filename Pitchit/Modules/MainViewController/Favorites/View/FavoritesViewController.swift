@@ -15,9 +15,11 @@ extension FavoritesViewController: FavoritesTableItemDelegate{
 class FavoritesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
-    fileprivate var favoritesViewDatasource: FavoritesTableViewDatasource?
+    var favoritesViewDatasource: FavoritesTableViewDatasource?
     fileprivate var favoritesViewDelegate: FavoritesTableViewDelegate?
     
+    lazy var presenter: PresenterFavorites = PresenterFavorites(view: self)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Favorites".uppercased()
@@ -25,6 +27,8 @@ class FavoritesViewController: UIViewController {
 
         self.favoritesViewDelegate = FavoritesTableViewDelegate(self)
         self.favoritesViewDatasource = FavoritesTableViewDatasource(tableView: tableView, delegate: self.favoritesViewDelegate!, delegateVC: self)
+        
+        presenter.getAllFavorites()
     }
     
     @IBAction func closeAction(_ sender: Any) {

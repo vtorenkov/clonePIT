@@ -62,7 +62,7 @@ struct LoginManager: LoginClient {
     
     func parseErrorMessage(error: MoyaError) -> String {
         do {
-            if let body = try error.response?.mapJSON() as? NSDictionary, let mess = body.value(forKey: "Message") as? String {
+            if let body = try error.response?.mapJSON() as? NSDictionary, let mess = body.value(forKey: "message") as? String {
                 return mess
             }
         } catch {
