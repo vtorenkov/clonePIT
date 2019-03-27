@@ -34,6 +34,13 @@ class VideoTableViewCell: UITableViewCell, NibReusable {
         loadingLabel.roundCorners()
         inquireButton.roundCornersButton()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.player.fillMode = PlayerFillMode.resizeAspectFill.avFoundationType
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
     var delegate: ItemDetailsTableItemDelegate?
 
     @IBAction func iquireAction(_ sender: Any) {

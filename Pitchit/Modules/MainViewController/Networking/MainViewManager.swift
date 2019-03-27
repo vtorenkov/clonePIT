@@ -12,6 +12,27 @@ import Moya
 struct MainViewManager: MainViewClient {
     let provider = MoyaProvider<MainView>()
     
+    func addToFavorites(offerId: String, completion: @escaping(ResultAddToFavorites)) {
+        provider.request(.addToFavorites(offerId: offerId)) { (result) in
+            switch result {
+            case let .success(response):
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let items = try filteredResponse.map([CategoryItem].self, atKeyPath: "data", using: decoder)
+                    completion(response.description)
+                }
+                catch let error {
+                    completion(error.localizedDescription)
+                }
+            case let .failure(error):
+                completion(self.parseErrorMessage(error: error))
+            }
+        }
+    }
+    
+    
     func getCategories(completion: @escaping(ResultGetCats)) {
         provider.request(.getCategories()) { (result) in
             switch result {

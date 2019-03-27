@@ -58,7 +58,6 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             priceView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         }
 
-        
         //TODO: use another player:
         // https://github.com/newyjp/JPVideoPlayer
         self.player.view.frame = self.videoView.bounds

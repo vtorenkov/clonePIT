@@ -14,7 +14,8 @@ public enum MainView: TargetType {
     case getPosts()
     case getCategories()
     case getFavorites()
-    
+    case addToFavorites(offerId: String)
+
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
@@ -26,13 +27,15 @@ public enum MainView: TargetType {
         case .getCategories:
             return "/category/get"
         case .getFavorites:
-            return "/Offer/GetFavorites"
+            return "/offer/getfavorites"
+        case .addToFavorites:
+            return "/offer/addtofavourite"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .getPosts, .getCategories, .getFavorites():
+        case .getPosts, .getCategories, .getFavorites, .addToFavorites:
             return .get
         }
     }
@@ -49,12 +52,14 @@ public enum MainView: TargetType {
             return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
         case .getFavorites:
             return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
+        case .addToFavorites(let offerId):
+            return .requestParameters(parameters: ["offerId":offerId], encoding: URLEncoding.default)
         }
     }
     
     public var headers: [String : String]? {
         switch self {
-        case .getPosts, .getCategories, .getFavorites:
+        case .getPosts, .getCategories, .getFavorites, .addToFavorites:
             let username = UserManager.getCurrentUserObject().email
             let password = UserManager.getPassword()
             let loginString = String(format: "%@:%@", username, password)

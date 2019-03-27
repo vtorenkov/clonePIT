@@ -34,9 +34,9 @@ class FavoritesTableViewCell: UITableViewCell, NibReusable {
         favoriteLastDate.text = item.postedAt
         
         if item.is_favourite {
-            heartFavorite.tintColor = UIColor.red
+            heartFavorite.image = UIImage(named: "heart_red")
         } else {
-            heartFavorite.tintColor = UIColor.black
+            heartFavorite.image = UIImage(named: "heart")
         }
         
         self.favoritesImage.setSmallRoundedCorners()
