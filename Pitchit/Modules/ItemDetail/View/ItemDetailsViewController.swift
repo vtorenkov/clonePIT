@@ -19,6 +19,18 @@ extension ItemDetailsViewController: ItemDetailsTableItemDelegate{
         let photoController = NYTPhotosViewController(dataSource: dataSource)
         self.present(photoController, animated: true, completion: nil)
     }
+    
+    func messageAction() {
+    }
+    
+    func favoritesAction() {
+        if let item = self.item {
+            presenter.sendToFavorites(offerId: item.id)
+        }
+    }
+    
+    func shareAction() {
+    }
 }
 
 class ItemDetailsViewController: UIViewController {
@@ -28,6 +40,8 @@ class ItemDetailsViewController: UIViewController {
     fileprivate var itemDetailsTableViewDatasource: ItemDetailsTableViewDatasource?
     fileprivate var itemDetailsTableViewDelegate: ItemDetailsTableViewDelegate?
     weak var item: ItemModel?
+    
+    lazy var presenter: PresenterDetails = PresenterDetails(view: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,14 +22,18 @@ enum ItemDetailType {
 protocol ItemDetailsTableItemDelegate {
     func showImageFullSize(image: UIImage?)
     func tapOnImquire()
+    func messageAction()
+    func favoritesAction()
+    func shareAction()
 }
 
-final class ItemDetailsTableViewDatasource: NSObject, ItemDetailsTableViewDatasourceProtocol {
+class ItemDetailsTableViewDatasource: NSObject, ItemDetailsTableViewDatasourceProtocol {
     
     weak var tableView: UITableView?
     weak var delegate: UITableViewDelegate?
     var delegateVC: ItemDetailsTableItemDelegate
     weak var item: ItemModel?
+    
     required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC : ItemDetailsTableItemDelegate, item: ItemModel?) {
         self.tableView = tableView
         self.delegate = delegate
@@ -51,7 +55,6 @@ final class ItemDetailsTableViewDatasource: NSObject, ItemDetailsTableViewDataso
         self.setupTableView()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ItemDetailType.allTypes.count
     }
@@ -63,7 +66,7 @@ final class ItemDetailsTableViewDatasource: NSObject, ItemDetailsTableViewDataso
         case .video:
             model = VideoTableViewCellModel(item: self.item, delegate: self.delegateVC)
         case .buttons:
-            model = ButtonsTableViewCellModel(item: self.item)
+            model = ButtonsTableViewCellModel(delegate: self, item: self.item)
         case .userInfo:
             model = ProfileTableViewCellModel(item: self.item)
         case .details:
@@ -107,5 +110,20 @@ class ItemDetailsTableViewDelegate: NSObject, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+
+extension ItemDetailsTableViewDatasource: ItemButtonsProtocol {
+    func messageAction() {
+        delegateVC.messageAction()
+    }
+    
+    func favoritesAction() {
+        delegateVC.favoritesAction()
+    }
+    
+    func shareAction() {
+        delegateVC.shareAction()
     }
 }

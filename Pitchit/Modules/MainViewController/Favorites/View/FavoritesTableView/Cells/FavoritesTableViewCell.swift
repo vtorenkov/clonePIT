@@ -6,7 +6,12 @@
 
 import UIKit
 
+protocol FavoriteCellProtocol: class {
+    func tapHeart(favoriteId: String)
+}
+
 class FavoritesTableViewCell: UITableViewCell, NibReusable {
+    weak var delegate: FavoriteCellProtocol?
     
     @IBOutlet var heartFavorite: UIImageView!
     @IBOutlet var favoriteLastDate: UILabel!
@@ -18,7 +23,7 @@ class FavoritesTableViewCell: UITableViewCell, NibReusable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
     
     override func layoutSubviews() {
@@ -32,15 +37,11 @@ class FavoritesTableViewCell: UITableViewCell, NibReusable {
         favoriteLabel.text = item.title
         favoritePrice.text = item.price
         favoriteLastDate.text = item.postedAt
+        favoritesImage.setSmallRoundedCorners()
         
-        if item.is_favourite {
-            heartFavorite.image = UIImage(named: "heart_red")
-        } else {
-            heartFavorite.image = UIImage(named: "heart")
-        }
-        
-        self.favoritesImage.setSmallRoundedCorners()
-        
+        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleHeart(_:)))
+        heartFavorite.addGestureRecognizer(tapGestureRecognizer)
+        heartFavorite.isUserInteractionEnabled = true
     }
     
     static var reuseIdentifier: String { return "FavoritesTableViewCell" }
@@ -49,10 +50,21 @@ class FavoritesTableViewCell: UITableViewCell, NibReusable {
 
 struct FavoritesTableViewCellModel {
     var favoriteItem: FavoritesCodable
+    var delegate: FavoriteCellProtocol
 }
 
 extension FavoritesTableViewCellModel: CellViewModel {
     func setup(cell: FavoritesTableViewCell) {
+        cell.delegate = delegate
         cell.favoriteItem = favoriteItem
+    }
+}
+
+extension FavoritesTableViewCell {
+    @objc func handleHeart(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard let item = favoriteItem else {
+            return
+        }
+        delegate?.tapHeart(favoriteId: item.id)
     }
 }

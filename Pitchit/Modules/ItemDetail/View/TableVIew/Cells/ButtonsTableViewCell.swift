@@ -8,15 +8,20 @@
 
 import UIKit
 
-
+protocol ItemButtonsProtocol: class {
+    func messageAction()
+    func favoritesAction()
+    func shareAction()
+}
 
 class ButtonsTableViewCell: UITableViewCell, NibReusable {
-
+    weak var delegate: ItemButtonsProtocol?
+    
     @IBAction func messageAction(_ sender: Any) {
         print("messageAction")
     }
-    @IBAction func saveAction(_ sender: Any) {
-        print("saveAction")
+    @IBAction func favoriteAction(_ sender: Any) {
+        delegate?.favoritesAction()
     }
 
     @IBAction func shareAction(_ sender: Any) {
@@ -34,11 +39,13 @@ class ButtonsTableViewCell: UITableViewCell, NibReusable {
 }
 
 struct ButtonsTableViewCellModel {
+    var delegate: ItemButtonsProtocol
     var item: ItemModel?
 }
 
 extension ButtonsTableViewCellModel: CellViewModel {
     func setup(cell: ButtonsTableViewCell) {
         cell.item = item
+        cell.delegate = delegate
     }
 }

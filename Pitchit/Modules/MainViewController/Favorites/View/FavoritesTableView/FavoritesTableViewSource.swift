@@ -8,6 +8,13 @@ import Foundation
 import UIKit
 
 protocol FavoritesTableItemDelegate: class {
+    func tapHeart(favoriteId: String)
+}
+
+extension FavoritesTableViewDatasource: FavoriteCellProtocol {
+    func tapHeart(favoriteId: String) {
+        delegateVC?.tapHeart(favoriteId: favoriteId)
+    }
 }
 
 final class FavoritesTableViewDatasource: NSObject, FavoritesTableViewDatasourceProtocol {
@@ -35,7 +42,7 @@ final class FavoritesTableViewDatasource: NSObject, FavoritesTableViewDatasource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = FavoritesTableViewCellModel(favoriteItem: favoritesArray[indexPath.row])
+        let model = FavoritesTableViewCellModel(favoriteItem: favoritesArray[indexPath.row], delegate: self)
         return tableView.dequeueReusableCell(with: model, for: indexPath)
     }
 }

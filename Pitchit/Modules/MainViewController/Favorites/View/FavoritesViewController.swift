@@ -9,7 +9,9 @@
 import UIKit
 
 extension FavoritesViewController: FavoritesTableItemDelegate{
-    
+    func tapHeart(favoriteId: String) {
+        presenter.addToFavorites(favoriteId: favoriteId)
+    }
 }
 
 class FavoritesViewController: UIViewController {

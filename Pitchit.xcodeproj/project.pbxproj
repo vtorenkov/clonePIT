@@ -47,6 +47,7 @@
 		FA63053820FE6F6500F0777E /* ProfileTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63053620FE6F6400F0777E /* ProfileTableViewSource.swift */; };
 		FA63053B20FE6F6C00F0777E /* AvtarProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63053920FE6F6B00F0777E /* AvtarProfileTableViewCell.swift */; };
 		FA63053C20FE6F6C00F0777E /* AvtarProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */; };
+		FA6DB79C224BF47E00D86260 /* PresenterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DB79B224BF47E00D86260 /* PresenterDetails.swift */; };
 		FA6E9DD422135A4600D50B15 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */; };
 		FA6E9DD522135A4600D50B15 /* AddCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E9DD322135A4600D50B15 /* AddCard.storyboard */; };
 		FA6E9DDA2218549C00D50B15 /* ConfirmPurchase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6E9DD92218549C00D50B15 /* ConfirmPurchase.storyboard */; };
@@ -298,6 +299,7 @@
 		FA63053620FE6F6400F0777E /* ProfileTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewSource.swift; sourceTree = "<group>"; };
 		FA63053920FE6F6B00F0777E /* AvtarProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvtarProfileTableViewCell.swift; sourceTree = "<group>"; };
 		FA63053A20FE6F6B00F0777E /* AvtarProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvtarProfileTableViewCell.xib; sourceTree = "<group>"; };
+		FA6DB79B224BF47E00D86260 /* PresenterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterDetails.swift; sourceTree = "<group>"; };
 		FA6E9DD222135A4600D50B15 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		FA6E9DD322135A4600D50B15 /* AddCard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCard.storyboard; sourceTree = "<group>"; };
 		FA6E9DD92218549C00D50B15 /* ConfirmPurchase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmPurchase.storyboard; sourceTree = "<group>"; };
@@ -721,6 +723,14 @@
 				FAF2454121985A4800642F4C /* PersonalAccountTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA6DB79A224BF44A00D86260 /* PresenterDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DB79B224BF47E00D86260 /* PresenterDetails.swift */,
+			);
+			path = PresenterDetails;
 			sourceTree = "<group>";
 		};
 		FA6E9DD022135A4600D50B15 /* AddCard */ = {
@@ -1238,6 +1248,7 @@
 		FACC88202107951800BBB31C /* ItemDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FA6DB79A224BF44A00D86260 /* PresenterDetails */,
 				FA6E9DD82218548200D50B15 /* ConfirmPurchase */,
 				FAE5ECAB220F19E700768C6F /* AddOfferOrder */,
 				FAE5ECAF220F19E700768C6F /* PurchaseOrder */,
@@ -2035,6 +2046,7 @@
 				FACC883E210C785F00BBB31C /* ProfileTableViewCell.swift in Sources */,
 				FA9A032921E373BE00DF6C2C /* FavoritesTableViewProtocol.swift in Sources */,
 				FA8E78F0221994DD00B23D1C /* ChatTableViewCell.swift in Sources */,
+				FA6DB79C224BF47E00D86260 /* PresenterDetails.swift in Sources */,
 				FA9A032721E373BE00DF6C2C /* FavoritesTableViewCell.swift in Sources */,
 				FA810C4E211CB4C3003176A8 /* PhotosCollectionViewProtocol.swift in Sources */,
 				FA63052B20F7BAEF00F0777E /* MenuTableViewSource.swift in Sources */,

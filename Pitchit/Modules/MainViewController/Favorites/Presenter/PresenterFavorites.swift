@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class PresenterFavorites: NSObject, Presenter {
     
     typealias PresenterView = FavoritesViewController
@@ -18,6 +17,12 @@ class PresenterFavorites: NSObject, Presenter {
     required init(view: PresenterView, service: MainViewClient = MainViewManager()) {
         self.view = view
         self.service = service
+    }
+    
+    func addToFavorites(favoriteId: String) {
+        service.addToFavorites(offerId: favoriteId) { (succes) in
+            print(succes)
+        }
     }
     
     func getAllFavorites() {
