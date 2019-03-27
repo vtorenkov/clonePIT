@@ -43,7 +43,7 @@
                             <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9a-79-cat">
                                 <rect key="frame" x="0.0" y="0.0" width="263" height="145.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Uhz-Le-4Yf">
-                                    <rect key="frame" x="0.0" y="0.0" width="263" height="145"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="263" height="145.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="dark"/>
