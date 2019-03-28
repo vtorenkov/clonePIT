@@ -31,6 +31,10 @@ extension ItemDetailsViewController: ItemDetailsTableItemDelegate{
     
     func shareAction() {
     }
+    
+    func showUser(with id:String) {
+        presenter.getUserProfile(userId: id)
+    }
 }
 
 class ItemDetailsViewController: UIViewController {
@@ -45,7 +49,7 @@ class ItemDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.itemDetailsTableViewDelegate = ItemDetailsTableViewDelegate(self)
+        self.itemDetailsTableViewDelegate = ItemDetailsTableViewDelegate(self, item: item)
         self.itemDetailsTableViewDatasource = ItemDetailsTableViewDatasource(tableView: tableView, delegate: self.itemDetailsTableViewDelegate!, delegateVC: self, item: item)
         if let item = self.item {
             priceLabel.text = item.price + "$"

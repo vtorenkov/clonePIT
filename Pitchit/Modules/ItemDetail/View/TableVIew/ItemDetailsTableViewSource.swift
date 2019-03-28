@@ -25,6 +25,7 @@ protocol ItemDetailsTableItemDelegate {
     func messageAction()
     func favoritesAction()
     func shareAction()
+    func showUser(with id:String)
 }
 
 class ItemDetailsTableViewDatasource: NSObject, ItemDetailsTableViewDatasourceProtocol {
@@ -85,9 +86,11 @@ class ItemDetailsTableViewDatasource: NSObject, ItemDetailsTableViewDatasourcePr
 
 class ItemDetailsTableViewDelegate: NSObject, UITableViewDelegate {
     var delegate: ItemDetailsTableItemDelegate
-    
-    init(_ delegate: ItemDetailsTableItemDelegate) {
+    weak var item: ItemModel?
+
+    init(_ delegate: ItemDetailsTableItemDelegate, item: ItemModel?) {
         self.delegate = delegate
+        self.item = item
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -109,6 +112,15 @@ class ItemDetailsTableViewDelegate: NSObject, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let type = ItemDetailType.allTypes[indexPath.row]
+        switch type {
+        case .userInfo:
+            if let user = item?.author {
+                delegate.showUser(with: user.userId)
+            }
+        default:
+            break
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

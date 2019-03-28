@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0709428322392FF200B736BD /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709428222392FF200B736BD /* LogInPresenter.swift */; };
-		070942882239309C00B736BD /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070942852239309B00B736BD /* NetworkClient.swift */; };
-		070942892239309C00B736BD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070942862239309C00B736BD /* Login.swift */; };
-		0709428A2239309C00B736BD /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070942872239309C00B736BD /* LoginManager.swift */; };
 		0709A8D9222E93E000CF120B /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0709A8D8222E93E000CF120B /* FilterView.swift */; };
 		0709A8DB222E93F700CF120B /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0709A8DA222E93F600CF120B /* FilterView.xib */; };
 		073C6A482227F0450019A825 /* UiView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C6A472227F0450019A825 /* UiView+Borders.swift */; };
 		079F99202226DCAF007E159B /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F991F2226DCAF007E159B /* ChatModel.swift */; };
-		07AF2C9C2241007400D86244 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF2C992241007300D86244 /* MainView.swift */; };
-		07AF2C9D2241007400D86244 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF2C9A2241007400D86244 /* MainViewManager.swift */; };
-		07AF2C9E2241007400D86244 /* MainViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF2C9B2241007400D86244 /* MainViewClient.swift */; };
+		07B91F47224CD72800D65AE9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F3C224CD72800D65AE9 /* UserView.swift */; };
+		07B91F48224CD72800D65AE9 /* UserViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F3D224CD72800D65AE9 /* UserViewClient.swift */; };
+		07B91F49224CD72800D65AE9 /* UserViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F3E224CD72800D65AE9 /* UserViewManager.swift */; };
+		07B91F4A224CD72800D65AE9 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F40224CD72800D65AE9 /* NetworkClient.swift */; };
+		07B91F4B224CD72800D65AE9 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F41224CD72800D65AE9 /* Login.swift */; };
+		07B91F4C224CD72800D65AE9 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F42224CD72800D65AE9 /* LoginManager.swift */; };
+		07B91F4D224CD72800D65AE9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F44224CD72800D65AE9 /* MainView.swift */; };
+		07B91F4E224CD72800D65AE9 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F45224CD72800D65AE9 /* MainViewManager.swift */; };
+		07B91F4F224CD72800D65AE9 /* MainViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F46224CD72800D65AE9 /* MainViewClient.swift */; };
 		07C02B46224B9FD0005A3639 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C02B45224B9FD0005A3639 /* FavoritesModel.swift */; };
 		07C02B49224BA1C6005A3639 /* PresenterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C02B48224BA1C6005A3639 /* PresenterFavorites.swift */; };
 		C4668F85B94FADEC5980165D /* Pods_Pitchit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */; };
@@ -259,16 +262,19 @@
 /* Begin PBXFileReference section */
 		032BF683CAB4D9444997BFC4 /* Pods-Pitchit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.debug.xcconfig"; sourceTree = "<group>"; };
 		0709428222392FF200B736BD /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
-		070942852239309B00B736BD /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		070942862239309C00B736BD /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		070942872239309C00B736BD /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		0709A8D8222E93E000CF120B /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		0709A8DA222E93F600CF120B /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		073C6A472227F0450019A825 /* UiView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Borders.swift"; sourceTree = "<group>"; };
 		079F991F2226DCAF007E159B /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
-		07AF2C992241007300D86244 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		07AF2C9A2241007400D86244 /* MainViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
-		07AF2C9B2241007400D86244 /* MainViewClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewClient.swift; sourceTree = "<group>"; };
+		07B91F3C224CD72800D65AE9 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		07B91F3D224CD72800D65AE9 /* UserViewClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewClient.swift; sourceTree = "<group>"; };
+		07B91F3E224CD72800D65AE9 /* UserViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewManager.swift; sourceTree = "<group>"; };
+		07B91F40224CD72800D65AE9 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		07B91F41224CD72800D65AE9 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		07B91F42224CD72800D65AE9 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		07B91F44224CD72800D65AE9 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		07B91F45224CD72800D65AE9 /* MainViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
+		07B91F46224CD72800D65AE9 /* MainViewClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewClient.swift; sourceTree = "<group>"; };
 		07C02B45224B9FD0005A3639 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		07C02B48224BA1C6005A3639 /* PresenterFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFavorites.swift; sourceTree = "<group>"; };
 		89DF4DA8C098DBD982220254 /* Pods-Pitchit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.release.xcconfig"; sourceTree = "<group>"; };
@@ -542,24 +548,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		0709428122392EF900B736BD /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				070942842239309B00B736BD /* Networking */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		070942842239309B00B736BD /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				070942852239309B00B736BD /* NetworkClient.swift */,
-				070942862239309C00B736BD /* Login.swift */,
-				070942872239309C00B736BD /* LoginManager.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		0709A8D7222E93CA00CF120B /* FilterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,14 +565,44 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		07AF2C982241004800D86244 /* Networking */ = {
+		07B91F3A224CD72800D65AE9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				07AF2C992241007300D86244 /* MainView.swift */,
-				07AF2C9B2241007400D86244 /* MainViewClient.swift */,
-				07AF2C9A2241007400D86244 /* MainViewManager.swift */,
+				07B91F3B224CD72800D65AE9 /* Users */,
+				07B91F3F224CD72800D65AE9 /* LogIn&SignUp */,
+				07B91F43224CD72800D65AE9 /* Main */,
 			);
-			path = Networking;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		07B91F3B224CD72800D65AE9 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				07B91F3C224CD72800D65AE9 /* UserView.swift */,
+				07B91F3D224CD72800D65AE9 /* UserViewClient.swift */,
+				07B91F3E224CD72800D65AE9 /* UserViewManager.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		07B91F3F224CD72800D65AE9 /* LogIn&SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				07B91F40224CD72800D65AE9 /* NetworkClient.swift */,
+				07B91F41224CD72800D65AE9 /* Login.swift */,
+				07B91F42224CD72800D65AE9 /* LoginManager.swift */,
+			);
+			path = "LogIn&SignUp";
+			sourceTree = "<group>";
+		};
+		07B91F43224CD72800D65AE9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				07B91F44224CD72800D65AE9 /* MainView.swift */,
+				07B91F45224CD72800D65AE9 /* MainViewManager.swift */,
+				07B91F46224CD72800D65AE9 /* MainViewClient.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		07C02B44224B9F0B005A3639 /* Models */ = {
@@ -664,7 +682,6 @@
 		FA4CA5C3214060750018C6B7 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				0709428122392EF900B736BD /* Services */,
 				0709428022392EF300B736BD /* Presenter */,
 				FA4CA5C4214060AC0018C6B7 /* LogInScreen.storyboard */,
 				FA4CA5C6214061CA0018C6B7 /* LogInScreenViewController.swift */,
@@ -1388,6 +1405,7 @@
 				FAE575E320EFCAF60023383B /* Libs */,
 				FAE575E220EFCAEF0023383B /* Extensions */,
 				FA86BF9D215008B000B0B7AA /* Models */,
+				07B91F3A224CD72800D65AE9 /* Services */,
 				FAE575E120EFCAE00023383B /* Modules */,
 				FAE575E020EFCAD10023383B /* Constants */,
 				FAE575CE20EFCA430023383B /* AppDelegate.swift */,
@@ -1463,7 +1481,6 @@
 			isa = PBXGroup;
 			children = (
 				07C02B44224B9F0B005A3639 /* Models */,
-				07AF2C982241004800D86244 /* Networking */,
 				0709A8D7222E93CA00CF120B /* FilterView */,
 				FA9A031B21E2204B00DF6C2C /* Favorites */,
 				FADBF2502142D74E0047FAF0 /* Filters */,
@@ -2007,12 +2024,12 @@
 				FA79F3B121750EAA005A9AEB /* EditProfileViewController.swift in Sources */,
 				FA810C92212B4889003176A8 /* AdditionalPicsVidsTableViewCell.swift in Sources */,
 				FA810CE421370E51003176A8 /* InviteFriendsViewController.swift in Sources */,
+				07B91F4B224CD72800D65AE9 /* Login.swift in Sources */,
 				FA810CBF213191C1003176A8 /* Int+Extensions.swift in Sources */,
 				FAF1A9B421EA077000F5ABD1 /* SavedSearchTableViewProtocol.swift in Sources */,
 				FAE5761F20F11C8B0023383B /* PitchCollectionViewSource.swift in Sources */,
 				FA86BF9C214E910900B0B7AA /* SetPasswordViewController.swift in Sources */,
 				FAE5764320F123C20023383B /* NibOwnerLoadable.swift in Sources */,
-				07AF2C9D2241007400D86244 /* MainViewManager.swift in Sources */,
 				FA810C742124A78E003176A8 /* CategoriesPostCollectionViewProtocol.swift in Sources */,
 				FAF1A99D21E55D0200F5ABD1 /* CatsCollectionViewProtocol.swift in Sources */,
 				FA810CC821343CFA003176A8 /* Date+Extension.swift in Sources */,
@@ -2022,15 +2039,14 @@
 				FA79F3B4217514C1005A9AEB /* EditProfileTableViewSource.swift in Sources */,
 				FAF2454221985A4800642F4C /* PersonalAccountTableViewCell.swift in Sources */,
 				FA86BFA12150092400B0B7AA /* UserManager.swift in Sources */,
-				07AF2C9C2241007400D86244 /* MainView.swift in Sources */,
 				FA96D5E2215968CC00A04840 /* BussinesSignUpFromViewController.swift in Sources */,
 				FA7CD2FD21C99C7D008CD64D /* SortByTableViewCell.swift in Sources */,
 				FAE5763220F122A20023383B /* Presenter.swift in Sources */,
-				07AF2C9E2241007400D86244 /* MainViewClient.swift in Sources */,
 				FA810CAE212C8E0C003176A8 /* ConditionsCollectionViewCell.swift in Sources */,
 				FAF1A99F21E55D0200F5ABD1 /* CatsCollectionViewCell.swift in Sources */,
 				FA63052620F6A94C00F0777E /* MenuViewController.swift in Sources */,
 				FAE5760420EFCF940023383B /* String+LocalizeBundle.swift in Sources */,
+				07B91F4F224CD72800D65AE9 /* MainViewClient.swift in Sources */,
 				FA810C52211CB6BE003176A8 /* MapTableViewCell.swift in Sources */,
 				FAE5762C20F1216B0023383B /* MainPresenter.swift in Sources */,
 				FA3D5F3721C05EB200B17AD9 /* FilterTableViewSource.swift in Sources */,
@@ -2051,6 +2067,7 @@
 				FA810C4E211CB4C3003176A8 /* PhotosCollectionViewProtocol.swift in Sources */,
 				FA63052B20F7BAEF00F0777E /* MenuTableViewSource.swift in Sources */,
 				FAE5763020F121960023383B /* CategoryItem.swift in Sources */,
+				07B91F47224CD72800D65AE9 /* UserView.swift in Sources */,
 				FAE5760620EFCF940023383B /* String+LocalizeTableName.swift in Sources */,
 				FA7CD30521C99CA5008CD64D /* SelecterTableViewCell.swift in Sources */,
 				FAE575F820EFCD820023383B /* PostItemController.swift in Sources */,
@@ -2075,6 +2092,8 @@
 				FA810CE8213DB34F003176A8 /* UIViewController+Extension.swift in Sources */,
 				FA810CC621343709003176A8 /* UIView+Extension.swift in Sources */,
 				FA810CA3212C860C003176A8 /* AdditionalCollectionViewProtocol.swift in Sources */,
+				07B91F4D224CD72800D65AE9 /* MainView.swift in Sources */,
+				07B91F4A224CD72800D65AE9 /* NetworkClient.swift in Sources */,
 				FAE5762020F11C8B0023383B /* PitchCollectionViewProtocol.swift in Sources */,
 				FA63053820FE6F6500F0777E /* ProfileTableViewSource.swift in Sources */,
 				FAF1A99E21E55D0200F5ABD1 /* CatsCollectionViewSource.swift in Sources */,
@@ -2088,7 +2107,6 @@
 				FAF1A99521E51A0C00F5ABD1 /* HeaderTableViewCell.swift in Sources */,
 				FADB458821AABBB500304A45 /* InquireViewController.swift in Sources */,
 				FADBF2582143E5F80047FAF0 /* SwitchUITableViewCell.swift in Sources */,
-				070942892239309C00B736BD /* Login.swift in Sources */,
 				FAE5764020F123C20023383B /* Reusable.swift in Sources */,
 				FACC88312109014900BBB31C /* VideoTableViewCell.swift in Sources */,
 				FA86BF9F215008C400B0B7AA /* UserModel.swift in Sources */,
@@ -2101,6 +2119,7 @@
 				FABF83C8223EC7D8005EBED2 /* SignUpPresenter.swift in Sources */,
 				FA810C7C2124AA87003176A8 /* PostItemCatCollectionViewCell.swift in Sources */,
 				FA810C732124A78E003176A8 /* CategoriesPostCollectionViewSource.swift in Sources */,
+				07B91F4E224CD72800D65AE9 /* MainViewManager.swift in Sources */,
 				FA79F3CB2184A940005A9AEB /* PhotosFullSizeDataSource.swift in Sources */,
 				FA810CB8212DE54F003176A8 /* PostItemPresenter.swift in Sources */,
 				FA78386E21F507240033D8E7 /* UITextView+Extension.swift in Sources */,
@@ -2127,7 +2146,7 @@
 				FAA0525421D3E649003F960F /* FilterTypesCategories.swift in Sources */,
 				FADBF25C2143E60A0047FAF0 /* ProfileCollectionTableViewCell.swift in Sources */,
 				FAE5764520F1255A0023383B /* AnyCellProtocol.swift in Sources */,
-				0709428A2239309C00B736BD /* LoginManager.swift in Sources */,
+				07B91F49224CD72800D65AE9 /* UserViewManager.swift in Sources */,
 				FA810C86212A0756003176A8 /* ItemDescTableViewSource.swift in Sources */,
 				FA810CC42132BC62003176A8 /* ItemManager.swift in Sources */,
 				FA6E9DDD221854B200D50B15 /* ConfirmPurchaseViewController.swift in Sources */,
@@ -2137,6 +2156,7 @@
 				FAE5763D20F123C20023383B /* StoryboardSceneBased.swift in Sources */,
 				FA63052A20F7BAEF00F0777E /* MenuTableViewProtocol.swift in Sources */,
 				FA63053720FE6F6400F0777E /* ProfileTableViewProtocol.swift in Sources */,
+				07B91F48224CD72800D65AE9 /* UserViewClient.swift in Sources */,
 				FA7CD2F921C99C62008CD64D /* RangeTableViewCell.swift in Sources */,
 				FA79F3BD2176500E005A9AEB /* DoubleTextTableViewCell.swift in Sources */,
 				FAE575CF20EFCA430023383B /* AppDelegate.swift in Sources */,
@@ -2164,11 +2184,11 @@
 				FAA6A56C21D502B000D6C3A1 /* TypesCollectionViewSource.swift in Sources */,
 				FA810C6F21233BAD003176A8 /* PostItemTableViewSource.swift in Sources */,
 				FA7CD30121C99C96008CD64D /* SelectTypesTableViewCell.swift in Sources */,
-				070942882239309C00B736BD /* NetworkClient.swift in Sources */,
 				FA3D5F3921C05EB200B17AD9 /* LocationTableViewCell.swift in Sources */,
 				FAE575F320EFCD5E0023383B /* MainViewController.swift in Sources */,
 				FA810CE021370E33003176A8 /* SavedSearchViewController.swift in Sources */,
 				FAF1A9B321EA077000F5ABD1 /* SavedSearchTableViewCell.swift in Sources */,
+				07B91F4C224CD72800D65AE9 /* LoginManager.swift in Sources */,
 				FA810CAB212C861B003176A8 /* ConditionsCollectionViewSource.swift in Sources */,
 				FACC881F2100FBA100BBB31C /* CoverA.swift in Sources */,
 				FA5D55542118D51D008CA265 /* AdditionalPhotosTableViewCell.swift in Sources */,

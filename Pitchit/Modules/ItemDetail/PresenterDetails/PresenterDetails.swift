@@ -14,10 +14,12 @@ class PresenterDetails: NSObject, Presenter {
     typealias PresenterView = ItemDetailsViewController
     weak var view: PresenterView!
     fileprivate let service: MainViewClient!
+    fileprivate let serviceUser: UserViewClient!
     
-    required init(view: PresenterView, service: MainViewClient = MainViewManager()) {
+    required init(view: PresenterView, service: MainViewClient = MainViewManager(), serviceUser: UserViewClient = UserViewManager()) {
         self.view = view
         self.service = service
+        self.serviceUser = serviceUser
     }
     
     func sendToFavorites(offerId: String) {
@@ -25,4 +27,11 @@ class PresenterDetails: NSObject, Presenter {
             print(succes)
         }
     }
+    
+    func getUserProfile(userId: String) {
+        serviceUser.getUserProfile(userId: userId) { (items, succes) in
+            
+        }
+    }
+
 }
