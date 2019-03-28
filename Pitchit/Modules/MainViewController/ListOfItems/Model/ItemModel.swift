@@ -66,7 +66,7 @@ class ItemModelCodable: Codable {
 
 class AuthorCodable: Codable {
     var name = ""
-    var userId: String? = ""
+    var userId: String = ""
     var image: String? = ""
 }
 

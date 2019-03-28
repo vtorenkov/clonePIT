@@ -17,10 +17,6 @@ struct MainViewManager: MainViewClient {
             switch result {
             case let .success(response):
                 do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .secondsSince1970
-                    let items = try filteredResponse.map([CategoryItem].self, atKeyPath: "data", using: decoder)
                     completion(response.description)
                 }
                 catch let error {
