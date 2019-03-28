@@ -28,6 +28,8 @@ final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProt
     weak var delegateVC: ProfileTableItemDelegate?
     weak var delegatePitch: PitchCollectionInteract?
 
+    var profile: UserProfile?
+
     required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC: ProfileTableItemDelegate, delegatePitch: PitchCollectionInteract) {
         self.tableView = tableView
         self.delegate = delegate

@@ -12,18 +12,22 @@ import Moya
 struct UserViewManager: UserViewClient {
     let provider = MoyaProvider<UserView>()
     
-    func getUserProfile(userId: String, completion: @escaping(ResultGetPosts)) {
+    func getUserProfile(userId: String, completion: @escaping(ResultGetProfile)) {
         provider.request(.getUserProfile(userId: userId)) { (result) in
             switch result {
             case let .success(response):
                 do {
-//                    completion(response.description)
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let profile = try filteredResponse.map(UserProfile.self, atKeyPath: "data", using: decoder)
+                    completion(profile, response.description)
                 }
                 catch let error {
-//                    completion(error.localizedDescription)
+                    completion(nil, error.localizedDescription)
                 }
-            case let .failure(error): break
-//                completion(self.parseErrorMessage(error: error))
+            case let .failure(error):
+                completion(nil, self.parseErrorMessage(error: error))
             }
         }
     }

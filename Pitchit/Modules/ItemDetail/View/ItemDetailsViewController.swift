@@ -33,7 +33,6 @@ extension ItemDetailsViewController: ItemDetailsTableItemDelegate{
     }
     
     func showUser(with id:String) {
-        presenter.getUserProfile(userId: id)
     }
 }
 

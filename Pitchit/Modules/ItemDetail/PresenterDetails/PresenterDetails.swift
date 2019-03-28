@@ -27,11 +27,4 @@ class PresenterDetails: NSObject, Presenter {
             print(succes)
         }
     }
-    
-    func getUserProfile(userId: String) {
-        serviceUser.getUserProfile(userId: userId) { (items, succes) in
-            
-        }
-    }
-
 }

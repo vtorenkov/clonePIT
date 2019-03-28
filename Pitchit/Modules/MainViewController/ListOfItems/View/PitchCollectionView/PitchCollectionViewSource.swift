@@ -10,6 +10,7 @@ import UIKit
 
 protocol PitchCollectionInteract: class {
     func tapOnLike(item: ItemModel?)
+    func showUser(with id:String)
 }
 
 final class PitchCollectionDatasource: NSObject, PitchCollectionDatasourceProtocol {

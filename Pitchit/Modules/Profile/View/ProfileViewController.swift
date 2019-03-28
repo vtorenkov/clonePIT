@@ -9,6 +9,9 @@
 import UIKit
 
 extension ProfileViewController: PitchCollectionInteract {
+    func showUser(with id: String) {
+    }
+    
     func tapOnLike(item: ItemModel?) {
         self.alert(message: "Not yet implemented")
     }
@@ -25,18 +28,25 @@ extension ProfileViewController: ProfileTableItemDelegate {
 }
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet var tableView: UITableView!
     
-    fileprivate var profileTableViewDatasource: ProfileTableViewDatasource?
+    var profileTableViewDatasource: ProfileTableViewDatasource?
     fileprivate var profileTableViewDelegate: ProfileTableViewDelegate?
-
+    lazy var presenter: ProfilePresenter = ProfilePresenter(view: self)
+    var userId = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.profileTableViewDelegate = ProfileTableViewDelegate(self)
         self.profileTableViewDatasource = ProfileTableViewDatasource(tableView: tableView, delegate: self.profileTableViewDelegate!, delegateVC: self, delegatePitch: self)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.getUserProfile(userId: userId)
     }
     
     deinit {

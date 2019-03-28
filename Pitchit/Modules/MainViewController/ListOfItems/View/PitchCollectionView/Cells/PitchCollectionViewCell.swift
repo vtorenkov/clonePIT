@@ -100,6 +100,10 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         super.awakeFromNib()
     }
     
+    @IBAction func tapOnUser(_ sender: UIButton) {
+        delegate?.showUser(with: item?.author.userId ?? "")
+    }
+    
     @IBAction func tapOnlike(_ sender: Any) {
         delegate?.tapOnLike(item: item)
     }

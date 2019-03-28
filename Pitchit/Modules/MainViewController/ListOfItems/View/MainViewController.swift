@@ -34,6 +34,10 @@ extension MainViewController: PitchCollectionInteract {
     func tapOnLike(item: ItemModel?) {
         self.alert(message: "Not yest implemented")
     }
+    
+    func showUser(with id:String) {
+        RouterTabBar.sharedInstance.openProfileTab(targer: self, porfileId: id)
+    }
 }
 
 extension MainViewController: UISearchBarDelegate {

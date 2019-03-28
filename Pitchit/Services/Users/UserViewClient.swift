@@ -8,8 +8,8 @@
 import Moya
 
 protocol UserViewClient {
-    typealias ResultGetPosts = ([ItemModelCodable]?, String) -> ()
+    typealias ResultGetProfile = (UserProfile?, String) -> ()
 
     var provider: MoyaProvider<UserView> { get }
-    func getUserProfile(userId: String, completion: @escaping(ResultGetPosts))
+    func getUserProfile(userId: String, completion: @escaping(ResultGetProfile))
 }

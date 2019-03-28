@@ -21,6 +21,10 @@
 		07B91F4D224CD72800D65AE9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F44224CD72800D65AE9 /* MainView.swift */; };
 		07B91F4E224CD72800D65AE9 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F45224CD72800D65AE9 /* MainViewManager.swift */; };
 		07B91F4F224CD72800D65AE9 /* MainViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F46224CD72800D65AE9 /* MainViewClient.swift */; };
+		07B91F51224CE5AC00D65AE9 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F50224CE5AC00D65AE9 /* UserProfile.swift */; };
+		07B91F56224D04D900D65AE9 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F55224D04D900D65AE9 /* ProfilePresenter.swift */; };
+		07B91F58224D060000D65AE9 /* RouterTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F57224D060000D65AE9 /* RouterTabBar.swift */; };
+		07B91F5A224D062300D65AE9 /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F59224D062300D65AE9 /* GlobalRouter.swift */; };
 		07C02B46224B9FD0005A3639 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C02B45224B9FD0005A3639 /* FavoritesModel.swift */; };
 		07C02B49224BA1C6005A3639 /* PresenterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C02B48224BA1C6005A3639 /* PresenterFavorites.swift */; };
 		C4668F85B94FADEC5980165D /* Pods_Pitchit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */; };
@@ -275,6 +279,10 @@
 		07B91F44224CD72800D65AE9 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		07B91F45224CD72800D65AE9 /* MainViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
 		07B91F46224CD72800D65AE9 /* MainViewClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewClient.swift; sourceTree = "<group>"; };
+		07B91F50224CE5AC00D65AE9 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		07B91F55224D04D900D65AE9 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		07B91F57224D060000D65AE9 /* RouterTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTabBar.swift; sourceTree = "<group>"; };
+		07B91F59224D062300D65AE9 /* GlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
 		07C02B45224B9FD0005A3639 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		07C02B48224BA1C6005A3639 /* PresenterFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFavorites.swift; sourceTree = "<group>"; };
 		89DF4DA8C098DBD982220254 /* Pods-Pitchit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.release.xcconfig"; sourceTree = "<group>"; };
@@ -603,6 +611,14 @@
 				07B91F46224CD72800D65AE9 /* MainViewClient.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		07B91F54224D03CE00D65AE9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				07B91F55224D04D900D65AE9 /* ProfilePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		07C02B44224B9F0B005A3639 /* Models */ = {
@@ -1118,6 +1134,7 @@
 			children = (
 				FA79F3C92184A928005A9AEB /* PhotosForFullSizeDataSource */,
 				FA86BF9E215008C400B0B7AA /* UserModel.swift */,
+				07B91F50224CE5AC00D65AE9 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1282,6 +1299,8 @@
 				FACC88222107953C00BBB31C /* Router.swift */,
 				FA79F3AC21750E49005A9AEB /* RouterProfile.swift */,
 				FADB458921AABBE600304A45 /* RouterItem.swift */,
+				07B91F57224D060000D65AE9 /* RouterTabBar.swift */,
+				07B91F59224D062300D65AE9 /* GlobalRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -1513,6 +1532,7 @@
 		FAE575E920EFCC500023383B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				07B91F54224D03CE00D65AE9 /* Presenter */,
 				FA9E6D992199F58E00C22FD5 /* Analytics */,
 				FAF2454421985C2A00642F4C /* RateProfile */,
 				FA79F3AE21750E88005A9AEB /* EditProfile */,
@@ -2052,6 +2072,7 @@
 				FA3D5F3721C05EB200B17AD9 /* FilterTableViewSource.swift in Sources */,
 				FA810C5E21233B1F003176A8 /* UploadVideoTableViewCell.swift in Sources */,
 				FAE5764120F123C20023383B /* UITableView+Reusable.swift in Sources */,
+				07B91F5A224D062300D65AE9 /* GlobalRouter.swift in Sources */,
 				FA86BF96214E8DF500B0B7AA /* String+Extension.swift in Sources */,
 				FA810C87212A0756003176A8 /* ItemDescTableViewProtocol.swift in Sources */,
 				FACC88232107953C00BBB31C /* Router.swift in Sources */,
@@ -2071,6 +2092,7 @@
 				FAE5760620EFCF940023383B /* String+LocalizeTableName.swift in Sources */,
 				FA7CD30521C99CA5008CD64D /* SelecterTableViewCell.swift in Sources */,
 				FAE575F820EFCD820023383B /* PostItemController.swift in Sources */,
+				07B91F56224D04D900D65AE9 /* ProfilePresenter.swift in Sources */,
 				FA79F3CE2184B132005A9AEB /* NewAdditionalPhotoCollectionViewCell.swift in Sources */,
 				FADBF2542142D7990047FAF0 /* FiltersViewController.swift in Sources */,
 				FA3D5F3A21C05EB200B17AD9 /* FilterTableViewProtocol.swift in Sources */,
@@ -2147,6 +2169,7 @@
 				FADBF25C2143E60A0047FAF0 /* ProfileCollectionTableViewCell.swift in Sources */,
 				FAE5764520F1255A0023383B /* AnyCellProtocol.swift in Sources */,
 				07B91F49224CD72800D65AE9 /* UserViewManager.swift in Sources */,
+				07B91F58224D060000D65AE9 /* RouterTabBar.swift in Sources */,
 				FA810C86212A0756003176A8 /* ItemDescTableViewSource.swift in Sources */,
 				FA810CC42132BC62003176A8 /* ItemManager.swift in Sources */,
 				FA6E9DDD221854B200D50B15 /* ConfirmPurchaseViewController.swift in Sources */,
@@ -2164,6 +2187,7 @@
 				FA810CBD212F08D4003176A8 /* RecordVideoViewController.swift in Sources */,
 				FAA6A56B21D502B000D6C3A1 /* TypesCollectionViewProtocol.swift in Sources */,
 				FA9E6DA42199F99E00C22FD5 /* AnalyticsTableViewCell.swift in Sources */,
+				07B91F51224CE5AC00D65AE9 /* UserProfile.swift in Sources */,
 				FA9A031F21E2208C00DF6C2C /* FavoritesViewController.swift in Sources */,
 				FA79F3B5217514C1005A9AEB /* EditProfileTableViewProtocol.swift in Sources */,
 				FA810CB5212DDFAB003176A8 /* ItemModel.swift in Sources */,

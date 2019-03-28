@@ -9,27 +9,6 @@
 import Foundation
 import UIKit
 
-class GlobalRouter {
-    enum RouterPresentationStyle {
-        case push
-        case present
-    }
-    
-    func pushOrPresentController(target: UIViewController?, controller: UIViewController, presentationStyle: RouterPresentationStyle) {
-        switch presentationStyle {
-        case .present:
-            let navigationController = UINavigationController(rootViewController: controller)
-            target?.present(navigationController, animated: true, completion: nil)
-        case .push:
-            if let target = target as? UINavigationController {
-                target.pushViewController(controller, animated: true)
-            } else {
-                target?.navigationController?.pushViewController(controller, animated: true)
-            }
-        }
-    }
-}
-
 class RouterItem: GlobalRouter {
     
     static let sharedInstance : RouterItem = {
