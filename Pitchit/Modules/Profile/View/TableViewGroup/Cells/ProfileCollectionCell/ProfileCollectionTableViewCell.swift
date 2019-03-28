@@ -32,6 +32,7 @@ struct ProfileCollectionTableViewCellModel {
     var items: [ItemModel]
     var delegate: ProfileTableItemDelegate?
     var delegatePitch: PitchCollectionInteract?
+    var userProfile: UserProfile
 }
 
 extension ProfileCollectionTableViewCellModel: CellViewModel {

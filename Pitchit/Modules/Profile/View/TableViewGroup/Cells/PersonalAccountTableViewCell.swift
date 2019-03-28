@@ -35,6 +35,7 @@ class PersonalAccountTableViewCell: UITableViewCell, NibReusable {
 
 struct PersonalAccountTableViewCellModel {
     var delegate: ProfileTableItemDelegate?
+    var userProfile: UserProfile
 }
 
 extension PersonalAccountTableViewCellModel: CellViewModel {

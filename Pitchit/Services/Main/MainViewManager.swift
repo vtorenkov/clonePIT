@@ -10,17 +10,12 @@ import Foundation
 import Moya
 
 struct MainViewManager: MainViewClient, AddToFavoritesClient {
-    //    let plugins: [PluginType] = [NetworkLoggerPlugin(verbose: true)]
-    //    let provider = MoyaProvider<MainView>(plugins: plugins)
-    
     let provider = MoyaProvider<MainView>(plugins: [NetworkActivityPlugin { type,_  in
         switch type {
         case .began : print("start")
         case .ended : print("end")
         }
         }])
-    
-    //    let provider = MoyaProvider<MainView>()
     
     func addToFavorites(offerId: String, completion: @escaping(ResultAddToFavorites)) {
         provider.request(.addToFavorites(offerId: offerId)) { (result) in

@@ -56,17 +56,20 @@ final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProt
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var model: CellViewAnyModel
+        guard let profile = self.profile else {
+            return UITableViewCell()
+        }
         let items = ItemManager.sharedInstance.items
         let type = ProfileType.allTypes[indexPath.row]
         switch type {
         case .TopAvatar:
-            model = AvtarProfileTableViewCellModel(delegate: delegateVC)
+            model = AvtarProfileTableViewCellModel(delegate: delegateVC, userProfile: profile)
         case .Personal:
-            model = PersonalAccountTableViewCellModel(delegate: delegateVC)
+            model = PersonalAccountTableViewCellModel(delegate: delegateVC, userProfile: profile)
         case .Switch:
-            model = SwitchUITableViewCellModel()
+            model = SwitchUITableViewCellModel(userProfile: profile)
         case .Items:
-            model = ProfileCollectionTableViewCellModel(items: items, delegate: delegateVC, delegatePitch: delegatePitch)
+            model = ProfileCollectionTableViewCellModel(items: items, delegate: delegateVC, delegatePitch: delegatePitch, userProfile: profile)
         }
         return tableView.dequeueReusableCell(with: model, for: indexPath)
     }
@@ -97,5 +100,4 @@ class ProfileTableViewDelegate: NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }

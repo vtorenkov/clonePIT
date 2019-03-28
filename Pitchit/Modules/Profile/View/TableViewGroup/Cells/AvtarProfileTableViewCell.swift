@@ -18,6 +18,8 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet var starRate: CosmosView!
     @IBOutlet var numberReviews: UILabel!
     
+    var userProfile: UserProfile!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,13 +36,11 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
         tapGestureRecognizer.numberOfTapsRequired = 1
         rateView.addGestureRecognizer(tapGestureRecognizer)
         
-        userName.text = UserShared.sharedInstance.user.getUserFullName().uppercased()
+        userName.text = userProfile.firstName.uppercased() + " " + userProfile.lastName.uppercased()
         avatarImage.setRounded()
         
-        if let url = UserShared.sharedInstance.checkUserUrl() {
-            let url = URL(string: url)
-            avatarImage.kf.setImage(with: url)
-        }
+        let url = URL(string: userProfile.image)
+        avatarImage.kf.setImage(with: url)
         
         if let type = UserShared.sharedInstance.user.accountType, let text = userName.text {
             switch type {
@@ -73,10 +73,12 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
 
 struct AvtarProfileTableViewCellModel {
     var delegate: ProfileTableItemDelegate?
+    var userProfile: UserProfile
 }
 
 extension AvtarProfileTableViewCellModel: CellViewModel {
     func setup(cell: AvtarProfileTableViewCell) {
         cell.delegate = delegate
+        cell.userProfile = userProfile
     }
 }

@@ -31,6 +31,7 @@ class SwitchUITableViewCell: UITableViewCell, NibReusable {
 }
 
 struct SwitchUITableViewCellModel {
+    var userProfile: UserProfile
 }
 
 extension SwitchUITableViewCellModel: CellViewModel {
