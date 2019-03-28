@@ -12,21 +12,23 @@ class PresenterFavorites: NSObject, Presenter {
     
     typealias PresenterView = FavoritesViewController
     weak var view: PresenterView!
-    fileprivate let service: MainViewClient!
-    
-    required init(view: PresenterView, service: MainViewClient = MainViewManager()) {
+    fileprivate let serviceMain: MainViewClient!
+    fileprivate let serviceAddFavorites: AddToFavoritesClient!
+
+    required init(view: PresenterView, serviceMain: MainViewClient = MainViewManager(), serviceAddFavorites: AddToFavoritesClient = MainViewManager()) {
         self.view = view
-        self.service = service
+        self.serviceAddFavorites = serviceAddFavorites
+        self.serviceMain = serviceMain
     }
     
     func addToFavorites(favoriteId: String) {
-        service.addToFavorites(offerId: favoriteId) { (succes) in
-            print(succes)
+        serviceAddFavorites.addToFavorites(offerId: favoriteId) { (succes) in
+            self.getAllFavorites()
         }
     }
     
     func getAllFavorites() {
-        service.getFavorites { [weak self] (favorites, success) in
+        serviceMain.getFavorites { [weak self] (favorites, success) in
             self?.view.favoritesViewDatasource?.favoritesArray = favorites ?? [FavoritesCodable]()
             self?.view.favoritesViewDatasource?.tableView?.reloadData()
         }

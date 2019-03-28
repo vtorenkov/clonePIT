@@ -10,7 +10,11 @@ import UIKit
 
 extension FavoritesViewController: FavoritesTableItemDelegate{
     func tapHeart(favoriteId: String) {
-        presenter.addToFavorites(favoriteId: favoriteId)
+        self.alertYesNo(title: "Remove?", message: "Remove from favorites?") { (yes) in
+            if yes {
+                self.presenter.addToFavorites(favoriteId: favoriteId)
+            }
+        }
     }
 }
 

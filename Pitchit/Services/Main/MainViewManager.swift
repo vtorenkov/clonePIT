@@ -9,8 +9,18 @@
 import Foundation
 import Moya
 
-struct MainViewManager: MainViewClient {
-    let provider = MoyaProvider<MainView>()
+struct MainViewManager: MainViewClient, AddToFavoritesClient {
+    //    let plugins: [PluginType] = [NetworkLoggerPlugin(verbose: true)]
+    //    let provider = MoyaProvider<MainView>(plugins: plugins)
+    
+    let provider = MoyaProvider<MainView>(plugins: [NetworkActivityPlugin { type,_  in
+        switch type {
+        case .began : print("start")
+        case .ended : print("end")
+        }
+        }])
+    
+    //    let provider = MoyaProvider<MainView>()
     
     func addToFavorites(offerId: String, completion: @escaping(ResultAddToFavorites)) {
         provider.request(.addToFavorites(offerId: offerId)) { (result) in
@@ -88,7 +98,7 @@ struct MainViewManager: MainViewClient {
             }
         }
     }
-        
+    
     func parseErrorMessage(error: MoyaError) -> String {
         do {
             if let body = try error.response?.mapJSON() as? NSDictionary, let mess = body.value(forKey: "message") as? String {

@@ -16,10 +16,18 @@ class MainPresenter: NSObject, Presenter {
     weak var view: PresenterView!
     
     fileprivate let service: MainViewClient!
-    
-    required init(view: PresenterView, service: MainViewClient = MainViewManager()) {
+    fileprivate let serviceFavorites: AddToFavoritesClient!
+
+    required init(view: PresenterView, service: MainViewClient = MainViewManager(), serviceFavorites: AddToFavoritesClient = MainViewManager()) {
         self.view = view
         self.service = service
+        self.serviceFavorites = serviceFavorites
+    }
+    
+    func sendToFavorites(offerId: String) {
+        self.serviceFavorites.addToFavorites(offerId: offerId) { (succes) in
+            print(succes)
+        }
     }
     
     func getPosts() {

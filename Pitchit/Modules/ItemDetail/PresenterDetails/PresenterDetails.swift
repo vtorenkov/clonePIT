@@ -14,16 +14,16 @@ class PresenterDetails: NSObject, Presenter {
     typealias PresenterView = ItemDetailsViewController
     weak var view: PresenterView!
     fileprivate let service: MainViewClient!
-    fileprivate let serviceUser: UserViewClient!
+    fileprivate let serviceUser: AddToFavoritesClient!
     
-    required init(view: PresenterView, service: MainViewClient = MainViewManager(), serviceUser: UserViewClient = UserViewManager()) {
+    required init(view: PresenterView, service: MainViewClient = MainViewManager(), serviceUser: AddToFavoritesClient = MainViewManager()) {
         self.view = view
         self.service = service
         self.serviceUser = serviceUser
     }
     
     func sendToFavorites(offerId: String) {
-        self.service.addToFavorites(offerId: offerId) { (succes) in
+        self.serviceUser.addToFavorites(offerId: offerId) { (succes) in
             print(succes)
         }
     }
