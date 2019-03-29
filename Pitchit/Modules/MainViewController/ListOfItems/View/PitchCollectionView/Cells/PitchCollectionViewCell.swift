@@ -90,6 +90,8 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             if let url = seller.image {
                 let url = URL(string: url)
                 avatarImage.kf.setImage(with: url)
+            } else {
+                avatarImage.image = UIImage(named: "placeholder_avatar")
             }
         }
         

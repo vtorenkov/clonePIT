@@ -27,7 +27,8 @@ final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProt
     weak var delegate: UITableViewDelegate?
     weak var delegateVC: ProfileTableItemDelegate?
     weak var delegatePitch: PitchCollectionInteract?
-
+    
+    var items = [ItemModel]()
     var profile: UserProfile?
 
     required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC: ProfileTableItemDelegate, delegatePitch: PitchCollectionInteract) {
@@ -59,7 +60,6 @@ final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProt
         guard let profile = self.profile else {
             return UITableViewCell()
         }
-        let items = ItemManager.sharedInstance.items
         let type = ProfileType.allTypes[indexPath.row]
         switch type {
         case .TopAvatar:

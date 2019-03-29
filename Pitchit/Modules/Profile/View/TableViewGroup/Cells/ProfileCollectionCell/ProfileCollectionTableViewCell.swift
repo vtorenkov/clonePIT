@@ -18,6 +18,8 @@ class ProfileCollectionTableViewCell: UITableViewCell, NibReusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         // Initialization code
         self.collectionView?.register(cellType: PitchCollectionViewCell.self)
     }
@@ -39,10 +41,8 @@ extension ProfileCollectionTableViewCellModel: CellViewModel {
     func setup(cell: ProfileCollectionTableViewCell) {
         cell.items = items
         cell.delegate = delegate
-        cell.collectionView.delegate = cell
-        cell.collectionView.dataSource = cell
         let itemsCount = Double(self.items.count) / 2
-
+        cell.collectionView.reloadData()
         cell.collectionHeight.constant = CGFloat(round(Double(itemsCount))) * (kScreenHeight / 3)
     }
 }
@@ -59,7 +59,6 @@ extension ProfileCollectionTableViewCell: UICollectionViewDelegateFlowLayout, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let item = items[indexPath.row]
         let model = PitchCollectionViewCellModel(item: item, delegate: delegatePitch)
         return collectionView.dequeueReusableCell(with: model, for: indexPath)

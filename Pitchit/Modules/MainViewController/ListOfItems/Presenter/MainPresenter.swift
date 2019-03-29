@@ -32,7 +32,7 @@ class MainPresenter: NSObject, Presenter {
     
     func getPosts() {
         var items = [ItemModel]()
-        self.service.getPosts { [weak self] (itemsCodable, response) in
+        self.service.getPosts(userId: nil) { [weak self] (itemsCodable, response) in
             itemsCodable?.forEach{items.append(ItemModel(codableItem: $0))}
             self?.view.items = items
             self?.view.pitchCollectionViewDelegate?.items = items

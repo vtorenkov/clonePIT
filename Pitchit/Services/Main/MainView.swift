@@ -11,11 +11,11 @@ import Moya
 import Alamofire
 
 public enum MainView: TargetType {
-    case getPosts()
+    case getPosts(userId: String?)
     case getCategories()
     case getFavorites()
     case addToFavorites(offerId: String)
-
+    
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
@@ -46,8 +46,12 @@ public enum MainView: TargetType {
     
     public var task: Task {
         switch self {
-        case .getPosts:
-            return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
+        case .getPosts(let userId):
+            if let id = userId {
+                return .requestParameters(parameters: ["page":1, "limit":20, "userId": id], encoding: URLEncoding.default)
+            } else {
+                return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
+            }
         case .getCategories:
             return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
         case .getFavorites:

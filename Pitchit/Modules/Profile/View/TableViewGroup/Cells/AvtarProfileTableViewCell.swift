@@ -43,7 +43,7 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
             let url = URL(string: url)
             avatarImage.kf.setImage(with: url)
         } else {
-            avatarImage.image = UIImage(named: "default-placeholder")
+            avatarImage.image = UIImage(named: "placeholder_avatar")
         }
         
         if let type = UserShared.sharedInstance.user.accountType, let text = userName.text {

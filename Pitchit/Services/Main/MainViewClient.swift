@@ -13,7 +13,7 @@ protocol MainViewClient {
     typealias ResultGetFavorites = ([FavoritesCodable]?, String) -> ()
 
     var provider: MoyaProvider<MainView> { get }
-    func getPosts(completion: @escaping(ResultGetPosts))
+    func getPosts(userId: String?, completion: @escaping(ResultGetPosts))
     func getCategories(completion: @escaping(ResultGetCats))
     func getFavorites(completion: @escaping(ResultGetFavorites))
 }

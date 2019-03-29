@@ -75,8 +75,8 @@ struct MainViewManager: MainViewClient, AddToFavoritesClient {
         }
     }
     
-    func getPosts(completion: @escaping (ResultGetPosts)) {
-        provider.request(.getPosts()) { (result) in
+    func getPosts(userId: String?, completion: @escaping (ResultGetPosts)) {
+        provider.request(.getPosts(userId: userId)) { (result) in
             switch result {
             case let .success(response):
                 do {
