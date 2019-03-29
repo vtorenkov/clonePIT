@@ -45,7 +45,7 @@ public class RegisterModel: Codable  {
     var email = ""
 
     var fullName: String? = ""
-    var userId: String = ""
+    var id: String = ""
     var phone: Int? = 0
     var passWord: String? = ""
     var passWordRepeat: String? = ""
@@ -57,9 +57,9 @@ public class RegisterModel: Codable  {
     public required init(from decoder: Decoder) throws {
         let map = try decoder.container(keyedBy: CodingKeys.self)
         do {
-            self.userId = try map.decode(String.self, forKey: .userId)
+            self.id = try map.decode(String.self, forKey: .id)
         } catch {
-            self.userId = ""
+            self.id = ""
         }
         
         self.firstName = try map.decode(String.self, forKey: .firstName)
@@ -84,7 +84,7 @@ public class RegisterModel: Codable  {
     init() {}
     
     init(json:JSON) {
-        self.userId = json["id"].stringValue
+        self.id = json["id"].stringValue
         self.fullName = json["name"].stringValue
         self.imageUrl = json["picture"]["data"]["url"].stringValue
         self.email = json["email"].stringValue

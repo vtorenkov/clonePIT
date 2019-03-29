@@ -13,7 +13,7 @@ class UserProfile: Codable {
     var id = ""
     var firstName = ""
     var lastName = ""
-    var image = ""
+    var image: String? = ""
     var city: String? = ""
     var state: String? = ""
     var topRated: String? = ""

@@ -21,7 +21,11 @@ class ProfilePresenter: NSObject, Presenter {
     }
     
     func getUserProfile(userId: String) {
-        service.getUserProfile(userId: userId) { (profile, succes) in
+        var id = userId
+        if id.isEmpty {
+            id = UserManager.getCurrentUserObject().id
+        }
+        service.getUserProfile(userId: id) { (profile, succes) in
             self.profile = profile
             self.view.profileTableViewDatasource?.profile = profile
             self.view.profileTableViewDatasource?.tableView?.reloadData()

@@ -76,6 +76,7 @@ PODS:
   - RangeSeekSlider (1.7.0)
   - Result (3.2.4)
   - SearchTextField (1.2.0)
+  - SKActivityIndicatorView (0.1.0)
   - SkyFloatingLabelTextField (3.5.2)
   - SwiftlySlider (0.7.1)
   - SwiftyJSON (4.1.0)
@@ -101,6 +102,7 @@ DEPENDENCIES:
   - Player
   - RangeSeekSlider
   - SearchTextField
+  - SKActivityIndicatorView (~> 0.1.0)
   - SkyFloatingLabelTextField
   - SwiftlySlider
   - SwiftyJSON
@@ -137,6 +139,7 @@ SPEC REPOS:
     - RangeSeekSlider
     - Result
     - SearchTextField
+    - SKActivityIndicatorView
     - SkyFloatingLabelTextField
     - SwiftlySlider
     - SwiftyJSON
@@ -158,7 +161,7 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleSignIn: 11183592dc63e105475c7305a325045ff95e02b7
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
@@ -172,10 +175,11 @@ SPEC CHECKSUMS:
   RangeSeekSlider: 0386c5a9aa5ebcb2fa5238e8a627280cf46c7c0a
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
+  SKActivityIndicatorView: f46936f760d33eb8235333242269bf01cc9248ae
   SkyFloatingLabelTextField: f0672b67cd0e86abda946c0dc3b2fe8580767dbb
   SwiftlySlider: 1c9b3dd207a50b83983b29317e3247711d387e14
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 37cf4810f6ffb72fdb6d58cef0f258e7e7f40062
+PODFILE CHECKSUM: 24462b1ce4ffac81f82e1100ad1809ebf5d578a7
 
 COCOAPODS: 1.5.3

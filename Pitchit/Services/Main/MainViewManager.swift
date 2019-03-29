@@ -8,12 +8,13 @@
 
 import Foundation
 import Moya
+import SKActivityIndicatorView
 
 struct MainViewManager: MainViewClient, AddToFavoritesClient {
     let provider = MoyaProvider<MainView>(plugins: [NetworkActivityPlugin { type,_  in
         switch type {
-        case .began : print("start")
-        case .ended : print("end")
+        case .began : SKActivityIndicator.show("Loading...")
+        case .ended : SKActivityIndicator.dismiss()
         }
         }])
     

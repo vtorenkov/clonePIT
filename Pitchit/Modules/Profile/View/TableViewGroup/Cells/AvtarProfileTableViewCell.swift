@@ -39,8 +39,12 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
         userName.text = userProfile.firstName.uppercased() + " " + userProfile.lastName.uppercased()
         avatarImage.setRounded()
         
-        let url = URL(string: userProfile.image)
-        avatarImage.kf.setImage(with: url)
+        if let url = userProfile.image {
+            let url = URL(string: url)
+            avatarImage.kf.setImage(with: url)
+        } else {
+            avatarImage.image = UIImage(named: "default-placeholder")
+        }
         
         if let type = UserShared.sharedInstance.user.accountType, let text = userName.text {
             switch type {

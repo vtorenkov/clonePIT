@@ -28,6 +28,7 @@ pod 'DropDown'
 pod 'SwiftlySlider'
 pod 'RangeSeekSlider'
 pod 'GoogleSignIn'
+pod 'SKActivityIndicatorView', '~> 0.1.0'
 
 pod 'Moya', '~> 11.0'
 end
