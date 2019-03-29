@@ -10,11 +10,19 @@ import Foundation
 
 
 class ItemManager {
-    
     static let sharedInstance : ItemManager = {
         let instance = ItemManager()
         return instance
     }()
 
     var items = [ItemModel]()
+}
+
+class CategoryManager {
+    static let sharedInstance : CategoryManager = {
+        let instance = CategoryManager()
+        return instance
+    }()
+    
+    var items = [CategoryItem]()
 }

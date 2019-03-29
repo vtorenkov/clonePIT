@@ -19,6 +19,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="162" height="189"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puc-xV-hKf">
+                        <rect key="frame" x="0.0" y="0.0" width="162" height="189"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="table_sample" translatesAutoresizingMaskIntoConstraints="NO" id="fry-j1-7KR">
                         <rect key="frame" x="20" y="20" width="122" height="116"/>
                     </imageView>
@@ -42,7 +46,11 @@
                 <constraint firstItem="fry-j1-7KR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Gq3-tE-1Ax"/>
                 <constraint firstAttribute="trailing" secondItem="D6A-OW-gEf" secondAttribute="trailing" id="HBa-Ju-PGa"/>
                 <constraint firstItem="eLW-Cm-JiG" firstAttribute="centerX" secondItem="fry-j1-7KR" secondAttribute="centerX" id="OfF-Zy-wPv"/>
+                <constraint firstItem="Puc-xV-hKf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ST6-nn-4LF"/>
                 <constraint firstAttribute="bottom" secondItem="D6A-OW-gEf" secondAttribute="bottom" id="WXX-GP-rOw"/>
+                <constraint firstAttribute="bottom" secondItem="Puc-xV-hKf" secondAttribute="bottom" id="Xlp-sg-aG8"/>
+                <constraint firstAttribute="trailing" secondItem="Puc-xV-hKf" secondAttribute="trailing" id="ces-xG-pOO"/>
+                <constraint firstItem="Puc-xV-hKf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iH1-SY-ZHa"/>
                 <constraint firstItem="eLW-Cm-JiG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="jK1-3V-fJe"/>
                 <constraint firstItem="D6A-OW-gEf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mNN-jQ-Mbc"/>
                 <constraint firstItem="D6A-OW-gEf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rd2-Yw-FDs"/>
@@ -55,6 +63,7 @@
             <connections>
                 <outlet property="categoryImage" destination="fry-j1-7KR" id="FmM-Za-7Cg"/>
                 <outlet property="categoryName" destination="eLW-Cm-JiG" id="hzF-3a-Q1e"/>
+                <outlet property="gradientView" destination="Puc-xV-hKf" id="vCO-T6-r0V"/>
                 <outlet property="whiteDeselected" destination="D6A-OW-gEf" id="yMa-gZ-NZW"/>
             </connections>
             <point key="canvasLocation" x="195.19999999999999" y="187.55622188905548"/>

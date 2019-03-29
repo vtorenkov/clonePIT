@@ -12,6 +12,9 @@
 		0709A8DB222E93F700CF120B /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0709A8DA222E93F600CF120B /* FilterView.xib */; };
 		073C6A482227F0450019A825 /* UiView+Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C6A472227F0450019A825 /* UiView+Borders.swift */; };
 		079F99202226DCAF007E159B /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079F991F2226DCAF007E159B /* ChatModel.swift */; };
+		07AD16F5224E211600236902 /* CreatePostViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD16F2224E211600236902 /* CreatePostViewClient.swift */; };
+		07AD16F6224E211600236902 /* CreatePostViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD16F3224E211600236902 /* CreatePostViewManager.swift */; };
+		07AD16F7224E211600236902 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD16F4224E211600236902 /* CreatePostView.swift */; };
 		07B91F47224CD72800D65AE9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F3C224CD72800D65AE9 /* UserView.swift */; };
 		07B91F48224CD72800D65AE9 /* UserViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F3D224CD72800D65AE9 /* UserViewClient.swift */; };
 		07B91F49224CD72800D65AE9 /* UserViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F3E224CD72800D65AE9 /* UserViewManager.swift */; };
@@ -270,6 +273,9 @@
 		0709A8DA222E93F600CF120B /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		073C6A472227F0450019A825 /* UiView+Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Borders.swift"; sourceTree = "<group>"; };
 		079F991F2226DCAF007E159B /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		07AD16F2224E211600236902 /* CreatePostViewClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewClient.swift; sourceTree = "<group>"; };
+		07AD16F3224E211600236902 /* CreatePostViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewManager.swift; sourceTree = "<group>"; };
+		07AD16F4224E211600236902 /* CreatePostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		07B91F3C224CD72800D65AE9 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		07B91F3D224CD72800D65AE9 /* UserViewClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewClient.swift; sourceTree = "<group>"; };
 		07B91F3E224CD72800D65AE9 /* UserViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewManager.swift; sourceTree = "<group>"; };
@@ -573,9 +579,20 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		07AD16F1224E20E000236902 /* CreatePost */ = {
+			isa = PBXGroup;
+			children = (
+				07AD16F4224E211600236902 /* CreatePostView.swift */,
+				07AD16F2224E211600236902 /* CreatePostViewClient.swift */,
+				07AD16F3224E211600236902 /* CreatePostViewManager.swift */,
+			);
+			path = CreatePost;
+			sourceTree = "<group>";
+		};
 		07B91F3A224CD72800D65AE9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				07AD16F1224E20E000236902 /* CreatePost */,
 				07B91F3B224CD72800D65AE9 /* Users */,
 				07B91F3F224CD72800D65AE9 /* LogIn&SignUp */,
 				07B91F43224CD72800D65AE9 /* Main */,
@@ -2060,6 +2077,7 @@
 				FA63053B20FE6F6C00F0777E /* AvtarProfileTableViewCell.swift in Sources */,
 				FA79F3B4217514C1005A9AEB /* EditProfileTableViewSource.swift in Sources */,
 				FAF2454221985A4800642F4C /* PersonalAccountTableViewCell.swift in Sources */,
+				07AD16F5224E211600236902 /* CreatePostViewClient.swift in Sources */,
 				FA86BFA12150092400B0B7AA /* UserManager.swift in Sources */,
 				FA96D5E2215968CC00A04840 /* BussinesSignUpFromViewController.swift in Sources */,
 				FA7CD2FD21C99C7D008CD64D /* SortByTableViewCell.swift in Sources */,
@@ -2090,6 +2108,7 @@
 				FA810C4E211CB4C3003176A8 /* PhotosCollectionViewProtocol.swift in Sources */,
 				FA63052B20F7BAEF00F0777E /* MenuTableViewSource.swift in Sources */,
 				FAE5763020F121960023383B /* CategoryItem.swift in Sources */,
+				07AD16F7224E211600236902 /* CreatePostView.swift in Sources */,
 				07B91F47224CD72800D65AE9 /* UserView.swift in Sources */,
 				FAE5760620EFCF940023383B /* String+LocalizeTableName.swift in Sources */,
 				FA7CD30521C99CA5008CD64D /* SelecterTableViewCell.swift in Sources */,
@@ -2122,6 +2141,7 @@
 				FA63053820FE6F6500F0777E /* ProfileTableViewSource.swift in Sources */,
 				FAF1A99E21E55D0200F5ABD1 /* CatsCollectionViewSource.swift in Sources */,
 				07C02B46224B9FD0005A3639 /* FavoritesModel.swift in Sources */,
+				07AD16F6224E211600236902 /* CreatePostViewManager.swift in Sources */,
 				FAE575EE20EFCC900023383B /* TabBarController.swift in Sources */,
 				FA5D55502118D50A008CA265 /* CategoryConditionTableViewCell.swift in Sources */,
 				FAE5763F20F123C20023383B /* UICollectionView+Reusable.swift in Sources */,

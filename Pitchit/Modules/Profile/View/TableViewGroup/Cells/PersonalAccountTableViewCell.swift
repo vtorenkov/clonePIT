@@ -40,5 +40,6 @@ struct PersonalAccountTableViewCellModel {
 
 extension PersonalAccountTableViewCellModel: CellViewModel {
     func setup(cell: PersonalAccountTableViewCell) {
+        cell.folowersNumber.text = "Followers: \(userProfile.followerCount)"
     }
 }

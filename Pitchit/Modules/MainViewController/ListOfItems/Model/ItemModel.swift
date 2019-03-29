@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class ItemModel {
+public class ItemModel {
     var id = ""
     var title = ""
     var desc = ""
@@ -49,7 +49,7 @@ class ItemModel {
     init() {}
 }
 
-class ItemModelCodable: Codable {
+public class ItemModelCodable: Codable {
     var id = ""
     var title = "" 
     var description = ""

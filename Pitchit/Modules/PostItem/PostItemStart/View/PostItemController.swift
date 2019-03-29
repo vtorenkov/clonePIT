@@ -11,11 +11,10 @@ import NYTPhotoViewer
 
 extension PostItemController: ItemDescTableItemDelegate {
     func uploadItem() {
-//        item.author = UserShared.sharedInstance.user
-//        item.dateOfPost = Date().toString()
-//        ItemManager.sharedInstance.items.append(item)
-        
-        self.dismiss(animated: true, completion: nil)
+        self.view.endEditing(true)
+        item.dateOfPost = Date().toString()
+        presenter.saveItem(item: item)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     func selectImageFullSize(image: UIImage?) {
@@ -28,20 +27,6 @@ extension PostItemController: ItemDescTableItemDelegate {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
-    }
-}
-
-extension PostItemController: PostItemTableItemDelegate{
-    func nextPostItemScreen() {
-        self.view.endEditing(true)
-        if self.validateItem() {
-            RouterItem.sharedInstance.openPostItemDesc(target: self, item: self.item)
-        }
-    }
-    
-    func addVideoToItem() {
-        self.view.endEditing(true)
-        self.presenter.addVideoCapture(currentVC: self)
     }
 }
 
@@ -97,22 +82,33 @@ class PostItemController: UIViewController {
     }
 }
 
-
+// MARK: - UIImagePickerControllerDelegate Methods
 extension PostItemController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    // MARK: - UIImagePickerControllerDelegate Methods
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.item.additionImage.append(pickedImage)
             self.tableView.reloadData()
         }
-        
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
-        
+    }
+}
+
+
+//from start where was 2 separate screns for add item. now is one screen. using only ItemDescTableItemDelegate.
+extension PostItemController: PostItemTableItemDelegate{
+    func nextPostItemScreen() {
+        self.view.endEditing(true)
+        if self.validateItem() {
+            RouterItem.sharedInstance.openPostItemDesc(target: self, item: self.item)
+        }
+    }
+    
+    func addVideoToItem() {
+        self.view.endEditing(true)
+        self.presenter.addVideoCapture(currentVC: self)
     }
 }

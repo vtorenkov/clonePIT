@@ -19,42 +19,44 @@ class PostItemPresenter:NSObject, Presenter {
     typealias PresenterView = PostItemController
     
     weak var view: PresenterView!
+    let service:CreatePostViewClient
     
-    //    let service:RestServiceManager
-    //
-    //    let amazonService = AmazonService()
+    func saveItem(item: ItemModel) {
+        service.createPost(offer: item) { (success) in
+            
+        }
+    }
     
-    //    required init(view: PresenterView ,service:RestServiceManager = RestServiceManager()) {
-    
-    required init(view: PresenterView, item: ItemModel) {
+    required init(view: PresenterView, item: ItemModel, service: CreatePostViewClient = CreatePostViewManager()) {
         self.view = view
         self.item = item
+        self.service = service
     }
-
+    
     func addVideoCapture(currentVC: UIViewController) {
         RouterItem.sharedInstance.openRecordVideo(target: currentVC, item: item)
         /*
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            self.currentVC = currentVC
-            let myPickerController = UIImagePickerController()
-            myPickerController.delegate = self
-            myPickerController.sourceType = .photoLibrary
-            myPickerController.mediaTypes = [kUTTypeMovie as String, kUTTypeVideo as String]
-            currentVC.present(myPickerController, animated: true, completion: nil)
-        }
- */
+         if UIImagePickerController.isSourceTypeAvailable(.camera){
+         self.currentVC = currentVC
+         let myPickerController = UIImagePickerController()
+         myPickerController.delegate = self
+         myPickerController.sourceType = .photoLibrary
+         myPickerController.mediaTypes = [kUTTypeMovie as String, kUTTypeVideo as String]
+         currentVC.present(myPickerController, animated: true, completion: nil)
+         }
+         */
     }
 }
 
 extension PostItemPresenter: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-//        // To handle image
-//        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            self.imagePickedBlock?(image)
-//        } else{
-//            print("Something went wrong in  image")
-//        }
+        //        // To handle image
+        //        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        //            self.imagePickedBlock?(image)
+        //        } else{
+        //            print("Something went wrong in  image")
+        //        }
         // To handle video
         
         if let videoUrl = info[UIImagePickerControllerMediaURL] as? NSURL{
@@ -75,7 +77,6 @@ extension PostItemPresenter: UIImagePickerControllerDelegate, UINavigationContro
         let urlAsset = AVURLAsset(url: inputURL, options: nil)
         guard let exportSession = AVAssetExportSession(asset: urlAsset, presetName: AVAssetExportPreset1280x720) else {
             handler(nil)
-            
             return
         }
         
@@ -86,27 +87,27 @@ extension PostItemPresenter: UIImagePickerControllerDelegate, UINavigationContro
             handler(exportSession)
         }
     }
-        
-        fileprivate func compressWithSessionStatusFunc(_ videoUrl: NSURL) {
-            let compressedURL = NSURL.fileURL(withPath: NSTemporaryDirectory() + NSUUID().uuidString + ".MOV")
-            compressVideo(inputURL: videoUrl as URL, outputURL: compressedURL) { (exportSession) in
-                guard let session = exportSession else {
+    
+    fileprivate func compressWithSessionStatusFunc(_ videoUrl: NSURL) {
+        let compressedURL = NSURL.fileURL(withPath: NSTemporaryDirectory() + NSUUID().uuidString + ".MOV")
+        compressVideo(inputURL: videoUrl as URL, outputURL: compressedURL) { (exportSession) in
+            guard let session = exportSession else {
+                return
+            }
+            
+            switch session.status {
+            case .completed:
+                guard let compressedData = NSData(contentsOf: compressedURL) else {
                     return
                 }
+                print("File size after compression: \(Double(compressedData.length / 1048576)) mb")
                 
-                switch session.status {
-                case .completed:
-                    guard let compressedData = NSData(contentsOf: compressedURL) else {
-                        return
-                    }
-                    print("File size after compression: \(Double(compressedData.length / 1048576)) mb")
-                    
-                    DispatchQueue.main.async {
-                        self.item?.videoUrl = compressedURL.absoluteString
-                    }
-                default: break
+                DispatchQueue.main.async {
+                    self.item?.videoUrl = compressedURL.absoluteString
                 }
+            default: break
             }
         }
+    }
     
 }
