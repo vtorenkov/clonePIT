@@ -25,6 +25,15 @@ extension ProfileViewController: ProfileTableItemDelegate {
     func tapOnrate() {
         RouterProfile.sharedInstance.openRateProfile(target: self)
     }
+    
+    func selectPosts(of type: PosrType) {
+        switch type {
+        case .All:
+            print("all")
+        case .Favorites:
+            print("Favorites")
+        }
+    }
 }
 
 class ProfileViewController: UIViewController {

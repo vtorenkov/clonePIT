@@ -9,7 +9,8 @@
 import UIKit
 
 class SwitchUITableViewCell: UITableViewCell, NibReusable {
-    
+    weak var delegate: ProfileTableItemDelegate?
+
     @IBOutlet var switchPtofileOutlet: UISegmentedControl!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,20 +23,27 @@ class SwitchUITableViewCell: UITableViewCell, NibReusable {
         self.switchPtofileOutlet.addUnderlineForSelectedSegment()
     }
     
-    @IBAction func switchAction(_ sender: Any) {
+    @IBAction func switchPost(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            delegate?.selectPosts(of: .All)
+        } else {
+            delegate?.selectPosts(of: .Favorites)
+        }
         switchPtofileOutlet.changeUnderlinePosition()
     }
-    
+
     static var reuseIdentifier: String { return "SwitchUITableViewCell" }
     static var nib: UINib { return UINib(nibName: "SwitchUITableViewCell", bundle: nil) } // Use VeryCustomUI.xib
 }
 
 struct SwitchUITableViewCellModel {
+    var delegate: ProfileTableItemDelegate?
     var userProfile: UserProfile
 }
 
 extension SwitchUITableViewCellModel: CellViewModel {
     func setup(cell: SwitchUITableViewCell) {
+        cell.delegate = delegate
         let widthSegment = kScreenWidth / 2
         cell.switchPtofileOutlet.setWidth(widthSegment, forSegmentAt: 0)
         cell.switchPtofileOutlet.setWidth(widthSegment, forSegmentAt: 1)

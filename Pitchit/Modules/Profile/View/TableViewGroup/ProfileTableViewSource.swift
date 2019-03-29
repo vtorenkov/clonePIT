@@ -10,6 +10,12 @@ import UIKit
 protocol ProfileTableItemDelegate: class {
     func selectItem(item: ItemModel)
     func tapOnrate()
+    func selectPosts(of type: PosrType)
+}
+
+enum PosrType {
+    case All
+    case Favorites
 }
 
 enum ProfileType {
@@ -67,7 +73,7 @@ final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProt
         case .Personal:
             model = PersonalAccountTableViewCellModel(delegate: delegateVC, userProfile: profile)
         case .Switch:
-            model = SwitchUITableViewCellModel(userProfile: profile)
+            model = SwitchUITableViewCellModel(delegate: delegateVC, userProfile: profile)
         case .Items:
             model = ProfileCollectionTableViewCellModel(items: items, delegate: delegateVC, delegatePitch: delegatePitch, userProfile: profile)
         }

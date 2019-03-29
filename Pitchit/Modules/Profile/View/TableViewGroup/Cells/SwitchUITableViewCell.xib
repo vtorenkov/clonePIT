@@ -27,7 +27,7 @@
                         </segments>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
-                            <action selector="switchAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="iYu-Es-1VC"/>
+                            <action selector="switchPost:" destination="KGk-i7-Jjw" eventType="valueChanged" id="M1j-Be-3ug"/>
                         </connections>
                     </segmentedControl>
                 </subviews>
