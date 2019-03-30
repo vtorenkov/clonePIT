@@ -90,5 +90,6 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func openEditProfile(_ sender: Any) {
+        RouterTabBar.sharedInstance.openProfileTab(targer: self, porfileId: "")
     }
 }

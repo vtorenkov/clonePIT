@@ -38,6 +38,7 @@ extension ProfileViewController: ProfileTableItemDelegate {
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet var editProfileButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     
     var profileTableViewDatasource: ProfileTableViewDatasource?
@@ -57,10 +58,12 @@ class ProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         presenter.getUserProfile(userId: userId)
         presenter.getPosts(userId: userId)
-    }
-    
-    deinit {
-        print("deinit ProfileViewController")
+        
+        if userId.isEmpty {
+            self.navigationItem.rightBarButtonItem = editProfileButton
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     @IBAction func editProfile(_ sender: Any) {

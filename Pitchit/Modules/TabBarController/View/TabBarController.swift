@@ -63,6 +63,12 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             self.present(navigationController2, animated: true, completion: nil)
             return false
         }
+        if let nav = viewController as? UINavigationController {
+            if let vc = nav.topViewController! as? ProfileViewController {
+                vc.userId = ""
+            }
+        }
+
         return true
     }
 }

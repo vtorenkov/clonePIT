@@ -48,6 +48,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="editProfileButton" destination="9cj-uA-0Jz" id="dqc-rh-PBD"/>
                         <outlet property="tableView" destination="7PX-sa-pOU" id="q2j-oN-Ar0"/>
                     </connections>
                 </viewController>
