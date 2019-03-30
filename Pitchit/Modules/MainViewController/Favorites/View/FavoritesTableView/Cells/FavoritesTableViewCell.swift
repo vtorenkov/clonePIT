@@ -19,7 +19,7 @@ class FavoritesTableViewCell: UITableViewCell, NibReusable {
     @IBOutlet var favoriteLabel: UILabel!
     @IBOutlet var favoritesImage: UIImageView!
     
-    var favoriteItem: FavoritesCodable?
+    var favoriteItem: ItemModelCodable?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,8 +32,10 @@ class FavoritesTableViewCell: UITableViewCell, NibReusable {
             return
         }
         
-        let url = URL(string: item.thumbNail)
-        favoritesImage.kf.setImage(with: url)
+        if let url = item.thumbNail {
+            let url = URL(string: url)
+            favoritesImage.kf.setImage(with: url)
+        }
         favoriteLabel.text = item.title
         favoritePrice.text = item.price
         favoriteLastDate.text = item.postedAt
@@ -49,7 +51,7 @@ class FavoritesTableViewCell: UITableViewCell, NibReusable {
 }
 
 struct FavoritesTableViewCellModel {
-    var favoriteItem: FavoritesCodable
+    var favoriteItem: ItemModelCodable
     var delegate: FavoriteCellProtocol
 }
 

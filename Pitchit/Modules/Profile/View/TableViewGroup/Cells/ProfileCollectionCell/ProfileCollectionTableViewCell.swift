@@ -43,7 +43,7 @@ extension ProfileCollectionTableViewCellModel: CellViewModel {
         cell.delegate = delegate
         let itemsCount = Double(self.items.count) / 2
         cell.collectionView.reloadData()
-        cell.collectionHeight.constant = CGFloat(round(Double(itemsCount))) * (kScreenHeight / 3)
+        cell.collectionHeight.constant = CGFloat(round(Double(self.items.count))) * (kScreenHeight / 3)
     }
 }
 

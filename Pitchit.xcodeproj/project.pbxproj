@@ -28,7 +28,6 @@
 		07B91F56224D04D900D65AE9 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F55224D04D900D65AE9 /* ProfilePresenter.swift */; };
 		07B91F58224D060000D65AE9 /* RouterTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F57224D060000D65AE9 /* RouterTabBar.swift */; };
 		07B91F5A224D062300D65AE9 /* GlobalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B91F59224D062300D65AE9 /* GlobalRouter.swift */; };
-		07C02B46224B9FD0005A3639 /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C02B45224B9FD0005A3639 /* FavoritesModel.swift */; };
 		07C02B49224BA1C6005A3639 /* PresenterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C02B48224BA1C6005A3639 /* PresenterFavorites.swift */; };
 		C4668F85B94FADEC5980165D /* Pods_Pitchit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */; };
 		FA0A12E821A73C190061F7AA /* ItemConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A12E621A73C190061F7AA /* ItemConditionTableViewCell.swift */; };
@@ -289,7 +288,6 @@
 		07B91F55224D04D900D65AE9 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		07B91F57224D060000D65AE9 /* RouterTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTabBar.swift; sourceTree = "<group>"; };
 		07B91F59224D062300D65AE9 /* GlobalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRouter.swift; sourceTree = "<group>"; };
-		07C02B45224B9FD0005A3639 /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		07C02B48224BA1C6005A3639 /* PresenterFavorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterFavorites.swift; sourceTree = "<group>"; };
 		89DF4DA8C098DBD982220254 /* Pods-Pitchit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pitchit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit.release.xcconfig"; sourceTree = "<group>"; };
 		F23E370D23AEAF302DE85FED /* Pods_Pitchit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pitchit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -636,14 +634,6 @@
 				07B91F55224D04D900D65AE9 /* ProfilePresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		07C02B44224B9F0B005A3639 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				07C02B45224B9FD0005A3639 /* FavoritesModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		07C02B47224BA1B3005A3639 /* Presenter */ = {
@@ -1516,7 +1506,6 @@
 		FAE575E620EFCBFF0023383B /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
-				07C02B44224B9F0B005A3639 /* Models */,
 				0709A8D7222E93CA00CF120B /* FilterView */,
 				FA9A031B21E2204B00DF6C2C /* Favorites */,
 				FADBF2502142D74E0047FAF0 /* Filters */,
@@ -2140,7 +2129,6 @@
 				FAE5762020F11C8B0023383B /* PitchCollectionViewProtocol.swift in Sources */,
 				FA63053820FE6F6500F0777E /* ProfileTableViewSource.swift in Sources */,
 				FAF1A99E21E55D0200F5ABD1 /* CatsCollectionViewSource.swift in Sources */,
-				07C02B46224B9FD0005A3639 /* FavoritesModel.swift in Sources */,
 				07AD16F6224E211600236902 /* CreatePostViewManager.swift in Sources */,
 				FAE575EE20EFCC900023383B /* TabBarController.swift in Sources */,
 				FA5D55502118D50A008CA265 /* CategoryConditionTableViewCell.swift in Sources */,

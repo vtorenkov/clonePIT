@@ -55,15 +55,15 @@ struct MainViewManager: MainViewClient, AddToFavoritesClient {
         }
     }
     
-    func getFavorites(completion: @escaping(ResultGetFavorites)) {
-        provider.request(.getFavorites()) { (result) in
+    func getFavorites(userId: String?, completion: @escaping(ResultGetFavorites)) {
+        provider.request(.getFavorites(userId: userId)) { (result) in
             switch result {
             case let .success(response):
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .secondsSince1970
-                    let items = try filteredResponse.map([FavoritesCodable].self, atKeyPath: "data", using: decoder)
+                    let items = try filteredResponse.map([ItemModelCodable].self, atKeyPath: "data", using: decoder)
                     completion(items, response.description)
                 }
                 catch let error {

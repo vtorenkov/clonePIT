@@ -28,8 +28,8 @@ class PresenterFavorites: NSObject, Presenter {
     }
     
     func getAllFavorites() {
-        serviceMain.getFavorites { [weak self] (favorites, success) in
-            self?.view.favoritesViewDatasource?.favoritesArray = favorites ?? [FavoritesCodable]()
+        serviceMain.getFavorites(userId: nil) { [weak self] (favorites, success) in
+            self?.view.favoritesViewDatasource?.favoritesArray = favorites ?? [ItemModelCodable]()
             self?.view.favoritesViewDatasource?.tableView?.reloadData()
         }
     }

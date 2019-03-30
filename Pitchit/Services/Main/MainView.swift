@@ -13,7 +13,7 @@ import Alamofire
 public enum MainView: TargetType {
     case getPosts(userId: String?)
     case getCategories()
-    case getFavorites()
+    case getFavorites(userId: String?)
     case addToFavorites(offerId: String)
     
     public var baseURL: URL {
@@ -54,8 +54,12 @@ public enum MainView: TargetType {
             }
         case .getCategories:
             return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
-        case .getFavorites:
-            return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
+        case .getFavorites(let userId):
+            if let id = userId {
+                return .requestParameters(parameters: ["page":1, "limit":20, "userId": id], encoding: URLEncoding.default)
+            } else {
+                return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
+            }
         case .addToFavorites(let offerId):
             return .requestParameters(parameters: ["offerId":offerId], encoding: URLEncoding.default)
         }

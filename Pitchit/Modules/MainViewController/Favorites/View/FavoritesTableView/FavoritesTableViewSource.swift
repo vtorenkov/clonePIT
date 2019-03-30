@@ -22,7 +22,7 @@ final class FavoritesTableViewDatasource: NSObject, FavoritesTableViewDatasource
     weak var tableView: UITableView?
     weak var delegate: UITableViewDelegate?
     weak var delegateVC: FavoritesTableItemDelegate?
-    var favoritesArray = [FavoritesCodable]()
+    var favoritesArray = [ItemModelCodable]()
     
     required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC : FavoritesTableItemDelegate) {
         self.tableView = tableView

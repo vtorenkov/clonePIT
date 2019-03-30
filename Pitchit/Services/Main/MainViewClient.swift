@@ -10,12 +10,12 @@ import Moya
 protocol MainViewClient {
     typealias ResultGetPosts = ([ItemModelCodable]?, String) -> ()
     typealias ResultGetCats = ([CategoryItem]?, String) -> ()
-    typealias ResultGetFavorites = ([FavoritesCodable]?, String) -> ()
+    typealias ResultGetFavorites = ([ItemModelCodable]?, String) -> ()
 
     var provider: MoyaProvider<MainView> { get }
     func getPosts(userId: String?, completion: @escaping(ResultGetPosts))
     func getCategories(completion: @escaping(ResultGetCats))
-    func getFavorites(completion: @escaping(ResultGetFavorites))
+    func getFavorites(userId: String?, completion: @escaping(ResultGetFavorites))
 }
 
 protocol AddToFavoritesClient {

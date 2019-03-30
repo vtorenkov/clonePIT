@@ -29,9 +29,9 @@ extension ProfileViewController: ProfileTableItemDelegate {
     func selectPosts(of type: PosrType) {
         switch type {
         case .All:
-            print("all")
+            presenter.getPosts(userId: userId)
         case .Favorites:
-            print("Favorites")
+            presenter.getFavorites(userId: userId)
         }
     }
 }
@@ -56,6 +56,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.getUserProfile(userId: userId)
+        presenter.getPosts(userId: userId)
     }
     
     deinit {

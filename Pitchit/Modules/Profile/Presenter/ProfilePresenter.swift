@@ -23,25 +23,42 @@ class ProfilePresenter: NSObject, Presenter {
     }
     
     func getUserProfile(userId: String) {
-        var id = userId
-        if id.isEmpty {
-            id = UserManager.getCurrentUserObject().id
-        }
+        let id = checkIscurrentUserId(userId: userId)
+
         service.getUserProfile(userId: id) { (profile, succes) in
             self.profile = profile
             self.view.profileTableViewDatasource?.profile = profile
             self.view.profileTableViewDatasource?.tableView?.reloadData()
         }
-        self.getPosts(userId: id)
     }
     
     func getPosts(userId: String) {
+        let id = checkIscurrentUserId(userId: userId)
         var items = [ItemModel]()
-        self.serviceMain.getPosts(userId: userId) { [weak self] (itemsCodable, response) in
+        self.serviceMain.getPosts(userId: id) { [weak self] (itemsCodable, response) in
             itemsCodable?.forEach{items.append(ItemModel(codableItem: $0))}
             self?.view.profileTableViewDatasource?.items = items
             self?.view.profileTableViewDatasource?.items = items
             self?.view.profileTableViewDatasource?.tableView?.reloadData()
         }
+    }
+    
+    func getFavorites(userId: String) {
+        let id = checkIscurrentUserId(userId: userId)
+        var items = [ItemModel]()
+        self.serviceMain.getFavorites(userId: id) { [weak self] (itemsCodable, response) in
+            itemsCodable?.forEach{items.append(ItemModel(codableItem: $0))}
+            self?.view.profileTableViewDatasource?.items = items
+            self?.view.profileTableViewDatasource?.items = items
+            self?.view.profileTableViewDatasource?.tableView?.reloadData()
+        }
+    }
+    
+    func checkIscurrentUserId(userId: String) -> String {
+        var id = userId
+        if id.isEmpty {
+            id = UserManager.getCurrentUserObject().id
+        }
+        return id
     }
 }

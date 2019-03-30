@@ -62,6 +62,8 @@ public class ItemModelCodable: Codable {
     var is_favourite: Bool? = true
     var sold: Bool? = true
     var category: String = ""
+    var thumbNail: String? = ""
+    var postedAt: String? = ""
 }
 
 class AuthorCodable: Codable {
