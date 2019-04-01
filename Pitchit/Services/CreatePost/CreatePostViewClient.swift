@@ -8,7 +8,7 @@
 import Moya
 
 protocol CreatePostViewClient {
-    typealias ResultCreatePost = (String) -> ()
+    typealias ResultCreatePost = (Bool, String) -> ()
 
     var provider: MoyaProvider<CreatePostView> { get }
     func createPost(offer: ItemModel, completion: @escaping(ResultCreatePost))

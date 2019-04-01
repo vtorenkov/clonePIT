@@ -13,7 +13,7 @@ import Alamofire
 public enum CreatePostView: TargetType {
     
     case createPost(post: ItemModel)
-  
+    
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
@@ -39,18 +39,36 @@ public enum CreatePostView: TargetType {
     public var task: Task {
         switch self {
         case .createPost(let post):
-            return .requestParameters(parameters: ["title":post.title,
-                                                   "description":post.desc,
-                                                   "categoryId":post.type.rawValue,
-                                                   "address":"post.address",
-                                                   "longitude":post.placeCoodinate?.longitude,
-                                                   "latitude":post.placeCoodinate?.latitude,
-                                                   "price":post.price,
-                                                   "productStatus":post.conditionType.rawValue,
-                                                   "videoFile":post.videoUrl,
-                                                   "thumbNail":"post.thumbnail"
-                                                  // "attachments": nil  //optionals
-                ], encoding: URLEncoding.default)
+            var movieData: Data?
+            let urlString = "http://d3kodtkjrr2gfn.cloudfront.net/offersdata/92a66829-3edc-355f-b9a7-ee9da85b0ba6/1500468017VID_20170719_180951.mp4"
+            //post.videoUrl
+            if let url = URL(string: urlString) {
+                do {
+                    movieData = try Data(contentsOf: url, options: Data.ReadingOptions.alwaysMapped)
+                } catch _ {
+                    movieData = nil
+                }
+            }
+
+            let urlParameters = ["title":"post.title",
+                                 "description":"post.desc",
+                                 "categoryId":post.type.rawValue,
+                                 "address":"post.address",
+                                 "longitude":post.placeCoodinate?.longitude ?? 0.0,
+                                 "latitude":post.placeCoodinate?.latitude ?? 0.0,
+                                 "price":4,//post.price,
+                "productStatus":"post.conditionType.rawValue"] as [String : Any]
+            
+            
+            let data = UIImagePNGRepresentation(UIImage(named: "albums")!)
+            let movData = MultipartFormData(provider: .data(movieData!), name: "videoFile", fileName: "video.mov", mimeType: "video/mov")
+            let thumb = MultipartFormData(provider: .data(data!), name: "thumbNail", fileName: "image.png", mimeType: "image/png")
+            var formData = [movData, thumb]
+            for (key, value) in urlParameters {
+                formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
+            }
+            
+            return .uploadMultipart(formData)
         }
     }
     

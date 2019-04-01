@@ -14,7 +14,6 @@ extension PostItemController: ItemDescTableItemDelegate {
         self.view.endEditing(true)
         item.dateOfPost = Date().toString()
         presenter.saveItem(item: item)
-//        self.dismiss(animated: true, completion: nil)
     }
     
     func selectImageFullSize(image: UIImage?) {
@@ -99,7 +98,7 @@ extension PostItemController: UIImagePickerControllerDelegate, UINavigationContr
 
 
 //from start where was 2 separate screns for add item. now is one screen. using only ItemDescTableItemDelegate.
-extension PostItemController: PostItemTableItemDelegate{
+extension PostItemController: PostItemTableItemDelegate {
     func nextPostItemScreen() {
         self.view.endEditing(true)
         if self.validateItem() {

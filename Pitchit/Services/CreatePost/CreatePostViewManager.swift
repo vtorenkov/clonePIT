@@ -21,13 +21,13 @@ struct CreatePostViewManager: CreatePostViewClient {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .secondsSince1970
                     let profile = try filteredResponse.map(UserProfile.self, atKeyPath: "data", using: decoder)
-                    completion(response.description)
+                    completion(true, response.description)
                 }
                 catch let error {
-                    completion(error.localizedDescription)
+                    completion(false, error.localizedDescription)
                 }
             case let .failure(error):
-                completion(self.parseErrorMessage(error: error))
+                completion(false, self.parseErrorMessage(error: error))
             }
         }
     }

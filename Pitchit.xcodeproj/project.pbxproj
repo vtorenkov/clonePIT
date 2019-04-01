@@ -916,13 +916,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		FA810C7E2125D6F2003176A8 /* PostItemDescription */ = {
+		FA810C7E2125D6F2003176A8 /* PostItemDescription_old */ = {
 			isa = PBXGroup;
 			children = (
 				FA810C82212A06B6003176A8 /* TableView */,
 				FA810C802125D71C003176A8 /* PostItemDescViewController.swift */,
 			);
-			path = PostItemDescription;
+			path = PostItemDescription_old;
 			sourceTree = "<group>";
 		};
 		FA810C7F2125D6FA003176A8 /* PostItemStart */ = {
@@ -1529,7 +1529,7 @@
 			children = (
 				FA810CB9212F08A5003176A8 /* RecordVideo */,
 				FA810C7F2125D6FA003176A8 /* PostItemStart */,
-				FA810C7E2125D6F2003176A8 /* PostItemDescription */,
+				FA810C7E2125D6F2003176A8 /* PostItemDescription_old */,
 				FAE575F420EFCD700023383B /* PostItemController.storyboard */,
 			);
 			path = PostItem;

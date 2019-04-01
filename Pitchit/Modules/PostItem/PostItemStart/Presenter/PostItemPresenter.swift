@@ -22,8 +22,12 @@ class PostItemPresenter:NSObject, Presenter {
     let service:CreatePostViewClient
     
     func saveItem(item: ItemModel) {
-        service.createPost(offer: item) { (success) in
-            
+        service.createPost(offer: item) { (success, message) in
+            if success {
+                self.view?.dismiss(animated: true, completion: nil)
+            } else {
+                self.view?.alert(message: message)
+            }
         }
     }
     
