@@ -17,14 +17,14 @@ final class CategoriesPostCollectionViewSource: NSObject, CategoriesPostDatasour
     weak var collectionView: UICollectionView?
     weak var delegate: UICollectionViewDelegate?
     weak var delegateVC: CategoriesPostInteract?
-    var type: CategoryItemType = .art
+    var type: String = ""
     var categories = CategoryManager.sharedInstance.items
     
-    required init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CategoriesPostInteract, currentCat: CategoryItemType?) {
+    required init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CategoriesPostInteract, currentCat: String?) {
         self.collectionView = collectionView
         self.delegate = delegate
         self.delegateVC = delegateVC
-        self.type = currentCat ?? .art
+        self.type = currentCat ?? ""
         
         super.init()
         

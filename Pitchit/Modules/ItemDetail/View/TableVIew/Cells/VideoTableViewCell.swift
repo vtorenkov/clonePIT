@@ -66,6 +66,9 @@ extension VideoTableViewCellModel: CellViewModel {
             cell.player.url = url
             cell.player.stop()
             cell.player.autoplay = false
+        }
+        
+        if let item = cell.item {
             cell.itemNameOutlet.text = item.title
         }
     }

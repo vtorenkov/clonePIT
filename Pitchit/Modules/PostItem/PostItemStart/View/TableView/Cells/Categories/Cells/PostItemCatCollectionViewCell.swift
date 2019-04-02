@@ -31,13 +31,13 @@ class PostItemCatCollectionViewCell: UICollectionViewCell, NibReusable {
 
 struct PostItemCatCollectionViewCellModel {
     var cat: CategoryItem
-    var currentCat: CategoryItemType
+    var currentCat: String
 }
 
 extension PostItemCatCollectionViewCellModel: CellViewModel {
     func setup(cell: PostItemCatCollectionViewCell) {
         cell.categoryName.text = cat.name
-        if cat.name == currentCat.rawValue {
+        if cat.id == currentCat {
             cell.whiteDeselected.alpha = 0.0
         } else {
             cell.whiteDeselected.alpha = 0.5

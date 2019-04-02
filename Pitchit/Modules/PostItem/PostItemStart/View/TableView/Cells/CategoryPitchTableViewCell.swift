@@ -11,9 +11,9 @@ import UIKit
 extension CategoryPitchTableViewCell: CategoriesPostInteract {
     func selectCategory(cat: CategoryItem) {
         if let item = self.item {
-//            item.type = cat.type
-//            self.categoriesCollectionViewDatasource?.type = cat.type
-//            self.collectionView.reloadData()
+            item.typeString = cat.id
+            self.categoriesCollectionViewDatasource?.type = cat.id
+            self.collectionView.reloadData()
         }
     }
 }
@@ -35,7 +35,7 @@ class CategoryPitchTableViewCell: UITableViewCell, NibReusable {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.categoriesCollectionViewDelegate = CategoriesPostDelegate(self, collectionView: collectionView)
-        self.categoriesCollectionViewDatasource = CategoriesPostCollectionViewSource(collectionView: collectionView, delegate: self.categoriesCollectionViewDelegate!, delegateVC: self, currentCat: self.item?.type)
+        self.categoriesCollectionViewDatasource = CategoriesPostCollectionViewSource(collectionView: collectionView, delegate: self.categoriesCollectionViewDelegate!, delegateVC: self, currentCat: self.item?.typeString)
     }
     
     static var reuseIdentifier: String { return "CategoryPitchTableViewCell" }

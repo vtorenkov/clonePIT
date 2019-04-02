@@ -16,16 +16,7 @@ struct CreatePostViewManager: CreatePostViewClient {
         provider.request(.createPost(post: offer)) { (result) in
             switch result {
             case let .success(response):
-                do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .secondsSince1970
-                    let profile = try filteredResponse.map(UserProfile.self, atKeyPath: "data", using: decoder)
-                    completion(true, response.description)
-                }
-                catch let error {
-                    completion(false, error.localizedDescription)
-                }
+                completion(true, response.description)
             case let .failure(error):
                 completion(false, self.parseErrorMessage(error: error))
             }

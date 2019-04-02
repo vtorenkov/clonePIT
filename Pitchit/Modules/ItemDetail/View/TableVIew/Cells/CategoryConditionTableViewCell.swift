@@ -28,7 +28,7 @@ struct CategoryConditionTableViewCellModel {
 extension CategoryConditionTableViewCellModel: CellViewModel {
     func setup(cell: CategoryConditionTableViewCell) {
         cell.item = item
-        cell.labelType.text = item?.type.rawValue
+        cell.labelType.text = item?.typeString
         cell.conditionLabel.text = item?.conditionType.rawValue
     }
 }

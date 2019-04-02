@@ -11,7 +11,7 @@ protocol CategoriesPostDatasourceProtocol: UICollectionViewDataSource {
     weak var collectionView: UICollectionView? {get}
     weak var delegate: UICollectionViewDelegate? {get}
     
-    init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CategoriesPostInteract, currentCat: CategoryItemType?)
+    init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CategoriesPostInteract, currentCat: String?)
     func setupCollectionView()
 }
 

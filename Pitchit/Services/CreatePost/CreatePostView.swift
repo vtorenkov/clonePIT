@@ -50,14 +50,14 @@ public enum CreatePostView: TargetType {
                 }
             }
 
-            let urlParameters = ["title":"post.title",
-                                 "description":"post.desc",
-                                 "categoryId":post.type.rawValue,
-                                 "address":"post.address",
+            let urlParameters = ["title":post.title,
+                                 "description":post.desc,
+                                 "categoryId":post.typeString,
+                                 "address":post.place,
                                  "longitude":post.placeCoodinate?.longitude ?? 0.0,
                                  "latitude":post.placeCoodinate?.latitude ?? 0.0,
-                                 "price":4,//post.price,
-                "productStatus":"post.conditionType.rawValue"] as [String : Any]
+                                 "price":post.price,
+                "productStatus":post.conditionType.rawValue] as [String : Any]
             
             
             let data = UIImagePNGRepresentation(UIImage(named: "albums")!)
