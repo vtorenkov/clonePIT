@@ -39,17 +39,6 @@ public enum CreatePostView: TargetType {
     public var task: Task {
         switch self {
         case .createPost(let post):
-            var movieData: Data?
-            let urlString = "http://d3kodtkjrr2gfn.cloudfront.net/offersdata/92a66829-3edc-355f-b9a7-ee9da85b0ba6/1500468017VID_20170719_180951.mp4"
-            //post.videoUrl
-            if let url = URL(string: urlString) {
-                do {
-                    movieData = try Data(contentsOf: url, options: Data.ReadingOptions.alwaysMapped)
-                } catch _ {
-                    movieData = nil
-                }
-            }
-
             let urlParameters = ["title":post.title,
                                  "description":post.desc,
                                  "categoryId":post.typeString,
@@ -60,10 +49,22 @@ public enum CreatePostView: TargetType {
                 "productStatus":post.conditionType.rawValue] as [String : Any]
             
             
+            //refactor here, now is default image from assets
             let data = UIImagePNGRepresentation(UIImage(named: "albums")!)
-            let movData = MultipartFormData(provider: .data(movieData!), name: "videoFile", fileName: "video.mov", mimeType: "video/mov")
             let thumb = MultipartFormData(provider: .data(data!), name: "thumbNail", fileName: "image.png", mimeType: "image/png")
-            var formData = [movData, thumb]
+            
+            var formData = [thumb]
+            
+            let urlString = post.videoUrl
+            if let url = URL(string: urlString) {
+                let movieData = try? Data(contentsOf: url, options: Data.ReadingOptions.alwaysMapped)
+                if let data = movieData {
+                    let movData = MultipartFormData(provider: .data(data), name: "videoFile", fileName: "video.mov", mimeType: "video/mov")
+                    formData.append(movData)
+                }
+            }
+            
+            
             for (key, value) in urlParameters {
                 formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
             }

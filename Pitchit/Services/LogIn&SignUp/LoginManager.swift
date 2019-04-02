@@ -10,8 +10,13 @@ import Foundation
 import Moya
 
 struct LoginManager: LoginClient {
-    
-    let provider = MoyaProvider<Login>()
+   
+    let provider = MoyaProvider<Login>(plugins: [NetworkActivityPlugin { type,_  in
+        switch type {
+        case .began : SKActivityIndicator.show("Loading...")
+        case .ended : SKActivityIndicator.dismiss()
+        }
+        }])
 
     func loginUser(email: String, password: String, completion: @escaping (ResultLogin)) {
         provider.request(.login(email: email, password: password)) { (result) in

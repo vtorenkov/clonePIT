@@ -8,9 +8,15 @@
 
 import Foundation
 import Moya
+import SKActivityIndicatorView
 
 struct CreatePostViewManager: CreatePostViewClient {
-    let provider = MoyaProvider<CreatePostView>()
+    let provider = MoyaProvider<CreatePostView>(plugins: [NetworkActivityPlugin { type,_  in
+        switch type {
+        case .began : SKActivityIndicator.show("Loading...")
+        case .ended : SKActivityIndicator.dismiss()
+        }
+        }])
     
     func createPost(offer: ItemModel, completion: @escaping(ResultCreatePost)) {
         provider.request(.createPost(post: offer)) { (result) in

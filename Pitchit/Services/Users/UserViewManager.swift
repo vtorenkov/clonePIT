@@ -9,8 +9,13 @@
 import Foundation
 import Moya
 
-struct UserViewManager: UserViewClient {
-    let provider = MoyaProvider<UserView>()
+struct UserViewManager: UserViewClient {    
+    let provider = MoyaProvider<UserView>(plugins: [NetworkActivityPlugin { type,_  in
+        switch type {
+        case .began : SKActivityIndicator.show("Loading...")
+        case .ended : SKActivityIndicator.dismiss()
+        }
+        }])
     
     func getUserProfile(userId: String, completion: @escaping(ResultGetProfile)) {
         provider.request(.getUserProfile(userId: userId)) { (result) in
