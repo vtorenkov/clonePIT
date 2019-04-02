@@ -24,7 +24,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-fc-Aif">
-                        <rect key="frame" x="0.0" y="216" width="30" height="30"/>
+                        <rect key="frame" x="8" y="216" width="30" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="y3L-fc-Aif" secondAttribute="height" multiplier="1:1" id="ItC-pt-h8o"/>
@@ -39,13 +39,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-9i-65Q">
-                        <rect key="frame" x="8" y="224" width="14" height="14"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Mvo-9i-65Q" secondAttribute="height" multiplier="1:1" id="OX1-7t-Ucu"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6A-yc-5as" customClass="PaddingLabel" customModule="Pitchit" customModuleProvider="target">
                         <rect key="frame" x="46" y="12.5" width="320" height="21"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,6 +102,10 @@
                             <action selector="tapOnUser:" destination="gTV-IL-0wX" eventType="touchUpInside" id="r8H-DA-CPj"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-9i-65Q">
+                        <rect key="frame" x="8" y="216" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,9 +115,9 @@
                 <constraint firstAttribute="bottom" secondItem="lwb-Rh-f21" secondAttribute="bottom" constant="3" id="4Px-Ur-WZg"/>
                 <constraint firstItem="R6A-yc-5as" firstAttribute="leading" secondItem="GJw-IM-ayc" secondAttribute="trailing" constant="8" id="59I-J9-mHF"/>
                 <constraint firstItem="hFZ-BS-qba" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="6nx-Fc-65Q"/>
-                <constraint firstItem="Mvo-9i-65Q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="8xL-pR-lWx"/>
-                <constraint firstItem="y3L-fc-Aif" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EPQ-oy-GZ5"/>
+                <constraint firstItem="y3L-fc-Aif" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="EPQ-oy-GZ5"/>
                 <constraint firstItem="8K5-e8-rcL" firstAttribute="centerY" secondItem="GJw-IM-ayc" secondAttribute="centerY" id="GnG-2r-mgB"/>
+                <constraint firstItem="Mvo-9i-65Q" firstAttribute="width" secondItem="y3L-fc-Aif" secondAttribute="width" id="JdL-6p-cN9"/>
                 <constraint firstAttribute="bottom" secondItem="dZM-FC-iHU" secondAttribute="bottom" id="Nx5-qT-ssc"/>
                 <constraint firstItem="NPZ-dt-VKM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OLa-rY-FOH"/>
                 <constraint firstItem="y3L-fc-Aif" firstAttribute="top" secondItem="hFZ-BS-qba" secondAttribute="bottom" id="Oyi-wf-WCf"/>
@@ -128,6 +125,7 @@
                 <constraint firstItem="dZM-FC-iHU" firstAttribute="top" secondItem="y3L-fc-Aif" secondAttribute="bottom" id="Vny-7t-OY6"/>
                 <constraint firstAttribute="trailing" secondItem="NPZ-dt-VKM" secondAttribute="trailing" id="W2C-O6-T8V"/>
                 <constraint firstItem="aYt-pE-UHM" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="WDu-qh-ued"/>
+                <constraint firstItem="Mvo-9i-65Q" firstAttribute="height" secondItem="y3L-fc-Aif" secondAttribute="height" id="WHL-TY-mSA"/>
                 <constraint firstAttribute="trailing" secondItem="hFZ-BS-qba" secondAttribute="trailing" id="Y5Z-f5-a9Q"/>
                 <constraint firstItem="8K5-e8-rcL" firstAttribute="centerX" secondItem="GJw-IM-ayc" secondAttribute="centerX" id="bC3-Zq-Tds"/>
                 <constraint firstItem="NPZ-dt-VKM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="daM-bD-4p5"/>

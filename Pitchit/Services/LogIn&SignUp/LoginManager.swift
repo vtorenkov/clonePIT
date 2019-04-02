@@ -8,6 +8,7 @@
 
 import Foundation
 import Moya
+import SKActivityIndicatorView
 
 struct LoginManager: LoginClient {
    
