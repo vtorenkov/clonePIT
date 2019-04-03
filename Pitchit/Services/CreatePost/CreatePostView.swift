@@ -9,6 +9,7 @@
 import Foundation
 import Moya
 import Alamofire
+import AVFoundation
 
 public enum CreatePostView: TargetType {
     
@@ -49,13 +50,11 @@ public enum CreatePostView: TargetType {
                 "productStatus":post.conditionType.rawValue] as [String : Any]
             
             
-            //refactor here, now is default image from assets
-            let data = UIImagePNGRepresentation(UIImage(named: "albums")!)
+            let urlString = post.videoUrl
+            let data = UIImagePNGRepresentation(getImage(from: urlString))
             let thumb = MultipartFormData(provider: .data(data!), name: "thumbNail", fileName: "image.png", mimeType: "image/png")
             
             var formData = [thumb]
-            
-            let urlString = post.videoUrl
             if let url = URL(string: urlString) {
                 let movieData = try? Data(contentsOf: url, options: Data.ReadingOptions.alwaysMapped)
                 if let data = movieData {
@@ -63,7 +62,6 @@ public enum CreatePostView: TargetType {
                     formData.append(movData)
                 }
             }
-            
             
             for (key, value) in urlParameters {
                 formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
@@ -83,6 +81,18 @@ public enum CreatePostView: TargetType {
             let base64LoginString = loginData.base64EncodedString()
             
             return ["Authorization":"Basic \(base64LoginString)"]
+        }
+    }
+    
+    func getImage(from videoUrl: String) -> UIImage {
+        let asset = AVURLAsset(url: URL(fileURLWithPath: videoUrl) , options: nil)
+        
+        let imgGenerator = AVAssetImageGenerator(asset: asset)
+        imgGenerator.appliesPreferredTrackTransform = true
+        if let cgImage = try?  imgGenerator.copyCGImage(at: CMTimeMake(0, 1), actualTime: nil) {
+            return UIImage(cgImage: cgImage)
+        } else {
+            return UIImage(named: "albums")!
         }
     }
     

@@ -17,9 +17,9 @@ class UserProfile: Codable {
     var city: String? = ""
     var state: String? = ""
     var topRated: String? = ""
-    var licenceVerified = false
-    var facebookConnected = false
-    var creditCardVerified = false
+    var licenceVerified: Bool? = false
+    var facebookConnected: Bool? = false
+    var creditCardVerified: Bool? = false
     var reviewCount = 0
     var followerCount = 0
 }
