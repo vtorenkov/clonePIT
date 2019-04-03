@@ -1771,7 +1771,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Pitchit/Pods-Pitchit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CameraManager/CameraManager.framework",
@@ -1830,7 +1830,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pitchit/Pods-Pitchit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3C4EA87483A08E0D0983A25 /* [CP] Copy Pods Resources */ = {
@@ -1839,7 +1839,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Pitchit/Pods-Pitchit-resources.sh",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1848,7 +1848,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pitchit/Pods-Pitchit-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pitchit/Pods-Pitchit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A65AC93E12EDF33ADB586F4F /* [CP] Check Pods Manifest.lock */ = {

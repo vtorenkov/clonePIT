@@ -16,15 +16,23 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "FBSDKDeviceLoginError.h"
+#import <Foundation/Foundation.h>
 
-#import "FBSDKLoginConstants.h"
+#import "FBSDKAppLinkResolving.h"
 
-@implementation FBSDKDeviceLoginError
+NS_ASSUME_NONNULL_BEGIN
 
-+ (NSString *)errorDomain
-{
-  return FBSDKLoginErrorDomain;
-}
+/*!
+ A reference implementation for an App Link resolver that uses a hidden UIWebView
+ to parse the HTML containing App Link metadata.
+ */
+@interface FBSDKWebViewAppLinkResolver : NSObject <FBSDKAppLinkResolving>
+
+/*!
+ Gets the instance of a FBSDKWebViewAppLinkResolver.
+ */
++ (instancetype)sharedInstance;
 
 @end
+
+NS_ASSUME_NONNULL_END

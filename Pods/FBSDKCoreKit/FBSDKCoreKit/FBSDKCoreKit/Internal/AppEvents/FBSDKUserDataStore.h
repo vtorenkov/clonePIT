@@ -18,11 +18,23 @@
 
 #import <Foundation/Foundation.h>
 
+@interface FBSDKUserDataStore : NSObject
 
-@interface FBSDKAppEventsUninstall : NSObject
++ (void)initStore;
 
-+ (BOOL)initiated;
-+ (void)setUninstallTrackingEnabled:(BOOL)_uninstallTrackingEnabled;
-+ (void)installSwizzler;
-+ (void)updateAndUploadToken:(NSString*)tokenString;
++ (void)setUserDataAndHash:(NSDictionary *)ud;
+
++ (void)setUserDataAndHash:(nullable NSString *)email
+                 firstName:(nullable NSString *)firstName
+                  lastName:(nullable NSString *)lastName
+                     phone:(nullable NSString *)phone
+               dateOfBirth:(nullable NSString *)dateOfBirth
+                    gender:(nullable NSString *)gender
+                      city:(nullable NSString *)city
+                     state:(nullable NSString *)state
+                       zip:(nullable NSString *)zip
+                   country:(nullable NSString *)country;
+
++ (NSString *) getHashedUserData;
+
 @end
