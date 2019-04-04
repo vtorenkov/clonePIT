@@ -61,6 +61,8 @@ class PostItemController: UIViewController {
             NSAttributedStringKey.font : UIFont.mainFonSFUItMedium(ofSize: 17),
             NSAttributedStringKey.foregroundColor : UIColor.navBarColorItem,
             ], for: .normal)
+        let itemButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = itemButton
     }
     
     override func viewWillAppear(_ animated: Bool) {

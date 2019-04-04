@@ -8,6 +8,7 @@
 
 import UIKit
 import CameraManager
+import SKActivityIndicatorView
 
 class RecordVideoViewController: UIViewController {
     weak var item: ItemModel?
@@ -80,6 +81,9 @@ class RecordVideoViewController: UIViewController {
         
        
         self.urlString = ""
+
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
+        self.title = "Record Video"
     }
     
     // MARK: - ViewController
@@ -107,9 +111,11 @@ class RecordVideoViewController: UIViewController {
             self.urlString = ""
             cameraManager.startRecordingVideo()
         } else {
+            SKActivityIndicator.show("Loading...")
             cameraManager.stopCaptureSession()
             cameraManager.stopVideoRecording({ (videoURL, error) -> Void in
                 DispatchQueue.main.async { [unowned self] in
+                    SKActivityIndicator.dismiss()
                     self.cameraManager.stopCaptureSession()
                     if error != nil {
                         self.cameraManager.showErrorBlock("Error occurred", "Cannot save video.")

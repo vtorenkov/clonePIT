@@ -9,13 +9,13 @@
 import UIKit
 import GooglePlaces
 import SearchTextField
+import SKActivityIndicatorView
 
 class TextPitchTableViewCell: UITableViewCell, NibReusable, UITextFieldDelegate {
     var findPlaces = [GMSPlace]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.selectionStyle = .none
     }
     
@@ -89,24 +89,21 @@ extension TextPitchTableViewCellModel: CellViewModel {
                     }
                 }
             }
-            
-            
         default: break
         }
     }
 }
 
-
 extension TextPitchTableViewCell {
     func placeAutocompleteAdress(string:String) {
+        SKActivityIndicator.show("Loading...")
         self.findPlaces.removeAll()
         let filter = GMSAutocompleteFilter()
-        //filter.type = .city
-        //filter.country = "usa"
         filter.type = .address
         var stringFindplaces = [String]()
         let placesClient = GMSPlacesClient()
         placesClient.autocompleteQuery(string, bounds: nil, filter: filter) { (results, error:Error?) -> Void in
+            SKActivityIndicator.dismiss()
             if results == nil {
                 return
             }
@@ -120,9 +117,6 @@ extension TextPitchTableViewCell {
                         }
                         
                         if let place = gplace {
-                            print("place result")
-                            print(place)
-                            
                             let placeG = PlaceGoogle()
                             placeG.lon = place.coordinate.longitude
                             placeG.lat = place.coordinate.latitude
@@ -130,25 +124,16 @@ extension TextPitchTableViewCell {
                             placeG.gymName = place.name
                             self.findPlaces.append(place)
                             stringFindplaces.append(place.formattedAddress!)
-                            
-                            
                         } else {
                             print("No place details for \(gplace)")
                         }
                         self.textField.filterStrings(stringFindplaces)
-                        
                     })
-                    
-                    
                 }
             }
-            //set here google place string
         }
     }
 }
-
-
-
 
 class PlaceGoogle {
     var lon: Double = 0.0
