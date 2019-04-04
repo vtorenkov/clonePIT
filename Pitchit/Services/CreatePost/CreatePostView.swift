@@ -62,6 +62,12 @@ public enum CreatePostView: TargetType {
                     formData.append(movData)
                 }
             }
+            //attachments
+            for img in post.additionImage {
+                let data = UIImagePNGRepresentation(img)
+                let thumb = MultipartFormData(provider: .data(data!), name: "attachments", fileName: "image.png", mimeType: "image/png")
+                formData.append(thumb)
+            }
             
             for (key, value) in urlParameters {
                 formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
