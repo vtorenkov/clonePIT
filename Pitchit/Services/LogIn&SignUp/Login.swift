@@ -18,7 +18,7 @@ public enum Login: TargetType {
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
-    
+
     public var path: String {
         switch self {
         case .register:

@@ -22,7 +22,7 @@ public enum CreatePostView: TargetType {
     public var path: String {
         switch self {
         case .createPost:
-            return "/offer/create"
+            return "/post/create"
         }
     }
     
@@ -50,8 +50,7 @@ public enum CreatePostView: TargetType {
                 "productStatus":post.conditionType.rawValue] as [String : Any]
             
             
-            let urlString = "http://d3kodtkjrr2gfn.cloudfront.net/offersdata/f2c2d2e5-9cd5-353e-8933-e2d47c97d6c8/15542099221500468017VID_20170719_180951.mp4"
-                //post.videoUrl
+            let urlString = post.videoUrl
             let data = UIImagePNGRepresentation(getImage(from: urlString))
             let thumb = MultipartFormData(provider: .data(data!), name: "thumbNail", fileName: "image.png", mimeType: "image/png")
             

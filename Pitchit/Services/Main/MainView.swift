@@ -23,13 +23,13 @@ public enum MainView: TargetType {
     public var path: String {
         switch self {
         case .getPosts:
-            return "/offer/get"
+            return "/post/get"
         case .getCategories:
             return "/category/get"
         case .getFavorites:
-            return "/offer/getfavorites"
+            return "/post/getfavorites"
         case .addToFavorites:
-            return "/offer/addtofavourite"
+            return "/post/addtofavourite"
         }
     }
     
