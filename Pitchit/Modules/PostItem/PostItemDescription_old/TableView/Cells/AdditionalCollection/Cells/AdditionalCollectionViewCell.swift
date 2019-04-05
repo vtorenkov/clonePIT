@@ -27,12 +27,13 @@ class AdditionalCollectionViewCell: UICollectionViewCell, NibReusable {
 }
 
 struct AdditionalCollectionViewCellModel {
-    var image: UIImage
+    var image: String
 }
 
 extension AdditionalCollectionViewCellModel: CellViewModel {
     func setup(cell: AdditionalCollectionViewCell) {
-        cell.additionalPhoto.image = image
+        let url = URL(string: image)
+        cell.additionalPhoto.kf.setImage(with: url)
     }
 }
 

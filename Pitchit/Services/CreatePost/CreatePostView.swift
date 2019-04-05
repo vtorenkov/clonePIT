@@ -40,17 +40,18 @@ public enum CreatePostView: TargetType {
     public var task: Task {
         switch self {
         case .createPost(let post):
-            let urlParameters = ["title":post.title,
-                                 "description":post.desc,
+            let urlParameters = ["title":"post.title",
+                                 "description":"post.desc",
                                  "categoryId":post.typeString,
-                                 "address":post.place,
+                                 "address":"post.place",
                                  "longitude":post.placeCoodinate?.longitude ?? 0.0,
                                  "latitude":post.placeCoodinate?.latitude ?? 0.0,
-                                 "price":post.price,
+                                 "price": 33,//post.price,
                 "productStatus":post.conditionType.rawValue] as [String : Any]
             
             
-            let urlString = post.videoUrl
+            let urlString = "http://d3kodtkjrr2gfn.cloudfront.net/offersdata/f2c2d2e5-9cd5-353e-8933-e2d47c97d6c8/15542099221500468017VID_20170719_180951.mp4"
+                //post.videoUrl
             let data = UIImagePNGRepresentation(getImage(from: urlString))
             let thumb = MultipartFormData(provider: .data(data!), name: "thumbNail", fileName: "image.png", mimeType: "image/png")
             
@@ -62,12 +63,13 @@ public enum CreatePostView: TargetType {
                     formData.append(movData)
                 }
             }
-            //attachments
-            for img in post.additionImage {
-                let data = UIImagePNGRepresentation(img)
-                let thumb = MultipartFormData(provider: .data(data!), name: "attachments", fileName: "image.png", mimeType: "image/png")
+            
+            for (index, image) in post.additionImage.enumerated() {
+                let data = UIImagePNGRepresentation(image)
+                let thumb = MultipartFormData(provider: .data(data!), name: "attachments[\(index)]", fileName: "image\(index).png", mimeType: "image/png")
                 formData.append(thumb)
             }
+
             
             for (key, value) in urlParameters {
                 formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))

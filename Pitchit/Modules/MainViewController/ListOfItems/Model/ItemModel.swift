@@ -40,7 +40,8 @@ public class ItemModel {
         self.typeString = codableItem.category
         self.is_favourite = codableItem.is_favourite ?? false
         self.sold = codableItem.sold ?? false
-
+        self.additionImageUrl = codableItem.images ?? [String]()
+        
         //add dependency from codable classes to this wrapper
         self.conditionType = ConditionType(rawValue: codableItem.productStatus) ?? .likeNew
         self.author = codableItem.seller
@@ -64,6 +65,7 @@ public class ItemModelCodable: Codable {
     var category: String = ""
     var thumbNail: String? = ""
     var postedAt: String? = ""
+    var images: [String]? = [String]()
 }
 
 class AuthorCodable: Codable {

@@ -51,7 +51,7 @@ final class AdditionalCollectionDatasource: NSObject, AdditionalCollectionDataso
             return UICollectionViewCell()
         }
         
-        let model = AdditionalCollectionViewCellModel(image: itemPhoto)
+        let model = AdditionalCollectionViewCellModel(image: "itemPhoto")
         return collectionView.dequeueReusableCell(with: model, for: indexPath)
     }
   

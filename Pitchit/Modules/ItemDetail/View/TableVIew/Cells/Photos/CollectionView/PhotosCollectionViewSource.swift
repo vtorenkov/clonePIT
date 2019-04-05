@@ -37,11 +37,11 @@ final class PhotosCollectionDatasource: NSObject, PhotosCollectionDatasourceProt
         guard let item = self.item else {
             return 0
         }
-        return item.additionImage.count
+        return item.additionImageUrl.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let itemPhoto = item?.additionImage[indexPath.row] else {
+        guard let itemPhoto = item?.additionImageUrl[indexPath.row] else {
             return UICollectionViewCell()
         }
         let model = AdditionalCollectionViewCellModel(image: itemPhoto)
@@ -67,12 +67,12 @@ class PhotosCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let itemPhoto = item?.additionImage[indexPath.row] else {
+        guard let itemPhoto = item?.additionImageUrl[indexPath.row] else {
             self.delegate.selectingPhotoFromAdditional(image: nil)
             return
         }
 
-        self.delegate.selectingPhotoFromAdditional(image: itemPhoto)
+//        self.delegate.selectingPhotoFromAdditional(image: itemPhoto)
     }
 }
 

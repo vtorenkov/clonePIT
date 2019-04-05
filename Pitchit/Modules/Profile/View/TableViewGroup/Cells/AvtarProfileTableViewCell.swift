@@ -40,8 +40,12 @@ class AvtarProfileTableViewCell: UITableViewCell, NibReusable {
         avatarImage.setRounded()
         
         if let url = userProfile.image {
-            let url = URL(string: url)
-            avatarImage.kf.setImage(with: url)
+            if url.isEmpty {
+                avatarImage.image = UIImage(named: "placeholder_avatar")
+            } else {
+                let url = URL(string: url)
+                avatarImage.kf.setImage(with: url)
+            }
         } else {
             avatarImage.image = UIImage(named: "placeholder_avatar")
         }
