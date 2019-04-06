@@ -67,7 +67,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func editProfile(_ sender: Any) {
-        RouterProfile.sharedInstance.openEditProfile(target: self)
+        RouterProfile.sharedInstance.openEditProfile(target: self, profile:  self.profileTableViewDatasource?.profile)
     }
     
     @IBAction func showAnalytics(_ sender: Any) {

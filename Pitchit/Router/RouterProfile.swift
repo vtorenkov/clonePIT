@@ -26,10 +26,11 @@ class RouterProfile {
         }
     }
     
-    func openEditProfile(target: UIViewController?){
+    func openEditProfile(target: UIViewController?, profile: UserProfile?){
         let storyboard = UIStoryboard(name: "ProfileController", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController") as? EditProfileViewController{
             let navigationController = UINavigationController(rootViewController: controller)
+            controller.profile = profile
             target?.present(navigationController, animated: true, completion: nil)
         }
     }

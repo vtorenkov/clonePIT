@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-
-class UserProfile: Codable {
+public class UserProfile: Codable {
     var id = ""
     var firstName = ""
     var lastName = ""
@@ -22,6 +22,9 @@ class UserProfile: Codable {
     var creditCardVerified: Bool? = false
     var reviewCount = 0
     var followerCount = 0
+    
+    var phoneNumber: String? = ""
+    var editedImage: Data?
 }
 
 

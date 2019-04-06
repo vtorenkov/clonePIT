@@ -12,7 +12,8 @@ import Alamofire
 
 public enum UserView: TargetType {
     case getUserProfile(userId: String)
-  
+    case userUpdateProfile(user: UserProfile)
+
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
@@ -21,6 +22,8 @@ public enum UserView: TargetType {
         switch self {
         case .getUserProfile:
             return "/user/getuserprofile"
+        case .userUpdateProfile:
+            return "/user/updateprofile"
         }
     }
     
@@ -28,6 +31,8 @@ public enum UserView: TargetType {
         switch self {
         case .getUserProfile:
             return .get
+        case .userUpdateProfile:
+            return .post
         }
     }
     
@@ -39,13 +44,18 @@ public enum UserView: TargetType {
         switch self {
         case .getUserProfile(let userId):
             return .requestParameters(parameters: ["id":userId], encoding: URLEncoding.default)
-       
+        case .userUpdateProfile(let user):
+            let urlParameters = ["firstName": user.firstName,
+                                 "lastName": user.lastName,
+                                 "mobileNo": user.phoneNumber ?? "",
+                                 "image": user.editedImage ?? ""] as [String : Any]
+            return .requestParameters(parameters: urlParameters, encoding: URLEncoding.default)
         }
     }
     
     public var headers: [String : String]? {
         switch self {
-        case .getUserProfile:
+        case .getUserProfile, .userUpdateProfile:
             let username = UserManager.getCurrentUserObject().email
             let password = UserManager.getPassword()
             let loginString = String(format: "%@:%@", username, password)

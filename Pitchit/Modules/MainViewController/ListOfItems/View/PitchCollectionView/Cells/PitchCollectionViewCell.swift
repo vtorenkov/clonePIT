@@ -19,7 +19,7 @@ extension PitchCollectionViewCell: PlayerDelegate{
         self.player.view.frame = self.videoView.bounds
         self.loadingLabel.isHidden = true
         self.avatarImage.circleCorners()
-//        self.player.playFromCurrentTime()
+        self.player.playFromCurrentTime()
     }
     
     func playerPlaybackStateDidChange(_ player: Player) {
@@ -69,7 +69,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             let url = URL.init(string: item.videoUrl)!
             self.player.url = url
             //self.player.stop()
-//            self.player.autoplay = true
+            self.player.autoplay = true
             self.player.volume = 0.0
         }
         

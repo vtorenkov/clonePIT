@@ -11,6 +11,26 @@ import Moya
 import SKActivityIndicatorView
 
 struct UserViewManager: UserViewClient {
+    func userUpdateProfile(user: UserProfile, completion: @escaping (ResultUpdateProfile)) {
+        provider.request(.userUpdateProfile(user: user)) { (result) in
+            switch result {
+            case let .success(response):
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let profile = try filteredResponse.map(UserProfile.self, atKeyPath: "data", using: decoder)
+                    completion(true, response.description)
+                }
+                catch let error {
+                    completion(false, error.localizedDescription)
+                }
+            case let .failure(error):
+                completion(false, self.parseErrorMessage(error: error))
+            }
+        }
+    }
+    
     let provider = MoyaProvider<UserView>(plugins: [NetworkActivityPlugin { type,_  in
         switch type {
         case .began : SKActivityIndicator.show("Loading...")

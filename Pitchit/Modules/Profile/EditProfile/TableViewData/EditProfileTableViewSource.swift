@@ -10,6 +10,7 @@ import UIKit
 protocol EditProfileTableItemDelegate: class {
     func addPurchaseMethod()
     func removePurchaseMethod()
+    func selectPhoto()
 }
 
 enum EditProfileType {
@@ -101,6 +102,8 @@ class EditProfileTableViewDelegate: NSObject, UITableViewDelegate {
             self.delegate.addPurchaseMethod()
         case .paymentCard:
             self.delegate.removePurchaseMethod()
+        case .TopAvatar:
+            self.delegate.selectPhoto()
         default: break
         }
         tableView.deselectRow(at: indexPath, animated: true)

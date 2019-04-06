@@ -9,7 +9,9 @@ import Moya
 
 protocol UserViewClient {
     typealias ResultGetProfile = (UserProfile?, String) -> ()
+    typealias ResultUpdateProfile = (Bool, String) -> ()
 
     var provider: MoyaProvider<UserView> { get }
     func getUserProfile(userId: String, completion: @escaping(ResultGetProfile))
+    func userUpdateProfile(user: UserProfile, completion: @escaping(ResultUpdateProfile))
 }

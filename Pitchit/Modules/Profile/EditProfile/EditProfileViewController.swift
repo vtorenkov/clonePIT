@@ -11,10 +11,15 @@ import UIKit
 class EditProfileViewController: UIViewController {
     fileprivate var editProfileTableViewDatasource: EditProfileTableViewDatasource?
     fileprivate var editProfileTableViewDelegate: EditProfileTableViewDelegate?
-
+    let imagePicker = UIImagePickerController()
+    var profile: UserProfile?
+    
+    lazy var service: UserViewClient = UserViewManager()
+    
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         self.title = "Edit Profile".uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
         self.editProfileTableViewDelegate = EditProfileTableViewDelegate(self)
@@ -24,11 +29,26 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func closeAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if let user = self.profile {
+            service.userUpdateProfile(user: user) { (succes, message) in
+                if succes {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.alert(message: message)
+                }
+            }
+        }
     }
 }
 
 extension EditProfileViewController: EditProfileTableItemDelegate {
+    
+    func selectPhoto() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     func addPurchaseMethod() {
         RouterItem.sharedInstance.openAddCard(target: self)
     }
@@ -51,5 +71,23 @@ extension EditProfileViewController: EditProfileTableItemDelegate {
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
+    }
+}
+
+
+// MARK: - UIImagePickerControllerDelegate Methods
+extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if let user = self.profile {
+                let data = UIImagePNGRepresentation(pickedImage)
+                user.editedImage = data
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }
