@@ -29,11 +29,13 @@ final class EditProfileTableViewDatasource: NSObject, EditProfileTableViewDataso
     weak var tableView: UITableView?
     weak var delegate: UITableViewDelegate?
     weak var delegateVC: EditProfileTableItemDelegate?
+    var profile: UserProfile?
     
-    required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC : EditProfileTableItemDelegate) {
+    required init(tableView: UITableView, delegate: UITableViewDelegate, delegateVC : EditProfileTableItemDelegate, profile: UserProfile?) {
         self.tableView = tableView
         self.delegate = delegate
         self.delegateVC = delegateVC
+        self.profile = profile
         super.init()
         self.tableView?.separatorColor = UIColor.clear
         
@@ -59,11 +61,11 @@ final class EditProfileTableViewDatasource: NSObject, EditProfileTableViewDataso
         case .TopAvatar:
             model = AvatarTableViewCellModel(type: type)
         case .nameSurname:
-            model = DoubleTextTableViewCellModel(type: type)
+            model = DoubleTextTableViewCellModel(type: type, profile: profile)
         case .email:
-            model = SingleTextTableViewCellModel(type: type)
+            model = SingleTextTableViewCellModel(type: type, profile: profile)
         case .phone:
-            model = SingleTextTableViewCellModel(type: type)
+            model = SingleTextTableViewCellModel(type: type, profile: profile)
         case .paymentCard:
             model = PaymentTableViewCellModel(type: type)
         case .addPayment:

@@ -8,11 +8,28 @@
 
 import UIKit
 
-class DoubleTextTableViewCell: UITableViewCell, NibReusable {
+class DoubleTextTableViewCell: UITableViewCell, NibReusable, UITextFieldDelegate {
     
+    @IBOutlet var surnameText: UITextField!
+    @IBOutlet var nameText: UITextField!
+    
+    var profile: UserProfile?
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        surnameText.delegate = self
+        nameText.delegate = self
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let user = profile else {return}
+        if textField == nameText {
+            user.firstName = textField.text ?? ""
+        }
+        
+        if textField == surnameText {
+            user.lastName = textField.text ?? ""
+        }
     }
 
     static var reuseIdentifier: String { return "DoubleTextTableViewCell" }
@@ -21,9 +38,13 @@ class DoubleTextTableViewCell: UITableViewCell, NibReusable {
 
 struct DoubleTextTableViewCellModel {
     var type: EditProfileType
+    var profile: UserProfile?
 }
 
 extension DoubleTextTableViewCellModel: CellViewModel {
     func setup(cell: DoubleTextTableViewCell) {
+        cell.profile = profile
     }
 }
+
+

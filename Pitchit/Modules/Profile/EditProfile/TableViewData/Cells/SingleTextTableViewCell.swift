@@ -8,12 +8,26 @@
 
 import UIKit
 
-class SingleTextTableViewCell: UITableViewCell, NibReusable {
-    
+class SingleTextTableViewCell: UITableViewCell, NibReusable, UITextFieldDelegate {
+    var profile: UserProfile?
+    var type: EditProfileType!
+
     @IBOutlet var textField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        textField.delegate = self
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let user = profile else { return }
+        switch type {
+        case .phone?:
+            user.phoneNumber = textField.text ?? ""
+        case .email?:
+            user.email = textField.text ?? ""
+        default:
+            break
+        }
     }
    
     static var reuseIdentifier: String { return "SingleTextTableViewCell" }
@@ -22,10 +36,13 @@ class SingleTextTableViewCell: UITableViewCell, NibReusable {
 
 struct SingleTextTableViewCellModel {
     var type: EditProfileType
+    var profile: UserProfile?
 }
 
 extension SingleTextTableViewCellModel: CellViewModel {
     func setup(cell: SingleTextTableViewCell) {
+        cell.profile = profile
+        cell.type = type
         switch type {
         case .email:
             cell.textField.placeholder = "Email"

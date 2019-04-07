@@ -39,7 +39,7 @@
                                 <action selector="showAnalytics:" destination="v7X-lP-450" id="lbn-d7-29m"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="icons8-settings-filled-50" id="9cj-uA-0Jz">
+                        <barButtonItem key="rightBarButtonItem" image="edit_post" id="9cj-uA-0Jz">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="editProfile:" destination="v7X-lP-450" id="Rje-bf-JdY"/>
@@ -225,7 +225,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="edit_post" width="25" height="25"/>
         <image name="icons8-google-analytics-logo-filled-50" width="25" height="25"/>
-        <image name="icons8-settings-filled-50" width="25" height="25"/>
     </resources>
 </document>

@@ -23,19 +23,20 @@ class EditProfileViewController: UIViewController {
         self.title = "Edit Profile".uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.mainFonSFUItMedium(ofSize: 12)]
         self.editProfileTableViewDelegate = EditProfileTableViewDelegate(self)
-        self.editProfileTableViewDatasource = EditProfileTableViewDatasource(tableView: tableView, delegate: self.editProfileTableViewDelegate!, delegateVC: self)
+        self.editProfileTableViewDatasource = EditProfileTableViewDatasource(tableView: tableView, delegate: self.editProfileTableViewDelegate!, delegateVC: self, profile: profile)
         let itemButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = itemButton
     }
     
     @IBAction func closeAction(_ sender: Any) {
+        self.view.endEditing(true)
         if let user = self.profile {
             service.userUpdateProfile(user: user) { (succes, message) in
-                if succes {
+//                if succes {
                     self.dismiss(animated: true, completion: nil)
-                } else {
-                    self.alert(message: message)
-                }
+//                } else {
+//                    self.alert(message: message)
+//                }
             }
         }
     }

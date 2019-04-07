@@ -16,7 +16,8 @@ final class CatsCollectionDatasource: NSObject, CatsCollectionDatasourceProtocol
     weak var collectionView: UICollectionView?
     weak var delegate: UICollectionViewDelegate?
     weak var delegateVC: CatsCollectionInteract?
-    
+    let item: [CategoryItem] = CategoryManager.sharedInstance.items
+
     required init(collectionView: UICollectionView, delegate: UICollectionViewDelegate, delegateVC : CatsCollectionInteract) {
         self.collectionView = collectionView
         self.delegate = delegate
@@ -28,11 +29,12 @@ final class CatsCollectionDatasource: NSObject, CatsCollectionDatasourceProtocol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return item.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = CatsCollectionViewCellModel()
+        let cat = item[indexPath.row]
+        let model = CatsCollectionViewCellModel(cat: cat)
         return collectionView.dequeueReusableCell(with: model, for: indexPath)
     }
 }

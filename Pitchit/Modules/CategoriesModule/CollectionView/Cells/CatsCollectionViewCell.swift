@@ -28,10 +28,15 @@ class CatsCollectionViewCell: UICollectionViewCell, NibReusable {
 }
 
 struct CatsCollectionViewCellModel {
+    var cat: CategoryItem
 }
 
 extension CatsCollectionViewCellModel: CellViewModel {
     func setup(cell: CatsCollectionViewCell) {
+        cell.catNameLabel.text = cat.name
+        
+        let url = URL(string: cat.image)
+        cell.catImage.kf.setImage(with: url)
     }
 }
 

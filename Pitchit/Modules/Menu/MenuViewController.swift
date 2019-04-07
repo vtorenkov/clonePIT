@@ -63,6 +63,7 @@ class MenuViewController: UIViewController {
     @IBOutlet var bottomView: UIView!
     fileprivate var menuViewDatasource: MenuTableViewDatasource?
     fileprivate var menuViewDelegate: MenuTableViewDelegate?
+    lazy var service: UserViewClient = UserViewManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +91,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func openEditProfile(_ sender: Any) {
-        RouterTabBar.sharedInstance.openProfileTab(targer: self, porfileId: "")
+        let id = UserManager.getCurrentUserObject().id
+        service.getUserProfile(userId: id) { (profile, succes) in
+            RouterProfile.sharedInstance.openEditProfile(target: self, profile:  profile)
+        }
     }
 }

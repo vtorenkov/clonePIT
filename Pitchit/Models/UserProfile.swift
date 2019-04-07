@@ -25,6 +25,7 @@ public class UserProfile: Codable {
     
     var phoneNumber: String? = ""
     var editedImage: Data?
+    var email: String?
 }
 
 
