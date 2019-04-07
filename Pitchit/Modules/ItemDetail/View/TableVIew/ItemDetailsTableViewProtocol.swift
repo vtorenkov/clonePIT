@@ -23,6 +23,5 @@ extension ItemDetailsTableViewDatasourceProtocol {
         self.tableView?.dataSource = self
         self.tableView?.delegate = self.delegate
         self.tableView?.reloadData()
-        
     }
 }

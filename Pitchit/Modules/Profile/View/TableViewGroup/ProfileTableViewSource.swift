@@ -24,7 +24,8 @@ enum ProfileType {
     case Items
     case Personal
     
-    static let allTypes = [TopAvatar, Personal, Switch, Items]
+//    static let allTypes = [TopAvatar, Personal, Switch, Items]
+    static let allTypes = [TopAvatar, Personal, Items]
 }
 
 final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProtocol {

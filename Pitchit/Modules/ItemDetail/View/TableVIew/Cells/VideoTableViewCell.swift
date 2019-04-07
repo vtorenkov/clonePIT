@@ -12,8 +12,6 @@ class VideoTableViewCell: UITableViewCell, NibReusable {
     weak var item: ItemModel?
     @IBOutlet var loadingLabel: UILabel!
     
-    @IBOutlet var inquireButton: UIButton!
-    
     @IBOutlet var itemNameOutlet: UILabel!
     @IBOutlet var buttonView: UIView!
     
@@ -32,7 +30,6 @@ class VideoTableViewCell: UITableViewCell, NibReusable {
         self.contentView.bringSubview(toFront: loadingLabel)
         self.loadingLabel.text = "  Play  "
         loadingLabel.roundCorners()
-        inquireButton.roundCornersButton()
     }
     
     override func layoutSubviews() {
@@ -43,9 +40,9 @@ class VideoTableViewCell: UITableViewCell, NibReusable {
     
     var delegate: ItemDetailsTableItemDelegate?
 
-    @IBAction func iquireAction(_ sender: Any) {
-        self.delegate?.tapOnImquire()
-    }
+//    @IBAction func iquireAction(_ sender: Any) {
+//        self.delegate?.tapOnImquire()
+//    }
     
     static var reuseIdentifier: String { return "VideoTableViewCell" }
     static var nib: UINib { return UINib(nibName: "VideoTableViewCell", bundle: nil) } // Use VeryCustomUI.xib
@@ -75,7 +72,6 @@ extension VideoTableViewCellModel: CellViewModel {
 }
 
 extension VideoTableViewCell {
-    
     @objc func handleTapGestureRecognizer(_ gestureRecognizer: UITapGestureRecognizer) {
         switch (self.player.playbackState.rawValue) {
         case PlaybackState.stopped.rawValue:
@@ -99,5 +95,4 @@ extension VideoTableViewCell {
             break
         }
     }
-    
 }
