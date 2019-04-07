@@ -105,7 +105,7 @@ class ItemDetailsTableViewDelegate: NSObject, UITableViewDelegate {
         case .map:
             return kScreenHeight/2
         case .buttons:
-            return kScreenHeight/6
+            return kScreenHeight/10
         default:
             return UITableViewAutomaticDimension
         }
