@@ -72,10 +72,6 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             //self.player.stop()
             self.player.autoplay = true
             self.player.volume = 0.0
-            
-            if item.author.userId != UserManager.getCurrentUserObject().id {
-                removeOutlet.removeFromSuperview()
-            }
         }
         
         self.videoView.sendSubview(toBack: self.player.view)
@@ -99,6 +95,9 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             } else {
                 avatarImage.image = UIImage(named: "placeholder_avatar")
             }
+            if seller.userId != UserManager.getCurrentUserObject().id {
+                removeOutlet.removeFromSuperview()
+            }
         }
         
         self.avatarImage.circleCorners()
@@ -117,7 +116,9 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     @IBAction func removeItem(_ sender: UIButton) {
+        
     }
+    
     static var reuseIdentifier: String { return "PitchCollectionViewCell" }
     static var nib: UINib { return UINib(nibName: "PitchCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
 }
