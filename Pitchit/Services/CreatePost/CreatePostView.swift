@@ -40,10 +40,10 @@ public enum CreatePostView: TargetType {
     public var task: Task {
         switch self {
         case .createPost(let post):
-            let urlParameters = ["title":"post.title",
-                                 "description":"post.desc",
+            let urlParameters = ["title":post.title,
+                                 "description":post.desc,
                                  "categoryId":post.typeString,
-                                 "address":"post.place",
+                                 "address":post.place,
                                  "longitude":post.placeCoodinate?.longitude ?? 0.0,
                                  "latitude":post.placeCoodinate?.latitude ?? 0.0,
                                  "price": 33,//post.price,

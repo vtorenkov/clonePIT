@@ -47,7 +47,7 @@ class ItemDetailsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     fileprivate var itemDetailsTableViewDatasource: ItemDetailsTableViewDatasource?
     fileprivate var itemDetailsTableViewDelegate: ItemDetailsTableViewDelegate?
-    weak var item: ItemModel?
+    var item: ItemModel?
     
     lazy var presenter: PresenterDetails = PresenterDetails(view: self)
 
