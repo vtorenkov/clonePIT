@@ -16,13 +16,17 @@ extension FavoritesViewController: FavoritesTableItemDelegate{
             }
         }
     }
+    
+    func tapFavorites(favoriteId: String) {
+        presenter.getPostDetails(postId: favoriteId)
+    }
 }
 
 class FavoritesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
     var favoritesViewDatasource: FavoritesTableViewDatasource?
-    fileprivate var favoritesViewDelegate: FavoritesTableViewDelegate?
+    var favoritesViewDelegate: FavoritesTableViewDelegate?
     
     lazy var presenter: PresenterFavorites = PresenterFavorites(view: self)
 
@@ -39,5 +43,9 @@ class FavoritesViewController: UIViewController {
     
     @IBAction func closeAction(_ sender: Any) {
         closeProgramaticalyController()
+    }
+    
+    func openPost(item: ItemModel) {
+        RouterItem.sharedInstance.openItemDetails(target: self, item: item)
     }
 }

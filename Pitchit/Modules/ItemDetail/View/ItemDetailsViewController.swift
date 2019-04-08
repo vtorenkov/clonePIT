@@ -8,16 +8,21 @@
 
 import UIKit
 import NYTPhotoViewer
+import Kingfisher
 
 extension ItemDetailsViewController: ItemDetailsTableItemDelegate{
     func tapOnImquire() {
         RouterItem.sharedInstance.openItemInquire(target: self, item: self.item)
     }
     
-    func showImageFullSize(image: UIImage?) {
-        let dataSource = DataSource(image: image)
-        let photoController = NYTPhotosViewController(dataSource: dataSource)
-        self.present(photoController, animated: true, completion: nil)
+    func showImageFullSize(image: String) {
+        if let url = URL(string: image) {
+            KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                let dataSource = DataSource(image: image)
+                let photoController = NYTPhotosViewController(dataSource: dataSource)
+                self.present(photoController, animated: true, completion: nil)
+            })
+        }
     }
     
     func messageAction() {

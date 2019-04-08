@@ -47,8 +47,13 @@ public enum UserView: TargetType {
         case .userUpdateProfile(let user):
             let urlParameters = ["firstName": user.firstName,
                                  "lastName": user.lastName,
-                                 "mobileNo": user.phoneNumber ?? "",
-                                 "image": user.editedImage ?? ""] as [String : Any]
+                                 "mobileNo": user.mobileNo ?? "",
+                                 "image": user.editedImage ?? "",
+                                 "facebookConnected": false,
+                                 "creditCardVerified": false,
+                                 "identityType": "passport",
+                                 "indentityDoc": "passport",
+                                 "identityVerified": true] as [String : Any]
             return .requestParameters(parameters: urlParameters, encoding: URLEncoding.default)
         }
     }

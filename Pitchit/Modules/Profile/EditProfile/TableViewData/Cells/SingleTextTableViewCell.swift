@@ -22,7 +22,7 @@ class SingleTextTableViewCell: UITableViewCell, NibReusable, UITextFieldDelegate
         guard let user = profile else { return }
         switch type {
         case .phone?:
-            user.phoneNumber = textField.text ?? ""
+            user.mobileNo = textField.text ?? ""
         case .email?:
             user.email = textField.text ?? ""
         default:
@@ -46,8 +46,10 @@ extension SingleTextTableViewCellModel: CellViewModel {
         switch type {
         case .email:
             cell.textField.placeholder = "Email"
+            cell.textField.text = profile?.email
         case .phone:
             cell.textField.placeholder = "Phone"
+            cell.textField.text = profile?.mobileNo
         default: break
         }
     }

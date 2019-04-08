@@ -9,7 +9,7 @@
 import UIKit
 
 extension AdditionalPhotosTableViewCell: PhotosCollectionInteract {
-    func selectingPhotoFromAdditional(image: UIImage?) {
+    func selectingPhotoFromAdditional(image: String) {
         self.delegate?.showImageFullSize(image: image)
     }
 }

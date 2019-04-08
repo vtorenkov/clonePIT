@@ -23,7 +23,7 @@ public class UserProfile: Codable {
     var reviewCount = 0
     var followerCount = 0
     
-    var phoneNumber: String? = ""
+    var mobileNo: String? = ""
     var editedImage: Data?
     var email: String?
 }

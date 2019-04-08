@@ -57,7 +57,7 @@ class RouterItem: GlobalRouter {
     
     func openItemDetails(target: UIViewController?, item: ItemModel?){
         let storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "ItemDetailsViewController") as? ItemDetailsViewController{
+        if let controller = storyboard.instantiateViewController(withIdentifier: "ItemDetailsViewController") as? ItemDetailsViewController {
             controller.item = item
             let navigationController = UINavigationController(rootViewController: controller)
             target?.present(navigationController, animated: true, completion: nil)
@@ -66,7 +66,7 @@ class RouterItem: GlobalRouter {
     
     func openPostItemDesc(target: UIViewController?, item: ItemModel?){
         let storyboard = UIStoryboard(name: "PostItemController", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "PostItemDescViewController") as? PostItemDescViewController{
+        if let controller = storyboard.instantiateViewController(withIdentifier: "PostItemDescViewController") as? PostItemDescViewController {
             controller.item = item
             target?.navigationController?.pushViewController(controller, animated: true)
         }

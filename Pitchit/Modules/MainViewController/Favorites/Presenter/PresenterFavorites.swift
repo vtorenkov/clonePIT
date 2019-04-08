@@ -27,9 +27,21 @@ class PresenterFavorites: NSObject, Presenter {
         }
     }
     
+    func getPostDetails(postId: String) {
+        serviceMain.getPost(postId: postId) { [weak self] (post, message) in
+            if let post = post {
+                let itemObject = ItemModel(codableItem: post)
+                self?.view.openPost(item: itemObject)
+            } else {
+                self?.view.alert(message: message)
+            }
+        }
+    }
+    
     func getAllFavorites() {
         serviceMain.getFavorites(userId: nil) { [weak self] (favorites, success) in
             self?.view.favoritesViewDatasource?.favoritesArray = favorites ?? [ItemModelCodable]()
+            self?.view.favoritesViewDelegate?.favoritesArray = favorites ?? [ItemModelCodable]()
             self?.view.favoritesViewDatasource?.tableView?.reloadData()
         }
     }

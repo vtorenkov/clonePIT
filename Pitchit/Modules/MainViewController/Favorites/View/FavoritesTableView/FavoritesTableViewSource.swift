@@ -9,6 +9,7 @@ import UIKit
 
 protocol FavoritesTableItemDelegate: class {
     func tapHeart(favoriteId: String)
+    func tapFavorites(favoriteId: String)
 }
 
 extension FavoritesTableViewDatasource: FavoriteCellProtocol {
@@ -49,6 +50,7 @@ final class FavoritesTableViewDatasource: NSObject, FavoritesTableViewDatasource
 
 class FavoritesTableViewDelegate: NSObject, UITableViewDelegate {
     weak var delegate: FavoritesTableItemDelegate?
+    var favoritesArray = [ItemModelCodable]()
     
     init(_ delegate: FavoritesTableItemDelegate) {
         self.delegate = delegate
@@ -59,6 +61,8 @@ class FavoritesTableViewDelegate: NSObject, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let fav = self.favoritesArray[indexPath.row]
+        self.delegate?.tapFavorites(favoriteId: fav.id)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

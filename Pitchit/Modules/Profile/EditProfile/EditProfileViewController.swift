@@ -32,11 +32,11 @@ class EditProfileViewController: UIViewController {
         self.view.endEditing(true)
         if let user = self.profile {
             service.userUpdateProfile(user: user) { (succes, message) in
-//                if succes {
+                if succes {
                     self.dismiss(animated: true, completion: nil)
-//                } else {
-//                    self.alert(message: message)
-//                }
+                } else {
+                    self.alert(message: message)
+                }
             }
         }
     }

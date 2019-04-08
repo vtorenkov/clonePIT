@@ -20,7 +20,7 @@ enum ItemDetailType {
 }
 
 protocol ItemDetailsTableItemDelegate {
-    func showImageFullSize(image: UIImage?)
+    func showImageFullSize(image: String)
     func tapOnImquire()
     func messageAction()
     func favoritesAction()

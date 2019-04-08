@@ -44,6 +44,8 @@ struct DoubleTextTableViewCellModel {
 extension DoubleTextTableViewCellModel: CellViewModel {
     func setup(cell: DoubleTextTableViewCell) {
         cell.profile = profile
+        cell.surnameText.text = profile?.lastName
+        cell.nameText.text = profile?.firstName
     }
 }
 

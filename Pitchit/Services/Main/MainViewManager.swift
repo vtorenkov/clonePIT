@@ -18,6 +18,26 @@ struct MainViewManager: MainViewClient, AddToFavoritesClient {
         }
         }])
     
+    func getPost(postId: String, completion: @escaping(ResultGetPost)) {
+        provider.request(.getPost(postId: postId)) { (result) in
+            switch result {
+            case let .success(response):
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let item = try filteredResponse.map(ItemModelCodable.self, atKeyPath: "data", using: decoder)
+                    completion(item, response.description)
+                }
+                catch let error {
+                    completion(nil, error.localizedDescription)
+                }
+            case let .failure(error):
+                completion(nil, self.parseErrorMessage(error: error))
+            }
+        }
+    }
+    
     func addToFavorites(offerId: String, completion: @escaping(ResultAddToFavorites)) {
         provider.request(.addToFavorites(offerId: offerId)) { (result) in
             switch result {

@@ -9,7 +9,7 @@ import UIKit
 
 
 protocol PhotosCollectionInteract {
-    func selectingPhotoFromAdditional(image: UIImage?)
+    func selectingPhotoFromAdditional(image: String)
 }
 
 
@@ -68,11 +68,9 @@ class PhotosCollectionDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let itemPhoto = item?.additionImageUrl[indexPath.row] else {
-            self.delegate.selectingPhotoFromAdditional(image: nil)
             return
         }
-
-//        self.delegate.selectingPhotoFromAdditional(image: itemPhoto)
+        self.delegate.selectingPhotoFromAdditional(image: itemPhoto)
     }
 }
 
