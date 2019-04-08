@@ -26,6 +26,7 @@ public class UserProfile: Codable {
     var mobileNo: String? = ""
     var editedImage: Data?
     var email: String?
+    var currentUser: Bool? = false
 }
 
 

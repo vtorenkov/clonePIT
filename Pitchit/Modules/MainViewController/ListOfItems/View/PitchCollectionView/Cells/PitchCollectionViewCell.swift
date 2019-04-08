@@ -38,6 +38,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     fileprivate var player = Player()
     weak var item: ItemModel?
     
+    @IBOutlet var removeOutlet: UIButton!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet var buttonBackGround: UIButton!
     @IBOutlet var titleLabel: UILabel!
@@ -71,6 +72,10 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             //self.player.stop()
             self.player.autoplay = true
             self.player.volume = 0.0
+            
+            if item.author.userId != UserManager.getCurrentUserObject().id {
+                removeOutlet.removeFromSuperview()
+            }
         }
         
         self.videoView.sendSubview(toBack: self.player.view)
@@ -111,6 +116,8 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         delegate?.tapOnLike(item: item)
     }
     
+    @IBAction func removeItem(_ sender: UIButton) {
+    }
     static var reuseIdentifier: String { return "PitchCollectionViewCell" }
     static var nib: UINib { return UINib(nibName: "PitchCollectionViewCell", bundle: nil) } // Use VeryCustomUI.xib
 }

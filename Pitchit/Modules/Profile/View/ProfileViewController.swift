@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var profileTableViewDatasource: ProfileTableViewDatasource?
-    fileprivate var profileTableViewDelegate: ProfileTableViewDelegate?
+    var profileTableViewDelegate: ProfileTableViewDelegate?
     lazy var presenter: ProfilePresenter = ProfilePresenter(view: self)
     var userId = ""
     

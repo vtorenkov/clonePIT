@@ -16,7 +16,9 @@ public enum MainView: TargetType {
     case getFavorites(userId: String?)
     case addToFavorites(offerId: String)
     case getPost(postId: String)
-    
+    case deletePost(postId: String)
+    case updatePostSold(postId: String)
+
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
@@ -25,6 +27,10 @@ public enum MainView: TargetType {
         switch self {
         case .getPost:
             return "/post/getpost"
+        case .deletePost:
+            return "/post/delete"
+        case .updatePostSold:
+            return "/post/updatetosold"
         case .getPosts:
             return "/post/get"
         case .getCategories:
@@ -40,6 +46,8 @@ public enum MainView: TargetType {
         switch self {
         case .getPosts, .getCategories, .getFavorites, .addToFavorites, .getPost:
             return .get
+        case .deletePost, .updatePostSold:
+            return .post
         }
     }
     
@@ -67,13 +75,16 @@ public enum MainView: TargetType {
             return .requestParameters(parameters: ["offerId":offerId], encoding: URLEncoding.default)
         case .getPost(let postId):
             return .requestParameters(parameters: ["postId":postId], encoding: URLEncoding.default)
-
+        case .deletePost(let postId):
+            return .requestParameters(parameters: ["postId":postId], encoding: URLEncoding.default)
+        case .updatePostSold(let postId):
+            return .requestParameters(parameters: ["postId":postId], encoding: URLEncoding.default)
         }
     }
     
     public var headers: [String : String]? {
         switch self {
-        case .getPosts, .getCategories, .getFavorites, .addToFavorites, .getPost:
+        case .getPosts, .getCategories, .getFavorites, .addToFavorites, .getPost, .deletePost, .updatePostSold:
             let username = UserManager.getCurrentUserObject().email
             let password = UserManager.getPassword()
             let loginString = String(format: "%@:%@", username, password)

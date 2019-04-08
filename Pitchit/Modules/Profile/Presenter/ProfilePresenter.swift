@@ -26,8 +26,13 @@ class ProfilePresenter: NSObject, Presenter {
         let id = checkIscurrentUserId(userId: userId)
 
         service.getUserProfile(userId: id) { (profile, succes) in
+          
             self.profile = profile
+            if id == UserManager.getCurrentUserObject().id {
+                self.profile?.currentUser = true
+            }
             self.view.profileTableViewDatasource?.profile = profile
+            self.view.profileTableViewDelegate?.profile = profile
             self.view.profileTableViewDatasource?.tableView?.reloadData()
         }
     }

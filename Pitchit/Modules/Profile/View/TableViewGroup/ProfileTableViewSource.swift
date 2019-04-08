@@ -82,10 +82,10 @@ final class ProfileTableViewDatasource: NSObject, ProfileTableViewDatasourceProt
     }
 }
 
-
 class ProfileTableViewDelegate: NSObject, UITableViewDelegate {
     var delegate: ProfileTableItemDelegate
-    
+    var profile: UserProfile?
+
     init(_ delegate: ProfileTableItemDelegate) {
         self.delegate = delegate
     }
