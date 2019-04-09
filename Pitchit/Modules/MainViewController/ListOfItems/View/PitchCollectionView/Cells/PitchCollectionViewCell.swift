@@ -48,7 +48,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     @IBOutlet var likeImage: UIImageView!
     @IBOutlet var priceTitle: UILabel!
     @IBOutlet var distanceLabel: UILabel!
-    weak var delegate: PitchCollectionInteract?
+    var delegate: PitchCollectionInteract?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -103,10 +103,6 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         self.avatarImage.circleCorners()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     @IBAction func tapOnUser(_ sender: UIButton) {
         delegate?.showUser(with: item?.author.userId ?? "")
     }
@@ -116,7 +112,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
     }
     
     @IBAction func removeItem(_ sender: UIButton) {
-        
+        delegate?.tapOnRremove(item: item)
     }
     
     static var reuseIdentifier: String { return "PitchCollectionViewCell" }
@@ -126,6 +122,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
 struct PitchCollectionViewCellModel {
     var item: ItemModel
     var delegate: PitchCollectionInteract?
+    var profileScreen = false
 }
 
 extension PitchCollectionViewCellModel: CellViewModel {
@@ -134,6 +131,10 @@ extension PitchCollectionViewCellModel: CellViewModel {
         cell.priceTitle.text = "$" + item.price
         cell.titleLabel.text = item.title
         cell.delegate = delegate
+        
+        if !profileScreen {
+            cell.removeOutlet.removeFromSuperview()
+        }
     }
 }
 

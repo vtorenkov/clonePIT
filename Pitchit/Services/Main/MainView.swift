@@ -72,7 +72,7 @@ public enum MainView: TargetType {
                 return .requestParameters(parameters: ["page":1, "limit":20], encoding: URLEncoding.default)
             }
         case .addToFavorites(let offerId):
-            return .requestParameters(parameters: ["offerId":offerId], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["postId":offerId], encoding: URLEncoding.default)
         case .getPost(let postId):
             return .requestParameters(parameters: ["postId":postId], encoding: URLEncoding.default)
         case .deletePost(let postId):

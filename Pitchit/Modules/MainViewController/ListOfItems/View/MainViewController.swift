@@ -31,6 +31,10 @@ extension MainViewController: CategoriesCollectionInteract {
 }
 
 extension MainViewController: PitchCollectionInteract {
+    func tapOnRremove(item: ItemModel?) {
+        
+    }
+    
     func tapOnLike(item: ItemModel?) {
         if let item = item {
             presenter.sendToFavorites(offerId: item.id)

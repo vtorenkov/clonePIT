@@ -18,6 +18,23 @@ struct MainViewManager: MainViewClient, AddToFavoritesClient {
         }
         }])
     
+    func deletePost(postId: String, completion: @escaping(ResultDeletePost)) {
+        provider.request(.deletePost(postId: postId)) { (result) in
+            switch result {
+            case let .success(response):
+                do {
+                    completion(true, response.description)
+                }
+                catch let error {
+                    completion(false, error.localizedDescription)
+                }
+            case let .failure(error):
+                completion(false, self.parseErrorMessage(error: error))
+            }
+        }
+    }
+    
+    
     func getPost(postId: String, completion: @escaping(ResultGetPost)) {
         provider.request(.getPost(postId: postId)) { (result) in
             switch result {

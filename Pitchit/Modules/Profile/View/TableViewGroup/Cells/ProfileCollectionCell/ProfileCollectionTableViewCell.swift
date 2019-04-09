@@ -41,6 +41,7 @@ extension ProfileCollectionTableViewCellModel: CellViewModel {
     func setup(cell: ProfileCollectionTableViewCell) {
         cell.items = items
         cell.delegate = delegate
+        cell.delegatePitch = delegatePitch
         let itemsCount = Double(self.items.count) / 2
         cell.collectionView.reloadData()
         cell.collectionHeight.constant = CGFloat(round(Double(self.items.count))) * (kScreenHeight / 3)
@@ -60,7 +61,7 @@ extension ProfileCollectionTableViewCell: UICollectionViewDelegateFlowLayout, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items[indexPath.row]
-        let model = PitchCollectionViewCellModel(item: item, delegate: delegatePitch)
+        let model = PitchCollectionViewCellModel(item: item, delegate: delegatePitch, profileScreen: true)
         return collectionView.dequeueReusableCell(with: model, for: indexPath)
     }
     

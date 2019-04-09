@@ -13,7 +13,7 @@ import Alamofire
 public enum UserView: TargetType {
     case getUserProfile(userId: String)
     case userUpdateProfile(user: UserProfile)
-
+    
     public var baseURL: URL {
         return URL(string: "http://ec2-52-91-253-224.compute-1.amazonaws.com")!
     }
@@ -45,6 +45,7 @@ public enum UserView: TargetType {
         case .getUserProfile(let userId):
             return .requestParameters(parameters: ["id":userId], encoding: URLEncoding.default)
         case .userUpdateProfile(let user):
+            
             let urlParameters = ["firstName": user.firstName,
                                  "lastName": user.lastName,
                                  "mobileNo": user.mobileNo ?? "",
@@ -54,7 +55,17 @@ public enum UserView: TargetType {
                                  "identityType": "passport",
                                  "indentityDoc": "passport",
                                  "identityVerified": true] as [String : Any]
-            return .requestParameters(parameters: urlParameters, encoding: URLEncoding.default)
+            
+            if let data = user.editedImage {
+                let thumb = MultipartFormData(provider: .data(data), name: "image", fileName: "image.png", mimeType: "image/png")
+                var formData = [thumb]
+                for (key, value) in urlParameters {
+                    formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
+                }
+                return .uploadMultipart(formData)
+            } else {
+                return .requestParameters(parameters: urlParameters, encoding: URLEncoding.default)
+            }
         }
     }
     

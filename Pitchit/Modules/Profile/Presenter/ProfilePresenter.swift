@@ -49,6 +49,7 @@ class ProfilePresenter: NSObject, Presenter {
     }
     
     func getFavorites(userId: String) {
+        return
         let id = checkIscurrentUserId(userId: userId)
         var items = [ItemModel]()
         self.serviceMain.getFavorites(userId: id) { [weak self] (itemsCodable, response) in
@@ -65,5 +66,19 @@ class ProfilePresenter: NSObject, Presenter {
             id = UserManager.getCurrentUserObject().id
         }
         return id
+    }
+    
+    func removeItemFromProfile(item: ItemModel) {
+        serviceMain.deletePost(postId: item.id) { (success, message) in
+            if success {
+                /*
+                self?.view.profileTableViewDatasource?.items = items
+                self?.view.profileTableViewDatasource?.items = items
+                self?.view.profileTableViewDatasource?.tableView?.reloadData()
+ */
+            } else {
+                self.view?.alert(message: message)
+            }
+        }
     }
 }

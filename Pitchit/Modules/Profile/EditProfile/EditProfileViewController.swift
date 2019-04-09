@@ -83,6 +83,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
             if let user = self.profile {
                 let data = UIImagePNGRepresentation(pickedImage)
                 user.editedImage = data
+                self.tableView.reloadData()
             }
         }
         dismiss(animated: true, completion: nil)

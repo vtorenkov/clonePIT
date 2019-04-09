@@ -9,6 +9,12 @@
 import UIKit
 
 extension ProfileViewController: PitchCollectionInteract {
+    func tapOnRremove(item: ItemModel?) {
+        if let it = item {
+            self.presenter.removeItemFromProfile(item: it)
+        }
+    }
+    
     func showUser(with id: String) {
     }
     
@@ -21,6 +27,7 @@ extension ProfileViewController: ProfileTableItemDelegate {
     func selectItem(item: ItemModel) {
         RouterItem.sharedInstance.openItemDetails(target: self, item: item)
     }
+    
     
     func tapOnrate() {
         RouterProfile.sharedInstance.openRateProfile(target: self)

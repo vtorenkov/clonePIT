@@ -59,7 +59,7 @@ final class EditProfileTableViewDatasource: NSObject, EditProfileTableViewDataso
         
         switch type {
         case .TopAvatar:
-            model = AvatarTableViewCellModel(type: type)
+            model = AvatarTableViewCellModel(type: type, profile: profile)
         case .nameSurname:
             model = DoubleTextTableViewCellModel(type: type, profile: profile)
         case .email:

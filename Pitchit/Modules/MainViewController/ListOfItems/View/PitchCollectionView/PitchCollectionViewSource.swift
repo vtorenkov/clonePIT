@@ -10,6 +10,7 @@ import UIKit
 
 protocol PitchCollectionInteract: class {
     func tapOnLike(item: ItemModel?)
+    func tapOnRremove(item: ItemModel?)
     func showUser(with id:String)
 }
 
@@ -45,7 +46,7 @@ final class PitchCollectionDatasource: NSObject, PitchCollectionDatasourceProtoc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items[indexPath.row]
-        let model = PitchCollectionViewCellModel(item: item, delegate: delegateVC)
+        let model = PitchCollectionViewCellModel(item: item, delegate: delegateVC, profileScreen: false)
         return collectionView.dequeueReusableCell(with: model, for: indexPath)
     }
 }
