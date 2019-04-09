@@ -13,13 +13,15 @@ class ProfilePresenter: NSObject, Presenter {
     weak var view: PresenterView!
     fileprivate let service: UserViewClient!
     fileprivate let serviceMain: MainViewClient!
+    fileprivate let serviceFavorites: AddToFavoritesClient!
 
     var profile: UserProfile?
 
-    required init(view: PresenterView, service: UserViewClient = UserViewManager(), serviceMain: MainViewClient = MainViewManager()) {
+    required init(view: PresenterView, service: UserViewClient = UserViewManager(), serviceMain: MainViewClient = MainViewManager(), serviceFavorites: AddToFavoritesClient = MainViewManager()) {
         self.view = view
         self.service = service
         self.serviceMain = serviceMain
+        self.serviceFavorites = serviceFavorites
     }
     
     func getUserProfile(userId: String) {
@@ -66,6 +68,12 @@ class ProfilePresenter: NSObject, Presenter {
             id = UserManager.getCurrentUserObject().id
         }
         return id
+    }
+    
+    func sendToFavorites(offerId: String) {
+        self.serviceFavorites.addToFavorites(offerId: offerId) { (succes) in
+            print(succes)
+        }
     }
     
     func removeItemFromProfile(item: ItemModel) {

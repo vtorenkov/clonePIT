@@ -19,7 +19,9 @@ extension ProfileViewController: PitchCollectionInteract {
     }
     
     func tapOnLike(item: ItemModel?) {
-        self.alert(message: "Not yet implemented")
+        if let item = item {
+            presenter.sendToFavorites(offerId: item.id)
+        }
     }
 }
 

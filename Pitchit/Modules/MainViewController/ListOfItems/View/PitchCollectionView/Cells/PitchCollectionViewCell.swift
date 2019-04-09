@@ -100,6 +100,16 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             }
         }
         
+        if let item = item {
+            if item.is_favourite {
+                buttonBackGround.isHidden = true
+                likeImage.isHidden = true
+            } else {
+                buttonBackGround.isHidden = false
+                likeImage.isHidden = false
+            }
+        }
+        
         self.avatarImage.circleCorners()
     }
     

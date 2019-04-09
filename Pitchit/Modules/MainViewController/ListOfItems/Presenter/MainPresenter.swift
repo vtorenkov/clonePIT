@@ -27,6 +27,7 @@ class MainPresenter: NSObject, Presenter {
     func sendToFavorites(offerId: String) {
         self.serviceFavorites.addToFavorites(offerId: offerId) { (succes) in
             print(succes)
+            self.getPosts()
         }
     }
     
