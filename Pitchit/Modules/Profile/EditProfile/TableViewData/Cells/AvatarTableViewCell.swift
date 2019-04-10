@@ -14,7 +14,7 @@ class AvatarTableViewCell: UITableViewCell, NibReusable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        
     }
     
     override func layoutSubviews() {
@@ -22,15 +22,15 @@ class AvatarTableViewCell: UITableViewCell, NibReusable {
         avatarImage.layoutIfNeeded() // iOS 10 Fix
         avatarImage.setRounded()
         
-        if let url = UserShared.sharedInstance.checkUserUrl() {
-            let url = URL(string: url)
-            avatarImage.kf.setImage(with: url)
-        } else if let data = profile?.editedImage {
+        if let data = profile?.editedImage {
             if let img = UIImage(data: data) {
                 avatarImage.image = img
             } else {
                 avatarImage.image = UIImage(named: "placeholder_avatar")
             }
+        } else if let imgUrl = profile?.image {
+            let url = URL(string: imgUrl)
+            avatarImage.kf.setImage(with: url)
         } else {
             avatarImage.image = UIImage(named: "placeholder_avatar")
         }
