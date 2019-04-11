@@ -10,8 +10,10 @@ import UIKit
 
 extension ProfileViewController: PitchCollectionInteract {
     func tapOnRremove(item: ItemModel?) {
-        if let it = item {
-            self.presenter.removeItemFromProfile(item: it)
+        self.alertYesNo(title: "Delete?", message: "Are you sure?") { (yes) in
+            if yes, let it = item  {
+                self.presenter.removeItemFromProfile(item: it)
+            }
         }
     }
     
@@ -30,18 +32,17 @@ extension ProfileViewController: ProfileTableItemDelegate {
         RouterItem.sharedInstance.openItemDetails(target: self, item: item)
     }
     
-    
     func tapOnrate() {
         RouterProfile.sharedInstance.openRateProfile(target: self)
     }
     
     func selectPosts(of type: PosrType) {
-        switch type {
-        case .All:
-            presenter.getPosts(userId: userId)
-        case .Favorites:
-            presenter.getFavorites(userId: userId)
-        }
+//        switch type {
+//        case .All:
+//            presenter.getPosts(userId: userId)
+//        case .Favorites:
+//            presenter.getFavorites(userId: userId)
+//        }
     }
 }
 

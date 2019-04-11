@@ -58,7 +58,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         if #available(iOS 11.0, *) {
             priceView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         }
-
+        
         //TODO: use another player:
         // https://github.com/newyjp/JPVideoPlayer
         self.player.view.frame = self.videoView.bounds
@@ -100,16 +100,6 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
             }
         }
         
-        if let item = item {
-            if item.is_favourite {
-                buttonBackGround.isHidden = true
-                likeImage.isHidden = true
-            } else {
-                buttonBackGround.isHidden = false
-                likeImage.isHidden = false
-            }
-        }
-        
         self.avatarImage.circleCorners()
     }
     
@@ -144,6 +134,14 @@ extension PitchCollectionViewCellModel: CellViewModel {
         
         if !profileScreen {
             cell.removeOutlet.removeFromSuperview()
+        }
+        
+        if item.is_favourite {
+            cell.buttonBackGround.isHidden = true
+            cell.likeImage.isHidden = true
+        } else {
+            cell.buttonBackGround.isHidden = false
+            cell.likeImage.isHidden = false
         }
     }
 }

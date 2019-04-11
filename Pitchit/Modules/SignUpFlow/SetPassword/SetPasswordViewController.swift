@@ -100,8 +100,9 @@ extension SetPasswordViewController: SignUpPresenterProtocol {
     }
     
     func sendToMainScreen() {
-        UserManager.savePassword(user: newUser)
-        UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
-        Router.sharedInstance.goToMainPage()
+//        UserManager.savePassword(user: newUser)
+//        UserShared.sharedInstance.user = UserManager.getCurrentUserObject()
+        self.navigationController?.popToRootViewController(animated: true)
+//        Router.sharedInstance.goToMainPage()
     }
 }

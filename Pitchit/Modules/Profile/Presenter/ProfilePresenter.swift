@@ -49,7 +49,7 @@ class ProfilePresenter: NSObject, Presenter {
             self?.view.profileTableViewDatasource?.tableView?.reloadData()
         }
     }
-    
+    /*
     func getFavorites(userId: String) {
         return
         let id = checkIscurrentUserId(userId: userId)
@@ -60,7 +60,7 @@ class ProfilePresenter: NSObject, Presenter {
             self?.view.profileTableViewDatasource?.items = items
             self?.view.profileTableViewDatasource?.tableView?.reloadData()
         }
-    }
+    }*/
     
     func checkIscurrentUserId(userId: String) -> String {
         var id = userId
@@ -79,11 +79,9 @@ class ProfilePresenter: NSObject, Presenter {
     func removeItemFromProfile(item: ItemModel) {
         serviceMain.deletePost(postId: item.id) { (success, message) in
             if success {
-                /*
-                self?.view.profileTableViewDatasource?.items = items
-                self?.view.profileTableViewDatasource?.items = items
-                self?.view.profileTableViewDatasource?.tableView?.reloadData()
- */
+                if let id = self.profile?.id {
+                    self.getPosts(userId: id)
+                }
             } else {
                 self.view?.alert(message: message)
             }

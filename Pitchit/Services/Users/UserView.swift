@@ -49,7 +49,6 @@ public enum UserView: TargetType {
             let urlParameters = ["firstName": user.firstName,
                                  "lastName": user.lastName,
                                  "mobileNo": user.mobileNo ?? "",
-                                 "image": user.editedImage ?? "",
                                  "facebookConnected": false,
                                  "creditCardVerified": false,
                                  "identityType": "passport",
