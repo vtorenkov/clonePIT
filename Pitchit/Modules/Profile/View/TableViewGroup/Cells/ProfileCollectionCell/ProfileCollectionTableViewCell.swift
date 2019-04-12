@@ -20,7 +20,6 @@ class ProfileCollectionTableViewCell: UITableViewCell, NibReusable {
         super.awakeFromNib()
         collectionView.delegate = self
         collectionView.dataSource = self
-        // Initialization code
         self.collectionView?.register(cellType: PitchCollectionViewCell.self)
     }
     
@@ -44,7 +43,7 @@ extension ProfileCollectionTableViewCellModel: CellViewModel {
         cell.delegatePitch = delegatePitch
         let itemsCount = Double(self.items.count) / 2
         cell.collectionView.reloadData()
-        cell.collectionHeight.constant = CGFloat(round(Double(self.items.count))) * (kScreenHeight / 3)
+        cell.collectionHeight.constant = CGFloat(round(Double(self.items.count))) * (kScreenHeight / 3) + 30
     }
 }
 

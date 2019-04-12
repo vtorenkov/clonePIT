@@ -82,7 +82,7 @@ class PitchCollectionViewCell: UICollectionViewCell, NibReusable {
         self.distanceLabel.roundCorners()
         
         self.titleLabel.font = UIFont.mainFonSFUItRegular(ofSize: 14)
-        self.priceTitle.font = UIFont.mainFonSFUItBold(ofSize: 16)
+        self.priceTitle.font = UIFont.mainFonSFUItBold(ofSize: 12)
         self.distanceLabel.font = UIFont.mainFonSFUItRegular(ofSize: 10)
         
         self.avatarImage.contentMode = .scaleAspectFill

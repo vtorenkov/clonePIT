@@ -88,5 +88,6 @@ extension AvtarProfileTableViewCellModel: CellViewModel {
     func setup(cell: AvtarProfileTableViewCell) {
         cell.delegate = delegate
         cell.userProfile = userProfile
+        cell.userAddress.text = userProfile.city
     }
 }
