@@ -49,22 +49,25 @@ public enum UserView: TargetType {
             let urlParameters = ["firstName": user.firstName,
                                  "lastName": user.lastName,
                                  "mobileNo": user.mobileNo ?? "",
-                                 "facebookConnected": false,
-                                 "creditCardVerified": false,
-                                 "identityType": "passport",
-                                 "indentityDoc": "passport",
-                                 "identityVerified": true] as [String : Any]
+                                 "isFacebookVerified": false,
+                                 "isCardVerified": false,
+                                 "identityType": "Other"] as [String : Any]
+            
+            let dataImg = UIImagePNGRepresentation(UIImage(named: "albums")!)
+            let thumbImge = MultipartFormData(provider: .data(dataImg!), name: "indentityDoc", fileName: "image.png", mimeType: "image/png")
+            var formData = [thumbImge]
+            
+            for (key, value) in urlParameters {
+                formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
+            }
             
             if let data = user.editedImage {
                 let thumb = MultipartFormData(provider: .data(data), name: "image", fileName: "image.png", mimeType: "image/png")
-                var formData = [thumb]
-                for (key, value) in urlParameters {
-                    formData.append(MultipartFormData(provider: .data("\(value)".data(using: .utf8)!), name: key))
-                }
-                return .uploadMultipart(formData)
-            } else {
-                return .requestParameters(parameters: urlParameters, encoding: URLEncoding.default)
+                formData.append(thumb)
             }
+            
+            return .uploadMultipart(formData)
+
         }
     }
     
